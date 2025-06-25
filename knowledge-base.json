@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "id": 1,
+      "title": "Test Entry",
+      "content": "This is a test entry to verify the system is working.",
+      "source": "System Test",
+      "section": "Test",
+      "keywords": ["test", "example"],
+      "category": "general",
+      "lastUpdated": "2025-06-25"
+    }
+  ]
+}

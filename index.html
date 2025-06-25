@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Service Coach</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .search-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: #2c5aa0;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            padding: 10px 20px;
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: #1e3d6f;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .quick-btn {
+            padding: 12px 20px;
+            background: #f8f9fb;
+            border: 1px solid #e1e5e9;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .quick-btn:hover {
+            background: #2c5aa0;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .results-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            display: none;
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .result-item {
+            border-left: 4px solid #2c5aa0;
+            background: #f8f9fb;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .result-title {
+            font-weight: 600;
+            color: #2c5aa0;
+            margin-bottom: 5px;
+        }
+
+        .result-source {
+            font-size: 12px;
+            color: #666;
+            background: #e8f0fe;
+            padding: 3px 8px;
+            border-radius: 12px;
+        }
+
+        .result-content {
+            color: #444;
+            line-height: 1.7;
+            margin: 10px 0;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .helpful-btns {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .helpful-btn {
+            padding: 5px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .helpful-btn.yes:hover {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        .helpful-btn.no:hover {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .search-section, .header {
+                padding: 20px;
+            }
+            
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Customer Service Coach</h1>
+            <p>Ask any question about policies, procedures, or customer issues</p>
+        </div>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" 
+                       class="search-input" 
+                       id="searchInput" 
+                       placeholder="Ask your question... (e.g., 'How do I process a refund?')"
+                       onkeypress="handleKeyPress(event)">
+                <button class="search-btn" onclick="searchKnowledge()">Search</button>
+            </div>
+
+            <div class="quick-actions">
+                <div class="quick-btn" onclick="quickSearch('refund process')">🔄 Refund Process</div>
+                <div class="quick-btn" onclick="quickSearch('escalation procedures')">⬆️ Escalation</div>
+                <div class="quick-btn" onclick="quickSearch('product information')">📦 Product Info</div>
+                <div class="quick-btn" onclick="quickSearch('billing issues')">💳 Billing</div>
+                <div class="quick-btn" onclick="quickSearch('shipping policy')">🚚 Shipping</div>
+                <div class="quick-btn" onclick="quickSearch('returns exchange')">↩️ Returns</div>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <div id="searchResults"></div>
+        </div>
+    </div>
+
+    <script>
+        // Sample knowledge base - replace with your actual data
+        const knowledgeBase = [
+            {
+                id: 1,
+                title: "Standard Refund Process",
+                content: "For standard refunds: 1) Verify purchase within return window (30 days), 2) Check item condition, 3) Process refund in system using ticket #, 4) Send confirmation email to customer. Refunds take 3-5 business days to appear.",
+                source: "Refund Policy v2.1",
+                keywords: ["refund", "return", "money back", "process"]
+            },
+            {
+                id: 2,
+                title: "When to Escalate to Manager",
+                content: "Escalate immediately when: Customer requests manager, refund amount over $500, customer mentions legal action, complaint about employee conduct, technical issue you cannot resolve, or customer is extremely upset/angry.",
+                source: "Escalation Procedures",
+                keywords: ["escalate", "manager", "supervisor", "when"]
+            },
+            {
+                id: 3,
+                title: "Damaged Item Returns",
+                content: "For damaged items: 1) Ask customer to provide photos, 2) Document damage in notes, 3) Offer immediate replacement or full refund, 4) No return shipping required for damaged items, 5) Flag item for quality control review.",
+                source: "Returns Policy Section 3.2",
+                keywords: ["damaged", "broken", "defective", "return"]
+            },
+            {
+                id: 4,
+                title: "Billing Dispute Resolution",
+                content: "Billing disputes: 1) Review customer account history, 2) Verify charges in billing system, 3) If error found - process immediate credit, 4) If charges correct - explain each charge clearly, 5) Offer payment plan if needed.",
+                source: "Billing Procedures Manual",
+                keywords: ["billing", "charge", "dispute", "payment", "credit"]
+            }
+        ];
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchKnowledge();
+            }
+        }
+
+        function quickSearch(query) {
+            document.getElementById('searchInput').value = query;
+            searchKnowledge();
+        }
+
+        function searchKnowledge() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const resultsSection = document.getElementById('resultsSection');
+            const resultsDiv = document.getElementById('searchResults');
+
+            if (!query) {
+                alert('Please enter a question or search term');
+                return;
+            }
+
+            // Show loading
+            resultsSection.classList.add('show');
+            resultsDiv.innerHTML = '<div class="loading">🔍 Searching knowledge base...</div>';
+
+            // Simulate search delay (remove in real implementation)
+            setTimeout(() => {
+                const results = searchDocuments(query);
+                displayResults(results, query);
+            }, 500);
+        }
+
+        function searchDocuments(query) {
+            const queryWords = query.split(' ').filter(word => word.length > 2);
+            let results = [];
+
+            knowledgeBase.forEach(doc => {
+                let score = 0;
+                
+                // Check title match
+                if (doc.title.toLowerCase().includes(query)) score += 10;
+                
+                // Check content match
+                if (doc.content.toLowerCase().includes(query)) score += 8;
+                
+                // Check keyword matches
+                queryWords.forEach(word => {
+                    if (doc.keywords.some(keyword => keyword.includes(word))) {
+                        score += 5;
+                    }
+                    if (doc.content.toLowerCase().includes(word)) {
+                        score += 3;
+                    }
+                    if (doc.title.toLowerCase().includes(word)) {
+                        score += 4;
+                    }
+                });
+
+                if (score > 0) {
+                    results.push({ ...doc, score });
+                }
+            });
+
+            return results.sort((a, b) => b.score - a.score);
+        }
+
+        function displayResults(results, query) {
+            const resultsDiv = document.getElementById('searchResults');
+
+            if (results.length === 0) {
+                resultsDiv.innerHTML = `
+                    <div class="no-results">
+                        <h3>No results found for "${query}"</h3>
+                        <p>Try different keywords or check the quick actions above</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = `<h3 style="margin-bottom: 20px; color: #2c5aa0;">Found ${results.length} result(s) for "${query}"</h3>`;
+
+            results.forEach(result => {
+                html += `
+                    <div class="result-item">
+                        <div class="result-header">
+                            <div class="result-title">${result.title}</div>
+                            <div class="result-source">📄 ${result.source}</div>
+                        </div>
+                        <div class="result-content">${result.content}</div>
+                        <div class="helpful-btns">
+                            <button class="helpful-btn yes" onclick="markHelpful(${result.id}, true)">👍 Helpful</button>
+                            <button class="helpful-btn no" onclick="markHelpful(${result.id}, false)">👎 Not helpful</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            resultsDiv.innerHTML = html;
+        }
+
+        function markHelpful(resultId, isHelpful) {
+            // In real implementation, send this data to your backend
+            console.log(`Result ${resultId} marked as ${isHelpful ? 'helpful' : 'not helpful'}`);
+            
+            // Visual feedback
+            const btn = event.target;
+            btn.style.background = isHelpful ? '#d4edda' : '#f8d7da';
+            btn.style.borderColor = isHelpful ? '#28a745' : '#dc3545';
+            btn.textContent = isHelpful ? '👍 Thanks!' : '👎 Noted';
+            btn.disabled = true;
+        }
+
+        // Auto-focus search input when page loads
+        window.onload = function() {
+            document.getElementById('searchInput').focus();
+        };
+    </script>
+</body>
+</html>
