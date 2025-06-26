@@ -236,122 +236,144 @@
             <div id="searchResults"></div>
         </div>
     </div>
-    <script>
-        // Knowledge base for Tick Tock Loans based on provided documentation
-        let knowledgeBase = [];
+    let knowledgeBase = [];
+let isKnowledgeBaseLoaded = false;
 
 // Load knowledge base from server
 async function loadKnowledgeBase() {
     try {
+        console.log('Loading knowledge base from server...');
         const response = await fetch('/api/documents');
         const data = await response.json();
         knowledgeBase = data.documents || [];
+        isKnowledgeBaseLoaded = true;
+        console.log('Knowledge base loaded:', knowledgeBase.length, 'documents');
+        
+        // Show initial message
+        if (knowledgeBase.length === 0) {
+            displayResults([], 'No documents in knowledge base');
+        } else {
+            displayResults([]);
+        }
     } catch (error) {
         console.error('Error loading knowledge base:', error);
         knowledgeBase = [];
+        isKnowledgeBaseLoaded = true;
+        displayResults([], 'Error loading knowledge base');
     }
 }
 
-// Load knowledge base when page loads
-loadKnowledgeBase();let knowledgeBase = [];
-
-// Load knowledge base from server
-async function loadKnowledgeBase() {
-    try {
-        const response = await fetch('/api/documents');
-        const data = await response.json();
-        knowledgeBase = data.documents || [];
-    } catch (error) {
-        console.error('Error loading knowledge base:', error);
-        knowledgeBase = [];
+function performSearch() {
+    const query = document.getElementById('searchInput').value.trim();
+    
+    if (!isKnowledgeBaseLoaded) {
+        displayResults([], 'Knowledge base is still loading...');
+        return;
     }
-}
-
-// Load knowledge base when page loads
-loadKnowledgeBase();
-
-        function performSearch() {
-            const query = document.getElementById('searchInput').value.trim();
-            if (query.length < 2) {
-                displayResults([]);
-                return;
-            }
-            
-            const results = searchKnowledgeBase(query);
-            displayResults(results, query);
-        }
-
-        function quickSearch(query) {
-            document.getElementById('searchInput').value = query;
-            performSearch();
-        }
-
-        function searchKnowledgeBase(query) {
-            const queryWords = query.toLowerCase().split(' ');
-            
-            return knowledgeBase.map(item => {
-                let score = 0;
-                const searchText = (item.title + ' ' + item.content + ' ' + item.keywords.join(' ')).toLowerCase();
-                
-                queryWords.forEach(word => {
-                    if (word.length > 2) {
-                        const titleMatches = (item.title.toLowerCase().match(new RegExp(word, 'g')) || []).length;
-                        const keywordMatches = item.keywords.filter(keyword => 
-                            keyword.toLowerCase().includes(word)).length;
-                        const contentMatches = (item.content.toLowerCase().match(new RegExp(word, 'g')) || []).length;
-                        
-                        score += titleMatches * 3 + keywordMatches * 2 + contentMatches;
-                    }
-                });
-                
-                return { ...item, score };
-            })
-            .filter(item => item.score > 0)
-            .sort((a, b) => b.score - a.score);
-        }
-
-        function displayResults(results, query = '') {
-            const resultsContainer = document.getElementById('searchResults');
-            
-            if (results.length === 0) {
-                resultsContainer.innerHTML = `
-                    <div class="no-results">
-                        ${query ? `No results found for "${query}". Try different keywords or check the quick access buttons above.` : 'Start typing to search the knowledge base...'}
-                    </div>
-                `;
-                return;
-            }
-            
-            const resultsHTML = results.map(result => {
-                let highlightedContent = result.content;
-                if (query) {
-                    const queryWords = query.split(' ').filter(word => word.length > 2);
-                    queryWords.forEach(word => {
-                        const regex = new RegExp(`(${word})`, 'gi');
-                        highlightedContent = highlightedContent.replace(regex, '<span class="highlight">$1</span>');
-                    });
-                }
-                
-                return `
-                    <div class="result-card">
-                        <div class="result-title">${result.title}</div>
-                        <div class="result-content">${highlightedContent}</div>
-                        <div class="result-source">📋 ${result.source}</div>
-                    </div>
-                `;
-            }).join('');
-            
-            resultsContainer.innerHTML = resultsHTML;
-        }
-
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                performSearch();
-            }
-        }
-
-        // Initialize with empty state
+    
+    if (query.length < 2) {
         displayResults([]);
-    </script>
+        return;
+    }
+    
+    console.log('Searching for:', query);
+    console.log('Available documents:', knowledgeBase.length);
+    
+    const results = searchKnowledgeBase(query);
+    console.log('Search results:', results.length);
+    displayResults(results, query);
+}
+
+function quickSearch(query) {
+    document.getElementById('searchInput').value = query;
+    performSearch();
+}
+
+function searchKnowledgeBase(query) {
+    if (!knowledgeBase || knowledgeBase.length === 0) {
+        console.log('No documents to search');
+        return [];
+    }
+    
+    const queryWords = query.toLowerCase().split(' ');
+    console.log('Query words:', queryWords);
+    
+    return knowledgeBase.map(item => {
+        let score = 0;
+        const searchText = (item.title + ' ' + item.content + ' ' + (item.keywords ? item.keywords.join(' ') : '')).toLowerCase();
+        
+        queryWords.forEach(word => {
+            if (word.length > 2) {
+                const titleMatches = (item.title.toLowerCase().match(new RegExp(word, 'g')) || []).length;
+                const keywordMatches = item.keywords ? item.keywords.filter(keyword => 
+                    keyword.toLowerCase().includes(word)).length : 0;
+                const contentMatches = (item.content.toLowerCase().match(new RegExp(word, 'g')) || []).length;
+                
+                score += titleMatches * 3 + keywordMatches * 2 + contentMatches;
+            }
+        });
+        
+        return { ...item, score };
+    })
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score);
+}
+
+function displayResults(results, query = '') {
+    const resultsContainer = document.getElementById('searchResults');
+    
+    if (results.length === 0) {
+        let message;
+        if (query && query !== 'No documents in knowledge base' && query !== 'Error loading knowledge base' && query !== 'Knowledge base is still loading...') {
+            message = `No results found for "${query}". Try different keywords or check the quick access buttons above.`;
+        } else if (query) {
+            message = query; // Use the passed message
+        } else {
+            message = 'Start typing to search the knowledge base...';
+        }
+        
+        resultsContainer.innerHTML = `
+            <div class="no-results">
+                ${message}
+            </div>
+        `;
+        return;
+    }
+    
+    const resultsHTML = results.map(result => {
+        let highlightedContent = result.content;
+        if (query && query.length > 1) {
+            const queryWords = query.split(' ').filter(word => word.length > 2);
+            queryWords.forEach(word => {
+                const regex = new RegExp(`(${word})`, 'gi');
+                highlightedContent = highlightedContent.replace(regex, '<span class="highlight">$1</span>');
+            });
+        }
+        
+        return `
+            <div class="result-card">
+                <div class="result-title">${result.title}</div>
+                <div class="result-content">${highlightedContent}</div>
+                <div class="result-source">📋 ${result.source}</div>
+            </div>
+        `;
+    }).join('');
+    
+    resultsContainer.innerHTML = resultsHTML;
+}
+
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        performSearch();
+    }
+}
+
+// Load knowledge base when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadKnowledgeBase();
+});
+
+// Initialize with loading state
+displayResults([], 'Loading knowledge base...');
 </body>
 </html>
