@@ -492,8 +492,10 @@
         document.getElementById('manualForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            const form = this;
+            const isEditing = form.dataset.editingId;
+            
             const doc = {
-                id: Date.now(),
                 title: document.getElementById('title').value,
                 content: document.getElementById('content').value,
                 source: document.getElementById('source').value || 'Manual Entry',
@@ -503,11 +505,62 @@
                 lastUpdated: new Date().toISOString().split('T')[0]
             };
             
-            saveDocument(doc);
+            if (isEditing) {
+                // Update existing document
+                doc.id = parseInt(isEditing);
+                updateDocument(doc);
+            } else {
+                // Create new document
+                doc.id = Date.now();
+                saveDocument(doc);
+            }
             
             // Reset form
             this.reset();
+            delete form.dataset.editingId;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.textContent = '💾 Save Content';
+            submitBtn.style.background = '#2c5aa0';
         });
+
+        function updateDocument(doc) {
+            fetch(`/api/documents/${doc.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(doc)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showMessage('Document updated successfully!', 'success');
+                    loadDocuments();
+                } else {
+                    showMessage('Error updating document: ' + data.error, 'error');
+                }
+            })
+            .catch(error => {
+                showMessage('Error updating document: ' + error, 'error');
+            });
+        }
+
+        function deleteDocument(id) {
+            if (confirm('Are you sure you want to delete this document?')) {
+                fetch(`/api/documents/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        showMessage('Document deleted successfully!', 'success');
+                        loadDocuments();
+                    } else {
+                        showMessage('Error deleting document: ' + data.error, 'error');
+                    }
+                });
+            }
+        }
 
         function saveDocument(doc) {
             fetch('/api/documents', {
@@ -577,21 +630,38 @@
             });
         }
 
-        function deleteDocument(id) {
-            if (confirm('Are you sure you want to delete this document?')) {
-                fetch(`/api/documents/${id}`, {
-                    method: 'DELETE'
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        showMessage('Document deleted successfully!', 'success');
-                        loadDocuments();
-                    } else {
-                        showMessage('Error deleting document: ' + data.error, 'error');
-                    }
-                });
+        function editDocument(id) {
+            // Find the document to edit
+            const doc = knowledgeBase.documents.find(d => d.id === id);
+            if (!doc) {
+                showMessage('Document not found', 'error');
+                return;
             }
+
+            // Switch to Add Content tab
+            showTab('upload');
+
+            // Populate the form with existing data
+            document.getElementById('title').value = doc.title;
+            document.getElementById('content').value = doc.content;
+            document.getElementById('source').value = doc.source;
+            document.getElementById('category').value = doc.category;
+            document.getElementById('keywords').value = doc.keywords.join(', ');
+
+            // Change the form to edit mode
+            const form = document.getElementById('manualForm');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.textContent = '✏️ Update Content';
+            submitBtn.style.background = '#ffc107';
+
+            // Store the document ID for updating
+            form.dataset.editingId = id;
+
+            // Show a message
+            showMessage('Editing: ' + doc.title + '. Make your changes and click Update Content.', 'success');
+
+            // Scroll to form
+            form.scrollIntoView({ behavior: 'smooth' });
         }
 
         function loadAnalytics() {
