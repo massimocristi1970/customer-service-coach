@@ -230,12 +230,12 @@
             </div>
 
             <div class="quick-actions">
-                <div class="quick-btn" onclick="quickSearch('refund process')">🔄 Refund Process</div>
-                <div class="quick-btn" onclick="quickSearch('escalation procedures')">⬆️ Escalation</div>
-                <div class="quick-btn" onclick="quickSearch('product information')">📦 Product Info</div>
-                <div class="quick-btn" onclick="quickSearch('billing issues')">💳 Billing</div>
-                <div class="quick-btn" onclick="quickSearch('shipping policy')">🚚 Shipping</div>
-                <div class="quick-btn" onclick="quickSearch('returns exchange')">↩️ Returns</div>
+                <div class="quick-btn" onclick="quickSearch('right to withdraw RTW')">↩️ RTW Process</div>
+                <div class="quick-btn" onclick="quickSearch('interest queries charges')">📊 Interest Queries</div>
+                <div class="quick-btn" onclick="quickSearch('fraud investigation')">🛡️ Fraud Process</div>
+                <div class="quick-btn" onclick="quickSearch('website login password')">🔐 Website Login Queries</div>
+                <div class="quick-btn" onclick="quickSearch('payment plan schedule reset')">📅 PP/Schedule Reset Process</div>
+                <div class="quick-btn" onclick="quickSearch('vulnerability TEXAS IDEA')">❤️ Vulnerability Process</div>
             </div>
         </div>
 
@@ -245,36 +245,40 @@
     </div>
 
     <script>
-        // Sample knowledge base - replace with your actual data
+        // Knowledge base for Tick Tock Loans based on provided documentation
         const knowledgeBase = [
             {
                 id: 1,
-                title: "Standard Refund Process",
-                content: "For standard refunds: 1) Verify purchase within return window (30 days), 2) Check item condition, 3) Process refund in system using ticket #, 4) Send confirmation email to customer. Refunds take 3-5 business days to appear.",
-                source: "Refund Policy v2.1",
-                keywords: ["refund", "return", "money back", "process"]
+                title: "Right to Withdraw (RTW) Process",
+                content: "Period: 14 days from day after loan funding. Process: 1) Provide current balance, 2) Explain daily interest accrual, 3) Repayment period: 30 days from withdrawal, 4) Credit file entry removed upon payment. Customer pays current balance (principal + accrued interest).",
+                source: "Customer Service Handbook Section 7.4",
+                keywords: ["right to withdraw", "RTW", "14 days", "withdrawal", "cancel loan"]
             },
             {
                 id: 2,
-                title: "When to Escalate to Manager",
-                content: "Escalate immediately when: Customer requests manager, refund amount over $500, customer mentions legal action, complaint about employee conduct, technical issue you cannot resolve, or customer is extremely upset/angry.",
-                source: "Escalation Procedures",
-                keywords: ["escalate", "manager", "supervisor", "when"]
+                title: "Interest Accrual and Charges",
+                content: "Daily interest accrues on outstanding balance. Default charges: £15.00 applied at 4 PM on due date. For payment plan arrangements, interest continues to accrue during repayment period. Always explain to customers how interest affects total repayment amount.",
+                source: "Collections & Payment Management Section 7.3",
+                keywords: ["interest", "daily interest", "charges", "default fee", "accrual"]
             },
             {
                 id: 3,
-                title: "Damaged Item Returns",
-                content: "For damaged items: 1) Ask customer to provide photos, 2) Document damage in notes, 3) Offer immediate replacement or full refund, 4) No return shipping required for damaged items, 5) Flag item for quality control review.",
-                source: "Returns Policy Section 3.2",
-                keywords: ["damaged", "broken", "defective", "return"]
+                title: "Fraud Investigation Process",
+                content: "For suspected fraud: 1) Investigate thoroughly, 2) Document all evidence, 3) Report to Massimo Cristi immediately. Never process any transactions if fraud is suspected. Gather all relevant information before escalating. Freeze account activity pending investigation.",
+                source: "Special Circumstances Section 8.5",
+                keywords: ["fraud", "investigation", "suspicious", "report", "Massimo Cristi"]
             },
             {
                 id: 4,
-                title: "Billing Dispute Resolution",
-                content: "Billing disputes: 1) Review customer account history, 2) Verify charges in billing system, 3) If error found - process immediate credit, 4) If charges correct - explain each charge clearly, 5) Offer payment plan if needed.",
-                source: "Billing Procedures Manual",
-                keywords: ["billing", "charge", "dispute", "payment", "credit"]
-            }
+                title: "Website Login Issues - Password Reset",
+                content: "Online Password Reset: 1) Direct customer to www.ticktockloans.com, 2) Click login icon (top right), 3) Click 'Forgot Password', 4) Enter email and surname EXACTLY as in CRM (case sensitive), 5) System sends encrypted password. Troubleshooting: Ensure no extra spaces when copying/pasting password.",
+                source: "Customer Verification & Security Section 4.1",
+                keywords: ["website", "login", "password", "reset", "forgot password", "ticktockloans.com"]
+            },
+			title: "Website Login Issues - Password Reset",
+                content: "Online Password Reset: 1) Direct customer to www.ticktockloans.com, 2) Click login icon (top right), 3) Click 'Forgot Password', 4) Enter email and surname EXACTLY as in CRM (case sensitive), 5) System sends encrypted password. Troubleshooting: Ensure no extra spaces when copying/pasting password.",
+                source: "Customer Verification & Security Section 4.1",
+                keywords: ["website", "login", "password", "reset", "forgot password", "ticktockloans.com"]
         ];
 
         function handleKeyPress(event) {
