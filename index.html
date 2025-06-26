@@ -238,92 +238,37 @@
     </div>
     <script>
         // Knowledge base for Tick Tock Loans based on provided documentation
-        const knowledgeBase = [
-            {
-                id: 1,
-                title: "Right to Withdraw (RTW) Process",
-                content: "Period: 14 days from day after loan funding. Process: 1) Provide current balance, 2) Explain daily interest accrual, 3) Repayment period: 30 days from withdrawal, 4) Credit file entry removed upon payment. Customer pays current balance (principal + accrued interest).",
-                source: "Customer Service Handbook Section 7.4",
-                keywords: ["right to withdraw", "RTW", "14 days", "withdrawal", "cancel loan"]
-            },
-            {
-                id: 2,
-                title: "Interest Accrual and Charges",
-                content: "Daily interest accrues on outstanding balance. Default charges: £15.00 applied at 4 PM on due date. For payment plan arrangements, interest continues to accrue during repayment period. Always explain to customers how interest affects total repayment amount.",
-                source: "Collections & Payment Management Section 7.3",
-                keywords: ["interest", "daily interest", "charges", "default fee", "accrual"]
-            },
-            {
-                id: 3,
-                title: "Fraud Investigation Process",
-                content: "For suspected fraud: 1) Investigate thoroughly, 2) Document all evidence, 3) Report to Massimo Cristi immediately. Never process any transactions if fraud is suspected. Gather all relevant information before escalating. Freeze account activity pending investigation.",
-                source: "Special Circumstances Section 8.5",
-                keywords: ["fraud", "investigation", "suspicious", "report", "Massimo Cristi"]
-            },
-            {
-                id: 4,
-                title: "Website Login Issues - Password Reset",
-                content: "Online Password Reset: 1) Direct customer to www.ticktockloans.com, 2) Click login icon (top right), 3) Click 'Forgot Password', 4) Enter email and surname EXACTLY as in CRM (case sensitive), 5) System sends encrypted password. Troubleshooting: Ensure no extra spaces when copying/pasting password.",
-                source: "Customer Verification & Security Section 4.1",
-                keywords: ["website", "login", "password", "reset", "forgot password", "ticktockloans.com"]
-            },
-            {
-                id: 5,
-                title: "Payment Plan Schedule Reset Process",
-                content: "Setting up new schedules: Choose between 'Pay plan by amounts' (fixed monthly amount) or 'Pay plan by duration' (specific number of months). Required info: 1) Payment method (manual/card), 2) First repayment date, 3) Frequency, 4) Schedule category (interest accrual decision). Always send 'Payment Plan CPA Confirmation' email after setup.",
-                source: "Repayment Plans Section 13.6",
-                keywords: ["payment plan", "schedule", "reset", "payplan", "arrangement", "duration", "amounts"]
-            },
-            {
-                id: 6,
-                title: "Vulnerability Support - TEXAS Model",
-                content: "Apply TEXAS Model: 1) Thank customer for sharing, 2) Explain how information will be used, 3) eXplicit consent for recording, 4) Ask about the situation, 5) Signpost to available support. Use IDEA Model to understand: Impact, Duration, Extent, Action. Options include breathing space, debt management support, and referral to Vulnerabilities Specialist Team.",
-                source: "Supporting Vulnerable Customers Section 10",
-                keywords: ["vulnerability", "TEXAS", "IDEA", "mental health", "vulnerable", "breathing space", "support"]
-            },
-            {
-                id: 7,
-                title: "Customer Verification Requirements",
-                content: "Primary Verification (Must Pass All): 1) Full Name, 2) Date of Birth, 3) Full Address and Postcode. Secondary Verification (if primary fails): Email address, Employment details, Unique account information. Failed verification: Cannot discuss account details, advise retry later.",
-                source: "Data Protection & Privacy Section 1.1",
-                keywords: ["verification", "security", "data protection", "DOB", "address", "failed verification"]
-            },
-            {
-                id: 8,
-                title: "Payment Processing - Two Methods",
-                content: "Method 1 (Not Due Date): Account tab → Transactions → Card Payment. IMPORTANT: Reschedule repayment plan after payment. Method 2 (On Due Date): Account tab → Expand payplan → Card icon. Payment schedule updates automatically, no rescheduling required.",
-                source: "Payments & Interest Section 7.2",
-                keywords: ["payment processing", "card payment", "due date", "reschedule", "transactions"]
-            },
-            {
-                id: 9,
-                title: "Debt Management Company (DMC) Process",
-                content: "Required documents within 21 days: 1) Letter of authority, 2) Financial statement, 3) Repayment offer. Pre-loan DMC: If DMC date precedes loan date, refuse DMC and work directly with customer. Always verify letter of authority in attachments before proceeding.",
-                source: "Debt Management Section 8.1",
-                keywords: ["DMC", "debt management", "letter of authority", "financial statement", "21 days"]
-            },
-            {
-                id: 10,
-                title: "Collections Timeline and Actions",
-                content: "Due -7: Email reminder. Due -1: Email reminder. Due: Email + SMS + Move to Collections. Due +14: Move to Collections M0. Due +28: Notice of Pending CRA Default + Move to Collections M1. Due +49: Move to Collections M2. Due +56: Move to Collections Review. Default charge £15.00 applied at 4 PM on due date.",
-                source: "Collections Strategy Timeline Section 7.1",
-                keywords: ["collections", "timeline", "M0", "M1", "M2", "default notice", "CRA", "arrears"]
-            },
-            {
-                id: 11,
-                title: "Complaint Handling Process",
-                content: "Definition: Any expression of dissatisfaction (oral or written). Same-day resolution: No complaints department notification required, document in notes. Cannot resolve same day: Raise complaint task for Alex Cross. Timeframes: Acknowledgment within 5 days, Final response within 8 weeks. FOS referral costs £650 regardless of outcome.",
-                source: "Complaints & Dispute Resolution Section 11.1",
-                keywords: ["complaint", "FOS", "Alex Cross", "5 days", "8 weeks", "dissatisfaction"]
-            },
-            {
-                id: 12,
-                title: "Application Lifecycle and Stages",
-                content: "Stages: Lead Gen → E-sign Sent → Application Completed → Funds Processing → Funds Sent. Application expiry: 3 days without decision. Lending limits: 1 concurrent loan, maximum 4 loans per customer total. Cooling off periods: 1 loan=30 days, 2 loans=60 days, 3 loans=90 days, 4 loans=no further loans.",
-                source: "Application Management Section 5.3-5.4",
-                keywords: ["application", "stages", "expiry", "lending limits", "cooling off", "e-sign"]
-            }
-        ];
+        let knowledgeBase = [];
+
+// Load knowledge base from server
+async function loadKnowledgeBase() {
+    try {
+        const response = await fetch('/api/documents');
+        const data = await response.json();
+        knowledgeBase = data.documents || [];
+    } catch (error) {
+        console.error('Error loading knowledge base:', error);
+        knowledgeBase = [];
+    }
+}
+
+// Load knowledge base when page loads
+loadKnowledgeBase();let knowledgeBase = [];
+
+// Load knowledge base from server
+async function loadKnowledgeBase() {
+    try {
+        const response = await fetch('/api/documents');
+        const data = await response.json();
+        knowledgeBase = data.documents || [];
+    } catch (error) {
+        console.error('Error loading knowledge base:', error);
+        knowledgeBase = [];
+    }
+}
+
+// Load knowledge base when page loads
+loadKnowledgeBase();
 
         function performSearch() {
             const query = document.getElementById('searchInput').value.trim();
