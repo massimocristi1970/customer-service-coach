@@ -187,6 +187,27 @@ app.delete('/api/documents/:id', (req, res) => {
     }
 });
 
+// Update document endpoint
+app.put('/api/documents/:id', (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const updatedDoc = req.body;
+        
+        // Find and update the document
+        const docIndex = knowledgeBase.documents.findIndex(doc => doc.id === id);
+        if (docIndex === -1) {
+            return res.json({ success: false, error: 'Document not found' });
+        }
+        
+        knowledgeBase.documents[docIndex] = updatedDoc;
+        saveKnowledgeBase();
+        
+        res.json({ success: true });
+    } catch (error) {
+        res.json({ success: false, error: error.message });
+    }
+});
+
 // Other endpoints (logging, etc.)
 app.post('/api/log-unanswered', (req, res) => {
     const { question, timestamp, agent } = req.body;
