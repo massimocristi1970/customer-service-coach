@@ -461,6 +461,24 @@
       ],
       "category": "general",
       "lastUpdated": "2025-06-26"
+    },
+    {
+      "title": "What should I do if the e-sign link shows an error?",
+      "content": "Check the account stage first:\n•\tIf at \"Application Completed\": The customer must authorize their debit card via the online portal at www.ticktockloans.com\n•\tIf at \"Card Declined\": They need to reattempt verification via the portal\n•\tIf at \"Underwriting\": The application is under review\n•\tIf still at \"e-sign\": Test the link. If the issue persists, ask the customer to clear their cache and try again. Escalate with a screenshot if necessary.\n",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "e-sign",
+        "error",
+        "application completed",
+        "card declined",
+        "underwriting",
+        "cache",
+        "porta"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-06-26",
+      "id": 1750961349597
     }
   ]
 }
