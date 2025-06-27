@@ -17,6 +17,664 @@
       "category": "application-processing",
       "lastUpdated": "2025-06-26",
       "id": 1750961349597
+    },
+    {
+      "title": "What happens if the first repayment date is within a few days of the application date?",
+      "content": "You can select the customer's following payday; however, you must inform them of the additional cost, as daily interest will accrue during this period at a rate of 0.8% of the outstanding principal per day.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "first repayment date",
+        "payday",
+        "daily interest",
+        "0.8%",
+        "principal"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-06-27",
+      "id": 1751036537838
+    },
+    {
+      "title": "What if the customer has no additional income?",
+      "content": "They must still enter £00.00 in the additional income field, otherwise they will not be able to proceed with the application.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "additional income",
+        "£00.00",
+        "application",
+        "field"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-06-27",
+      "id": 1751036573919
+    },
+    {
+      "title": "Customer Portal & Login Issues",
+      "content": "Go to www.ticktockloans.com, click 'Forgot Password,' and enter their email and surname exactly as it appears in CRM.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "password reset",
+        "forgot password",
+        "email",
+        "surname",
+        "CRM"
+      ],
+      "category": "customer-portal",
+      "lastUpdated": "2025-06-27",
+      "id": 1751036770778
+    },
+    {
+      "title": "What causes login issues after a password reset?",
+      "content": "Usually due to extra spaces or case sensitivity in the email or password. Ask the customer to copy and paste the password from our email into the login page.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "login issues",
+        "password reset",
+        "spaces",
+        "case sensitivity",
+        "copy paste"
+      ],
+      "category": "customer-portal",
+      "lastUpdated": "2025-06-27",
+      "id": 1751036929355
+    },
+    {
+      "title": "What should I do if the 'My Card' section is missing in the portal?",
+      "content": "Ask the customer to refresh the page—it should appear afterward.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "My Card",
+        "missing",
+        "portal",
+        "refresh page"
+      ],
+      "category": "customer-portal",
+      "lastUpdated": "2025-06-27",
+      "id": 1751036959495
+    },
+    {
+      "title": "When can a customer be rolled back from Collections to Funds Sent?",
+      "content": "If they make the missed payment or set up a new arrangement.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "rollback",
+        "collections",
+        "funds sent",
+        "missed payment",
+        "arrangement"
+      ],
+      "category": "collections-account",
+      "lastUpdated": "2025-06-27",
+      "id": 1751037008160
+    },
+    {
+      "title": "When should a customer be moved from Collections to a Payment Plan?",
+      "content": "If they make a payment or set up an arrangement while in M0, M1, M2, DMC, or Hold stages.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "collections",
+        "payment plan",
+        "M0",
+        "M1",
+        "M2",
+        "DMC",
+        "hold",
+        "arrangement"
+      ],
+      "category": "collections-account",
+      "lastUpdated": "2025-06-27",
+      "id": 1751037035721
+    },
+    {
+      "title": "What types of schedules are available?",
+      "content": "Payplan by Amounts (fixed monthly payments)\nPayplan by Duration (based on number of months)\n",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "payplan",
+        "amounts",
+        "duration",
+        "fixed monthly payments",
+        "months"
+      ],
+      "category": "payment-plans",
+      "lastUpdated": "2025-06-27",
+      "id": 1751037077719
+    },
+    {
+      "title": "What payment methods can be used in a new schedule?",
+      "content": "Manual (via phone or bank transfer) or Card (CPA payments).",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "payment methods",
+        "manual",
+        "phone",
+        "bank transfer",
+        "card",
+        "CPA"
+      ],
+      "category": "payment-plans",
+      "lastUpdated": "2025-06-27",
+      "id": 1751038559545
+    },
+    {
+      "title": "What details must be entered for a new payment plan?",
+      "content": "Repayment method, amount (£) or number of payments, first payment date, payment frequency, and interest settings.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "payment plan",
+        "repayment method",
+        "amount",
+        "payments",
+        "date",
+        "frequency",
+        "interest"
+      ],
+      "category": "payment-plans",
+      "lastUpdated": "2025-06-27",
+      "id": 1751038626722
+    },
+    {
+      "title": "Can the first or second payment in a plan be adjusted?",
+      "content": "Yes, this can be done via the 'Additional Info' section during schedule setup.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "first payment",
+        "second payment",
+        "adjust",
+        "additional info",
+        "schedule setup"
+      ],
+      "category": "payment-plans",
+      "lastUpdated": "2025-06-27",
+      "id": 1751038665795
+    },
+    {
+      "title": "When should interest continue during a payment plan?",
+      "content": "Only if the price CAP has not yet been reached.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "interest",
+        "payment plan",
+        "price cap"
+      ],
+      "category": "payment-plans",
+      "lastUpdated": "2025-06-27",
+      "id": 1751038722035
+    },
+    {
+      "title": "How does a customer evidence their income?",
+      "content": "By sending their most recent payslip or a bank statement showing salary credits within the last 30 days.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "evidence income",
+        "payslip",
+        "bank statement",
+        "salary credits",
+        "30 days"
+      ],
+      "category": "income-evidence",
+      "lastUpdated": "2025-06-27",
+      "id": 1751038751160
+    },
+    {
+      "title": "The customer says they've never had to provide proof of income before. What should I say?",
+      "content": "Explain that, in line with our repeat lending policy, income verification is required. Without this, we cannot proceed with the application.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "proof of income",
+        "repeat lending policy",
+        "income verification",
+        "application"
+      ],
+      "category": "income-evidence",
+      "lastUpdated": "2025-06-27",
+      "id": 1751039987498
+    },
+    {
+      "title": "What email should I send when asking a customer to evidence income?",
+      "content": "Use Email ID 62 -- Payslip / Bank Statement email. Type this into the email dropdown—it will appear at the top.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "email ID 62",
+        "payslip",
+        "bank statement",
+        "email dropdown"
+      ],
+      "category": "income-evidence",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040106440
+    },
+    {
+      "title": "What happens if the \"Open Banking\" task doesn't raise after the customer signs up with Plaid?",
+      "content": "Walk them through the process on the phone. Allow a minute for the task to generate. If it still doesn't appear, ask them to send in a bank statement covering the last 30 days.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "open banking",
+        "task",
+        "Plaid",
+        "bank statement",
+        "30 days"
+      ],
+      "category": "income-evidence",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040143144
+    },
+    {
+      "title": "Can I confirm the SMS code over the phone?",
+      "content": "Yes, but only if the customer is calling from the mobile number on record",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "SMS code",
+        "phone",
+        "mobile number",
+        "record"
+      ],
+      "category": "security-verification",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040177989
+    },
+    {
+      "title": "Can I confirm the email code over the phone?",
+      "content": "No. The customer must access the email themselves. This is part of our two-step verification and must not be bypassed.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "email code",
+        "phone",
+        "two-step verification",
+        "bypass"
+      ],
+      "category": "security-verification",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040205972
+    },
+    {
+      "title": "Can I stay on the call while the customer agrees to the credit agreement?",
+      "content": "No. You must not remain on the call while the customer reads and agrees to the credit agreement and regulatory documents.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "call",
+        "credit agreement",
+        "regulatory documents",
+        "remain"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040249121
+    },
+    {
+      "title": "What is the Right to Withdraw (RTW) process?",
+      "content": "The customer can withdraw from the agreement within 14 days of the loan being funded. This period begins the day after the loan is funded. Once a customer has withdrawn, they have 30 days to repay the balance. This balance will accrue daily interest at a rate of 0.8% per day, based on the outstanding principal.\nYou should set a repayment date within the 30-day period via the Accounts tab in the Schedule section. Once the loan has been settled, raise a \"Customer Service -- Withdrawal from Agreement\" task. After full RTW compliance, the loan entry will be removed from the customer's credit file with the credit reference agencies.\n",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "right to withdraw",
+        "RTW",
+        "14 days",
+        "funded",
+        "30 days",
+        "daily interest",
+        "0.8%",
+        "principal",
+        "credit file"
+      ],
+      "category": "right-to-withdraw",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040298151
+    },
+    {
+      "title": "I've received the transaction response: \"Transaction Success\" -- what does this mean?",
+      "content": "This means that the transaction verification or payment was successful. Either the payment has been taken, or the verification has completed as expected.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "transaction success",
+        "payment",
+        "verification",
+        "successful"
+      ],
+      "category": "transaction-responses",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040375413
+    },
+    {
+      "title": "I've received the transaction response: \"Transaction declined by authorization system\" -- what does this mean?",
+      "content": "This typically refers to R1: Revocation of Authorisation, meaning the cardholder has requested to stop all recurring payment transactions. You should contact the customer to confirm whether they have cancelled all transactions. This response applies to VISA ",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "transaction declined",
+        "authorization system",
+        "R1",
+        "revocation",
+        "recurring payments",
+        "VISA"
+      ],
+      "category": "transaction-responses",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040418717
+    },
+    {
+      "title": "The customer says the application was made fraudulently and not by them. What should I do?",
+      "content": "When taking the initial details of an alleged fraudulent application, make sure to record the following information on the system:\n•\tContact telephone number\n•\tEmail address\n•\tWhether they recognise or hold the current bank details on the account\nIf the customer does not recognise the bank account, advise them to report it to their bank and request an investigation into how the account was opened in their name. We will need a copy of the letter the bank issues once their investigation is complete before we can consider closing the account.\nIf the bank account does belong to the customer, we will still require written confirmation from the bank stating that fraudulent transactions occurred and were investigated. In such cases, we expect the bank to reimburse the customer, who can then return the funds to us. We will also require a letter from the bank in order to write off any remaining interest.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "fraudulent application",
+        "bank details",
+        "investigation",
+        "bank letter",
+        "reimbursement"
+      ],
+      "category": "fraud-disputes",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040508543
+    },
+    {
+      "title": "What is the Debt Respite Scheme?",
+      "content": "The Debt Respite Scheme, also known as Breathing Space, is a UK government initiative that offers individuals temporary protection from creditors while they seek debt advice or mental health treatment.\nThere are two types:\n•\tStandard Breathing Space -- lasts for 60 days\n•\tMental Health Crisis Breathing Space -- lasts for the duration of the treatment, plus an additional 30 days, even if this exceeds 60 days\n",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "debt respite scheme",
+        "breathing space",
+        "60 days",
+        "mental health",
+        "protection",
+        "creditors"
+      ],
+      "category": "debt-respite",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040657310
+    },
+    {
+      "title": "What stage should I use for an account under the Debt Respite Scheme?",
+      "content": "Use On Hold -- 2 Months for a standard breathing space\nUse On Hold -- Vulnerable Customer for a Mental Health breathing space\n\nIn both cases, make sure to add a task to review the account in 60 days. The Insolvency Service typically informs us when the hold expires.\n",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "breathing space",
+        "on hold",
+        "2 months",
+        "vulnerable customer",
+        "60 days",
+        "insolvency service"
+      ],
+      "category": "debt-respite",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040722098
+    },
+    {
+      "title": "Is interest added while the account is in Breathing Space?",
+      "content": "No. Interest, fees, and charges are frozen while the account is in Breathing Space.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "interest",
+        "breathing space",
+        "frozen",
+        "fees",
+        "charges"
+      ],
+      "category": "debt-respite",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040759205
+    },
+    {
+      "title": "Customer has joined a debt management company---what info do I need?",
+      "content": "The name of the DMC, reference number, and the date they joined.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "debt management company",
+        "DMC",
+        "reference number",
+        "date joined"
+      ],
+      "category": "debt-management",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040823941
+    },
+    {
+      "title": "What stage should I move an account to if the customer joins a DMC?",
+      "content": "Move the account to \"On Hold -- Debt Management.\"",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "DMC",
+        "on hold",
+        "debt management"
+      ],
+      "category": "debt-management",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040865126
+    },
+    {
+      "title": "Do I need to send the customer a \"Repaid\" email once the balance is cleared?",
+      "content": "No. The system automatically sends this when the balance reaches zero.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "repaid email",
+        "balance cleared",
+        "automatic",
+        "zero balance"
+      ],
+      "category": "system-email",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040897543
+    },
+    {
+      "title": "What should I check before saving a payment plan?",
+      "content": "Double-check all entered information, then save and confirm details with the customer.",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "payment plan",
+        "check information",
+        "save",
+        "confirm",
+        "customer"
+      ],
+      "category": "payment-plans",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040936631
+    },
+    {
+      "title": "What should I do if a customer's portal isn't updating properly?",
+      "content": "Ask them to refresh the page or try using a different browser.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "portal",
+        "updating",
+        "refresh page",
+        "different browser"
+      ],
+      "category": "customer-portal",
+      "lastUpdated": "2025-06-27",
+      "id": 1751040989514
+    },
+    {
+      "title": "What are the contact details for Tick Tock Loans?",
+      "content": "•\tPhone: 020 8090 8340\n•\tAddress: 7 Berley Crescent, Gravesend, DA12 2AH\n•\tWebsite: www.ticktockloans.com\nEmail Addresses:\nCustomer Service: customerservice@ticktockloans.com\nCollections: collections@ticktockloans.com\nComplaints: complaints@ticktockloans.com\nUnderwriting: underwriting@ticktockloans.com\n",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "contact details",
+        "phone",
+        "address",
+        "email",
+        "customer service",
+        "collections",
+        "complaints",
+        "underwriting"
+      ],
+      "category": "contact-information",
+      "lastUpdated": "2025-06-27",
+      "id": 1751041076722
+    },
+    {
+      "title": "What are the contact details for Tick Tock Advance (MCA Product)?",
+      "content": "Website: www.ticktockcredit.co.uk\nPhone: 020 3838 2148\nEmail: customerservice@ticktockcredit.co.uk\n",
+      "source": "Tick Tock Loans Knowledge Base v1",
+      "section": "Manual Entry",
+      "keywords": [
+        "tick tock advance",
+        "MCA",
+        "website",
+        "phone",
+        "email"
+      ],
+      "category": "contact-information",
+      "lastUpdated": "2025-06-27",
+      "id": 1751041112505
+    },
+    {
+      "title": "Right to Withdraw (RTW) Process",
+      "content": "If a customer wishes to withdraw from their loan agreement, they must inform us within 14 days of the loan being funded. This 14-day period starts the day after the loan is funded.\nThe customer can notify us of their intention to withdraw either verbally or in writing.\nThe customer has 30 days from the date they notify us of their intention to withdraw to repay:\nThe amount borrowed, plus\nThe daily interest accrued up to the date the repayment is made.\nAsk the customer to confirm the exact date they intend to make the repayment.\nCreate a new payment schedule for that date.\nSet yourself a follow-up task on the same date to check whether the payment was made and follow up if necessary.\nIf the Customer Can’t Confirm a Date schedule the repayment for the 30th day after the withdrawal notification.\nIf the customer is unhappy with a card payment being scheduled, switch the payment method to bank transfer to avoid automated card collection attempts.\nThe balance will remain due, and the customer will continue to receive payment reminders as part of the usual communication cycle. If unpaid, the account will flow into the standard collections strategy.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Withdraw",
+        "RTW",
+        "right to withdraw",
+        "cancellation",
+        "cancel loan",
+        "cancel agreement",
+        "opt out",
+        "14-day rule",
+        "14 days",
+        "fourteen days",
+        "exit agreement",
+        "cooling-off period",
+        "loan withdrawal",
+        "customer wants to cancel",
+        "agreement withdrawal",
+        "stop loan",
+        "terminate agreement",
+        "ends loan",
+        "cancels loan",
+        "wishes to withdraw",
+        "no longer wants loan"
+      ],
+      "category": "right-to-withdraw",
+      "lastUpdated": "2025-06-27",
+      "id": 1751041259455
+    },
+    {
+      "title": "Interest Query",
+      "content": "Process Overview\n\nRefer to the customer’s original loan schedule and explain the Total Amount Payable (TAP) they agreed to at the start of their loan.\nLet them know that this amount reflects what they would repay if all payments were made on time, with no changes to their repayment dates.\nIf the TAP has increased due to changes in payment behaviour, explain why:\nInterest accrues daily at a rate of 0.8% on the outstanding principal.\nAny missed payments, changes in payday, or reduced payments may lead to an increase in the total interest charged.\nReassure them that interest is capped at 100% of the amount borrowed — this is a rule set by our regulator, the Financial Conduct Authority (FCA).\nHelp the customer understand how they can reduce their interest:\n\nThe more they pay, the less interest is charged, as the balance decreases.\nEven nominal payments (small amounts) can help reduce the interest if made within the interest-charging period.\nIf the customer expresses frustration (e.g., “You’re ripping me off” or “You’re like loan sharks”), respond calmly and clearly:\n\nWe are a regulated lender, authorised by the FCA.\nWe follow all legal rules on interest and have clearly outlined the terms in the agreement the customer signed.\nWe do not charge more than the 100% cap, and customers have control over how much interest builds up by making timely or early payments.\nOffer to help them explore ways to settle early or reduce their repayment burden.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Interest",
+        "daily interest",
+        "%",
+        "percentage",
+        "interest rate",
+        "charged interest",
+        "how much interest",
+        "contractual interest",
+        "calculate interest",
+        "work out interest",
+        "interest amount",
+        "arrears interest",
+        "quote interest",
+        "interest quote",
+        "interest query",
+        "interest calculation",
+        "total interest",
+        "cost of interest",
+        "breakdown of interest",
+        "accrued interest",
+        "what is the interest",
+        "interest explained",
+        "interest charge",
+        "interest fees",
+        "why charged interest",
+        "interest on loan",
+        "interest figure",
+        "interest applied",
+        "interest query help",
+        "customer asking about interest",
+        "interest per day",
+        "how interest works"
+      ],
+      "category": "transaction-responses",
+      "lastUpdated": "2025-06-27",
+      "id": 1751041473940
+    },
+    {
+      "title": "Fraud Process",
+      "content": "Process Overview:\n\nCustomer confirms that the bank details are not theirs:\n\nIf a customer contacts us to say they didn’t apply for the loan — often after receiving a default notice or spotting it on their credit file — follow these steps:\nVerify Identity & Cross-Check Details\nAsk the customer to confirm their full name, email address, contact number, and bank account details.\nCompare these to what’s recorded on the account.\nOutcome Based on Matching Details\nIf the email, phone number, and bank details match:\nThis likely indicates the customer, or someone close to them, made the application.\nThe customer would usually remain liable.\nIf you’re uncertain, escalate to the Fraud Specialist – Zoe Quick.\nIf any details do not match, especially the bank details:\nRecord the customer's correct contact details in the system for follow-up.\nAdvise the customer to report the loan as fraudulent to the bank used on the application.\nThe bank must investigate and provide a written response confirming the findings.\nHold the Account\nPlace the account on hold for 30 days while waiting for bank confirmation.\nAfter 30 days or upon receipt of the bank’s response, escalate to Zoe Quick for fraud investigation.\nCustomer Confirms All Details Are Correct – But Denies Applying\n\nIf the customer confirms that all details on the loan are correct, but insists they didn’t apply:\nAdvise Immediate External Reporting\nInstruct the customer to report the incident to:\nTheir bank\nAction Fraud\nThe police (to obtain a crime reference number)\nRequest Supporting Evidence\nWe require a letter from the bank confirming that the loan funds were deposited and withdrawn by a third party without the customer’s consent.\nThis confirmation must be in writing and clearly state that the transaction was fraudulent.\nFraud Outcome Handling\n\nOnce confirmed in writing:\nThe customer will be expected to repay the original loan amount (principal), since the funds were received.\nThe business will then write off any interest that accrued.\nThis aligns with our policy where fraud is proven and funds are reimbursed by the bank.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Fraud",
+        "suspected fraud",
+        "confirmed fraud",
+        "fraudulent",
+        "fraud alert",
+        "fraud team",
+        "fraud department",
+        "fraud process",
+        "report fraud",
+        "fraud claim",
+        "fraudulent transactions",
+        "unauthorised transactions",
+        "scam",
+        "scam activity",
+        "identity theft",
+        "account hacked",
+        "account compromised",
+        "fraud investigation",
+        "fraud check",
+        "fraud complaint",
+        "card blocked",
+        "card compromised",
+        "stolen card",
+        "fraudster",
+        "impersonation",
+        "police report",
+        "Police",
+        "crime report",
+        "crime reference number",
+        "CRN",
+        "action fraud",
+        "notice of correction",
+        "NOC",
+        "CIFAS",
+        "report to police",
+        "fraud escalation",
+        "fraud refund",
+        "fraud steps",
+        "fraud query",
+        "possible fraud",
+        "transaction not mine",
+        "not the customer",
+        "someone used."
+      ],
+      "category": "fraud-disputes",
+      "lastUpdated": "2025-06-27",
+      "id": 1751041521722
     }
   ]
 }
