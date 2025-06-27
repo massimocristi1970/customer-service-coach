@@ -383,7 +383,7 @@ function displayResults(results, query = '') {
     }
    
     const resultsHTML = results.map(result => {
-        let highlightedContent = result.content;
+        let highlightedContent = result.content.replace(/\. /g, '. <br>');
         if (query && query.length > 1) {
             const queryWords = query.split(' ').filter(word => word.length > 2);
             queryWords.forEach(word => {
