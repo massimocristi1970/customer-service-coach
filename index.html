@@ -290,7 +290,7 @@ async function loadKnowledgeBase() {
         knowledgeBase = data.documents || [];
         isKnowledgeBaseLoaded = true;
         console.log('Knowledge base loaded:', knowledgeBase.length, 'documents');
-        
+       
         // Show initial message
         if (knowledgeBase.length === 0) {
             displayResults([], 'No documents in knowledge base');
@@ -307,20 +307,20 @@ async function loadKnowledgeBase() {
 
 function performSearch() {
     const query = document.getElementById('searchInput').value.trim();
-    
+   
     if (!isKnowledgeBaseLoaded) {
         displayResults([], 'Knowledge base is still loading...');
         return;
     }
-    
+   
     if (query.length < 2) {
         displayResults([]);
         return;
     }
-    
+   
     console.log('Searching for:', query);
     console.log('Available documents:', knowledgeBase.length);
-    
+   
     const results = searchKnowledgeBase(query);
     console.log('Search results:', results.length);
     displayResults(results, query);
@@ -336,25 +336,25 @@ function searchKnowledgeBase(query) {
         console.log('No documents to search');
         return [];
     }
-    
+   
     const queryWords = query.toLowerCase().split(' ');
     console.log('Query words:', queryWords);
-    
+   
     return knowledgeBase.map(item => {
         let score = 0;
         const searchText = (item.title + ' ' + item.content + ' ' + (item.keywords ? item.keywords.join(' ') : '')).toLowerCase();
-        
+       
         queryWords.forEach(word => {
             if (word.length > 2) {
                 const titleMatches = (item.title.toLowerCase().match(new RegExp(word, 'g')) || []).length;
-                const keywordMatches = item.keywords ? item.keywords.filter(keyword => 
+                const keywordMatches = item.keywords ? item.keywords.filter(keyword =>
                     keyword.toLowerCase().includes(word)).length : 0;
                 const contentMatches = (item.content.toLowerCase().match(new RegExp(word, 'g')) || []).length;
-                
+               
                 score += titleMatches * 3 + keywordMatches * 2 + contentMatches;
             }
         });
-        
+       
         return { ...item, score };
     })
     .filter(item => item.score > 0)
@@ -363,17 +363,17 @@ function searchKnowledgeBase(query) {
 
 function displayResults(results, query = '') {
     const resultsContainer = document.getElementById('searchResults');
-    
+   
     if (results.length === 0) {
         let message;
         if (query && query !== 'No documents in knowledge base' && query !== 'Error loading knowledge base' && query !== 'Knowledge base is still loading...') {
             message = `No results found for "${query}". Try different keywords or check the quick access buttons above.`;
         } else if (query) {
-            message = query;
+            message = query; // Use the passed message
         } else {
             message = 'Start typing to search the knowledge base...';
         }
-        
+       
         resultsContainer.innerHTML = `
             <div class="no-results">
                 ${message}
@@ -381,7 +381,7 @@ function displayResults(results, query = '') {
         `;
         return;
     }
-    
+   
     const resultsHTML = results.map(result => {
         let highlightedContent = result.content;
         if (query && query.length > 1) {
@@ -391,7 +391,7 @@ function displayResults(results, query = '') {
                 highlightedContent = highlightedContent.replace(regex, '<span class="highlight">$1</span>');
             });
         }
-        
+       
         return `
             <div class="result-card">
                 <div class="result-title">${result.title}</div>
@@ -400,29 +400,7 @@ function displayResults(results, query = '') {
             </div>
         `;
     }).join('');
-    
-    resultsContainer.innerHTML = resultsHTML;
-}
-    
-    const resultsHTML = results.map(result => {
-        let highlightedContent = result.content;
-        if (query && query.length > 1) {
-            const queryWords = query.split(' ').filter(word => word.length > 2);
-            queryWords.forEach(word => {
-                const regex = new RegExp(`(${word})`, 'gi');
-                highlightedContent = highlightedContent.replace(regex, '<span class="highlight">$1</span>');
-            });
-        }
-        
-        return `
-            <div class="result-card">
-                <div class="result-title">${result.title}</div>
-                <div class="result-content">${highlightedContent}</div>
-                <div class="result-source">📋 ${result.source}</div>
-            </div>
-        `;
-    }).join('');
-    
+   
     resultsContainer.innerHTML = resultsHTML;
 }
 
