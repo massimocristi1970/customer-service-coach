@@ -396,26 +396,19 @@ function displayResults(results, query = '') {
     }
     
     const resultsHTML = results.map(result => {
-        // Simple text formatting - just add line breaks and clean up spacing
-        let formattedContent = result.content
-            .replace(/\s+/g, ' ') // Clean up multiple spaces
-            .replace(/\. /g, '. <br><br>') // Add breaks after sentences
-            .replace(/: /g, ': <br>') // Add breaks after colons
-            .trim();
-        
-        // Apply highlighting after formatting
+        let highlightedContent = result.content;
         if (query && query.length > 1) {
             const queryWords = query.split(' ').filter(word => word.length > 2);
             queryWords.forEach(word => {
                 const regex = new RegExp(`(${word})`, 'gi');
-                formattedContent = formattedContent.replace(regex, '<span class="highlight">$1</span>');
+                highlightedContent = highlightedContent.replace(regex, '<span class="highlight">$1</span>');
             });
         }
         
         return `
             <div class="result-card">
                 <div class="result-title">${result.title}</div>
-                <div class="result-content">${formattedContent}</div>
+                <div class="result-content">${highlightedContent}</div>
                 <div class="result-source">📋 ${result.source}</div>
             </div>
         `;
