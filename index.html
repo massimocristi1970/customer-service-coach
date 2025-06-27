@@ -202,6 +202,7 @@
 			line-height: 1.6;
 			margin-bottom: 15px;
 			font-size: 1rem;
+			white-space: normal;
 		}
 
 		.read-more {
@@ -383,7 +384,11 @@ function displayResults(results, query = '') {
     }
    
     const resultsHTML = results.map(result => {
-        let highlightedContent = result.content.replace(/\. /g, '. <br>');
+        let highlightedContent = result.content
+			.replace(/\s+/g, ' ')
+			.replace(/\. /g, '. <br>')
+			.replace(/: /g, ': <br>')
+			.replace(/(\d+\)) /g, '<br>$1 ');
         if (query && query.length > 1) {
             const queryWords = query.split(' ').filter(word => word.length > 2);
             queryWords.forEach(word => {
