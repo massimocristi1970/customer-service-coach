@@ -369,7 +369,7 @@ function displayResults(results, query = '') {
         if (query && query !== 'No documents in knowledge base' && query !== 'Error loading knowledge base' && query !== 'Knowledge base is still loading...') {
             message = `No results found for "${query}". Try different keywords or check the quick access buttons above.`;
         } else if (query) {
-            message = query; // Use the passed message
+            message = query;
         } else {
             message = 'Start typing to search the knowledge base...';
         }
