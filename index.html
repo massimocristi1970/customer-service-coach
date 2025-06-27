@@ -198,11 +198,34 @@
         }
 
         .result-content {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
+			color: #555;
+			line-height: 1.8;
+			margin-bottom: 15px;
+			font-size: 1rem;
+		}
+
+		.result-content p {
+			margin-bottom: 12px;
+			text-align: justify;
+		}
+
+		.result-content p:last-child {
+			margin-bottom: 0;
+		}
+
+		.result-content br {
+			line-height: 1.5;
+		}
+
+		.read-more {
+			color: #2196F3;
+			cursor: pointer;
+			font-weight: 600;
+		}
+
+		.read-more:hover {
+			text-decoration: underline;
+		}
 
         .result-source {
             font-size: 0.9rem;
@@ -351,6 +374,35 @@ function searchKnowledgeBase(query) {
     .sort((a, b) => b.score - a.score);
 }
 
+function formatTextForDisplay(text) {
+    // First, handle common formatting issues
+    let formatted = text
+        // Convert multiple spaces to single spaces
+        .replace(/\s+/g, ' ')
+        // Add line breaks after periods followed by capital letters (new sentences)
+        .replace(/\.\s*([A-Z])/g, '.\n\n$1')
+        // Add line breaks after colons followed by numbers or bullets
+        .replace(/:\s*([0-9])/g, ':\n$1')
+        // Add line breaks for numbered lists
+        .replace(/(\d+[\)\.]\s*)/g, '\n$1')
+        // Add line breaks for bullet points
+        .replace(/([•\-\*]\s*)/g, '\n$1')
+        // Add line breaks before common section starters
+        .replace(/(Process:|Steps:|Requirements:|Note:|Important:|WARNING:|IMPORTANT:)/gi, '\n\n$1')
+        // Convert line breaks to HTML
+        .replace(/\n\n+/g, '</p><p>')
+        .replace(/\n/g, '<br>')
+        // Wrap in paragraph tags
+        .replace(/^/, '<p>')
+        .replace(/$/, '</p>')
+        // Clean up empty paragraphs
+        .replace(/<p>\s*<\/p>/g, '')
+        // Fix double paragraph tags
+        .replace(/<\/p><p>/g, '</p>\n<p>');
+    
+    return formatted;
+}
+
 function displayResults(results, query = '') {
     const resultsContainer = document.getElementById('searchResults');
     
@@ -371,6 +423,68 @@ function displayResults(results, query = '') {
         `;
         return;
     }
+    
+    const resultsHTML = results.map(result => {
+        // Format the content for better readability
+        let formattedContent = formatTextForDisplay(result.content);
+        
+        // Apply highlighting after formatting
+        if (query && query.length > 1) {
+            const queryWords = query.split(' ').filter(word => word.length > 2);
+            queryWords.forEach(word => {
+                const regex = new RegExp(`(${word})`, 'gi');
+                formattedContent = formattedContent.replace(regex, '<span class="highlight">$1</span>');
+            });
+        }
+        
+        // Truncate if too long (optional)
+        const maxLength = 500;
+        let displayContent = formattedContent;
+        if (result.content.length > maxLength) {
+            // Find a good place to cut off (after a sentence or paragraph)
+            const truncated = result.content.substring(0, maxLength);
+            const lastSentence = truncated.lastIndexOf('.');
+            const cutPoint = lastSentence > maxLength * 0.7 ? lastSentence + 1 : truncated.lastIndexOf(' ');
+            const truncatedText = result.content.substring(0, cutPoint);
+            displayContent = formatTextForDisplay(truncatedText) + '<span class="read-more">... <em>(click to expand)</em></span>';
+        }
+        
+        return `
+            <div class="result-card" data-full-content="${encodeURIComponent(result.content)}">
+                <div class="result-title">${result.title}</div>
+                <div class="result-content">${displayContent}</div>
+                <div class="result-source">📋 ${result.source}</div>
+            </div>
+        `;
+    }).join('');
+    
+    resultsContainer.innerHTML = resultsHTML;
+    
+    // Add click handlers for expandable content
+    document.querySelectorAll('.result-card').forEach(card => {
+        const readMoreSpan = card.querySelector('.read-more');
+        if (readMoreSpan) {
+            readMoreSpan.style.cursor = 'pointer';
+            readMoreSpan.style.color = '#2196F3';
+            readMoreSpan.onclick = function() {
+                const fullContent = decodeURIComponent(card.dataset.fullContent);
+                const contentDiv = card.querySelector('.result-content');
+                let formattedFullContent = formatTextForDisplay(fullContent);
+                
+                // Apply highlighting to full content
+                if (query && query.length > 1) {
+                    const queryWords = query.split(' ').filter(word => word.length > 2);
+                    queryWords.forEach(word => {
+                        const regex = new RegExp(`(${word})`, 'gi');
+                        formattedFullContent = formattedFullContent.replace(regex, '<span class="highlight">$1</span>');
+                    });
+                }
+                
+                contentDiv.innerHTML = formattedFullContent;
+            };
+        }
+    });
+}
     
     const resultsHTML = results.map(result => {
         let highlightedContent = result.content;
