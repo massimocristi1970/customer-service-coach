@@ -15,7 +15,7 @@
         "portal"
       ],
       "category": "application-processing",
-      "lastUpdated": "2025-06-26",
+      "lastUpdated": "2025-07-03",
       "id": 1750961349597
     },
     {
@@ -741,6 +741,24 @@
       "category": "debt-respite",
       "lastUpdated": "2025-06-27",
       "id": 1751043291614
+    },
+    {
+      "title": "How do I calculate interest?",
+      "content": "Convert the percentage to a decimal:\n\n0.8% = 0.008\n\nMultiply the decimal by the amount:\n\n£100 × 0.008 = £0.80\n\n💡 Final Answer:\n\n0.8% of £100 is £0.80 (per day)",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "interest",
+        "calculate",
+        "work out",
+        "how much",
+        "charge",
+        "daily interest",
+        "price cap"
+      ],
+      "category": "collections-account",
+      "lastUpdated": "2025-07-03",
+      "id": 1751546280186
     }
   ]
 }
