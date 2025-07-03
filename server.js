@@ -232,37 +232,104 @@ app.get('/api/unanswered', (req, res) => {
 });
 
 // Search function
+
 function searchDocuments(query) {
-    const queryWords = query.split(' ').filter(word => word.length > 2);
+    // Define stop words to exclude from search
+    const stopWords = [
+        'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 
+        'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 
+        'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 
+        'must', 'can', 'shall', 'this', 'that', 'these', 'those', 'a', 'an',
+        'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them'
+    ];
+
+    // Filter and clean query words
+    const queryWords = query.toLowerCase()
+        .split(' ')
+        .filter(word => word.length > 2) // Only words longer than 2 characters
+        .filter(word => !stopWords.includes(word)) // Exclude stop words
+        .filter(word => word.match(/^[a-zA-Z]+$/)); // Only alphabetic words
+
+    console.log('Original query:', query);
+    console.log('Filtered query words:', queryWords);
+
+    // If no meaningful words remain, return empty results
+    if (queryWords.length === 0) {
+        console.log('No meaningful words found in query');
+        return [];
+    }
+
     const results = [];
 
     knowledgeBase.documents.forEach(doc => {
         let score = 0;
+        let matchedWords = 0;
         
-        if (doc.content.toLowerCase().includes(query)) score += 20;
-        if (doc.title.toLowerCase().includes(query)) score += 15;
-        
-        queryWords.forEach(word => {
-            if (doc.keywords && doc.keywords.some(keyword => keyword.includes(word))) {
-                score += 10;
-            }
-            if (doc.content.toLowerCase().includes(word)) {
-                score += 5;
-            }
-            if (doc.title.toLowerCase().includes(word)) {
-                score += 8;
-            }
-            if (doc.category && doc.category.toLowerCase().includes(word)) {
-                score += 6;
-            }
-        });
+        // Check for exact phrase match first (highest priority)
+        if (doc.content.toLowerCase().includes(query.toLowerCase())) {
+            score += 50;
+            matchedWords = queryWords.length; // Count as all words matched
+        } else if (doc.title.toLowerCase().includes(query.toLowerCase())) {
+            score += 40;
+            matchedWords = queryWords.length;
+        } else {
+            // Count individual word matches
+            queryWords.forEach(word => {
+                let wordFound = false;
+                
+                // Check title matches (high weight)
+                if (doc.title.toLowerCase().includes(word)) {
+                    const titleMatches = (doc.title.toLowerCase().match(new RegExp(`\\b${word}\\b`, 'g')) || []).length;
+                    score += titleMatches * 15;
+                    wordFound = true;
+                }
+                
+                // Check keyword matches (medium-high weight)
+                if (doc.keywords && doc.keywords.some(keyword => 
+                    keyword.toLowerCase().includes(word))) {
+                    score += 10;
+                    wordFound = true;
+                }
+                
+                // Check content matches (lower weight)
+                if (doc.content.toLowerCase().includes(word)) {
+                    const contentMatches = (doc.content.toLowerCase().match(new RegExp(`\\b${word}\\b`, 'g')) || []).length;
+                    score += contentMatches * 3;
+                    wordFound = true;
+                }
+                
+                // Check category matches (medium weight)
+                if (doc.category && doc.category.toLowerCase().includes(word)) {
+                    score += 8;
+                    wordFound = true;
+                }
+                
+                if (wordFound) {
+                    matchedWords++;
+                }
+            });
+        }
 
-        if (score > 0) {
-            results.push({ ...doc, score });
+        // Require that most words match (or at least 2 for longer queries)
+        const requiredMatches = queryWords.length > 3 ? Math.ceil(queryWords.length * 0.6) : Math.min(2, queryWords.length);
+        
+        console.log(`Document "${doc.title}": score=${score}, matchedWords=${matchedWords}, required=${requiredMatches}`);
+        
+        // Only include results with meaningful scores and sufficient word matches
+        if (matchedWords >= requiredMatches && score > 8) {
+            results.push({ ...doc, score, matchedWords });
         }
     });
 
-    return results.sort((a, b) => b.score - a.score).slice(0, 5);
+    console.log(`Found ${results.length} matching documents`);
+    
+    return results.sort((a, b) => {
+        // Sort by matched words first, then by score
+        if (b.matchedWords !== a.matchedWords) {
+            return b.matchedWords - a.matchedWords;
+        }
+        return b.score - a.score;
+    }).slice(0, 5);
 }
 
 // Logging functions

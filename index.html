@@ -279,10 +279,12 @@
         </div>
     </div>
     <script>
+// Replace the search-related functions in index.html with these:
+
 let knowledgeBase = [];
 let isKnowledgeBaseLoaded = false;
 
-// Load knowledge base from server
+// Load knowledge base from server (simplified - just for checking if empty)
 async function loadKnowledgeBase() {
     try {
         console.log('Loading knowledge base from server...');
@@ -306,7 +308,8 @@ async function loadKnowledgeBase() {
     }
 }
 
-function performSearch() {
+// Perform search using server-side API
+async function performSearch() {
     const query = document.getElementById('searchInput').value.trim();
    
     if (!isKnowledgeBaseLoaded) {
@@ -320,11 +323,25 @@ function performSearch() {
     }
    
     console.log('Searching for:', query);
-    console.log('Available documents:', knowledgeBase.length);
-   
-    const results = searchKnowledgeBase(query);
-    console.log('Search results:', results.length);
-    displayResults(results, query);
+    
+    try {
+        // Use server-side search API
+        const response = await fetch('/api/search', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ query })
+        });
+        
+        const data = await response.json();
+        console.log('Server returned:', data.results.length, 'results');
+        displayResults(data.results, query);
+        
+    } catch (error) {
+        console.error('Search error:', error);
+        displayResults([], 'Search error occurred. Please try again.');
+    }
 }
 
 function quickSearch(query) {
@@ -332,35 +349,7 @@ function quickSearch(query) {
     performSearch();
 }
 
-function searchKnowledgeBase(query) {
-    if (!knowledgeBase || knowledgeBase.length === 0) {
-        console.log('No documents to search');
-        return [];
-    }
-   
-    const queryWords = query.toLowerCase().split(' ');
-    console.log('Query words:', queryWords);
-   
-    return knowledgeBase.map(item => {
-        let score = 0;
-        const searchText = (item.title + ' ' + item.content + ' ' + (item.keywords ? item.keywords.join(' ') : '')).toLowerCase();
-       
-        queryWords.forEach(word => {
-            if (word.length > 2) {
-                const titleMatches = (item.title.toLowerCase().match(new RegExp(word, 'g')) || []).length;
-                const keywordMatches = item.keywords ? item.keywords.filter(keyword =>
-                    keyword.toLowerCase().includes(word)).length : 0;
-                const contentMatches = (item.content.toLowerCase().match(new RegExp(word, 'g')) || []).length;
-               
-                score += titleMatches * 3 + keywordMatches * 2 + contentMatches;
-            }
-        });
-       
-        return { ...item, score };
-    })
-    .filter(item => item.score > 0)
-    .sort((a, b) => b.score - a.score);
-}
+// Remove the old searchKnowledgeBase function entirely - we don't need it anymore!
 
 function displayResults(results, query = '') {
     const resultsContainer = document.getElementById('searchResults');
@@ -385,10 +374,10 @@ function displayResults(results, query = '') {
    
     const resultsHTML = results.map(result => {
         let highlightedContent = result.content
-			.replace(/\s+/g, ' ')
-			.replace(/\. /g, '. <br>')
-			.replace(/: /g, ': <br>')
-			.replace(/(\d+\)) /g, '<br>$1 ');
+            .replace(/\s+/g, ' ')
+            .replace(/\. /g, '. <br>')
+            .replace(/: /g, ': <br>')
+            .replace(/(\d+\)) /g, '<br>$1 ');
         if (query && query.length > 1) {
             const queryWords = query.split(' ').filter(word => word.length > 2);
             queryWords.forEach(word => {
