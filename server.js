@@ -136,18 +136,26 @@ function extractKeywords(text) {
         .map(([word]) => word);
 }
 
-// Search endpoint
+// Updated search endpoint with better logging
 app.post('/api/search', (req, res) => {
     const { query } = req.body;
+    
+    console.log('Search request received:', query);
     
     if (!query || query.trim() === '') {
         return res.json({ results: [], message: 'Please enter a search term' });
     }
 
+    // Always log the search attempt
     logSearch(query);
+    
     const results = searchDocuments(query.toLowerCase().trim());
     
+    console.log(`Search for "${query}" returned ${results.length} results`);
+    
+    // Log as unanswered if no results found
     if (results.length === 0) {
+        console.log('Logging as unanswered question:', query);
         logUnansweredQuestion(query);
     }
 
@@ -340,53 +348,113 @@ function searchDocuments(query) {
     }).slice(0, 5);
 }
 
-// Logging functions
+// Enhanced search logging function
 function logSearch(query) {
     try {
+        const fs = require('fs');
+        const path = require('path');
+        const logsDir = path.join(__dirname, 'logs');
+        
+        if (!fs.existsSync(logsDir)) {
+            fs.mkdirSync(logsDir, { recursive: true });
+        }
+        
+        const logFile = path.join(logsDir, 'search-logs.json');
         let logs = [];
+        
         try {
-            const data = fs.readFileSync('logs/search-logs.json', 'utf8');
-            logs = JSON.parse(data);
-        } catch (e) {}
+            if (fs.existsSync(logFile)) {
+                const data = fs.readFileSync(logFile, 'utf8');
+                if (data.trim()) {
+                    logs = JSON.parse(data);
+                }
+            }
+        } catch (readError) {
+            console.log('Could not read search logs, starting fresh');
+            logs = [];
+        }
+        
+        if (!Array.isArray(logs)) {
+            logs = [];
+        }
         
         logs.push({
             query: query,
             timestamp: new Date().toISOString()
         });
         
-        fs.writeFileSync('logs/search-logs.json', JSON.stringify(logs, null, 2));
+        fs.writeFileSync(logFile, JSON.stringify(logs, null, 2));
+        console.log(`Logged search: "${query}"`);
+        
     } catch (error) {
-        console.log('Error logging search:', error);
+        console.error('Error logging search:', error);
     }
 }
 
+// Enhanced logging function with better error handling
 function logUnansweredQuestion(question, agent = 'unknown') {
     try {
+        // Ensure logs directory exists
+        const fs = require('fs');
+        const path = require('path');
+        const logsDir = path.join(__dirname, 'logs');
+        
+        if (!fs.existsSync(logsDir)) {
+            console.log('Creating logs directory...');
+            fs.mkdirSync(logsDir, { recursive: true });
+        }
+        
+        const logFile = path.join(logsDir, 'unanswered-questions.json');
         let unanswered = [];
+        
+        // Try to read existing file
         try {
-            const data = fs.readFileSync('logs/unanswered-questions.json', 'utf8');
-            unanswered = JSON.parse(data);
-        } catch (e) {}
+            if (fs.existsSync(logFile)) {
+                const data = fs.readFileSync(logFile, 'utf8');
+                if (data.trim()) {
+                    unanswered = JSON.parse(data);
+                }
+            }
+        } catch (readError) {
+            console.log('Could not read existing unanswered questions file, starting fresh:', readError.message);
+            unanswered = [];
+        }
 
-        const existing = unanswered.find(item => item.question.toLowerCase() === question.toLowerCase());
+        // Ensure unanswered is an array
+        if (!Array.isArray(unanswered)) {
+            console.log('Unanswered questions file was corrupted, starting fresh');
+            unanswered = [];
+        }
+
+        // Check if question already exists (case-insensitive)
+        const existing = unanswered.find(item => 
+            item.question && item.question.toLowerCase() === question.toLowerCase()
+        );
         
         if (existing) {
             existing.count += 1;
             existing.lastAsked = new Date().toISOString();
+            console.log(`Updated existing unanswered question "${question}" - count now: ${existing.count}`);
         } else {
-            unanswered.push({
+            const newEntry = {
                 question: question,
                 count: 1,
                 firstAsked: new Date().toISOString(),
                 lastAsked: new Date().toISOString(),
                 agent: agent
-            });
+            };
+            unanswered.push(newEntry);
+            console.log(`Added new unanswered question: "${question}"`);
         }
 
-        fs.writeFileSync('logs/unanswered-questions.json', JSON.stringify(unanswered, null, 2));
-        console.log('Logged unanswered question: "' + question + '"');
+        // Write back to file
+        fs.writeFileSync(logFile, JSON.stringify(unanswered, null, 2));
+        console.log(`Successfully logged unanswered question to ${logFile}`);
+        
     } catch (error) {
-        console.log('Error logging unanswered question:', error);
+        console.error('ERROR logging unanswered question:', error);
+        console.error('Question was:', question);
+        console.error('Error details:', error.message);
     }
 }
 
