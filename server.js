@@ -8,6 +8,41 @@ const pdfParse = require('pdf-parse');
 const app = express();
 const PORT = 3000;
 
+// Ensure logs directory exists
+function ensureLogsDirectory() {
+    const logsDir = path.join(__dirname, 'logs');
+    try {
+        if (!fs.existsSync(logsDir)) {
+            fs.mkdirSync(logsDir, { recursive: true });
+            console.log('Created logs directory:', logsDir);
+        }
+        
+        const searchLogFile = path.join(logsDir, 'search-logs.json');
+        const unansweredLogFile = path.join(logsDir, 'unanswered-questions.json');
+        const feedbackLogFile = path.join(logsDir, 'feedback-logs.json');
+        
+        if (!fs.existsSync(searchLogFile)) {
+            fs.writeFileSync(searchLogFile, '[]');
+            console.log('Created search-logs.json');
+        }
+        
+        if (!fs.existsSync(unansweredLogFile)) {
+            fs.writeFileSync(unansweredLogFile, '[]');
+            console.log('Created unanswered-questions.json');
+        }
+        
+        if (!fs.existsSync(feedbackLogFile)) {
+            fs.writeFileSync(feedbackLogFile, '[]');
+            console.log('Created feedback-logs.json');
+        }
+        
+        return true;
+    } catch (error) {
+        console.error('Error ensuring logs directory:', error);
+        return false;
+    }
+}
+
 // Configure multer for file uploads
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -351,30 +386,13 @@ function searchDocuments(query) {
 // Enhanced search logging function
 function logSearch(query) {
     try {
-        const fs = require('fs');
-        const path = require('path');
-        const logsDir = path.join(__dirname, 'logs');
-        
-        if (!fs.existsSync(logsDir)) {
-            fs.mkdirSync(logsDir, { recursive: true });
-        }
-        
-        const logFile = path.join(logsDir, 'search-logs.json');
+        const logFile = path.join(__dirname, 'logs', 'search-logs.json');
         let logs = [];
         
         try {
-            if (fs.existsSync(logFile)) {
-                const data = fs.readFileSync(logFile, 'utf8');
-                if (data.trim()) {
-                    logs = JSON.parse(data);
-                }
-            }
-        } catch (readError) {
-            console.log('Could not read search logs, starting fresh');
-            logs = [];
-        }
-        
-        if (!Array.isArray(logs)) {
+            const data = fs.readFileSync(logFile, 'utf8');
+            logs = JSON.parse(data);
+        } catch (e) {
             logs = [];
         }
         
@@ -384,49 +402,30 @@ function logSearch(query) {
         });
         
         fs.writeFileSync(logFile, JSON.stringify(logs, null, 2));
-        console.log(`Logged search: "${query}"`);
+        console.log(`✓ Logged search: "${query}"`);
         
     } catch (error) {
-        console.error('Error logging search:', error);
+        console.error('✗ Error logging search:', error.message);
     }
 }
 
 // Enhanced logging function with better error handling
 function logUnansweredQuestion(question, agent = 'unknown') {
     try {
-        // Ensure logs directory exists
-        const fs = require('fs');
-        const path = require('path');
-        const logsDir = path.join(__dirname, 'logs');
-        
-        if (!fs.existsSync(logsDir)) {
-            console.log('Creating logs directory...');
-            fs.mkdirSync(logsDir, { recursive: true });
-        }
-        
-        const logFile = path.join(logsDir, 'unanswered-questions.json');
+        const logFile = path.join(__dirname, 'logs', 'unanswered-questions.json');
         let unanswered = [];
         
-        // Try to read existing file
         try {
-            if (fs.existsSync(logFile)) {
-                const data = fs.readFileSync(logFile, 'utf8');
-                if (data.trim()) {
-                    unanswered = JSON.parse(data);
-                }
-            }
-        } catch (readError) {
-            console.log('Could not read existing unanswered questions file, starting fresh:', readError.message);
+            const data = fs.readFileSync(logFile, 'utf8');
+            unanswered = JSON.parse(data);
+        } catch (e) {
             unanswered = [];
         }
 
-        // Ensure unanswered is an array
         if (!Array.isArray(unanswered)) {
-            console.log('Unanswered questions file was corrupted, starting fresh');
             unanswered = [];
         }
 
-        // Check if question already exists (case-insensitive)
         const existing = unanswered.find(item => 
             item.question && item.question.toLowerCase() === question.toLowerCase()
         );
@@ -434,7 +433,7 @@ function logUnansweredQuestion(question, agent = 'unknown') {
         if (existing) {
             existing.count += 1;
             existing.lastAsked = new Date().toISOString();
-            console.log(`Updated existing unanswered question "${question}" - count now: ${existing.count}`);
+            console.log(`✓ Updated unanswered question "${question}" - count: ${existing.count}`);
         } else {
             const newEntry = {
                 question: question,
@@ -444,27 +443,28 @@ function logUnansweredQuestion(question, agent = 'unknown') {
                 agent: agent
             };
             unanswered.push(newEntry);
-            console.log(`Added new unanswered question: "${question}"`);
+            console.log(`✓ Added new unanswered question: "${question}"`);
         }
 
-        // Write back to file
         fs.writeFileSync(logFile, JSON.stringify(unanswered, null, 2));
-        console.log(`Successfully logged unanswered question to ${logFile}`);
+        console.log(`✓ Successfully saved to unanswered-questions.json`);
         
     } catch (error) {
-        console.error('ERROR logging unanswered question:', error);
-        console.error('Question was:', question);
-        console.error('Error details:', error.message);
+        console.error('✗ Error logging unanswered question:', error.message);
     }
 }
 
 function logFeedback(resultId, helpful, agent = 'unknown') {
     try {
+        const logFile = path.join(__dirname, 'logs', 'feedback-logs.json');
         let logs = [];
+        
         try {
-            const data = fs.readFileSync('logs/feedback-logs.json', 'utf8');
+            const data = fs.readFileSync(logFile, 'utf8');
             logs = JSON.parse(data);
-        } catch (e) {}
+        } catch (e) {
+            logs = [];
+        }
         
         logs.push({
             resultId: resultId,
@@ -473,14 +473,17 @@ function logFeedback(resultId, helpful, agent = 'unknown') {
             timestamp: new Date().toISOString()
         });
         
-        fs.writeFileSync('logs/feedback-logs.json', JSON.stringify(logs, null, 2));
+        fs.writeFileSync(logFile, JSON.stringify(logs, null, 2));
+        console.log(`✓ Logged feedback: ${helpful ? 'helpful' : 'not helpful'}`);
+        
     } catch (error) {
-        console.log('Error logging feedback:', error);
+        console.error('✗ Error logging feedback:', error.message);
     }
 }
 
 // Initialize and start server
 loadKnowledgeBase();
+ensureLogsDirectory();
 
 app.listen(PORT, () => {
     console.log('Customer Service Coach running at http://localhost:' + PORT);
