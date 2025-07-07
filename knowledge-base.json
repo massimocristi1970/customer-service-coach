@@ -59,10 +59,12 @@
         "forgot password",
         "email",
         "surname",
-        "CRM"
+        "CRM",
+        "reset",
+        "password"
       ],
       "category": "customer-portal",
-      "lastUpdated": "2025-06-27",
+      "lastUpdated": "2025-07-03",
       "id": 1751036770778
     },
     {
@@ -759,6 +761,48 @@
       "category": "collections-account",
       "lastUpdated": "2025-07-03",
       "id": 1751546280186
+    },
+    {
+      "title": "How do you update the card details?",
+      "content": "To update their card details, the customer must complete the process via the website. Here's how to guide them:\n\n🔹 Step 1: Log In\nAsk the customer to visit the website and log in to their account.\n\n🔹 Step 2: Locate the Card Update Option\nOnce logged in, they should look for either:\n• “Update Card Securely”, or\n• “My Card”\n\nClicking on either option will take them to the card update page - if they do not see this get the customer to refresh the page.\n\n🔹 Step 3: Enter New Card Details\nThe customer should now enter their new card information on the page provided.\n\n🔹 Step 4: Verify via Banking App\nAfter entering the details, the customer will be prompted to verify the transaction in their banking app.\n\n🔹 Step 5: Return to Website\nOnce verified, the customer must return to the original website page.\n\nThis final step ensures the update is sent successfully through our API and applied to their account. ",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Update card",
+        "card",
+        "pre-auth",
+        "authorisation",
+        "new card",
+        "securely",
+        "banking app",
+        ""
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-03",
+      "id": 1751555066591
+    },
+    {
+      "title": "TEXAS - Vulnerable Customers ",
+      "content": "TEXAS is a widely used model designed to help frontline staff identify and respond appropriately to signs of customer vulnerability during conversations — especially when disclosures are made.\n\nEach letter in TEXAS represents a step to guide the interaction:\n\n🔹 T – Thank the customer\nAcknowledge and thank the customer for sharing something personal. This builds trust and shows empathy.\nExample:\n\"Thank you for letting me know, I really appreciate you sharing that with me.\"\n\n🔹 E – Explain how the information will be used\nLet the customer know why you're asking certain questions and how the information will help. This encourages openness and reassures them their data is handled appropriately.\nExample:\n\"This is just so we can understand your situation better and make sure we support you in the right way.\"\n\n🔹 X – eXplicit consent\nGet clear permission to record and use the information disclosed, especially if it will impact how their account is handled.\nExample:\n\"Is it okay if I make a note of what you've told me today so we can make sure your account reflects the right level of support?\"\n\n🔹 A – Ask relevant questions\nAsk only appropriate, respectful follow-up questions to better understand their needs — without probing unnecessarily.\nFocus on the impact, not the condition.\nExample:\n\"How is this currently affecting your ability to manage your account or make payments?\"\n\n🔹 S – Signpost or support\nOffer appropriate support based on what they’ve shared — this could include:\n\nApplying collections hold or breathing space\n\nReferring to the vulnerabilities specialist (Zoe Quick)\n\nOffering adjusted communication or repayment options\n\nSignposting to external organisations (e.g. Mind, StepChange, Samaritans)\n\n✅ Use TEXAS when:\nA customer discloses a mental health, financial, or life-impacting condition.\n\nYou suspect vulnerability based on what they say, how they say it, or how they behave.\n\nYou want to build a complete picture before applying any account-level support or escalation.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "vulnerability",
+        "TEXAS",
+        "impacting",
+        "condition",
+        "support",
+        "help customer",
+        "depression",
+        "mental health",
+        "vulnerable",
+        "disclosed",
+        "Samaritans",
+        "Mind"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-03",
+      "id": 1751555518830
     }
   ]
 }
