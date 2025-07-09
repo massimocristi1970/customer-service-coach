@@ -803,6 +803,138 @@
       "category": "application-processing",
       "lastUpdated": "2025-07-03",
       "id": 1751555518830
+    },
+    {
+      "title": "What is the cooling-off period?",
+      "content": "The cooling-off period is a set amount of time that must pass between loans once a previous loan has been repaid. During this time, any new applications will be automatically declined, in line with our repeat lending policy.\nThe following applies:\n•\tBetween the 1st and 2nd loan – 30-day cooling-off period\n•\tBetween the 2nd and 3rd loan – 30-day cooling-off period\n",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "cooling",
+        "between loans",
+        "period"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-08",
+      "id": 1751985069663
+    },
+    {
+      "title": "Do we offer top-up loans?",
+      "content": "No, we do not offer top-up loans. Customers are also subject to a cooling-off period, which varies depending on how many loans they’ve had previously. If a customer wishes to repay their loan and reapply, they will need to take this condition into account.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "top-up",
+        "top",
+        "second loan",
+        "additional loan",
+        "increase balance"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-08",
+      "id": 1751985614134
+    },
+    {
+      "title": "What does each stage in the system mean?",
+      "content": "Lead Purchased\n– The customer’s application has been sourced from an online broker and purchased by TTL.\nE-sign Sent\n– The e-agreement has been sent to the customer for signature.\nApplication Completed\n– The customer has signed the agreement and now needs to complete debit card verification.\nUnderwriting\n– The application is currently being assessed by the underwriting team.\nOffer Sent\n– Affordability checks are complete, and a new loan offer has been sent. The customer must re-sign the e-agreement.\nSigned Off\n– All assessment checks have passed, and the loan has been approved.\nFunds Processing\n– The loan is in the process of being sent to the customer.\nFunds Sent\n– Funds have been successfully credited to the customer’s account.\nCollections – Missed Instalment\n– The customer has missed their next scheduled payment.\nCollections M0\n– The customer has missed one payment.\nCollections M1\n– The customer has missed two payments. A 28-day notice for default may be issued at this stage.\nCollections M2\n– The customer has missed two or more payments. Communications about referral to a Debt Collection Agency (DCA) begin here.\nCollections Review\n– The account is being reviewed and prepared for referral to external debt collection.\nExternal Collections – Referred\n– The account has been passed to external debt collectors (typically in the order: CRS > UK Search > Digital DRA).\nExternal Collections – Returned\n– The account has been returned to us by the external debt collectors.\n",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "stage",
+        "collector",
+        "collections",
+        "underwriting",
+        "workflow",
+        "strategy"
+      ],
+      "category": "system-email",
+      "lastUpdated": "2025-07-08",
+      "id": 1751988255452
+    },
+    {
+      "title": "Who make up the backoffice team?",
+      "content": "Yulia Nachkebia (Team Lead)\nTinatin Maqatsaria\nZuka Gvazava\nKhatia Tavdishvili\n",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "backoffice",
+        "team",
+        "BO",
+        "Yulia",
+        "admin",
+        "dmc",
+        "email"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-08",
+      "id": 1751988353004
+    },
+    {
+      "title": "Who make up the underwriting team?",
+      "content": "Pikria Amashukeli \nNugzar Rukhaia\nNona Macharashvili\nMariam Macharashvili\nAnna Markhulia\nLuka Macharashvili\nTamar Abramidze\n",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "team",
+        "Pikria",
+        "underwriters",
+        "underwrites"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-08",
+      "id": 1751988486896
+    },
+    {
+      "title": "Can I place the customer on a 30 day hold if they make a nominal payment?",
+      "content": "Yes you can, however you should consider the reasons why you can’t at this stage set them up into an affordable plan. If you are waiting on information or changes in a role/position and the customer wants to make a nominal payment but there is no accessible income for future payments, then taking a nominal payment and holding the account would be an option. ",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "hold",
+        "temp financial difficulty",
+        "forbearance",
+        "nominal pay",
+        "GFP",
+        "extend hold",
+        "breathing space",
+        "freeze"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-08",
+      "id": 1751989614643
+    },
+    {
+      "title": "How does the customer repay their balance if they exercise their right to withdraw? ",
+      "content": "Customers can either pay the balance owing on their verified debit card on file or alternatively, they can make a bank transfer using the following detail; customers should attach their reference number to the payment:\n\nAccount Name: Savvy Loan Products Ltd\n\nAccount Number: 03587924\n\nSort Code: 04-00-72",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "BT",
+        "transfer",
+        "banking details",
+        "standing order",
+        "STO",
+        "RTW payment"
+      ],
+      "category": "payment-plans",
+      "lastUpdated": "2025-07-08",
+      "id": 1751989763595
+    },
+    {
+      "title": "What email do I send to confirm to the customer that their account has been placed on hold?",
+      "content": "Select or type email 43 or On Hold 30 days and send.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "email",
+        "hold",
+        "confirm hold",
+        "breathing space",
+        "BS email"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-08",
+      "id": 1751989805022
     }
   ]
 }
