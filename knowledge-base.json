@@ -61,10 +61,11 @@
         "surname",
         "CRM",
         "reset",
-        "password"
+        "password",
+        "how do I request"
       ],
       "category": "customer-portal",
-      "lastUpdated": "2025-07-03",
+      "lastUpdated": "2025-08-08",
       "id": 1751036770778
     },
     {
@@ -935,6 +936,406 @@
       "category": "application-processing",
       "lastUpdated": "2025-07-08",
       "id": 1751989805022
+    },
+    {
+      "title": "Do we lend to customers who are paid in cash?",
+      "content": "No. The customer either has to be full time employed and paid into a bank account or self-employed and able to evidence through invoices.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Cash",
+        "in hand",
+        "self-employed"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-28",
+      "id": 1753692123175
+    },
+    {
+      "title": "How do I block an account?",
+      "content": "Before blocking an account, confirm with a manager that it’s the appropriate action. To block an account, open the “Update” drop-down under the orange tab and choose “Block.” The block is applied to the account immediately.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "block",
+        "shut down",
+        "close account"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-28",
+      "id": 1753693493542
+    },
+    {
+      "title": "How do I request a password?",
+      "content": "To reset a customer’s online password, go to our website at www.ticktockloans.com and click “Login” in the top right corner. Instead of logging in, select “Forgot password” underneath. Enter the customer’s email address and surname exactly as they appear in our CRM; if the details don’t match, the reset won’t work. A new password will be sent to the email address on file.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "password",
+        "reset",
+        "login",
+        "website",
+        "online",
+        "forgot"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-07-28",
+      "id": 1753693919241
+    },
+    {
+      "title": "What is Bankruptcy?",
+      "content": "Bankruptcy is a legal process designed to help individuals who can’t repay their debts. It gives you a fresh financial start by writing off most of your unsecured debts, but it also comes with serious consequences and restrictions.\n\n📝 How do you apply?\nIn the UK, you can apply for bankruptcy online through the government’s Insolvency Service. You don’t need to go to court unless someone else is making you bankrupt. It’s a big decision, so it’s important to get advice before applying.\n\n💷 How much does it cost?\nAs of now, it costs £680 to apply for bankruptcy. This fee must be paid before your application can be submitted, although payment plans may be available in some cases.\n\n👥 Who manages your bankruptcy?\nOnce your bankruptcy is approved, it is managed by an Official Receiver – a person who works for the Insolvency Service. They’ll review your finances and may take control of certain assets to help repay your debts. In some cases, a Trustee may also be appointed to handle this.\n\n⚠️ What restrictions does bankruptcy create?\nWhen you're bankrupt, there are several restrictions you must follow, including:\n\nYou can’t borrow more than £500 without telling the lender you’re bankrupt.\n\nYou can’t act as a company director without court permission.\n\nYou must cooperate fully with the Official Receiver and provide any information they request.\n\nYour credit file will show the bankruptcy for 6 years, which can make getting credit, renting, or even some jobs more difficult.\n\nYour assets may be sold, and you could be asked to make monthly payments for up to 3 years if you have disposable income.\n\n📌 Important: Bankruptcy can be life-changing, so it’s always best to speak to a free debt adviser before applying. They can help you explore all your options and make the best choice for your situation.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Bankruptcy",
+        "BO",
+        "Bankruptcy Order",
+        "Order"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-08-08",
+      "id": 1754667749772
+    },
+    {
+      "title": "What happens if a customer goes bankrupt?",
+      "content": "You’ll be notified\nIf a customer is made bankrupt, you’ll usually receive a notice from the Official Receiver or see it on the Insolvency Register. Alterntively, the customer may make you aware directly.\n\nStop all contact and collection\nYou must stop chasing the customer for payment — no calls, emails, letters, or legal action. Bankruptcy protection means you're legally not allowed to pursue the debt.\n\nSend a Proof of Debt\nYou can submit a claim to the Official Receiver (or Trustee) showing how much you’re owed, with any evidence (like statements or contracts).\n\nWait for updates\nThe Receiver will deal with the customer’s assets. If there’s money left after priority debts and fees, you might get a small payment (called a dividend), though this is rare.\n\nDebt is written off\nAfter 12 months, bankruptcy usually ends. Most unsecured debts (like loans or credit cards) are written off. You can’t chase the customer after this.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "bankruptcy process",
+        "bankruptcy order",
+        "bankruptcy",
+        "dividend",
+        "written off",
+        "WO",
+        "official reciever",
+        "proof of debt",
+        "POD",
+        "bankrupt",
+        "insolvency",
+        "insolvency services"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-08-08",
+      "id": 1754668003410
+    },
+    {
+      "title": "Bankruptcy Procedure",
+      "content": "When a customer informs us they have been made bankrupt or are going through bankruptcy proceedings, follow the steps below:\n\nGather Key Information:\n\nFull name of the court where the hearing is scheduled or has taken place.\n\nDate of the bankruptcy hearing or date the order was made.\n\nBankruptcy order number (if known).\n\nCheck the Insolvency Register:\n\nVisit the Insolvency Service website to verify if the order has been registered:\n🔗 https://www.insolvencydirect.bis.gov.uk/eiir/\n\nIf listed, copy and paste the exact URL of the customer’s listing onto their account notes.\n\nUpdate Account Status:\n\nChange the customer’s stage to: On Hold – IVA/Bankruptcy.\n\nRequest Documentation:\n\nInform the customer that we require formal confirmation of the bankruptcy order (e.g., court letter or order document).\n\nMake them aware that this must be received within 21 days to maintain the hold status on their account.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Bankruptcy Procedure",
+        "bankrupt",
+        "BO",
+        "hearing",
+        "bankruptcy"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-08-08",
+      "id": 1754668301922
+    },
+    {
+      "title": "Can you apply for a loan the same day loan is expired or cancelled?",
+      "content": "Yes. ",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Reapply",
+        "apply",
+        "expired",
+        "cancelled",
+        "same day"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-08-20",
+      "id": 1755702047345
+    },
+    {
+      "title": "When do I send a Survey email?",
+      "content": "You should send the customer a survey email after each call, unless one has already been sent to them that day. The only exception is for stages between Leadgen Purchased and Funds Processing, as they will have already received the survey link once they were funded.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "survey",
+        "email",
+        "send email"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-08-20",
+      "id": 1755702219748
+    },
+    {
+      "title": "What is our IBAN Number?",
+      "content": "GB32 TRWI 2314 7081 2998 84/ TRWIGB2L\nAccount holder: Savvy Loan Products Ltd",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "IBAN",
+        "no uk account",
+        "paying abroad"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-08-20",
+      "id": 1755702363437
+    },
+    {
+      "title": "How can a customer stop the default notice being registered on thier credit file?",
+      "content": "To prevent the default notice from being recorded with the credit reference agencies, the customer must either:\n\nSettle the balance stated in the letter by the date noted in the default notice. (Note: the balance in the letter may differ from the current outstanding balance, as interest has accrued since the letter was issued.)\n\nMake a partial payment and agree for the remaining balance to be cleared either in full by a later date or through an affordable repayment arrangement. \n\nNote: If the amount stated in the default notice is not settled in full by the deadline, interest will continue to accrue according to the new schedule and will be payable.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "default notice",
+        "default letter",
+        "stop",
+        "DFN",
+        "default",
+        "credit reference agency",
+        "CRA"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-08-20",
+      "id": 1755702690896
+    },
+    {
+      "title": "Debt Relief Order",
+      "content": "A Debt Relief Order (DRO) is a formal insolvency tool designed for individuals with low income, minimal assets, and relatively small unsecured debts who are unable to repay their creditors. DROs provide a structured mechanism for managing qualifying debts while offering a clear path to debt write-off.\n\nKey Features:\n\nDebt Eligibility: Unsecured debts, including credit cards, personal loans, overdrafts, utility arrears, and other qualifying debts. Current debt limit: £30,000 (England & Wales).\n\nEligibility Criteria:\n\nTotal qualifying debts ≤ £30,000\n\nLimited assets (generally no more than £2,000, excluding certain essential items)\n\nLow disposable income (typically less than £75 per month after essential outgoings)\n\nMust not have had a DRO in the past six years\n\nDuration: Standard DRO period is 12 months. If circumstances remain unchanged, qualifying debts are written off at the end of this period.\n\nCredit Impact: DROs remain on the individual’s credit file for six years, affecting future credit applications.\n\nApplication Process:\n\nMust be completed through an approved intermediary (debt adviser from an approved organisation).\n\nA one-off fee of £90 is payable before submission.\n\nEffect During DRO: Creditors included in the DRO cannot pursue repayment while the order is active.\n\nConsiderations for Staff:\n\nDROs are suitable only for those meeting strict eligibility criteria; staff should verify circumstances carefully.\n\nWhile DROs provide debt relief, they have long-term implications for the customer’s credit rating and financial options.\n\nStaff should advise customers of alternative solutions if DROs are not appropriate.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "DRO",
+        "Relief",
+        "Debt Relief",
+        "Insolvency",
+        "debt management",
+        "order"
+      ],
+      "category": "collections-account",
+      "lastUpdated": "2025-09-18",
+      "id": 1758198264053
+    },
+    {
+      "title": "Handling Customer DRO Notifications",
+      "content": "Purpose:\nTo ensure customer Debt Relief Orders (DROs) are recorded accurately and accounts are managed correctly in line with our internal processes and regulatory requirements.\n\nProcedure:\n\nCustomer Notification:\n\nIf a customer contacts us to advise they have been approved for a DRO, the agent should:\n\nRecord the DRO reference number.\n\nRecord the DRO order date.\n\nRecord the official receiver or intermediary handling the DRO.\n\nVerification:\n\nIf the DRO has been formally made, the agent must verify it on the Insolvency Service Register:\n\nInsolvency Service Register\n\nCopy and paste the verification information into the customer notes.\n\nAccount Management:\n\nMove the account to the IVA/Bankruptcy stage in the system.\n\nA task will automatically be raised for the Back Office team to action at a later date.\n\nNotes:\n\nEnsure all relevant information is recorded clearly in the customer notes.\n\nDo not attempt to take further collection action on accounts under an active DRO.\n\nOutcome:\nFollowing this procedure ensures compliance, accurate record-keeping, and that the customer’s account is managed appropriately while under a DRO.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "DRO",
+        "procedure",
+        "Insolvency",
+        "DRO stage",
+        "debt relief order"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758198812630
+    },
+    {
+      "title": "Calculating Daily Interest",
+      "content": "Purpose:\nTo provide staff with a clear process for explaining how interest is applied and to calculate the daily interest charge for customer accounts.\n\nInterest Rate:\n\nWe charge 0.8% per day on the outstanding principal balance.\n\nDaily Interest Calculation:\n\nIdentify the outstanding principal on the customer account.\n\nMultiply the principal by 0.8% (0.008) to calculate the daily interest charge.\n\nFormula:\n\nDaily Interest = Outstanding Principal × 0.008\n\n\nExample Calculations:\n\nPrincipal (£)\tDaily Interest (£)\n300\t            2.40\n500\t            4.00\n750\t            6.00\n1,000\t        8.00\n1,500\t        12.00\n\nUsing the Table/Formula on Calls:\n\nIf a customer asks how much interest will be applied each day, staff can either:\n\nUse the table for quick reference, or\n\nApply the formula to calculate the exact amount for the outstanding balance.\n\nNotes:\n\nInterest is calculated daily based on the current outstanding principal.\n\nDo not include previously accrued interest when calculating daily interest — only use the current principal.\n\nEnsure all calculations and explanations are clearly noted in the customer account.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "calculate",
+        "interest",
+        "daily interest",
+        "charge",
+        "queries"
+      ],
+      "category": "transaction-responses",
+      "lastUpdated": "2025-09-18",
+      "id": 1758199205870
+    },
+    {
+      "title": "Early Settlements",
+      "content": "Purpose:\nTo explain how early settlements work and provide staff with a clear process to follow when customers request to pay their loan in full before the end of the agreed duration.\n\nKey Points:\n\nCustomers can settle their loan early by paying:\n\nThe outstanding principal, and\n\nThe interest accrued up to the settlement date.\n\nThe settlement figure provided is valid only on the day it is quoted.\n\nIf payment is not made on the same day, the settlement figure will increase daily at a rate of 0.8% of the outstanding principal.\n\nAdvise the customer:\n\n“This figure is valid for today only. If payment is not made today, the settlement figure will increase tomorrow by 0.8% of the outstanding principal.”\n\nNote the account with the settlement figure given and the date.\n\nFormula for Daily Settlement Increase:\n\nDaily Increase = Outstanding Principal × 0.008\n\n\nExample:\n\nOutstanding principal: £1,000\n\nDaily increase: £1,000 × 0.008 = £8.00\n\nIf the customer does not pay today, the quoted settlement figure will increase by £8.00 tomorrow.\n\nImportant Notes for Staff:\n\nAlways remind customers that early settlement saves them from paying further future interest, but the figure changes daily.\n\nEnsure all settlement quotes and customer communications are recorded in the notes.\n\nDo not attempt to fix a settlement figure beyond the day it is quoted.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "early",
+        "settlement",
+        "settle early",
+        "ESF",
+        "pay early"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758199711580
+    },
+    {
+      "title": "Contacting Customers in Insolvency",
+      "content": "No. Once a customer has entered an approved form of insolvency (e.g. Debt Relief Order, Individual Voluntary Arrangement, Bankruptcy, or Debt Management Plan through an appointed provider), we must not work directly with the customer regarding repayment of their debt.\n\nProcedure for Staff:\n\nIdentify Insolvency Status:\n\nConfirm the form of insolvency (e.g. DRO, IVA, Bankruptcy, DMP).\n\nRecord all relevant details in the customer notes (reference number, order date, name of Insolvency Practitioner/Official Receiver/DMP provider).\n\nVerification:\n\nWhere applicable, verify on the Insolvency Register:\nInsolvency Service Register\n\nCopy and paste confirmation into customer notes.\n\nAccount Handling:\n\nMove the account to the IVA/Bankruptcy stage in the system.\n\nA back-office task will automatically be raised for further handling.\n\nCommunication:\n\nDo not discuss repayment or collection directly with the customer.\n\nPolitely explain that all communications will now be managed via their appointed Insolvency Practitioner/Official Receiver/DMP provider.\n\nScript Example for Agents:\n\n“As your account is now under an approved form of insolvency, we’re not able to discuss repayment directly with you. From this point forward, all matters will be handled by your Insolvency Practitioner/Official Receiver, and we will work directly with them on your account.”\n\nKey Compliance Note:\nContacting customers directly to seek repayment after insolvency has been approved may breach regulatory obligations and consumer duty principles. All communication must go through the appointed insolvency representative.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "contacting",
+        "during insolvency",
+        "IVA",
+        "bankruptcy",
+        "DRO",
+        "Trust Deed",
+        "Sequestration"
+      ],
+      "category": "collections-account",
+      "lastUpdated": "2025-09-18",
+      "id": 1758199927883
+    },
+    {
+      "title": "Insolvency Orders Made Before Loan Approval",
+      "content": "Scenario:\nA customer advises (or it is identified) that they had an insolvency order (e.g. DRO, IVA, Bankruptcy) in place before they took out the loan.\n\nKey Point:\n\nIf the insolvency order was already made before the loan agreement was taken out, the customer’s current loan is not included in that insolvency.\n\nThis means the customer remains liable for repayment under the original loan terms.\n\nProcedure for Staff:\n\nCheck the insolvency order date against the loan start date.\n\nIf the insolvency order date is before the loan start date → the loan is not covered by that order.\n\nIf the insolvency order date is after the loan start date → follow the normal insolvency procedure (treat the loan as covered).\n\nRecord Details:\n\nNote the insolvency order reference, date, and type in the account.\n\nRecord the loan start date for clarity.\n\nCustomer Communication:\n\nIf the loan is not covered by the insolvency order, explain clearly to the customer that the debt remains payable in full.\n\nExample script:\n\n“I can see that your insolvency order was made before this loan agreement started. This means your loan with us is not included in that arrangement, and you remain responsible for repayment under the original terms.”\n\nAccount Handling:\n\nContinue managing the loan as normal (collections, interest, or settlement discussions) unless the customer later enters into a new insolvency arrangement that includes this loan.\n\nCompliance Note:\nIt is important to distinguish between debts included in insolvency orders and those that fall outside due to being taken out afterwards. Always double-check dates and record them clearly.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "orders made before approval",
+        "IVA",
+        "bankruptcy",
+        "dro",
+        "trust deed",
+        "sequestration",
+        "customer took loan after",
+        "applied",
+        "loan"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758200055828
+    },
+    {
+      "title": "Cancelling a Schedule",
+      "content": "Purpose:\nTo explain how agents can cancel a customer’s payment schedule and when this happens automatically.\n\nSteps for Agents (Manual Cancellation):\n\nGo to the account page of the customer’s account.\n\nAt the top of the page, locate the orange box titled “Schedules.”\n\nOpen the drop-down menu.\n\nSelect “Cancel Pay Plan.”\n\nThis will immediately cancel the active schedule on the account.\n\nAutomatic Cancellations:\nA payment schedule will also cancel automatically if the account is moved into any of the following stages:\n\nOn Hold 1 Month\n\nOn Hold 2 Month\n\nOn Hold 3 Month\n\nDM (Debt Management)\n\nVul (Vulnerability)\n\nPending Evidence\n\nImportant Notes for Staff:\n\nAlways confirm with the customer if they requested cancellation, and record the reason in the account notes.\n\nDo not attempt to restart or amend a schedule without following the correct setup procedure.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "undo",
+        "cancel CPA",
+        "cancel PP",
+        "cancel schedule",
+        "cancel"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758200491465
+    },
+    {
+      "title": "Customer Service Essentials",
+      "content": "Purpose: Ensure all staff interact with customers in a professional, supportive, and compliant way.\n\nKey Skills:\n\nTone: Always polite, empathetic, and professional, even in challenging conversations.\n\nActive Listening: Let the customer speak, don’t interrupt, and acknowledge their concerns.\n\nPlain English: Avoid jargon — explain things clearly and simply.\n\nEmpathy Statements: e.g. “I understand this must be difficult” or “Thank you for sharing that with me.”\n\nOwnership: Take responsibility for helping resolve the query, even if you need to escalate.\n\nClosing Calls/Emails: Summarise what was agreed and next steps.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "skills",
+        "good customer service",
+        "CS skills"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758201330818
+    },
+    {
+      "title": "Dealing with Vulnerable Customers",
+      "content": "Purpose: To handle calls where customers disclose difficulties such as illness, financial hardship, or other vulnerabilities.\n\nSteps:\n\nListen carefully and acknowledge what the customer has said.\n\nReassure them we can pause or adapt support if needed.\n\nMove the account with to on hold - Vulnerability, if you agree a hold and note the reason. \n\nAdd a \"must read note\" to make other staff aware of potential vulnerbility (this will show at the top of the general page)\n\nTask the account for a review (dependant on what is agreed with the customer)\n\nProvide information on free debt advice services if appropriate.\n\nUSse vulnerbility tools if needed i.e TEXAS\n\nEscalate to a manager (Zoe Quick) if position is complex and you are unsure of how to handle the situation.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Dealing with Vulnerable Customers",
+        "TEXAS",
+        "vul",
+        "special needs",
+        "support"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758201606395
+    },
+    {
+      "title": "Handling Difficult Conversations",
+      "content": "Purpose: To support staff when customers become upset, angry, or frustrated.\n\nTop Tips:\n\nStay calm and professional — don’t match the customer’s tone.\n\nAcknowledge their feelings: “I can hear you’re frustrated, let’s work through this together.”\n\nStick to facts and solutions, not emotions.\n\nIf the customer becomes abusive, politely warn them before ending the call.\n\nAlways record notes factually and without judgment.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "angry customer",
+        "conflict resolution"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758201648742
+    },
+    {
+      "title": "Understanding & Managing Customer Vulnerabilities",
+      "content": "Purpose:\nTo help staff recognise and respond appropriately when customers disclose vulnerabilities, in line with Consumer Duty and treating customers fairly.\n\n1. Health-Related Vulnerabilities\n\nExamples: Physical disability, serious illness, mental health conditions, addiction, cognitive impairment.\n\nHow to Respond:\n\nShow empathy and patience.\n\nOffer to slow down the call or provide information in writing.\n\nIf needed, place account into VUL (Vulnerability) status.\n\nProvide signposting to specialist support (e.g. debt charities, mental health helplines).\n\n2. Financial Vulnerabilities\n\nExamples: Job loss, reduced income, high cost of living, reliance on benefits, sudden financial shock (e.g. bereavement, separation).\n\nHow to Respond:\n\nExplore affordable solutions (payment plans, short-term hold).\n\nPlace into On Hold stage if evidence is pending.\n\nRemind them about free, impartial debt advice services.\n\nRecord notes clearly with context.\n\n3. Situational Vulnerabilities\n\nExamples: Bereavement, domestic abuse, caring responsibilities, divorce/separation, homelessness.\n\nHow to Respond:\n\nBe sensitive to emotional impact.\n\nAvoid pressing for immediate decisions.\n\nOffer flexibility and note the account accordingly.\n\nEscalate if safeguarding concerns arise (e.g. risk of harm).\n\n4. Communication Barriers\n\nExamples: Low literacy, English not first language, hearing or speech difficulties, limited access to digital tools.\n\nHow to Respond:\n\nAdapt communication style — speak clearly, avoid jargon.\n\nOffer alternative formats (email instead of phone, written confirmation).\n\nAllow extra time on calls.\n\nRecord any preferences in account notes.\n\n5. Age-Related Vulnerabilities\n\nExamples: Elderly customers with reduced memory/understanding, very young customers with limited financial experience.\n\nHow to Respond:\n\nCheck understanding by asking the customer to repeat back.\n\nProvide extra explanations where needed.\n\nBe mindful of potential safeguarding concerns.\n\nEscalate if exploitation or financial abuse is suspected.\n\n6. Risk of Harm / Safeguarding\n\nExamples: Suicidal thoughts, domestic abuse, threats of violence, immediate safety risks.\n\nHow to Respond:\n\nStay calm and listen.\n\nIf risk of immediate harm, follow emergency safeguarding procedure (e.g. contact emergency services if disclosure suggests life is in danger).\n\nEscalate to a manager straight away.\n\nRecord facts only, not opinions.\n\nKey Staff Reminders\n\nAlways note the vulnerability in the system using MUST READ NOTE and/or place into On Hold-Vulnerble stage, with the reason stated clearly.\n\nNever judge or dismiss what the customer discloses.\n\nProvide reassurance and explain what support options are available.\n\nEscalate if unsure — better to check than mishandle a vulnerable customer.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "vulnerability",
+        "conditions",
+        "mental health",
+        "identifying",
+        "vul"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758201846282
+    },
+    {
+      "title": "Vulnerabilities & Tools for Staff",
+      "content": "Purpose:\nTo help staff identify, record, and manage customer vulnerabilities consistently and sensitively, using recognised industry tools.\n\n1. Health-Related Vulnerabilities\n\nExamples: Long-term illness, disability, mental health, addiction.\n\nTool: TEXAS Protocol (for handling disclosures)\n\nThank the customer for sharing.\n\nExplain how the information will be used.\n\nXplicit consent — ask if you can record/share it internally.\n\nAsk relevant questions (how it affects finances, any support needed).\n\nSignpost to help (e.g. StepChange, Mind, Citizens Advice).\n\n2. Financial Vulnerabilities\n\nExamples: Job loss, reduced income, benefit reliance, cost-of-living pressures.\n\nTool: IDEA (for understanding impact)\n\nImpact — how is the situation affecting them financially?\n\nDuration — is it short-term, long-term, or permanent?\n\nExperience — have they managed something similar before?\n\nAdjustment — what support or changes do they need?\n\n3. Situational Vulnerabilities\n\nExamples: Bereavement, caring duties, domestic abuse, separation.\n\nTool: CARERS (for carers or dependent-related issues)\n\nCheck circumstances sensitively.\n\nAssess how caring impacts finances/time.\n\nRecord disclosure with consent.\n\nExplain available support.\n\nRefer to advice organisations if appropriate.\n\nSupport flexibly (e.g. pauses, payment plans).",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "tools",
+        "texas",
+        "IDEA",
+        "CARERS",
+        "vulnerability",
+        "vul"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758201922330
+    },
+    {
+      "title": "Using IDEA with Customers",
+      "content": "Purpose:\nIDEA helps agents understand the customer’s situation more deeply when they disclose a vulnerability. It breaks the conversation into four areas: Impact, Duration, Experience, Adjustment.\n\nI – Impact\n\nWhat impact is the vulnerability having on their finances or ability to manage the account?\n\n✅ Example questions:\n\n“How is this situation affecting your ability to make payments right now?”\n\n“Has this change impacted your income or expenses?”\n\n✅ Example notes:\n\nCustomer unable to work due to surgery, now on reduced sick pay.\n\nCustomer’s mental health makes budgeting difficult.\n\nD – Duration\n\nIs the situation temporary, long-term, or permanent?\n\n✅ Example questions:\n\n“Do you expect this to change soon, or is it ongoing?”\n\n“Has your GP or adviser said how long you may be in this situation?”\n\n✅ Example notes:\n\nCustomer expects to return to work in 3 months after recovery.\n\nCustomer has long-term disability, likely ongoing.\n\nE – Experience\n\nHas the customer been through this before, and how did they manage?\n\n✅ Example questions:\n\n“Have you had to manage something like this before?”\n\n“What’s helped you cope with your finances in the past?”\n\n✅ Example notes:\n\nCustomer has been through redundancy before, relied on payment holidays.\n\nCustomer has never been in financial difficulty before, feels anxious and unsure.\n\nA – Adjustment\n\nWhat changes, support, or solutions are needed now?\n\n✅ Example questions:\n\n“What would help make things more manageable for you right now?”\n\n“Would a short-term hold or reduced payment plan give you some breathing space?”\n\n✅ Example notes:\n\nCustomer requests 2-month payment hold until benefits start.\n\nCustomer would like smaller instalments for 6 months.\n\nPutting It All Together – Example Call Notes\n\nIDEA applied:\n\nImpact: Customer off work due to broken leg, income dropped to statutory sick pay.\n\nDuration: Doctor says recovery expected in 12 weeks.\n\nExperience: Customer previously managed using savings, but has none left now.\n\nAdjustment: Customer requests a temporary hold on payments until return to work.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "IDEA",
+        "vul",
+        "tools",
+        "understanding"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758202128463
+    },
+    {
+      "title": "Using CARERS with Customers",
+      "content": "Purpose:\nThe CARERS tool helps agents handle disclosures where customers are carers, or where caring responsibilities are affecting their finances and account management.\n\nC – Check circumstances sensitively\n\nUnderstand the customer’s caring situation without being intrusive.\n\n✅ Example questions:\n\n“Can I ask a little more about your caring responsibilities, so I can understand how it affects your account?”\n\n“Who do you provide care for, and how much time does this take each day?”\n\n✅ Example notes:\n\nCustomer caring full-time for elderly parent with dementia.\n\nCustomer provides part-time care for disabled child alongside work.\n\nA – Assess how caring impacts finances/time\n\nDoes caring reduce income, increase expenses, or affect their ability to make payments?\n\n✅ Example questions:\n\n“Does your caring role affect your ability to work or manage finances?”\n\n“Do you have extra costs linked to caring, such as travel or equipment?”\n\n✅ Example notes:\n\nCustomer reduced to part-time work due to caring role.\n\nCustomer has increased household costs, no spare income.\n\nR – Record disclosure with consent\n\nAlways ask before noting sensitive details.\n\n✅ Example script:\n\n“Would you be happy for me to make a note of this on your account, so we can make sure we support you properly?”\n\n✅ Example notes:\n\nConsent given. Recorded customer caring for disabled child; limited availability during working hours.\n\nE – Explain available support\n\nTell the customer how we can help manage their account fairly.\n\n✅ Example script:\n\n“We can look at putting your account on hold, adjusting your payment plan, or finding a schedule that works around your circumstances.”\n\nR – Refer to advice organisations if appropriate\n\nSignpost to specialist support.\n\n✅ Examples:\n\nCarers UK (www.carersuk.org\n)\n\nCitizens Advice\n\nLocal authority carers’ services\n\n✅ Example script:\n\n“There are organisations that can support carers with financial and emotional help — would you like me to share their details?”\n\nS – Support flexibly\n\nPut in place adjustments to help the customer manage.\n\n✅ Examples:\n\nPlace account into On Hold (VUL) while circumstances are reviewed.\n\nOffer flexible repayment dates that match benefit/payment cycles.\n\nAllow more time for evidence if requested.\n\nPutting It All Together – Example Call Notes\n\nCARERS applied:\n\nCheck: Customer provides daily care for disabled spouse.\n\nAssess: Reduced working hours, lower income, increased household costs.\n\nRecord: Consent given; noted in account.\n\nExplain: Advised account could be placed on hold pending review.\n\nRefer: Provided details for Carers UK.\n\nSupport: Account placed into VUL stage; repayment plan to be reviewed in 3 months.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "carers",
+        "support",
+        "vul",
+        "tools"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758202196993
+    },
+    {
+      "title": "Abbreviations Log",
+      "content": "Purpose:\nQuick reference for staff to understand common abbreviations used in customer accounts, communications, and internal processes.\n\nAccount Stages & Holds\n\nOn Hold 1/2/3 – Account temporarily paused for review.\n\nDM – Debt Management hold.\n\nVUL – Vulnerable customer hold.\n\nIVA – Individual Voluntary Arrangement.\n\nDRO – Debt Relief Order.\n\nBNK – Bankruptcy.\n\nProcesses & Actions\n\nCB – Call Back.\n\nLM – Left Message.\n\nNA – No Answer.\n\nCATC – Collection Action To Continue.\n\nES – Early Settlement.\n\nRTW – Right To Withdraw.\n\nCustomer & Payment Terms\n\nCust – Customer.\n\nBT – Bank Transfer.\n\nCPA – Continuous Payment Authority.\n\nPaym – Payment.\n\nCIF – Clear In Full.\n\nClr – Cleared.\n\nmnth – Month.\n\nrec'd – Received.\n\nVulnerability Tools & Protocols\n\nTEXAS – Thank, Explain, eXplicit consent, Ask, Signpost.\n\nIDEA – Impact, Duration, Experience, Adjustment.\n\nCARERS – Check, Assess, Record, Explain, Refer, Support.\n\nBRUCE – Behaviour, Remember, Understand, Check, Explore.\n\nCredit & Collections References\n\nCRS – Credit Resource Solutions.\n\nUKS – UK Search.\n\nDRA – Digital DRA.\n\nInterest & Balances\n\nOS – Outstanding Balance (principal + accrued interest).\n\nINT – Daily Interest applied (0.8% per day of outstanding principal).",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "abbreviatiions",
+        "shorthand",
+        "meanings"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-09-18",
+      "id": 1758202663656
     }
   ]
 }
