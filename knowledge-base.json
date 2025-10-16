@@ -1325,7 +1325,7 @@
     },
     {
       "title": "Abbreviations Log",
-      "content": "Purpose:\nQuick reference for staff to understand common abbreviations used in customer accounts, communications, and internal processes.\n\nAccount Stages & Holds\n\nOn Hold 1/2/3 – Account temporarily paused for review.\n\nDM – Debt Management hold.\n\nVUL – Vulnerable customer hold.\n\nIVA – Individual Voluntary Arrangement.\n\nDRO – Debt Relief Order.\n\nBNK – Bankruptcy.\n\nProcesses & Actions\n\nCB – Call Back.\n\nLM – Left Message.\n\nNA – No Answer.\n\nCATC – Collection Action To Continue.\n\nES – Early Settlement.\n\nRTW – Right To Withdraw.\n\nCustomer & Payment Terms\n\nCust – Customer.\n\nBT – Bank Transfer.\n\nCPA – Continuous Payment Authority.\n\nPaym – Payment.\n\nCIF – Clear In Full.\n\nClr – Cleared.\n\nmnth – Month.\n\nrec'd – Received.\n\nVulnerability Tools & Protocols\n\nTEXAS – Thank, Explain, eXplicit consent, Ask, Signpost.\n\nIDEA – Impact, Duration, Experience, Adjustment.\n\nCARERS – Check, Assess, Record, Explain, Refer, Support.\n\nBRUCE – Behaviour, Remember, Understand, Check, Explore.\n\nCredit & Collections References\n\nCRS – Credit Resource Solutions.\n\nUKS – UK Search.\n\nDRA – Digital DRA.\n\nInterest & Balances\n\nOS – Outstanding Balance (principal + accrued interest).\n\nINT – Daily Interest applied (0.8% per day of outstanding principal).",
+      "content": "Purpose:\nQuick reference for staff to understand common abbreviations used in customer accounts, communications, and internal processes.\n\nAccount Stages & Holds\n\nOn Hold 1/2/3 – Account temporarily paused for review.\n\nDM – Debt Management hold.\n\nVUL – Vulnerable customer hold.\n\nIVA – Individual Voluntary Arrangement.\n\nDRO – Debt Relief Order.\n\nBNK – Bankruptcy.\n\nProcesses & Actions\n\nCB – Call Back.\n\nLM – Left Message.\n\nNA – No Answer.\n\nCATC – Collection Action To Continue.\n\nES – Early Settlement.\n\nRTW – Right To Withdraw.\n\nCustomer & Payment Terms\n\nBTW - Back to work.\n\nOOW - Out of work.\n\nEOM - End of month.\n\nCust – Customer.\n\nBT – Bank Transfer.\n\nCPA – Continuous Payment Authority.\n\nPaym – Payment.\n\nCIF – Clear In Full.\n\nClr – Cleared.\n\nmnth – Month.\n\nrec'd – Received.\n\nVulnerability Tools & Protocols\n\nTEXAS – Thank, Explain, eXplicit consent, Ask, Signpost.\n\nIDEA – Impact, Duration, Experience, Adjustment.\n\nCARERS – Check, Assess, Record, Explain, Refer, Support.\n\nBRUCE – Behaviour, Remember, Understand, Check, Explore.\n\nCredit & Collections References\n\nCRS – Credit Resource Solutions.\n\nUKS – UK Search.\n\nDRA – Digital DRA.\n\nInterest & Balances\n\nOS – Outstanding Balance (principal + accrued interest).\n\nINT – Daily Interest applied (0.8% per day of outstanding principal).",
       "source": "Manual Entry",
       "section": "Manual Entry",
       "keywords": [
@@ -1334,8 +1334,40 @@
         "meanings"
       ],
       "category": "application-processing",
-      "lastUpdated": "2025-09-18",
+      "lastUpdated": "2025-10-15",
       "id": 1758202663656
+    },
+    {
+      "title": "What is an Annual Percentage Rate (APR)",
+      "content": "What is APR?\nAPR stands for Annual Percentage Rate. It represents the total cost of borrowing over a year, including interest and any compulsory fees, expressed as an annual percentage of the amount borrowed.\n\nWhy Do We Use It?\nAlthough our products are short-term and interest is typically calculated on a daily basis, we are still required by regulation to display an APR. This ensures transparency and consistency across all lenders, allowing customers to compare the cost of credit between different products and providers — even if the borrowing period is much shorter than a year.\n\nHow It Relates to High-Cost Short-Term Credit (HCSTC):\n\nIn high-cost short-term lending, the APR appears very high because it’s an annualised figure based on daily interest rates applied to short borrowing periods.\n\nFor example, a loan that runs for 30 days with daily interest may look disproportionately high when shown as an annual rate, but this doesn’t mean the borrower is paying that amount — it’s simply how the cost is standardised for comparison.\n\nThe key figure for our customers remains the total amount repayable and the daily interest rate, which reflect the true short-term cost of borrowing.\n\nIn Summary:\nWe calculate interest daily to reflect short borrowing terms, but we must display the APR to comply with consumer credit regulations and maintain transparency for customers.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "APR",
+        "annual percentage",
+        "interest",
+        "total amount payable"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-10-15",
+      "id": 1760539410222
+    },
+    {
+      "title": "Where can I locate the Annual Percentage Rate (APR)",
+      "content": "Locating the APR Figure\n\nYou may receive questions from customers about where to find the APR (Annual Percentage Rate). The location depends on whether the customer is making a general enquiry or already has an active account.\n\n1. General Public / Customer Service Enquiry\n\nFor general queries from potential customers who do not yet have an account, the APR can be found on our website.\n\nAt the bottom of the website, we display a representative example showing a typical loan and its associated costs:\n\nExample:\nBorrow £350 and pay £127.28 per month for 5 months at a fixed interest rate of 0.8% per day (292% per year).\nThe total charge for credit is £286.40 (all interest).\nThe total amount repayable is £636.40.\nRepresentative APR: 1297.89%.\n\nThis example helps customers understand the cost of borrowing and how the APR relates to our short-term lending model.\n\n2. Existing Customers with an Account\n\nIf the customer already has an account with us, the exact APR and full loan details are available within their Consumer Credit Agreement.\n\nThis document can be found in the customer’s account area under “Attachments.”\nYou should guide the customer to this section and explain that the agreement outlines their specific loan terms, including:\n\nThe interest rate\n\nThe total charge for credit\n\nThe total amount repayable\n\nThe representative APR",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "representative",
+        "apr",
+        "credit",
+        "charge",
+        "locate",
+        "find"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-10-15",
+      "id": 1760539694223
     }
   ]
 }
