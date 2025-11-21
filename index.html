@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Base</title>
+    <script src="config.js"></script>
     <style>
         * {
             margin: 0;
@@ -288,7 +289,11 @@ let isKnowledgeBaseLoaded = false;
 async function loadKnowledgeBase() {
     try {
         console.log('Loading knowledge base from server...');
-        const response = await fetch('/api/documents');
+        const apiUrl = window.appConfig.getApiUrl();
+        const headers = window.appConfig.getHeaders();
+        const endpoint = window.appConfig.localMode ? '/api/documents' : `${apiUrl}/documents`;
+        
+        const response = await fetch(endpoint, { headers });
         const data = await response.json();
         knowledgeBase = data.documents || [];
         isKnowledgeBaseLoaded = true;
@@ -326,11 +331,13 @@ async function performSearch() {
     
     try {
         // Use server-side search API
-        const response = await fetch('/api/search', {
+        const apiUrl = window.appConfig.getApiUrl();
+        const headers = window.appConfig.getHeaders();
+        const endpoint = window.appConfig.localMode ? '/api/search' : `${apiUrl}/search`;
+        
+        const response = await fetch(endpoint, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: headers,
             body: JSON.stringify({ query })
         });
         

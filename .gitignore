@@ -3,3 +3,7 @@ logs/
 uploads/
 *.log
 .env
+.env.local
+.env.production
+config.js.local
+knowledge-base.json.backup
