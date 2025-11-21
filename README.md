@@ -1,3 +1,31 @@
+# Customer Service Coach
+
+A knowledge base and search system for customer service teams with intelligent, lenient search capabilities.
+
+## 🚀 Deployment Options
+
+### Cloud Hosting (Recommended for Remote Teams)
+
+Host your backend on **Supabase** and frontend on **Cloudflare Pages** for:
+- ✅ Zero server maintenance
+- ✅ Free tiers available (500MB database + unlimited requests)
+- ✅ HTTPS and global CDN included
+- ✅ Scalable and reliable
+
+**Quick Start**: See [QUICKSTART_CLOUDFLARE_SUPABASE.md](QUICKSTART_CLOUDFLARE_SUPABASE.md) (30 minutes)  
+**Full Guide**: See [DEPLOYMENT.md](DEPLOYMENT.md)
+
+### Local Hosting (Original Setup)
+
+Run everything on your local machine:
+```bash
+npm install
+node server.js
+```
+Access at: `http://localhost:3000`
+
+---
+
 # Search Improvement Package - README
 
 ## 📦 What's Included
