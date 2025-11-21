@@ -27,7 +27,12 @@ serve(async (req) => {
 
     const url = new URL(req.url);
     const pathParts = url.pathname.split("/").filter((p) => p);
-    const documentId = pathParts.length > 0 ? pathParts[pathParts.length - 1] : null;
+    // Extract document ID if path is like /documents/{id}
+    // The function name 'documents' should be in the path, so ID is after it
+    const documentsIndex = pathParts.indexOf('documents');
+    const documentId = documentsIndex >= 0 && pathParts.length > documentsIndex + 1 
+      ? pathParts[documentsIndex + 1] 
+      : null;
 
     // GET all documents
     if (req.method === "GET" && !documentId) {

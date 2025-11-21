@@ -16,10 +16,10 @@ const path = require('path');
 
 // Configuration - Update these with your Supabase credentials
 const SUPABASE_URL = process.env.SUPABASE_URL || 'YOUR_SUPABASE_URL';
-const SUPABASE_KEY = process.env.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
 
 // Validate configuration
-if (SUPABASE_URL === 'YOUR_SUPABASE_URL' || SUPABASE_KEY === 'YOUR_SUPABASE_ANON_KEY') {
+if (SUPABASE_URL === 'YOUR_SUPABASE_URL' || SUPABASE_ANON_KEY === 'YOUR_SUPABASE_ANON_KEY') {
   console.error('❌ Error: Please set SUPABASE_URL and SUPABASE_ANON_KEY');
   console.error('   Either:');
   console.error('   1. Set environment variables:');
@@ -40,7 +40,7 @@ try {
   process.exit(1);
 }
 
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 async function migrateData() {
   try {

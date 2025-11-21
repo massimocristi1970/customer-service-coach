@@ -14,6 +14,20 @@ const config = {
     anonKey: "YOUR_SUPABASE_ANON_KEY", // Your public anon key
   },
 
+  // Validate configuration
+  isConfigured() {
+    if (!this.localMode) {
+      if (this.supabase.url === "YOUR_SUPABASE_URL" || 
+          this.supabase.anonKey === "YOUR_SUPABASE_ANON_KEY") {
+        console.error("❌ Configuration Error: Please update config.js with your Supabase credentials");
+        console.error("   Set localMode: true to use local server, or");
+        console.error("   Replace YOUR_SUPABASE_URL and YOUR_SUPABASE_ANON_KEY with your actual values");
+        return false;
+      }
+    }
+    return true;
+  },
+
   // API endpoints - these will be constructed based on your setup
   getApiUrl() {
     if (this.localMode) {

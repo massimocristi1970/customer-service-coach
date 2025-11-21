@@ -67,7 +67,7 @@ serve(async (req) => {
         }),
         {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
-          status: 400,
+          status: 415, // Unsupported Media Type
         }
       );
     }
