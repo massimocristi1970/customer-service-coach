@@ -872,7 +872,7 @@
     },
     {
       "title": "Who make up the underwriting team?",
-      "content": "Pikria Amashukeli \nNugzar Rukhaia\nNona Macharashvili\nMariam Macharashvili\nAnna Markhulia\nLuka Macharashvili\nTamar Abramidze\n",
+      "content": "Pikria Amashukeli \nNugzar Rukhaia\nNona Macharashvili\nMariam Macharashvili\nAnna Markhulia\nLuka Macharashvili\nTamar Abramidze\nNata Begdarashvili",
       "source": "Manual Entry",
       "section": "Manual Entry",
       "keywords": [
@@ -882,7 +882,7 @@
         "underwrites"
       ],
       "category": "application-processing",
-      "lastUpdated": "2025-07-08",
+      "lastUpdated": "2025-11-18",
       "id": 1751988486896
     },
     {
@@ -1368,6 +1368,246 @@
       "category": "application-processing",
       "lastUpdated": "2025-10-15",
       "id": 1760539694223
+    },
+    {
+      "title": "What is a Notice of Sum in Arrears ",
+      "content": "A Notice of Sum in Arrears is a formal letter sent by a lender/creditor when a borrower has fallen behind on their repayments for a credit agreement regulated by the Consumer Credit Act (for example: loans, credit cards, hire purchase, store cards).\n\nThe notice is issued when the borrower has missed the equivalent of two or more payments, or has underpaid to the point that the arrears reach the value of two full instalments.\n\nIts purpose is to:\n\nInform the borrower that they are behind on payments\n\nConfirm the total amount of arrears owed\n\nExplain any consequences, such as further action if the arrears are not cleared\n\nProvide required information and protections, including where to get free debt advice\n\nIt is a statutory notice, meaning the creditor must send it. It is not a court order and does not mean legal action has already started.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "NOSIA",
+        "sum in arrears",
+        "notice",
+        "regulated document",
+        "notice of sum"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-11-18",
+      "id": 1763463815660
+    },
+    {
+      "title": "What is a Further Notice of Sum in Arrears?",
+      "content": "A Further Notice of Sum in Arrears is a follow-up letter a lender/creditor must send after they have already issued an initial Notice of Sum in Arrears (NOSIA) under the Consumer Credit Act.\n\nA further NOSIA is sent every six months if:\n\nThe borrower still has arrears outstanding, and\n\nThe credit agreement is still active.\n\nIts purpose is to:\n\nUpdate the borrower on how much arrears remain\n\nRemind them that the account is still behind on payments\n\nProvide the required statutory information, including consumer rights and where to access free debt advice\n\nJust like the initial NOSIA, a further NOSIA:\n\nIs not a court order\n\nDoes not mean legal action has begun\n\nIs a legal requirement for regulated credit agreements\n\nIt is simply a periodic reminder that arrears are still owed.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Further notice",
+        "FNOSIA",
+        "sum in arrears"
+      ],
+      "category": "collections-account",
+      "lastUpdated": "2025-11-18",
+      "id": 1763463953673
+    },
+    {
+      "title": "What is a Summary of Borrowing",
+      "content": "A Summary of Borrowing (SOB) is a regulatory document a lender must provide to a customer who has taken a High-Cost Short-Term Credit (HCST) product (for example, payday or other short-term, high-cost loans). It gives a clear, concise breakdown of how much the customer has borrowed and how much they have paid in charges (interest and fees) over a reporting period.\n\nPurpose:\n\nShow the total amount borrowed during the reporting period.\n\nShow the total charges (interest, fees, and other costs).\n\nImprove transparency so customers can see the true cost of repeat or short-term borrowing.\n\nHelp customers make informed decisions about future borrowing and seek debt advice if needed.\n\nKey points:\n\nThe SOB is informational only — it is not a collection notice or enforcement action.\n\nIt is a regulatory requirement designed to protect consumers and ensure visibility of repeated HCST borrowing.\n\nWhen a customer SHOULD be sent an SOB\n\nA lender must send a Summary of Borrowing:\n\nEvery three months (quarterly), in arrears, covering the previous three-month period — regardless of whether payments are due or the account is active, where the customer has had HCST borrowing that meets the FCA reporting criteria.\n\nWhen the account is closed (including where the debt is sold or transferred to another creditor/third party).\n\nWhere there has been repeat borrowing from the lender (i.e., the customer has borrowed more than once), or otherwise where the FCA’s HCST reporting criteria apply.\n",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "SOB",
+        "Summary",
+        "Payday lending market",
+        "borrowing"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-11-18",
+      "id": 1763465948903
+    },
+    {
+      "title": "What is our appeals process?",
+      "content": "The appeal is reviewed by a senior underwriter to determine whether the original lending decision was correct.\n\nThe process typically takes up to 48 hours from the time the appeal is submitted.\n\nTo submit an appeal, the customer must follow the instructions in their decline email. In short, they should:\n\nEmail underwriting@ticktockloans.com\n\nClearly state their concerns and reasons for requesting a review\n\nThe senior underwriter will consider the customer’s points as part of their review.\n\nAppeal decisions will be communicated via email.\n\nCustomers can submit an appeal either directly by email or manually through a customer service representative.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "appeal",
+        "declined",
+        "unhappy with decision",
+        "appeal process"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-11-18",
+      "id": 1763467063526
+    },
+    {
+      "title": "Outbound Dialling Guidelines ",
+      "content": "When handling outbound dialling, please follow these rules to remain compliant with our Arrears Collections policy:\n\nCall Spacing & Attempt Limits\n\nLeave at least 3 hours between the first and second call to the same customer.\n\nMake no more than 5 call attempts per customer per day.\n\nVoicemail Policy\n\nLeave only one voicemail per customer per day.\n\nOnce a voicemail has been left, do not contact the customer again until the following day.\n\nDue Calls\n\nCall twice per day, once in the AM and once in the PM.\n\nList Priority\n\nFirst list: This is your initial priority for calling.\n\nSecond priority: DD + 1\n\nFollowed by: M0 → M1 → M2\n\nDaily List Refresh\n\nAll lists are refreshed daily.\n\nInbound Call Priority\n\nInbound calls take priority between 9:00–10:00 AM and during lunch periods.\n\nResume outbound calls once these periods have ended.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "Outbound dialling",
+        "due date list",
+        "DD list",
+        "DD+1",
+        "calling out",
+        "voicemails"
+      ],
+      "category": "collections-account",
+      "lastUpdated": "2025-11-18",
+      "id": 1763467409592
+    },
+    {
+      "title": "Call Structure – Reminder Guide",
+      "content": "1. Introduction\n\nIntroduce yourself and the company.\n\nComplete DPA/security checks.\n\nAdvise the customer that calls are recorded (outbound calls).\n\n2. Middle of the Call (Information Gathering)\n\nUse open questions to understand the customer’s situation:\n\n“How can I help you today?”\n\n“What has caused you to miss payments?”\n\n“Has anything changed in your circumstances recently?”\n\n“Is your situation likely to change in the near future?”\n\n“What steps are you taking to improve your situation?”\n\nKeep the conversation focused, supportive, and non-judgmental.\n\n3. Resolution\n\nExplore what the customer’s situation allows them to do:\n\nDo they need time to assess their finances or seek advice?\n\nIf they have income, how much can they reasonably pay toward their debt?\n\nCan the customer make a realistic offer?\n\nIf not, consider completing an Income & Expenditure (I&E) with them.\n\nCan they make a token payment during the call as a sign of goodwill?\n\nYour aim is to reach a fair and sustainable solution based on their circumstances.\n\n4. Call Closure\n\nBefore ending the call, confirm the following clearly:\n\nThe resolution/solution agreed\n\nThe terms (amounts, dates, frequency)\n\nWhether an email will be sent confirming the arrangement\n\nThe consequences of not maintaining the arrangement, such as:\n\nIssuing a pending default notice to credit reference agencies\n\nInstructing a third-party debt recovery agency\n\nCancelling the arrangement and returning the account to collections\n\nSet clear expectations:\n\nWho will contact them\n\nWhen they will be contacted\n\nHow we will communicate about upcoming payments or failed payments\n\nAlways close by asking:\n“Is there anything else I can help you with today?”",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "call structure",
+        "opening",
+        "closure",
+        "open ended questions",
+        "call flow",
+        "conversation",
+        "call"
+      ],
+      "category": "collections-account",
+      "lastUpdated": "2025-11-18",
+      "id": 1763482878170
+    },
+    {
+      "title": "What are the consequences of non-payment?",
+      "content": "1. Arrangement Cancelled\n\nIf the customer misses a payment or breaks the terms of the plan:\n\nThe current payment arrangement will be cancelled.\n\nThe account will return to active collections, meaning further contact attempts may be made to resolve the arrears.\n\nYou should always tell the customer:\n\n“If the agreed payment is not made, the arrangement may be cancelled and your account will return to collections for further action.”\n\n\n2. Pending Default Notice Issued\n\nIf the account continues to remain unpaid:\n\nA Pending Default Notice may be issued.\n\nThis is a formal warning that a default could be recorded if no action is taken.\n\nIt gives the customer an opportunity to bring the account back in line before a default is applied.\n\nThis should be explained clearly:\n\n“If the arrears are not resolved, we may issue a Pending Default Notice which is a formal step before a default is registered with credit reference agencies.”\n\n\n3. Default Registered with Credit Reference Agencies\n\nIf the customer still fails to contact us or make payments:\n\nA default may be registered on their credit file.\n\nThis will remain on their credit report for six years.\n\nIt can affect their ability to obtain credit, mortgages, phone contracts, or other financial services.\n\nExplain simply:\n\n“A default can impact your credit rating for six years and may affect future borrowing.”\n\n\n4. Third-Party Debt Recovery Agency Instructed\n\nIf the account cannot be resolved directly:\n\nThe debt may be transferred to a licensed third-party debt recovery agency.\n\nThe customer will then be contacted by the agency, not us.\n\nThe agency may use their own contact processes to recover the balance.\n\nExplain clearly and calmly:\n\n“If the account remains unpaid, it may be passed to a third-party debt recovery agency who will continue recovery efforts.”\n\n\n5. Additional Collections Activity\n\nDepending on the customer’s behaviour and account history, further action may include:\n\nIncreased outbound contact to try to engage the customer\n\nWritten correspondence outlining the arrears and next steps\n\nReassessment of the customer’s affordability if they re-engage\n\nThese actions should always be proportionate, fair, and compliant with regulatory requirements.\n\n\n6. Potential Legal Action (if applicable to your business)\n\nIf your organisation uses legal recovery routes, consequences may also include:\n\nEscalation to the legal team for pre-legal assessment\n\nThe possibility of a County Court Judgment (CCJ)\n\nFurther enforcement if a CCJ remains unpaid\n\nOnly include this section if legal routes are used. If not, I can remove or adapt it.\n\n\n7. Impact on Future Lending\n\nIf the customer continues to default or shows poor repayment behaviour:\n\nThey may be restricted from future borrowing\n\nTheir account may be flagged internally\n\nThey may be declined for new applications until the debt is resolved\n\nExplain in simple terms:\n\n“Non-payment can affect future lending decisions with us.”\n\nSummary to Read to Customers\n\nHere’s a simplified version for agents to use during calls:\n\n“If the payment isn’t made, the arrangement may be cancelled and your account will return to collections.\nIf it remains unpaid, we may issue a Pending Default Notice which can lead to a default being registered on your credit file for six years.\nThe account may also be passed to a third-party debt recovery agency.\nIt’s really important we work together to agree a plan that is realistic and sustainable for you.”",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "consequences",
+        "non-payment",
+        "non payment",
+        "failed arrangement",
+        "default notice",
+        "debt recovery",
+        "debt agency",
+        "failed payment"
+      ],
+      "category": "collections-account",
+      "lastUpdated": "2025-11-18",
+      "id": 1763483097125
+    },
+    {
+      "title": "Can I change my password on my account?",
+      "content": "Yes. You can update your password at any time by logging into your online account at www.ticktockloans.com.\n\nOnce logged in, go to the “My Profile” section, where you will be able to change your password to something more memorable and secure.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "password update",
+        "change password",
+        "password"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-11-18",
+      "id": 1763483660577
+    },
+    {
+      "title": "Do you accept credit cards?",
+      "content": "No. We do not accept credit cards as a payment method.\n\nThis is to ensure we comply with regulatory expectations, as customers should not use credit to repay credit, which could worsen their financial situation.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "credit card",
+        "debit card",
+        "card update"
+      ],
+      "category": "collections-account",
+      "lastUpdated": "2025-11-18",
+      "id": 1763483794456
+    },
+    {
+      "title": "Can I change the email address or phone number on theaccount?",
+      "content": "Yes. You can update the contact details; however, for security reasons we must first speak to the customer on the mobile number currently registered on the account.\n\nOnce we’ve verified the customers identity through that number, we can override the existing details and update the email address or phone number.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "mobile number",
+        "updating contact details",
+        "telephone number"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-11-18",
+      "id": 1763484019184
+    },
+    {
+      "title": "What Debt Recovery Agencies do we use?",
+      "content": "Credit Resource Solutions (CRS)\n\nPhone: 01422 324 510 \nEmail: sales@creditresourcesolutions.co.uk\nPostal Address: Second Floor, G Mill, Dean Clough, Halifax, West Yorkshire, HX3 5AX \nComplaints Email: complaints@creditresourcesolutions.co.uk\nWebsite: paycrs.co.uk\n\nOpening Hours: Mon–Fri, 08:00–18:00; Sat, 09:30–12:30 (as per their contact centre) \npaycrs.co.uk\n\nUK Search\n\nPhone: 01246 488 924 \nEmail (General / Customer): [email protected] \nAddress: 4 Gander Lane, Chesterfield, S43 4PZ \nOpening Hours:Monday–Thursday: 09:00–19:00 Friday: 09:00–17:00 Saturday: 09:00–13:00 \n\nDigital DRA (The Digital Debt Resolution Agency)\n\nWebsite / Portal: https://www.digitaldra.co.uk/\nRegistered Office: Office 5, Elsie Whiteley Innovation Centre, Hopwood Lane, Halifax, HX1 5ER \nEmail: info@digitaldra.co.uk\nSupport / Portal Contact: Customers can raise queries via their Customer Portal or by replying to the last email / SMS contact. \n",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "DRA",
+        "DCA",
+        "CRS",
+        "Digital DRA",
+        "UKS",
+        "UK Search",
+        "external recoveries",
+        "external collections"
+      ],
+      "category": "customer-portal",
+      "lastUpdated": "2025-11-18",
+      "id": 1763484574473
+    },
+    {
+      "title": "Do we accept direct debit?",
+      "content": "No \n\nOur primary automatic payment method is Continuous Payment Authority (CPA), which requires the customer’s consent to allow payments to be collected automatically.\n\nCustomers can also choose manual collection, where they must call us to process each payment.\n\nIf a customer prefers to pay by other methods, bank transfer is available. However, this option cannot be used at the application stage, as CPA is required as part of the loan application process.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "DD",
+        "direct debit",
+        "CPA",
+        "continuous payment authority",
+        "mandate"
+      ],
+      "category": "application-processing",
+      "lastUpdated": "2025-11-18",
+      "id": 1763484900719
+    },
+    {
+      "title": "What is a Subject Access Request (SAR)?",
+      "content": "A Subject Access Request is a request made by an individual for access to the personal data an organisation holds about them.\nSARs fall under the UK GDPR and Data Protection Act 2018.\n\nA SAR can be:\n\nWritten (email, letter, webform)\n\nVerbal (phone call, in person)\n\nMade to any staff member — not just the Data Protection Officer\n\nNo special wording is required. If a customer says anything like “I want my data”, it may be a valid SAR.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "DSAR",
+        "subject access request",
+        "SAR",
+        "data request"
+      ],
+      "category": "security-verification",
+      "lastUpdated": "2025-11-21",
+      "id": 1763733571577
+    },
+    {
+      "title": "Identifying a Valid SAR",
+      "content": "A request is a SAR if the individual asks for:\n\n“Everything you hold about me”\n\n“All my notes, calls, emails, recordings”\n\n“Any personal data you have on me”\n\n“A copy of my information”\n\nIf unsure, treat it as a SAR and escalate.",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "data",
+        "customer information",
+        "call recordings",
+        "DSAR",
+        "SAR",
+        "DPA"
+      ],
+      "category": "security-verification",
+      "lastUpdated": "2025-11-21",
+      "id": 1763733629276
+    },
+    {
+      "title": "DSAR (Data Subject Access Request) Process",
+      "content": "Step 1 — Acknowledge the Request\n\nThank the customer and confirm that we can help.\n\nAdvise that we will need to log the request for processing.\n\nIf on a call, note that the request is verbal — this is still valid.\n\nStep 2 — Raise the Correct Task\n\nAgents must raise a Complaint – Subject Access Request task.\nThis must be assigned to Alex Cross to action all DSAR responses.\n\nThis step is mandatory for every DSAR, regardless of channel or phrasing.\n\nStep 3 — Inform the Customer of the Timescales\n\nProvide the standard timeframe information:\n\nWe must respond within one month of receiving the request.\n\nIf the request is complex or involves large volumes of data, we may need to extend the deadline by up to two additional months.\n\nIf an extension is needed, the customer must be informed within the first month.\n\n3. Identity Verification\n\nBefore data can be released, identity must be verified.\nFollow our standard security checks.\nIf identity can't be safely confirmed, the timeframe is paused until verification is completed.\n\n4. What Happens After the Task Is Raised\n\nHandled by Alex Cross:\n\nLogging the DSAR\n\nGathering all relevant data (notes, correspondence, call recordings, documents)\n\nReviewing and redacting where needed\n\nPreparing the DSAR response pack\n\nSending securely to the customer\n\nClosing the complaint task\n\nRecording completion in the SAR log\n\nAgents do not prepare, review, or send DSAR information themselves.\n\n5. What to Avoid\n\nNever refuse a request because it’s verbal\n\nNever send personal data directly\n\nNever promise specific data points (e.g., “we definitely have that call recording”)\n\nNever delay raising the task — the one-month timeframe starts immediately upon receipt\n\n6. Standard Script Example (Optional for Agents)\n\n“I can help with that. I’ll log a Subject Access Request for you today. We must respond within one month, and if the request is complex we may extend by up to two additional months — but we would let you know within the first month if that’s needed.”",
+      "source": "Manual Entry",
+      "section": "Manual Entry",
+      "keywords": [
+        "DSAR",
+        "SAR",
+        "Process",
+        "Subject access request",
+        "data request",
+        "information request"
+      ],
+      "category": "security-verification",
+      "lastUpdated": "2025-11-21",
+      "id": 1763735568309
     }
   ]
 }
