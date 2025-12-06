@@ -7,6 +7,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- Documents table
 CREATE TABLE IF NOT EXISTS documents (
     id BIGSERIAL PRIMARY KEY,
+    app_name TEXT NOT NULL DEFAULT 'customer-service-coach',
     title TEXT NOT NULL,
     content TEXT NOT NULL,
     source TEXT,
@@ -20,6 +21,7 @@ CREATE TABLE IF NOT EXISTS documents (
 -- Search logs table
 CREATE TABLE IF NOT EXISTS search_logs (
     id BIGSERIAL PRIMARY KEY,
+    app_name TEXT NOT NULL DEFAULT 'customer-service-coach',
     query TEXT NOT NULL,
     timestamp TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
@@ -27,16 +29,19 @@ CREATE TABLE IF NOT EXISTS search_logs (
 -- Unanswered questions table
 CREATE TABLE IF NOT EXISTS unanswered_questions (
     id BIGSERIAL PRIMARY KEY,
-    question TEXT NOT NULL UNIQUE,
+    app_name TEXT NOT NULL DEFAULT 'customer-service-coach',
+    question TEXT NOT NULL,
     count INTEGER DEFAULT 1,
     first_asked TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     last_asked TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    agent TEXT DEFAULT 'unknown'
+    agent TEXT DEFAULT 'unknown',
+    UNIQUE(app_name, question)
 );
 
 -- Feedback logs table
 CREATE TABLE IF NOT EXISTS feedback_logs (
     id BIGSERIAL PRIMARY KEY,
+    app_name TEXT NOT NULL DEFAULT 'customer-service-coach',
     result_id BIGINT,
     helpful BOOLEAN NOT NULL,
     agent TEXT DEFAULT 'unknown',
@@ -44,11 +49,15 @@ CREATE TABLE IF NOT EXISTS feedback_logs (
 );
 
 -- Create indexes for better search performance
+CREATE INDEX IF NOT EXISTS idx_documents_app_name ON documents(app_name);
 CREATE INDEX IF NOT EXISTS idx_documents_title ON documents USING gin(to_tsvector('english', title));
 CREATE INDEX IF NOT EXISTS idx_documents_content ON documents USING gin(to_tsvector('english', content));
-CREATE INDEX IF NOT EXISTS idx_documents_category ON documents(category);
-CREATE INDEX IF NOT EXISTS idx_search_logs_timestamp ON search_logs(timestamp);
-CREATE INDEX IF NOT EXISTS idx_unanswered_questions_count ON unanswered_questions(count DESC);
+CREATE INDEX IF NOT EXISTS idx_documents_category ON documents(app_name, category);
+CREATE INDEX IF NOT EXISTS idx_search_logs_app_name ON search_logs(app_name);
+CREATE INDEX IF NOT EXISTS idx_search_logs_timestamp ON search_logs(app_name, timestamp);
+CREATE INDEX IF NOT EXISTS idx_unanswered_questions_app_name ON unanswered_questions(app_name);
+CREATE INDEX IF NOT EXISTS idx_unanswered_questions_count ON unanswered_questions(app_name, count DESC);
+CREATE INDEX IF NOT EXISTS idx_feedback_logs_app_name ON feedback_logs(app_name);
 
 -- Enable Row Level Security (RLS)
 ALTER TABLE documents ENABLE ROW LEVEL SECURITY;
@@ -99,15 +108,16 @@ CREATE POLICY "Enable read for authenticated users" ON feedback_logs
 -- Function to increment unanswered question count
 CREATE OR REPLACE FUNCTION increment_unanswered_count(
     p_question TEXT,
-    p_agent TEXT DEFAULT 'unknown'
+    p_agent TEXT DEFAULT 'unknown',
+    p_app_name TEXT DEFAULT 'customer-service-coach'
 )
 RETURNS void
 LANGUAGE plpgsql
 AS $$
 BEGIN
-    INSERT INTO unanswered_questions (question, count, agent, first_asked, last_asked)
-    VALUES (p_question, 1, p_agent, NOW(), NOW())
-    ON CONFLICT (question)
+    INSERT INTO unanswered_questions (app_name, question, count, agent, first_asked, last_asked)
+    VALUES (p_app_name, p_question, 1, p_agent, NOW(), NOW())
+    ON CONFLICT (app_name, question)
     DO UPDATE SET
         count = unanswered_questions.count + 1,
         last_asked = NOW(),
@@ -116,7 +126,10 @@ END;
 $$;
 
 -- Function to search documents (PostgreSQL full-text search)
-CREATE OR REPLACE FUNCTION search_documents(search_query TEXT)
+CREATE OR REPLACE FUNCTION search_documents(
+    search_query TEXT,
+    p_app_name TEXT DEFAULT 'customer-service-coach'
+)
 RETURNS TABLE (
     id BIGINT,
     title TEXT,
@@ -148,9 +161,12 @@ BEGIN
         )::REAL as score
     FROM documents d
     WHERE 
-        to_tsvector('english', d.title) @@ plainto_tsquery('english', search_query)
-        OR to_tsvector('english', d.content) @@ plainto_tsquery('english', search_query)
-        OR to_tsvector('english', array_to_string(d.keywords, ' ')) @@ plainto_tsquery('english', search_query)
+        d.app_name = p_app_name
+        AND (
+            to_tsvector('english', d.title) @@ plainto_tsquery('english', search_query)
+            OR to_tsvector('english', d.content) @@ plainto_tsquery('english', search_query)
+            OR to_tsvector('english', array_to_string(d.keywords, ' ')) @@ plainto_tsquery('english', search_query)
+        )
     ORDER BY score DESC
     LIMIT 5;
 END;

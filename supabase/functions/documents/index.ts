@@ -34,11 +34,15 @@ serve(async (req) => {
       ? pathParts[documentsIndex + 1] 
       : null;
 
+    // Get app_name from request header or body
+    const appName = req.headers.get("X-App-Name") || "customer-service-coach";
+
     // GET all documents
     if (req.method === "GET" && !documentId) {
       const { data, error } = await supabaseClient
         .from("documents")
         .select("*")
+        .eq("app_name", appName)
         .order("created_at", { ascending: false });
 
       if (error) throw error;
@@ -55,8 +59,10 @@ serve(async (req) => {
     // POST - Create new document
     if (req.method === "POST") {
       const doc = await req.json();
+      const docAppName = doc.app_name || appName;
       
       const newDoc = {
+        app_name: docAppName,
         title: doc.title,
         content: doc.content,
         source: doc.source || null,
@@ -100,7 +106,8 @@ serve(async (req) => {
       const { error } = await supabaseClient
         .from("documents")
         .update(updateData)
-        .eq("id", documentId);
+        .eq("id", documentId)
+        .eq("app_name", appName);
 
       if (error) throw error;
 
@@ -118,7 +125,8 @@ serve(async (req) => {
       const { error } = await supabaseClient
         .from("documents")
         .delete()
-        .eq("id", documentId);
+        .eq("id", documentId)
+        .eq("app_name", appName);
 
       if (error) throw error;
 

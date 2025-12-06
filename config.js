@@ -7,6 +7,11 @@ const config = {
   localMode: false,
   localApiUrl: "http://localhost:3000/api",
 
+  // Application identifier for multi-app support
+  // Each application sharing the same Supabase project should have a unique appName
+  // This enables multiple independent applications in a single Supabase project
+  appName: "customer-service-coach",
+
   // Supabase configuration
   // Get these values from: https://app.supabase.com/project/_/settings/api
   supabase: {
@@ -48,6 +53,21 @@ const config = {
         "Content-Type": "application/json",
         apikey: this.supabase.anonKey,
         Authorization: `Bearer ${this.supabase.anonKey}`,
+        "X-App-Name": this.appName, // Send app identifier with each request
+      };
+    }
+  },
+
+  // Helper to inject app_name into request bodies for Supabase
+  // This ensures data isolation when multiple apps share the same Supabase project
+  getRequestBody(data) {
+    if (this.localMode) {
+      return data;
+    } else {
+      // Inject app_name into the request body for Supabase filtering
+      return {
+        ...data,
+        app_name: this.appName,
       };
     }
   },

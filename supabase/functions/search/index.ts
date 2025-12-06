@@ -25,7 +25,8 @@ serve(async (req) => {
       }
     );
 
-    const { query } = await req.json();
+    const { query, app_name } = await req.json();
+    const appName = app_name || req.headers.get("X-App-Name") || "customer-service-coach";
 
     if (!query || query.trim() === "") {
       return new Response(
@@ -37,13 +38,16 @@ serve(async (req) => {
       );
     }
 
-    console.log("Search request received:", query);
+    console.log("Search request received:", query, "for app:", appName);
 
     // Log the search
-    await supabaseClient.from("search_logs").insert({ query: query.trim() });
+    await supabaseClient.from("search_logs").insert({ 
+      query: query.trim(),
+      app_name: appName
+    });
 
     // Perform the search using custom lenient search logic
-    const results = await searchDocuments(supabaseClient, query.toLowerCase().trim());
+    const results = await searchDocuments(supabaseClient, query.toLowerCase().trim(), appName);
 
     // Log as unanswered if no results found
     if (results.length === 0) {
@@ -51,6 +55,7 @@ serve(async (req) => {
       await supabaseClient.rpc("increment_unanswered_count", {
         p_question: query.trim(),
         p_agent: "unknown",
+        p_app_name: appName,
       });
     }
 
@@ -75,7 +80,7 @@ serve(async (req) => {
 });
 
 // Lenient search function matching the original server.js logic
-async function searchDocuments(supabaseClient: any, query: string) {
+async function searchDocuments(supabaseClient: any, query: string, appName: string) {
   // Minimal stop words - only filter truly meaningless words
   const stopWords = [
     "the",
@@ -107,10 +112,11 @@ async function searchDocuments(supabaseClient: any, query: string) {
     return [];
   }
 
-  // Fetch all documents
+  // Fetch all documents for this app
   const { data: documents, error } = await supabaseClient
     .from("documents")
-    .select("*");
+    .select("*")
+    .eq("app_name", appName);
 
   if (error) {
     console.error("Error fetching documents:", error);
