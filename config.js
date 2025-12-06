@@ -13,10 +13,11 @@ const config = {
   appName: "customer-service-coach",
 
   // Supabase configuration
-  // Get these values from: https://app.supabase.com/project/_/settings/api
+  // For Training Portal project, get these values from: https://app.supabase.com/project/_/settings/api
+  // Multiple applications can share the same Training Portal project credentials
   supabase: {
-    url: "YOUR_SUPABASE_URL", // e.g., https://xxxxx.supabase.co
-    anonKey: "YOUR_SUPABASE_ANON_KEY", // Your public anon key
+    url: "YOUR_SUPABASE_URL", // e.g., https://xxxxx.supabase.co (Training Portal project URL)
+    anonKey: "YOUR_SUPABASE_ANON_KEY", // Your Training Portal project anon key
   },
 
   // Validate configuration

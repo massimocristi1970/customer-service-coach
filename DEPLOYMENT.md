@@ -403,18 +403,18 @@ Check Supabase logs:
 
 ---
 
-## Multi-Application Support
+## Multi-Application Support in Training Portal
 
 ### Overview
 
-You can run multiple independent applications within a single Supabase project while maintaining complete data isolation. This approach significantly reduces costs while keeping your applications separate.
+You can run multiple independent applications within your existing **Training Portal** Supabase project while maintaining complete data isolation. This approach consolidates applications and significantly reduces costs.
 
 ### Benefits
 
-- ✅ **Cost Savings**: One Supabase project instead of multiple ($25/month vs $75/month for 3 apps)
+- ✅ **Cost Savings**: Use your existing Training Portal project instead of creating multiple projects ($25/month vs $75/month for 3 apps)
 - ✅ **Data Isolation**: Each app only sees its own records via `app_name` column
-- ✅ **Simple Management**: Single dashboard for all applications
-- ✅ **Easy Scaling**: Add new applications without creating new Supabase projects
+- ✅ **Simple Management**: Single Training Portal dashboard for all applications
+- ✅ **Easy Scaling**: Add new applications to Training Portal without creating new Supabase projects
 - ✅ **Production Ready**: Follows Supabase best practices for multi-tenant applications
 
 ### How It Works
@@ -422,14 +422,26 @@ You can run multiple independent applications within a single Supabase project w
 All database tables include an `app_name` column that identifies which application owns each record:
 
 ```sql
--- Each table has an app_name column
+-- Query documents for customer-service-coach app in Training Portal
 SELECT * FROM documents WHERE app_name = 'customer-service-coach';
+
+-- Query documents for other apps in Training Portal
 SELECT * FROM documents WHERE app_name = 'sales-support-coach';
 ```
 
-### Setting Up Additional Applications
+### Setting Up Additional Applications in Training Portal
 
-#### Step 1: Configure the New Application
+#### Step 1: Run Schema Migration on Training Portal
+
+If you haven't already, run the `supabase/schema.sql` in your **Training Portal** project:
+1. Open your Training Portal Supabase project dashboard
+2. Go to **SQL Editor**
+3. Copy and paste the contents of `supabase/schema.sql`
+4. Click "Run"
+
+The schema is safe to run on existing projects - it uses "IF NOT EXISTS" clauses.
+
+#### Step 2: Configure the New Application
 
 For each additional application, update `config.js` with a unique `appName`:
 
@@ -438,74 +450,76 @@ const config = {
   appName: "sales-support-coach",  // Different for each app
   
   supabase: {
-    url: "https://xxxxx.supabase.co",  // SAME across all apps
-    anonKey: "your-anon-key",          // SAME across all apps
+    url: "https://xxxxx.supabase.co",  // Training Portal project URL (SAME across all apps)
+    anonKey: "your-anon-key",          // Training Portal project key (SAME across all apps)
   },
   // ... rest of config
 };
 ```
 
-#### Step 2: Deploy the Application
+#### Step 3: Deploy the Application to Cloudflare
 
-Deploy to Cloudflare Pages (same steps as Part 2 above). Each application can have its own deployment:
+Deploy to Cloudflare Pages (same steps as Part 2 above). Each application in Training Portal can have its own Cloudflare deployment:
 
 - `customer-service-coach.pages.dev`
 - `sales-support-coach.pages.dev`
 - `hr-knowledge-base.pages.dev`
 
-#### Step 3: Verify Data Isolation
+All applications will connect to the same **Training Portal** Supabase project but with different `appName` values.
 
-Test that each application only sees its own data:
+#### Step 4: Verify Data Isolation in Training Portal
+
+Test that each application only sees its own data in the Training Portal:
 
 ```bash
-# Test App 1 - Should only see its own documents
+# Test App 1 - Should only see its own documents in Training Portal
 curl -X GET \
-  'https://YOUR_PROJECT_ID.supabase.co/functions/v1/documents' \
-  -H 'apikey: YOUR_ANON_KEY' \
-  -H 'Authorization: Bearer YOUR_ANON_KEY' \
+  'https://YOUR_TRAINING_PORTAL_PROJECT_ID.supabase.co/functions/v1/documents' \
+  -H 'apikey: YOUR_TRAINING_PORTAL_ANON_KEY' \
+  -H 'Authorization: Bearer YOUR_TRAINING_PORTAL_ANON_KEY' \
   -H 'X-App-Name: customer-service-coach'
 
-# Test App 2 - Should only see different documents
+# Test App 2 - Should only see different documents in Training Portal
 curl -X GET \
-  'https://YOUR_PROJECT_ID.supabase.co/functions/v1/documents' \
-  -H 'apikey: YOUR_ANON_KEY' \
-  -H 'Authorization: Bearer YOUR_ANON_KEY' \
+  'https://YOUR_TRAINING_PORTAL_PROJECT_ID.supabase.co/functions/v1/documents' \
+  -H 'apikey: YOUR_TRAINING_PORTAL_ANON_KEY' \
+  -H 'Authorization: Bearer YOUR_TRAINING_PORTAL_ANON_KEY' \
   -H 'X-App-Name: sales-support-coach'
 ```
 
 ### Configuration per Application
 
-Each application instance needs:
+Each application instance using Training Portal needs:
 
 1. **Unique `appName`** in `config.js`
-2. **Same Supabase credentials** (URL and anon key)
+2. **Same Training Portal Supabase credentials** (URL and anon key from Training Portal project)
 3. **Separate Cloudflare Pages deployment** (or separate directory)
 
-### Monitoring Per-App Usage
+### Monitoring Per-App Usage in Training Portal
 
-Query database usage per application:
+Query database usage per application in your Training Portal Supabase project:
 
 ```sql
--- Count documents per app
+-- Count documents per app in Training Portal
 SELECT app_name, COUNT(*) as document_count
 FROM documents
 GROUP BY app_name
 ORDER BY document_count DESC;
 
--- Count searches per app (last 30 days)
+-- Count searches per app in Training Portal (last 30 days)
 SELECT app_name, COUNT(*) as search_count
 FROM search_logs
 WHERE timestamp > NOW() - INTERVAL '30 days'
 GROUP BY app_name
 ORDER BY search_count DESC;
 
--- Count unanswered questions per app
+-- Count unanswered questions per app in Training Portal
 SELECT app_name, SUM(count) as total_unanswered
 FROM unanswered_questions
 GROUP BY app_name
 ORDER BY total_unanswered DESC;
 
--- Storage used per app (approximate)
+-- Storage used per app in Training Portal (approximate)
 SELECT 
   app_name,
   COUNT(*) as documents,
@@ -515,32 +529,32 @@ GROUP BY app_name
 ORDER BY mb_used DESC;
 ```
 
-### Important Considerations
+### Important Considerations for Training Portal
 
-1. **Shared Quotas**: All applications share the same Supabase free tier limits:
-   - 500MB database storage
-   - 2GB bandwidth/month
-   - 50MB file storage
+1. **Shared Quotas**: All applications in Training Portal share the same Supabase limits:
+   - 500MB database storage (Free tier)
+   - 2GB bandwidth/month (Free tier)
+   - 50MB file storage (Free tier)
 
-2. **No Automatic Separation**: The schema enforces data isolation, but you must configure each app correctly with a unique `appName`.
+2. **Configuration Required**: The schema enforces data isolation, but you must configure each app correctly with a unique `appName` in `config.js`.
 
-3. **Billing**: If you exceed free tier limits, you'll be upgraded to Pro ($25/month) for ALL applications.
+3. **Billing**: If your Training Portal project exceeds free tier limits, you'll be upgraded to Pro ($25/month) for ALL applications sharing the Training Portal.
 
 4. **RLS Policies**: The current RLS policies allow public access. Consider implementing app-specific authentication if needed.
 
-### Migration from Separate Projects
+### Migration to Training Portal from Separate Projects
 
-If you currently have multiple Supabase projects and want to consolidate:
+If you currently have multiple Supabase projects and want to consolidate into Training Portal:
 
-1. Export data from each project
-2. Add `app_name` column during import
-3. Update each application's `config.js` with unique `appName`
+1. Export data from each separate project
+2. Add `app_name` column during import to Training Portal
+3. Update each application's `config.js` to point to Training Portal with unique `appName`
 4. Test thoroughly before decommissioning old projects
 
-### Example: Three Applications, One Project
+### Example: Three Applications in Training Portal
 
 ```
-Project: xxxxx.supabase.co
+Training Portal Project: xxxxx.supabase.co
 ├── customer-service-coach (app_name: "customer-service-coach")
 │   ├── 50 documents
 │   ├── 200 search logs
@@ -554,8 +568,9 @@ Project: xxxxx.supabase.co
     ├── 100 search logs
     └── cloudflare: hr-kb.pages.dev
 
-Total cost: $0 (if within free tier) or $25/month (Pro tier)
+Total cost: $0 (if within free tier) or $25/month (Pro tier for Training Portal)
 Instead of: $75/month (3 separate Pro projects)
+Savings: Up to $50/month by using Training Portal
 ```
 
 ---
