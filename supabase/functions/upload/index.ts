@@ -27,6 +27,7 @@ serve(async (req) => {
 
     const formData = await req.formData();
     const file = formData.get("file") as File;
+    const appName = req.headers.get("X-App-Name") || "customer-service-coach";
 
     if (!file) {
       return new Response(
@@ -77,6 +78,7 @@ serve(async (req) => {
 
     // Create document entry
     const newDoc = {
+      app_name: appName,
       title: fileName.replace(/\.[^/.]+$/, ""), // Remove extension
       content: extractedText.trim(),
       source: fileName,
