@@ -403,6 +403,163 @@ Check Supabase logs:
 
 ---
 
+## Multi-Application Support
+
+### Overview
+
+You can run multiple independent applications within a single Supabase project while maintaining complete data isolation. This approach significantly reduces costs while keeping your applications separate.
+
+### Benefits
+
+- ✅ **Cost Savings**: One Supabase project instead of multiple ($25/month vs $75/month for 3 apps)
+- ✅ **Data Isolation**: Each app only sees its own records via `app_name` column
+- ✅ **Simple Management**: Single dashboard for all applications
+- ✅ **Easy Scaling**: Add new applications without creating new Supabase projects
+- ✅ **Production Ready**: Follows Supabase best practices for multi-tenant applications
+
+### How It Works
+
+All database tables include an `app_name` column that identifies which application owns each record:
+
+```sql
+-- Each table has an app_name column
+SELECT * FROM documents WHERE app_name = 'customer-service-coach';
+SELECT * FROM documents WHERE app_name = 'sales-support-coach';
+```
+
+### Setting Up Additional Applications
+
+#### Step 1: Configure the New Application
+
+For each additional application, update `config.js` with a unique `appName`:
+
+```javascript
+const config = {
+  appName: "sales-support-coach",  // Different for each app
+  
+  supabase: {
+    url: "https://xxxxx.supabase.co",  // SAME across all apps
+    anonKey: "your-anon-key",          // SAME across all apps
+  },
+  // ... rest of config
+};
+```
+
+#### Step 2: Deploy the Application
+
+Deploy to Cloudflare Pages (same steps as Part 2 above). Each application can have its own deployment:
+
+- `customer-service-coach.pages.dev`
+- `sales-support-coach.pages.dev`
+- `hr-knowledge-base.pages.dev`
+
+#### Step 3: Verify Data Isolation
+
+Test that each application only sees its own data:
+
+```bash
+# Test App 1 - Should only see its own documents
+curl -X GET \
+  'https://YOUR_PROJECT_ID.supabase.co/functions/v1/documents' \
+  -H 'apikey: YOUR_ANON_KEY' \
+  -H 'Authorization: Bearer YOUR_ANON_KEY' \
+  -H 'X-App-Name: customer-service-coach'
+
+# Test App 2 - Should only see different documents
+curl -X GET \
+  'https://YOUR_PROJECT_ID.supabase.co/functions/v1/documents' \
+  -H 'apikey: YOUR_ANON_KEY' \
+  -H 'Authorization: Bearer YOUR_ANON_KEY' \
+  -H 'X-App-Name: sales-support-coach'
+```
+
+### Configuration per Application
+
+Each application instance needs:
+
+1. **Unique `appName`** in `config.js`
+2. **Same Supabase credentials** (URL and anon key)
+3. **Separate Cloudflare Pages deployment** (or separate directory)
+
+### Monitoring Per-App Usage
+
+Query database usage per application:
+
+```sql
+-- Count documents per app
+SELECT app_name, COUNT(*) as document_count
+FROM documents
+GROUP BY app_name
+ORDER BY document_count DESC;
+
+-- Count searches per app (last 30 days)
+SELECT app_name, COUNT(*) as search_count
+FROM search_logs
+WHERE timestamp > NOW() - INTERVAL '30 days'
+GROUP BY app_name
+ORDER BY search_count DESC;
+
+-- Count unanswered questions per app
+SELECT app_name, SUM(count) as total_unanswered
+FROM unanswered_questions
+GROUP BY app_name
+ORDER BY total_unanswered DESC;
+
+-- Storage used per app (approximate)
+SELECT 
+  app_name,
+  COUNT(*) as documents,
+  SUM(LENGTH(content)) / 1024 / 1024 as mb_used
+FROM documents
+GROUP BY app_name
+ORDER BY mb_used DESC;
+```
+
+### Important Considerations
+
+1. **Shared Quotas**: All applications share the same Supabase free tier limits:
+   - 500MB database storage
+   - 2GB bandwidth/month
+   - 50MB file storage
+
+2. **No Automatic Separation**: The schema enforces data isolation, but you must configure each app correctly with a unique `appName`.
+
+3. **Billing**: If you exceed free tier limits, you'll be upgraded to Pro ($25/month) for ALL applications.
+
+4. **RLS Policies**: The current RLS policies allow public access. Consider implementing app-specific authentication if needed.
+
+### Migration from Separate Projects
+
+If you currently have multiple Supabase projects and want to consolidate:
+
+1. Export data from each project
+2. Add `app_name` column during import
+3. Update each application's `config.js` with unique `appName`
+4. Test thoroughly before decommissioning old projects
+
+### Example: Three Applications, One Project
+
+```
+Project: xxxxx.supabase.co
+├── customer-service-coach (app_name: "customer-service-coach")
+│   ├── 50 documents
+│   ├── 200 search logs
+│   └── cloudflare: cs-coach.pages.dev
+├── sales-support-coach (app_name: "sales-support-coach")
+│   ├── 30 documents
+│   ├── 150 search logs
+│   └── cloudflare: sales-support.pages.dev
+└── hr-knowledge-base (app_name: "hr-knowledge-base")
+    ├── 40 documents
+    ├── 100 search logs
+    └── cloudflare: hr-kb.pages.dev
+
+Total cost: $0 (if within free tier) or $25/month (Pro tier)
+Instead of: $75/month (3 separate Pro projects)
+```
+
+---
+
 ## Rollback to Local Setup
 
 If you need to go back to local hosting:

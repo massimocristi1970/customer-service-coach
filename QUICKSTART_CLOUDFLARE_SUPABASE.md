@@ -55,6 +55,32 @@ supabase functions deploy upload
    - **Project URL** (looks like: `https://xxx.supabase.co`)
    - **anon public** key (long string)
 
+### 1.5 Multi-Application Support (Optional)
+
+**NEW**: You can run multiple independent applications in the same Supabase project!
+
+**Benefits**:
+- 💰 Save money: One project instead of multiple
+- 🔒 Complete data isolation between apps
+- 📊 Single dashboard to manage everything
+- 🚀 Easy to add new applications
+
+**To use this feature**:
+1. Each app gets a unique identifier in `config.js`:
+   ```javascript
+   appName: "customer-service-coach"  // or "sales-support", "hr-kb", etc.
+   ```
+
+2. All apps share the same Supabase URL and keys (from Step 1.4)
+
+3. Data is automatically isolated by `app_name` in the database
+
+4. Deploy each app separately on Cloudflare Pages
+
+**Example**: Run customer service, sales support, and HR knowledge base in one Supabase project at $25/month instead of $75/month for three separate projects.
+
+See [DEPLOYMENT.md](DEPLOYMENT.md#multi-application-support) for full details.
+
 ---
 
 ## Step 2: Migrate Your Data (5 minutes)
@@ -88,6 +114,8 @@ Edit `config.js`:
 const config = {
   localMode: false,  // ← Change this to false!
   
+  appName: "customer-service-coach",  // ← Unique identifier for this app
+  
   supabase: {
     url: "https://xxx.supabase.co",  // ← Your Supabase URL
     anonKey: "your-anon-key-here",    // ← Your anon key
@@ -95,6 +123,8 @@ const config = {
   // ...
 };
 ```
+
+**Note**: The `appName` enables running multiple apps in one Supabase project. Use the default "customer-service-coach" for a single app, or set unique names for multiple apps (e.g., "sales-support", "hr-knowledge-base").
 
 ---
 
@@ -202,6 +232,13 @@ Your customer service coach is now live at:
 ### When You'll Need to Pay:
 - **Supabase Pro** ($25/mo): If you exceed 500MB database or need more features
 - **Cloudflare**: Stays free for most use cases
+
+### Multi-Application Savings:
+- **Single app**: $0-25/month
+- **Three apps in one Supabase project**: $0-25/month (shared quotas)
+- **Three separate Supabase projects**: $0-75/month (separate quotas)
+
+Using multi-application support can save you $50/month or more!
 
 ---
 
