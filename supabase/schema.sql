@@ -1,5 +1,13 @@
 -- Customer Service Coach Database Schema for Supabase
--- Run this in your Supabase SQL Editor to create the database structure
+-- Run this in your Training Portal Supabase SQL Editor to create the database structure
+--
+-- MIGRATION INSTRUCTIONS FOR EXISTING TRAINING PORTAL USERS:
+-- If you already have a Training Portal Supabase project with these tables,
+-- this schema is safe to run - it uses "IF NOT EXISTS" clauses.
+-- Existing data will be preserved, and the app_name column will be added
+-- with the default value 'customer-service-coach' for existing rows.
+-- To support multiple applications in your Training Portal, simply run this
+-- schema and configure each application with a unique appName in config.js.
 
 -- Enable UUID extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
