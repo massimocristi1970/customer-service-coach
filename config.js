@@ -16,8 +16,8 @@ const config = {
   // For Training Portal project, get these values from: https://app.supabase.com/project/_/settings/api
   // Multiple applications can share the same Training Portal project credentials
   supabase: {
-    url: "YOUR_SUPABASE_URL", // e.g., https://xxxxx.supabase.co (Training Portal project URL)
-    anonKey: "YOUR_SUPABASE_ANON_KEY", // Your Training Portal project anon key
+    url: "https://tkjazdeyppsluhlpfgso.supabase.co", // e.g., https://xxxxx.supabase.co (Training Portal project URL)
+    anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRramF6ZGV5cHBzbHVobHBmZ3NvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE1NjQwNDQsImV4cCI6MjA3NzE0MDA0NH0._6CSyddvL_hqifVPVeZklRN1fjSmo6Dpu_kPkc20du8", // Your Training Portal project anon key
   },
 
   // Validate configuration
