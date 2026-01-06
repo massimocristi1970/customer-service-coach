@@ -1,7 +1,7 @@
 # Supabase CLI configuration
 # This file is used by the Supabase CLI for local development and deployment
 
-project_id = "YOUR_PROJECT_ID"
+project_id = "tkjazdeyppsluhlpfgso"
 
 [api]
 enabled = true
