@@ -4,7 +4,7 @@
 const config = {
   // For local development with Express server (original setup)
   // Comment this out when using Supabase
-  localMode: false,
+  localMode: true,
   localApiUrl: "http://localhost:3000/api",
 
   // Application identifier for multi-app support
