@@ -404,7 +404,7 @@
         let supabaseClient = null;
 
         // Initialize Supabase client when not in local mode
-        if (!window.appConfig.localMode && window.supabase) {
+        if (!window.appConfig.localMode && typeof window.supabase !== 'undefined') {
             supabaseClient = window.supabase.createClient(
                 window.appConfig.supabase.url,
                 window.appConfig.supabase.anonKey
@@ -847,7 +847,7 @@
                 // Load document count
                 supabaseClient
                     .from('documents')
-                    .select('id', { count: 'exact', head: true })
+                    .select('*', { count: 'exact', head: true })
                     .eq('app_name', window.appConfig.appName)
                     .then(({ count, error }) => {
                         if (error) {
