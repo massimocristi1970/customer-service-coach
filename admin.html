@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Service Coach - Admin Panel</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
     <style>
         * {
@@ -400,6 +401,16 @@
 
     <script>
         let knowledgeBase = { documents: [] };
+        let supabaseClient = null;
+
+        // Initialize Supabase client when not in local mode
+        if (!window.appConfig.localMode && window.supabase) {
+            supabaseClient = window.supabase.createClient(
+                window.appConfig.supabase.url,
+                window.appConfig.supabase.anonKey
+            );
+            console.log('Supabase client initialized for admin panel');
+        }
 
         // Tab switching
         function showTab(tabName) {
@@ -457,23 +468,21 @@
         }
 
         function uploadFile(file) {
+            if (!window.appConfig.localMode) {
+                showMessage('File upload is only available in local mode. Please use the manual entry form or switch to local mode.', 'error');
+                return;
+            }
+
             const formData = new FormData();
             formData.append('file', file);
 
             // Show upload progress
             showMessage('Uploading and processing ' + file.name + '...', 'success');
 
-            const apiUrl = window.appConfig.getApiUrl();
-            const endpoint = window.appConfig.localMode ? '/api/upload' : `${apiUrl}/upload`;
-            // Note: For file upload, we don't use the standard headers
-            const uploadHeaders = window.appConfig.localMode ? {} : {
-                'apikey': window.appConfig.supabase.anonKey,
-                'Authorization': `Bearer ${window.appConfig.supabase.anonKey}`
-            };
+            const endpoint = `${window.appConfig.localApiUrl}/upload`;
 
             fetch(endpoint, {
                 method: 'POST',
-                headers: uploadHeaders,
                 body: formData
             })
             .then(response => response.json())
@@ -539,89 +548,188 @@
         });
 
         function updateDocument(doc) {
-            const apiUrl = window.appConfig.getApiUrl();
-            const headers = window.appConfig.getHeaders();
-            const endpoint = window.appConfig.localMode ? `/api/documents/${doc.id}` : `${apiUrl}/documents/${doc.id}`;
-            
-            fetch(endpoint, {
-                method: 'PUT',
-                headers: headers,
-                body: JSON.stringify(doc)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    showMessage('Document updated successfully!', 'success');
-                    loadDocuments();
-                } else {
-                    showMessage('Error updating document: ' + data.error, 'error');
-                }
-            })
-            .catch(error => {
-                showMessage('Error updating document: ' + error, 'error');
-            });
-        }
-
-        function deleteDocument(id) {
-            if (confirm('Are you sure you want to delete this document?')) {
-                const apiUrl = window.appConfig.getApiUrl();
-                const headers = window.appConfig.getHeaders();
-                const endpoint = window.appConfig.localMode ? `/api/documents/${id}` : `${apiUrl}/documents/${id}`;
+            if (window.appConfig.localMode) {
+                // Local mode: use Express server
+                const endpoint = `${window.appConfig.localApiUrl}/documents/${doc.id}`;
                 
                 fetch(endpoint, {
-                    method: 'DELETE',
-                    headers: headers
+                    method: 'PUT',
+                    headers: window.appConfig.getHeaders(),
+                    body: JSON.stringify(doc)
                 })
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        showMessage('Document deleted successfully!', 'success');
+                        showMessage('Document updated successfully!', 'success');
                         loadDocuments();
                     } else {
-                        showMessage('Error deleting document: ' + data.error, 'error');
+                        showMessage('Error updating document: ' + data.error, 'error');
                     }
+                })
+                .catch(error => {
+                    showMessage('Error updating document: ' + error, 'error');
                 });
+            } else {
+                // Supabase mode: update directly in database
+                const updateData = {
+                    title: doc.title,
+                    content: doc.content,
+                    source: doc.source,
+                    section: doc.section,
+                    keywords: doc.keywords,
+                    category: doc.category,
+                    last_updated: doc.lastUpdated || new Date().toISOString().split('T')[0],
+                    app_name: window.appConfig.appName
+                };
+                
+                supabaseClient
+                    .from('documents')
+                    .update(updateData)
+                    .eq('id', doc.id)
+                    .eq('app_name', window.appConfig.appName)
+                    .then(({ data, error }) => {
+                        if (error) {
+                            console.error('Supabase update error:', error);
+                            showMessage('Error updating document: ' + error.message, 'error');
+                        } else {
+                            showMessage('Document updated successfully!', 'success');
+                            loadDocuments();
+                        }
+                    });
+            }
+        }
+
+        function deleteDocument(id) {
+            if (confirm('Are you sure you want to delete this document?')) {
+                if (window.appConfig.localMode) {
+                    // Local mode: use Express server
+                    const endpoint = `${window.appConfig.localApiUrl}/documents/${id}`;
+                    
+                    fetch(endpoint, {
+                        method: 'DELETE',
+                        headers: window.appConfig.getHeaders()
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            showMessage('Document deleted successfully!', 'success');
+                            loadDocuments();
+                        } else {
+                            showMessage('Error deleting document: ' + data.error, 'error');
+                        }
+                    });
+                } else {
+                    // Supabase mode: delete directly from database
+                    supabaseClient
+                        .from('documents')
+                        .delete()
+                        .eq('id', id)
+                        .eq('app_name', window.appConfig.appName)
+                        .then(({ data, error }) => {
+                            if (error) {
+                                console.error('Supabase delete error:', error);
+                                showMessage('Error deleting document: ' + error.message, 'error');
+                            } else {
+                                showMessage('Document deleted successfully!', 'success');
+                                loadDocuments();
+                            }
+                        });
+                }
             }
         }
 
         function saveDocument(doc) {
-            const apiUrl = window.appConfig.getApiUrl();
-            const headers = window.appConfig.getHeaders();
-            const endpoint = window.appConfig.localMode ? '/api/documents' : `${apiUrl}/documents`;
-            
-            fetch(endpoint, {
-                method: 'POST',
-                headers: headers,
-                body: JSON.stringify(doc)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    showMessage('Document saved successfully!', 'success');
-                    loadDocuments();
-                } else {
-                    showMessage('Error saving document: ' + data.error, 'error');
-                }
-            })
-            .catch(error => {
-                showMessage('Error saving document: ' + error, 'error');
-            });
+            if (window.appConfig.localMode) {
+                // Local mode: use Express server
+                const endpoint = `${window.appConfig.localApiUrl}/documents`;
+                
+                fetch(endpoint, {
+                    method: 'POST',
+                    headers: window.appConfig.getHeaders(),
+                    body: JSON.stringify(doc)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        showMessage('Document saved successfully!', 'success');
+                        loadDocuments();
+                    } else {
+                        showMessage('Error saving document: ' + data.error, 'error');
+                    }
+                })
+                .catch(error => {
+                    showMessage('Error saving document: ' + error, 'error');
+                });
+            } else {
+                // Supabase mode: insert directly into database
+                const insertData = {
+                    app_name: window.appConfig.appName,
+                    title: doc.title,
+                    content: doc.content,
+                    source: doc.source,
+                    section: doc.section,
+                    keywords: doc.keywords,
+                    category: doc.category,
+                    last_updated: doc.lastUpdated || new Date().toISOString().split('T')[0]
+                };
+                
+                supabaseClient
+                    .from('documents')
+                    .insert([insertData])
+                    .then(({ data, error }) => {
+                        if (error) {
+                            console.error('Supabase insert error:', error);
+                            showMessage('Error saving document: ' + error.message, 'error');
+                        } else {
+                            showMessage('Document saved successfully!', 'success');
+                            loadDocuments();
+                        }
+                    });
+            }
         }
 
         function loadDocuments() {
-            const apiUrl = window.appConfig.getApiUrl();
-            const headers = window.appConfig.getHeaders();
-            const endpoint = window.appConfig.localMode ? '/api/documents' : `${apiUrl}/documents`;
-            
-            fetch(endpoint, { headers })
-                .then(response => response.json())
-                .then(data => {
-                    knowledgeBase = data;
-                    displayDocuments();
-                })
-                .catch(error => {
-                    console.error('Error loading documents:', error);
-                });
+            if (window.appConfig.localMode) {
+                // Local mode: use Express server
+                const endpoint = `${window.appConfig.localApiUrl}/documents`;
+                
+                fetch(endpoint, { headers: window.appConfig.getHeaders() })
+                    .then(response => response.json())
+                    .then(data => {
+                        knowledgeBase = data;
+                        displayDocuments();
+                    })
+                    .catch(error => {
+                        console.error('Error loading documents:', error);
+                    });
+            } else {
+                // Supabase mode: query database directly
+                supabaseClient
+                    .from('documents')
+                    .select('*')
+                    .eq('app_name', window.appConfig.appName)
+                    .order('title')
+                    .then(({ data, error }) => {
+                        if (error) {
+                            console.error('Supabase error loading documents:', error);
+                        } else {
+                            // Convert Supabase data to match expected format
+                            knowledgeBase = { 
+                                documents: data.map(doc => ({
+                                    id: doc.id,
+                                    title: doc.title,
+                                    content: doc.content,
+                                    source: doc.source,
+                                    section: doc.section,
+                                    keywords: doc.keywords || [],
+                                    category: doc.category,
+                                    lastUpdated: doc.last_updated
+                                }))
+                            };
+                            displayDocuments();
+                        }
+                    });
+            }
         }
 
         function displayDocuments() {
@@ -693,25 +801,63 @@
         }
 
         function loadAnalytics() {
-            // Load unanswered questions
-            const apiUrl = window.appConfig.getApiUrl();
-            const headers = window.appConfig.getHeaders();
-            const endpoint = window.appConfig.localMode ? '/api/unanswered' : `${apiUrl}/logs?action=unanswered`;
-            
-            fetch(endpoint, { headers })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('unansweredCount').textContent = data.length;
-                    displayUnansweredQuestions(data);
-                });
-            
-            // Load other stats
-            const docsEndpoint = window.appConfig.localMode ? '/api/documents' : `${apiUrl}/documents`;
-            fetch(docsEndpoint, { headers })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('totalDocs').textContent = data.documents.length;
-                });
+            if (window.appConfig.localMode) {
+                // Local mode: use Express server
+                // Load unanswered questions
+                const endpoint = `${window.appConfig.localApiUrl}/unanswered`;
+                
+                fetch(endpoint, { headers: window.appConfig.getHeaders() })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('unansweredCount').textContent = data.length;
+                        displayUnansweredQuestions(data);
+                    });
+                
+                // Load other stats
+                const docsEndpoint = `${window.appConfig.localApiUrl}/documents`;
+                fetch(docsEndpoint, { headers: window.appConfig.getHeaders() })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('totalDocs').textContent = data.documents.length;
+                    });
+            } else {
+                // Supabase mode: query database directly
+                // Load unanswered questions
+                supabaseClient
+                    .from('unanswered_questions')
+                    .select('*')
+                    .eq('app_name', window.appConfig.appName)
+                    .order('count', { ascending: false })
+                    .then(({ data, error }) => {
+                        if (error) {
+                            console.error('Error loading unanswered questions:', error);
+                            document.getElementById('unansweredCount').textContent = '0';
+                            displayUnansweredQuestions([]);
+                        } else {
+                            const formattedData = data.map(q => ({
+                                question: q.question,
+                                count: q.count,
+                                lastAsked: q.last_asked
+                            }));
+                            document.getElementById('unansweredCount').textContent = formattedData.length;
+                            displayUnansweredQuestions(formattedData);
+                        }
+                    });
+                
+                // Load document count
+                supabaseClient
+                    .from('documents')
+                    .select('id', { count: 'exact', head: true })
+                    .eq('app_name', window.appConfig.appName)
+                    .then(({ count, error }) => {
+                        if (error) {
+                            console.error('Error loading document count:', error);
+                            document.getElementById('totalDocs').textContent = '0';
+                        } else {
+                            document.getElementById('totalDocs').textContent = count || 0;
+                        }
+                    });
+            }
         }
 
         function displayUnansweredQuestions(questions) {

@@ -34,16 +34,6 @@ const config = {
     return true;
   },
 
-  // API endpoints - these will be constructed based on your setup
-  getApiUrl() {
-    if (this.localMode) {
-      return this.localApiUrl;
-    } else {
-      // Supabase Edge Functions URL pattern
-      return `${this.supabase.url}/functions/v1`;
-    }
-  },
-
   getHeaders() {
     if (this.localMode) {
       return {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Base</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
     <style>
         * {
@@ -284,18 +285,45 @@
 
 let knowledgeBase = [];
 let isKnowledgeBaseLoaded = false;
+let supabaseClient = null;
 
-// Load knowledge base from server (simplified - just for checking if empty)
+// Initialize Supabase client when not in local mode
+if (!window.appConfig.localMode && window.supabase) {
+    supabaseClient = window.supabase.createClient(
+        window.appConfig.supabase.url,
+        window.appConfig.supabase.anonKey
+    );
+    console.log('Supabase client initialized');
+}
+
+// Load knowledge base from server or Supabase
 async function loadKnowledgeBase() {
     try {
-        console.log('Loading knowledge base from server...');
-        const apiUrl = window.appConfig.getApiUrl();
-        const headers = window.appConfig.getHeaders();
-        const endpoint = window.appConfig.localMode ? '/api/documents' : `${apiUrl}/documents`;
+        console.log('Loading knowledge base...');
         
-        const response = await fetch(endpoint, { headers });
-        const data = await response.json();
-        knowledgeBase = data.documents || [];
+        if (window.appConfig.localMode) {
+            // Local mode: use Express server
+            const response = await fetch(`${window.appConfig.localApiUrl}/documents`, {
+                headers: window.appConfig.getHeaders()
+            });
+            const data = await response.json();
+            knowledgeBase = data.documents || [];
+        } else {
+            // Supabase mode: query database directly
+            const { data, error } = await supabaseClient
+                .from('documents')
+                .select('*')
+                .eq('app_name', window.appConfig.appName)
+                .order('title');
+            
+            if (error) {
+                console.error('Supabase error:', error);
+                throw error;
+            }
+            
+            knowledgeBase = data || [];
+        }
+        
         isKnowledgeBaseLoaded = true;
         console.log('Knowledge base loaded:', knowledgeBase.length, 'documents');
        
@@ -313,7 +341,7 @@ async function loadKnowledgeBase() {
     }
 }
 
-// Perform search using server-side API
+// Perform search using server-side API or Supabase RPC
 async function performSearch() {
     const query = document.getElementById('searchInput').value.trim();
    
@@ -330,20 +358,36 @@ async function performSearch() {
     console.log('Searching for:', query);
     
     try {
-        // Use server-side search API
-        const apiUrl = window.appConfig.getApiUrl();
-        const headers = window.appConfig.getHeaders();
-        const endpoint = window.appConfig.localMode ? '/api/search' : `${apiUrl}/search`;
+        let results = [];
         
-        const response = await fetch(endpoint, {
-            method: 'POST',
-            headers: headers,
-            body: JSON.stringify({ query })
-        });
+        if (window.appConfig.localMode) {
+            // Local mode: use Express server search API
+            const response = await fetch(`${window.appConfig.localApiUrl}/search`, {
+                method: 'POST',
+                headers: window.appConfig.getHeaders(),
+                body: JSON.stringify({ query })
+            });
+            
+            const data = await response.json();
+            results = data.results || [];
+        } else {
+            // Supabase mode: use RPC function search_documents
+            const { data, error } = await supabaseClient
+                .rpc('search_documents', {
+                    search_query: query,
+                    p_app_name: window.appConfig.appName
+                });
+            
+            if (error) {
+                console.error('Supabase search error:', error);
+                throw error;
+            }
+            
+            results = data || [];
+        }
         
-        const data = await response.json();
-        console.log('Server returned:', data.results.length, 'results');
-        displayResults(data.results, query);
+        console.log('Search returned:', results.length, 'results');
+        displayResults(results, query);
         
     } catch (error) {
         console.error('Search error:', error);
