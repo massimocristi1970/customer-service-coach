@@ -15,6 +15,7 @@ const config = {
   // Supabase configuration
   // For Training Portal project, get these values from: https://app.supabase.com/project/_/settings/api
   // Multiple applications can share the same Training Portal project credentials
+  // Note: The anon key is safe to expose in client-side code as it's protected by Row Level Security (RLS) policies
   supabase: {
     url: "https://tkjazdeyppsluhlpfgso.supabase.co", // e.g., https://xxxxx.supabase.co (Training Portal project URL)
     anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRramF6ZGV5cHBzbHVobHBmZ3NvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE1NjQwNDQsImV4cCI6MjA3NzE0MDA0NH0._6CSyddvL_hqifVPVeZklRN1fjSmo6Dpu_kPkc20du8", // Your Training Portal project anon key
@@ -32,16 +33,6 @@ const config = {
       }
     }
     return true;
-  },
-
-  // API endpoints - these will be constructed based on your setup
-  getApiUrl() {
-    if (this.localMode) {
-      return this.localApiUrl;
-    } else {
-      // Supabase Edge Functions URL pattern
-      return `${this.supabase.url}/functions/v1`;
-    }
   },
 
   getHeaders() {
