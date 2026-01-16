@@ -7,3 +7,6 @@ uploads/
 .env.production
 config.js.local
 knowledge-base.json.backup
+# Python venv
+.venv/
+
