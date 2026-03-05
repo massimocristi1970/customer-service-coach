@@ -268,6 +268,60 @@
             color: #666;
         }
 
+        .date-range-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fb;
+            border-radius: 8px;
+        }
+
+        .date-range-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .date-range-inputs {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .date-range-inputs input[type="date"] {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .apply-date-btn, .clear-date-btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .apply-date-btn {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        .apply-date-btn:hover {
+            background: #234a87;
+        }
+
+        .clear-date-btn {
+            background: #e9ecef;
+            color: #495057;
+        }
+
+        .clear-date-btn:hover {
+            background: #dee2e6;
+        }
+
         .success-message {
             background: #d4edda;
             color: #155724;
@@ -376,6 +430,17 @@
 
         <div id="analytics" class="tab-content">
             <h2>System Analytics</h2>
+            
+            <div class="date-range-section">
+                <label>Filter by date range (Total Searches & Unanswered):</label>
+                <div class="date-range-inputs">
+                    <input type="date" id="analyticsFromDate" title="From date">
+                    <span>to</span>
+                    <input type="date" id="analyticsToDate" title="To date">
+                    <button type="button" class="apply-date-btn" onclick="loadAnalytics()">Apply</button>
+                    <button type="button" class="clear-date-btn" onclick="clearAnalyticsDateRange(); loadAnalytics();">Clear</button>
+                </div>
+            </div>
             
             <div class="stats-grid">
                 <div class="stat-card">
@@ -800,20 +865,46 @@
             form.scrollIntoView({ behavior: 'smooth' });
         }
 
+        function getAnalyticsDateRange() {
+            const fromEl = document.getElementById('analyticsFromDate');
+            const toEl = document.getElementById('analyticsToDate');
+            return {
+                fromDate: fromEl && fromEl.value ? fromEl.value : null,
+                toDate: toEl && toEl.value ? toEl.value : null
+            };
+        }
+
+        function clearAnalyticsDateRange() {
+            const fromEl = document.getElementById('analyticsFromDate');
+            const toEl = document.getElementById('analyticsToDate');
+            if (fromEl) fromEl.value = '';
+            if (toEl) toEl.value = '';
+        }
+
         function loadAnalytics() {
+            const { fromDate, toDate } = getAnalyticsDateRange();
             if (window.appConfig.localMode) {
                 // Local mode: use Express server
-                // Load unanswered questions
-                const endpoint = `${window.appConfig.localApiUrl}/unanswered`;
-                
-                fetch(endpoint, { headers: window.appConfig.getHeaders() })
+                const params = new URLSearchParams();
+                if (fromDate) params.set('fromDate', fromDate);
+                if (toDate) params.set('toDate', toDate);
+                const qs = params.toString();
+                // Load unanswered questions (with optional date filter)
+                const unansweredUrl = `${window.appConfig.localApiUrl}/unanswered` + (qs ? '?' + qs : '');
+                fetch(unansweredUrl, { headers: window.appConfig.getHeaders() })
                     .then(response => response.json())
                     .then(data => {
                         document.getElementById('unansweredCount').textContent = data.length;
                         displayUnansweredQuestions(data);
                     });
-                
-                // Load other stats
+                // Load total searches count (with optional date filter)
+                const searchCountUrl = `${window.appConfig.localApiUrl}/search-logs/count` + (qs ? '?' + qs : '');
+                fetch(searchCountUrl, { headers: window.appConfig.getHeaders() })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('totalSearches').textContent = data.count != null ? data.count : 0;
+                    });
+                // Load document count (no date filter)
                 const docsEndpoint = `${window.appConfig.localApiUrl}/documents`;
                 fetch(docsEndpoint, { headers: window.appConfig.getHeaders() })
                     .then(response => response.json())
@@ -821,30 +912,53 @@
                         document.getElementById('totalDocs').textContent = data.documents.length;
                     });
             } else {
-                // Supabase mode: query database directly
-                // Load unanswered questions
-                supabaseClient
+                // Supabase mode: query database with optional date filter
+                let unansweredQuery = supabaseClient
                     .from('unanswered_questions')
                     .select('*')
                     .eq('app_name', window.appConfig.appName)
-                    .order('count', { ascending: false })
-                    .then(({ data, error }) => {
-                        if (error) {
-                            console.error('Error loading unanswered questions:', error);
-                            document.getElementById('unansweredCount').textContent = '0';
-                            displayUnansweredQuestions([]);
-                        } else {
-                            const formattedData = data.map(q => ({
-                                question: q.question,
-                                count: q.count,
-                                lastAsked: q.last_asked
-                            }));
-                            document.getElementById('unansweredCount').textContent = formattedData.length;
-                            displayUnansweredQuestions(formattedData);
-                        }
-                    });
-                
-                // Load document count
+                    .order('count', { ascending: false });
+                if (fromDate) {
+                    unansweredQuery = unansweredQuery.gte('last_asked', fromDate + 'T00:00:00.000Z');
+                }
+                if (toDate) {
+                    unansweredQuery = unansweredQuery.lte('last_asked', toDate + 'T23:59:59.999Z');
+                }
+                unansweredQuery.then(({ data, error }) => {
+                    if (error) {
+                        console.error('Error loading unanswered questions:', error);
+                        document.getElementById('unansweredCount').textContent = '0';
+                        displayUnansweredQuestions([]);
+                    } else {
+                        const formattedData = (data || []).map(q => ({
+                            question: q.question,
+                            count: q.count,
+                            lastAsked: q.last_asked
+                        }));
+                        document.getElementById('unansweredCount').textContent = formattedData.length;
+                        displayUnansweredQuestions(formattedData);
+                    }
+                });
+                // Total searches count (with optional date filter)
+                let searchCountQuery = supabaseClient
+                    .from('search_logs')
+                    .select('*', { count: 'exact', head: true })
+                    .eq('app_name', window.appConfig.appName);
+                if (fromDate) {
+                    searchCountQuery = searchCountQuery.gte('timestamp', fromDate + 'T00:00:00.000Z');
+                }
+                if (toDate) {
+                    searchCountQuery = searchCountQuery.lte('timestamp', toDate + 'T23:59:59.999Z');
+                }
+                searchCountQuery.then(({ count, error }) => {
+                    if (error) {
+                        console.error('Error loading search count:', error);
+                        document.getElementById('totalSearches').textContent = '0';
+                    } else {
+                        document.getElementById('totalSearches').textContent = count != null ? count : 0;
+                    }
+                });
+                // Document count (no date filter)
                 supabaseClient
                     .from('documents')
                     .select('*', { count: 'exact', head: true })

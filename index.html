@@ -384,6 +384,21 @@ async function performSearch() {
             }
             
             results = data || [];
+            
+            // Log every search to search_logs (Supabase doesn't do this in the RPC)
+            supabaseClient.from('search_logs').insert({
+                app_name: window.appConfig.appName,
+                query: query.trim()
+            }).then(({ error: logErr }) => { if (logErr) console.warn('Search log insert failed:', logErr); });
+            
+            // Log as unanswered when no results so it appears in admin "Questions That Need Answers"
+            if (results.length === 0) {
+                supabaseClient.rpc('increment_unanswered_count', {
+                    p_question: query.trim(),
+                    p_agent: 'unknown',
+                    p_app_name: window.appConfig.appName
+                }).then(({ error: uErr }) => { if (uErr) console.warn('Unanswered log failed:', uErr); });
+            }
         }
         
         console.log('Search returned:', results.length, 'results');

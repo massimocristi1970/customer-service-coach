@@ -318,10 +318,40 @@ app.post("/api/log-feedback", (req, res) => {
 app.get("/api/unanswered", (req, res) => {
   try {
     const data = fs.readFileSync("logs/unanswered-questions.json", "utf8");
-    const unanswered = JSON.parse(data);
+    let unanswered = JSON.parse(data);
+    const fromDate = req.query.fromDate; // YYYY-MM-DD
+    const toDate = req.query.toDate;     // YYYY-MM-DD
+    if (fromDate || toDate) {
+      unanswered = unanswered.filter((q) => {
+        const t = q.lastAsked ? new Date(q.lastAsked).getTime() : 0;
+        if (fromDate && t < new Date(fromDate).setHours(0, 0, 0, 0)) return false;
+        if (toDate && t > new Date(toDate).setHours(23, 59, 59, 999)) return false;
+        return true;
+      });
+    }
     res.json(unanswered);
   } catch (error) {
     res.json([]);
+  }
+});
+
+app.get("/api/search-logs/count", (req, res) => {
+  try {
+    const data = fs.readFileSync("logs/search-logs.json", "utf8");
+    let logs = JSON.parse(data);
+    const fromDate = req.query.fromDate;
+    const toDate = req.query.toDate;
+    if (fromDate || toDate) {
+      logs = logs.filter((entry) => {
+        const t = entry.timestamp ? new Date(entry.timestamp).getTime() : 0;
+        if (fromDate && t < new Date(fromDate).setHours(0, 0, 0, 0)) return false;
+        if (toDate && t > new Date(toDate).setHours(23, 59, 59, 999)) return false;
+        return true;
+      });
+    }
+    res.json({ count: logs.length });
+  } catch (error) {
+    res.json({ count: 0 });
   }
 });
 
