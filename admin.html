@@ -16,6 +16,26 @@
         .admin-hero {
             display: grid;
             gap: 14px;
+            background:
+                radial-gradient(circle at top right, rgba(143, 183, 216, 0.24), transparent 28%),
+                linear-gradient(135deg, rgba(17, 31, 49, 0.98), rgba(31, 93, 140, 0.9));
+            color: #fff;
+            box-shadow: var(--shadow-panel);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .admin-hero .hero-title,
+        .admin-hero .hero-copy {
+            color: #fff;
+        }
+
+        .admin-hero .hero-copy {
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .tabs-panel,
+        .tab-content.active {
+            background: linear-gradient(180deg, rgba(223, 235, 245, 0.88), rgba(238, 244, 250, 0.94));
         }
 
         .tabs-panel {
@@ -54,7 +74,7 @@
             padding: 34px 24px;
             text-align: center;
             border-radius: 1.15rem;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(244, 247, 251, 0.86));
+            background: linear-gradient(180deg, rgba(208, 224, 237, 0.84), rgba(239, 245, 250, 0.92));
             transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -109,11 +129,11 @@
 
         .document-item,
         .unanswered-item {
-            background: rgba(255, 255, 255, 0.84);
-            border: 1px solid rgba(22, 34, 53, 0.08);
+            background: linear-gradient(180deg, rgba(248, 251, 254, 0.9), rgba(224, 237, 247, 0.9));
+            border: 1px solid rgba(31, 93, 140, 0.1);
             border-radius: 1.1rem;
             padding: 20px;
-            box-shadow: 0 16px 28px rgba(22, 34, 53, 0.05);
+            box-shadow: 0 16px 28px rgba(22, 34, 53, 0.06);
         }
 
         .document-header {
@@ -159,7 +179,7 @@
             align-items: center;
             padding: 8px 12px;
             border-radius: var(--radius-pill);
-            background: rgba(143, 183, 216, 0.18);
+            background: rgba(31, 93, 140, 0.12);
             color: var(--color-primary);
             font-size: 0.84rem;
             font-weight: 700;
@@ -185,6 +205,7 @@
         .stat-card {
             padding: 22px;
             text-align: left;
+            background: linear-gradient(180deg, rgba(248, 251, 254, 0.92), rgba(224, 237, 247, 0.92));
         }
 
         .stat-number {
@@ -203,7 +224,7 @@
         .date-range-section {
             padding: 18px;
             border-radius: 1rem;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(208, 224, 237, 0.42);
             border: 1px solid rgba(22, 34, 53, 0.08);
         }
 
@@ -370,7 +391,6 @@
                     <button type="button" class="clear-date-btn" onclick="clearAnalyticsDateRange(); loadAnalytics();">Clear</button>
                 </div>
             </div>
-
             <div class="stats-grid">
                 <div class="glass-card stat-card">
                     <div class="stat-number" id="totalDocs">0</div>
@@ -499,6 +519,7 @@
 
             return words;
         }
+
         document.getElementById('manualForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -616,7 +637,6 @@
                 }
             }
         }
-
         function saveDocument(doc) {
             if (window.appConfig.localMode) {
                 const endpoint = `${window.appConfig.localApiUrl}/documents`;
@@ -739,6 +759,7 @@
                 container.appendChild(docElement);
             });
         }
+
         function editDocument(id) {
             const doc = knowledgeBase.documents.find(d => d.id === id);
             if (!doc) {
@@ -867,7 +888,6 @@
                     });
             }
         }
-
         function displayUnansweredQuestions(questions) {
             const container = document.getElementById('unansweredList');
             container.innerHTML = '';
