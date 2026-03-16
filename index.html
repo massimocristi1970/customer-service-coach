@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knowledge Base</title>
+    <title>SavvyConnect Knowledge Base</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
     <link rel="stylesheet" href="theme.css">
@@ -193,13 +193,8 @@
     <div class="app-shell agent-shell">
         <header class="glass-card page-header agent-hero">
             <div class="eyebrow">Agent Workspace</div>
-            <h1 class="hero-title">Knowledge Base</h1>
+            <h1 class="hero-title">SavvyConnect Knowledge Base</h1>
             <p class="hero-copy">Find policies, procedures, and support guidance in a calmer, faster workspace designed for customer conversations.</p>
-            <div class="hero-meta">
-                <div class="meta-pill">Tick Tock Loans</div>
-                <div class="meta-pill">Customer Service and Collections</div>
-                <div class="meta-pill">Search live guidance instantly</div>
-            </div>
         </header>
 
         <section class="glass-card toolbar-card search-card">
@@ -381,20 +376,18 @@ function displayResults(results, query = '') {
     const resultsContainer = document.getElementById('searchResults');
 
     if (results.length === 0) {
-        let message;
+        let message = '';
         if (query && query !== 'No documents in knowledge base' && query !== 'Error loading knowledge base' && query !== 'Knowledge base is still loading...') {
             message = `No results found for "${query}". Try different keywords or use one of the guided shortcuts above.`;
         } else if (query) {
             message = query;
-        } else {
-            message = 'Start typing to search the knowledge base.';
         }
 
-        resultsContainer.innerHTML = `
+        resultsContainer.innerHTML = message ? `
             <div class="no-results">
                 ${message}
             </div>
-        `;
+        ` : '';
         return;
     }
 
