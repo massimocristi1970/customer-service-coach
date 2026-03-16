@@ -6,262 +6,62 @@
     <title>SavvyConnect Knowledge Base - Admin Panel</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
+    <script src="auth.js"></script>
     <link rel="stylesheet" href="theme.css">
     <style>
-        .admin-shell {
-            display: grid;
-            gap: 24px;
-        }
-
+        .admin-shell { display: grid; gap: 24px; }
         .admin-hero {
-            display: grid;
-            gap: 14px;
-            background:
-                radial-gradient(circle at top right, rgba(143, 183, 216, 0.24), transparent 28%),
-                linear-gradient(135deg, rgba(17, 31, 49, 0.98), rgba(31, 93, 140, 0.9));
-            color: #fff;
-            box-shadow: var(--shadow-panel);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: grid; gap: 14px;
+            background: radial-gradient(circle at top right, rgba(143, 183, 216, 0.24), transparent 28%), linear-gradient(135deg, rgba(17, 31, 49, 0.98), rgba(31, 93, 140, 0.9));
+            color: #fff; box-shadow: var(--shadow-panel); border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        .admin-hero .hero-title,
-        .admin-hero .hero-copy {
-            color: #fff;
-        }
-
-        .admin-hero .hero-copy {
-            color: rgba(255, 255, 255, 0.82);
-        }
-
-        .tabs-panel,
-        .tab-content.active {
-            background: linear-gradient(180deg, rgba(223, 235, 245, 0.88), rgba(238, 244, 250, 0.94));
-        }
-
-        .tabs-panel {
-            padding: 14px;
-        }
-
-        .tabs {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tab {
-            padding: 12px 18px;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .status-stack {
-            margin-bottom: 18px;
-        }
-
-        .upload-layout {
-            display: grid;
-            gap: 22px;
-        }
-
+        .admin-hero .hero-title, .admin-hero .hero-copy { color: #fff; }
+        .admin-hero .hero-copy { color: rgba(255, 255, 255, 0.82); }
+        .tabs-panel, .tab-content.active { background: linear-gradient(180deg, rgba(223, 235, 245, 0.88), rgba(238, 244, 250, 0.94)); }
+        .tabs-panel { padding: 14px; }
+        .tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tab { padding: 12px 18px; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .status-stack { margin-bottom: 18px; }
+        .upload-layout { display: grid; gap: 22px; }
         .upload-section {
-            border: 1.5px dashed rgba(31, 93, 140, 0.24);
-            padding: 34px 24px;
-            text-align: center;
-            border-radius: 1.15rem;
+            border: 1.5px dashed rgba(31, 93, 140, 0.24); padding: 34px 24px; text-align: center; border-radius: 1.15rem;
             background: linear-gradient(180deg, rgba(208, 224, 237, 0.84), rgba(239, 245, 250, 0.92));
             transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
-
-        .upload-section.dragover {
-            border-color: rgba(31, 93, 140, 0.46);
-            box-shadow: 0 20px 36px rgba(31, 93, 140, 0.12);
-            transform: translateY(-2px);
-        }
-
-        .file-input {
-            display: none;
-        }
-
-        .upload-btn {
-            padding: 13px 22px;
-            margin-top: 16px;
-        }
-
-        .upload-btn.editing {
-            background: linear-gradient(135deg, #d79b2d, #f0b74b);
-            color: #1f1a11;
-            box-shadow: 0 14px 24px rgba(215, 155, 45, 0.24);
-        }
-
-        .form-divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-muted-strong);
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.94rem;
-            font-weight: 700;
-            color: var(--color-muted-strong);
-        }
-
-        .documents-list,
-        .unanswered-list {
-            display: grid;
-            gap: 16px;
-        }
-
-        .document-item,
-        .unanswered-item {
+        .upload-section.dragover { border-color: rgba(31, 93, 140, 0.46); box-shadow: 0 20px 36px rgba(31, 93, 140, 0.12); transform: translateY(-2px); }
+        .file-input { display: none; }
+        .upload-btn { padding: 13px 22px; margin-top: 16px; }
+        .upload-btn.editing { background: linear-gradient(135deg, #d79b2d, #f0b74b); color: #1f1a11; box-shadow: 0 14px 24px rgba(215, 155, 45, 0.24); }
+        .form-divider { display: flex; align-items: center; justify-content: center; color: var(--color-muted-strong); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 0.94rem; font-weight: 700; color: var(--color-muted-strong); }
+        .documents-list, .unanswered-list { display: grid; gap: 16px; }
+        .document-item, .unanswered-item {
             background: linear-gradient(180deg, rgba(248, 251, 254, 0.9), rgba(224, 237, 247, 0.9));
-            border: 1px solid rgba(31, 93, 140, 0.1);
-            border-radius: 1.1rem;
-            padding: 20px;
-            box-shadow: 0 16px 28px rgba(22, 34, 53, 0.06);
+            border: 1px solid rgba(31, 93, 140, 0.1); border-radius: 1.1rem; padding: 20px; box-shadow: 0 16px 28px rgba(22, 34, 53, 0.06);
         }
-
-        .document-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-
-        .document-title {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--color-text);
-        }
-
-        .document-meta,
-        .unanswered-meta,
-        .subtle-note {
-            color: var(--color-muted);
-            font-size: 0.92rem;
-        }
-
-        .document-content,
-        .unanswered-question {
-            color: var(--color-muted-strong);
-            line-height: 1.65;
-        }
-
-        .document-content {
-            margin: 14px 0;
-        }
-
-        .document-keywords {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .keyword-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 12px;
-            border-radius: var(--radius-pill);
-            background: rgba(31, 93, 140, 0.12);
-            color: var(--color-primary);
-            font-size: 0.84rem;
-            font-weight: 700;
-        }
-
-        .document-actions {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 10px 16px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            margin: 22px 0 28px;
-        }
-
-        .stat-card {
-            padding: 22px;
-            text-align: left;
-            background: linear-gradient(180deg, rgba(248, 251, 254, 0.92), rgba(224, 237, 247, 0.92));
-        }
-
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--color-primary);
-        }
-
-        .stat-label {
-            margin-top: 8px;
-            color: var(--color-muted);
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        .date-range-section {
-            padding: 18px;
-            border-radius: 1rem;
-            background: rgba(208, 224, 237, 0.42);
-            border: 1px solid rgba(22, 34, 53, 0.08);
-        }
-
-        .date-range-section label {
-            display: block;
-            margin-bottom: 12px;
-            font-weight: 700;
-            color: var(--color-muted-strong);
-        }
-
-        .apply-date-btn,
-        .clear-date-btn {
-            padding: 12px 18px;
-        }
-
-        .support-copy {
-            margin-top: 6px;
-        }
-
-        @media (max-width: 768px) {
-            .document-header {
-                flex-direction: column;
-            }
-
-            .document-actions,
-            .tabs {
-                width: 100%;
-            }
-
-            .tab,
-            .btn,
-            .apply-date-btn,
-            .clear-date-btn,
-            .upload-btn {
-                width: 100%;
-            }
-        }
+        .document-header, .unanswered-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+        .document-header { margin-bottom: 10px; }
+        .document-title { font-size: 1.1rem; font-weight: 800; color: var(--color-text); }
+        .document-meta, .unanswered-meta, .subtle-note { color: var(--color-muted); font-size: 0.92rem; }
+        .document-content, .unanswered-question { color: var(--color-muted-strong); line-height: 1.65; }
+        .document-content { margin: 14px 0; }
+        .document-keywords { display: flex; flex-wrap: wrap; gap: 8px; }
+        .keyword-tag { display: inline-flex; align-items: center; padding: 8px 12px; border-radius: var(--radius-pill); background: rgba(31, 93, 140, 0.12); color: var(--color-primary); font-size: 0.84rem; font-weight: 700; }
+        .document-actions, .unanswered-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn { padding: 10px 16px; }
+        .btn-complete { background: linear-gradient(135deg, #2e7d6d, #4c9d8c); color: #f7f7f7; box-shadow: 0 14px 24px rgba(46, 125, 109, 0.2); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin: 22px 0 28px; }
+        .stat-card { padding: 22px; text-align: left; background: linear-gradient(180deg, rgba(248, 251, 254, 0.92), rgba(224, 237, 247, 0.92)); }
+        .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--color-primary); }
+        .stat-label { margin-top: 8px; color: var(--color-muted); font-size: 0.95rem; font-weight: 600; }
+        .date-range-section { padding: 18px; border-radius: 1rem; background: rgba(208, 224, 237, 0.42); border: 1px solid rgba(22, 34, 53, 0.08); }
+        .date-range-section label { display: block; margin-bottom: 12px; font-weight: 700; color: var(--color-muted-strong); }
+        .apply-date-btn, .clear-date-btn { padding: 12px 18px; }
+        .support-copy { margin-top: 6px; }
+        @media (max-width: 768px) { .document-header, .unanswered-row { flex-direction: column; } .document-actions, .tabs, .unanswered-actions { width: 100%; } .tab, .btn, .apply-date-btn, .clear-date-btn, .upload-btn { width: 100%; } }
     </style>
 </head>
 <body>
@@ -286,18 +86,8 @@
         </section>
 
         <section id="upload" class="glass-card section-card tab-content active">
-            <div class="section-title">
-                <div>
-                    <h2>Add New Knowledge Base Content</h2>
-                    <p class="section-copy">Upload files for processing or add a clean manual entry below.</p>
-                </div>
-            </div>
-
-            <div class="status-stack">
-                <div id="successMessage" class="status-message success-message"></div>
-                <div id="errorMessage" class="status-message error-message"></div>
-            </div>
-
+            <div class="section-title"><div><h2>Add New Knowledge Base Content</h2><p class="section-copy">Upload files for processing or add a clean manual entry below.</p></div></div>
+            <div class="status-stack"><div id="successMessage" class="status-message success-message"></div><div id="errorMessage" class="status-message error-message"></div></div>
             <div class="upload-layout">
                 <div class="upload-section" id="uploadSection">
                     <h3>Upload Documents</h3>
@@ -305,198 +95,97 @@
                     <p class="subtle-note">Supported formats: PDF (.pdf) and text (.txt)</p>
                     <input type="file" id="fileInput" class="file-input" multiple accept=".pdf,.txt">
                     <button class="upload-btn" onclick="document.getElementById('fileInput').click()">Choose Files</button>
-                    <div class="subtle-note" style="margin-top: 16px;">
-                        PDF text is extracted automatically and added to search.
-                    </div>
+                    <div class="subtle-note" style="margin-top: 16px;">PDF text is extracted automatically and added to search.</div>
                 </div>
-
                 <div class="form-divider">or</div>
-
                 <form id="manualForm">
-                    <div class="section-title">
-                        <div>
-                            <h3>Add Content Manually</h3>
-                            <p class="section-copy">Create or update one article at a time with category and keyword metadata.</p>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" id="title" placeholder="e.g., Refund Process for Damaged Items" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="content">Content</label>
-                        <textarea id="content" placeholder="Enter the detailed information agents need to know..." required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="source">Source Document</label>
-                        <input type="text" id="source" placeholder="e.g., Customer Service Manual v2.1">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="category">Category</label>
-                        <select id="category">
-                            <option value="application-processing">Application Processing & E-sign Issues</option>
-                            <option value="customer-portal">Customer Portal & Login Issues</option>
-                            <option value="collections-account">Collections & Account Status Management</option>
-                            <option value="payment-plans">Payment Plans & Scheduling</option>
-                            <option value="income-evidence">Income Evidence & Verification</option>
-                            <option value="security-verification">Security & Verification</option>
-                            <option value="right-to-withdraw">Right to Withdraw (RTW)</option>
-                            <option value="transaction-responses">Transaction Responses & Payment Issues</option>
-                            <option value="fraud-disputes">Fraud & Disputes</option>
-                            <option value="debt-respite">Debt Respite Scheme (Breathing Space)</option>
-                            <option value="debt-management">Debt Management Companies (DMC)</option>
-                            <option value="system-email">System & Email Management</option>
-                            <option value="contact-information">Contact Information</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="keywords">Keywords (comma-separated)</label>
-                        <input type="text" id="keywords" placeholder="refund, return, damaged, broken, replacement">
-                    </div>
-
+                    <div class="section-title"><div><h3>Add Content Manually</h3><p class="section-copy">Create or update one article at a time with category and keyword metadata.</p></div></div>
+                    <div class="form-group"><label for="title">Title</label><input type="text" id="title" placeholder="e.g., Refund Process for Damaged Items" required></div>
+                    <div class="form-group"><label for="content">Content</label><textarea id="content" placeholder="Enter the detailed information agents need to know..." required></textarea></div>
+                    <div class="form-group"><label for="source">Source Document</label><input type="text" id="source" placeholder="e.g., Customer Service Manual v2.1"></div>
+                    <div class="form-group"><label for="category">Category</label><select id="category">
+                        <option value="application-processing">Application Processing & E-sign Issues</option><option value="customer-portal">Customer Portal & Login Issues</option><option value="collections-account">Collections & Account Status Management</option><option value="payment-plans">Payment Plans & Scheduling</option><option value="income-evidence">Income Evidence & Verification</option><option value="security-verification">Security & Verification</option><option value="right-to-withdraw">Right to Withdraw (RTW)</option><option value="transaction-responses">Transaction Responses & Payment Issues</option><option value="fraud-disputes">Fraud & Disputes</option><option value="debt-respite">Debt Respite Scheme (Breathing Space)</option><option value="debt-management">Debt Management Companies (DMC)</option><option value="system-email">System & Email Management</option><option value="contact-information">Contact Information</option>
+                    </select></div>
+                    <div class="form-group"><label for="keywords">Keywords (comma-separated)</label><input type="text" id="keywords" placeholder="refund, return, damaged, broken, replacement"></div>
                     <button type="submit" class="upload-btn">Save Content</button>
                 </form>
             </div>
         </section>
 
         <section id="manage" class="glass-card section-card tab-content">
-            <div class="section-title">
-                <div>
-                    <h2>Manage Knowledge Base</h2>
-                    <p class="section-copy">Browse current entries, update outdated guidance, or remove documents that should no longer appear in search.</p>
-                </div>
-            </div>
+            <div class="section-title"><div><h2>Manage Knowledge Base</h2><p class="section-copy">Browse current entries, update outdated guidance, or remove documents that should no longer appear in search.</p></div></div>
             <div id="documentsList" class="documents-list"></div>
         </section>
 
         <section id="analytics" class="glass-card section-card tab-content">
-            <div class="section-title">
-                <div>
-                    <h2>System Analytics</h2>
-                    <p class="section-copy">Track search volume and surface the questions your knowledge base still is not answering.</p>
-                </div>
-            </div>
-
+            <div class="section-title"><div><h2>System Analytics</h2><p class="section-copy">Track search volume and surface the questions your knowledge base still is not answering.</p></div></div>
             <div class="date-range-section">
                 <label>Filter by date range (total searches and unanswered questions)</label>
                 <div class="date-range-inputs">
-                    <input type="date" id="analyticsFromDate" title="From date">
-                    <input type="date" id="analyticsToDate" title="To date">
-                    <button type="button" class="apply-date-btn" onclick="loadAnalytics()">Apply</button>
-                    <button type="button" class="clear-date-btn" onclick="clearAnalyticsDateRange(); loadAnalytics();">Clear</button>
+                    <input type="date" id="analyticsFromDate" title="From date"><input type="date" id="analyticsToDate" title="To date"><button type="button" class="apply-date-btn" onclick="loadAnalytics()">Apply</button><button type="button" class="clear-date-btn" onclick="clearAnalyticsDateRange(); loadAnalytics();">Clear</button>
                 </div>
             </div>
             <div class="stats-grid">
-                <div class="glass-card stat-card">
-                    <div class="stat-number" id="totalDocs">0</div>
-                    <div class="stat-label">Total Documents</div>
-                </div>
-                <div class="glass-card stat-card">
-                    <div class="stat-number" id="totalSearches">0</div>
-                    <div class="stat-label">Total Searches</div>
-                </div>
-                <div class="glass-card stat-card">
-                    <div class="stat-number" id="unansweredCount">0</div>
-                    <div class="stat-label">Unanswered Questions</div>
-                </div>
+                <div class="glass-card stat-card"><div class="stat-number" id="totalDocs">0</div><div class="stat-label">Total Documents</div></div>
+                <div class="glass-card stat-card"><div class="stat-number" id="totalSearches">0</div><div class="stat-label">Total Searches</div></div>
+                <div class="glass-card stat-card"><div class="stat-number" id="unansweredCount">0</div><div class="stat-label">Unanswered Questions</div></div>
             </div>
-
-            <div class="section-title">
-                <div>
-                    <h3>Questions That Need Answers</h3>
-                    <p class="section-copy">These are the searches that need new content or better keywords.</p>
-                </div>
-            </div>
+            <div class="section-title"><div><h3>Questions That Need Answers</h3><p class="section-copy">These are the searches that need new content or better keywords.</p></div></div>
             <div id="unansweredList" class="unanswered-list"></div>
         </section>
     </div>
 
     <script>
-        let knowledgeBase = { documents: [] };
-        let supabaseClient = null;
+const currentUser = window.workspaceAuth.initialize({
+    workspace: 'admin',
+    workspaceLabel: 'Admin Workspace',
+    title: 'SavvyConnect Knowledge Base Admin',
+    subtitle: 'Sign in with an approved admin email to manage content and analytics.'
+});
 
-        if (!window.appConfig.localMode && typeof window.supabase !== 'undefined') {
-            supabaseClient = window.supabase.createClient(
-                window.appConfig.supabase.url,
-                window.appConfig.supabase.anonKey
-            );
-            console.log('Supabase client initialized for admin panel');
+if (currentUser) {
+    let knowledgeBase = { documents: [] };
+    let supabaseClient = null;
+    if (!window.appConfig.localMode && typeof window.supabase !== 'undefined') {
+        supabaseClient = window.supabase.createClient(window.appConfig.supabase.url, window.appConfig.supabase.anonKey);
+    }
+
+    function showTab(tabName, tabButton = null) {
+        document.querySelectorAll('.tab-content').forEach((content) => content.classList.remove('active'));
+        document.querySelectorAll('.tab').forEach((tab) => tab.classList.remove('active'));
+        document.getElementById(tabName).classList.add('active');
+        const targetTab = tabButton || document.querySelector(`.tab[data-tab="${tabName}"]`);
+        if (targetTab) targetTab.classList.add('active');
+        if (tabName === 'manage') loadDocuments();
+        if (tabName === 'analytics') loadAnalytics();
+    }
+
+    document.getElementById('fileInput').addEventListener('change', handleFileUpload);
+    const uploadSection = document.getElementById('uploadSection');
+    uploadSection.addEventListener('dragover', function(e) { e.preventDefault(); uploadSection.classList.add('dragover'); });
+    uploadSection.addEventListener('dragleave', function(e) { e.preventDefault(); uploadSection.classList.remove('dragover'); });
+    uploadSection.addEventListener('drop', function(e) {
+        e.preventDefault();
+        uploadSection.classList.remove('dragover');
+        handleFileUpload({ target: { files: e.dataTransfer.files } });
+    });
+
+    function handleFileUpload(event) {
+        const files = event.target.files;
+        for (let file of files) uploadFile(file);
+    }
+
+    function uploadFile(file) {
+        if (!window.appConfig.localMode) {
+            showMessage('File upload is only available in local mode. Please use the manual entry form or switch to local mode.', 'error');
+            return;
         }
-
-        function showTab(tabName, tabButton = null) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
-
-            const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-
-            document.getElementById(tabName).classList.add('active');
-
-            const targetTab = tabButton || document.querySelector(`.tab[data-tab="${tabName}"]`);
-            if (targetTab) {
-                targetTab.classList.add('active');
-            }
-
-            if (tabName === 'manage') {
-                loadDocuments();
-            } else if (tabName === 'analytics') {
-                loadAnalytics();
-            }
-        }
-
-        document.getElementById('fileInput').addEventListener('change', handleFileUpload);
-
-        const uploadSection = document.getElementById('uploadSection');
-
-        uploadSection.addEventListener('dragover', function(e) {
-            e.preventDefault();
-            uploadSection.classList.add('dragover');
-        });
-
-        uploadSection.addEventListener('dragleave', function(e) {
-            e.preventDefault();
-            uploadSection.classList.remove('dragover');
-        });
-
-        uploadSection.addEventListener('drop', function(e) {
-            e.preventDefault();
-            uploadSection.classList.remove('dragover');
-
-            const files = e.dataTransfer.files;
-            handleFileUpload({ target: { files: files } });
-        });
-
-        function handleFileUpload(event) {
-            const files = event.target.files;
-            for (let file of files) {
-                uploadFile(file);
-            }
-        }
-
-        function uploadFile(file) {
-            if (!window.appConfig.localMode) {
-                showMessage('File upload is only available in local mode. Please use the manual entry form or switch to local mode.', 'error');
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append('file', file);
-
-            showMessage('Uploading and processing ' + file.name + '...', 'success');
-
-            const endpoint = `${window.appConfig.localApiUrl}/upload`;
-
-            fetch(endpoint, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
+        const formData = new FormData();
+        formData.append('file', file);
+        showMessage('Uploading and processing ' + file.name + '...', 'success');
+        fetch(`${window.appConfig.localApiUrl}/upload`, { method: 'POST', body: formData })
+            .then((response) => response.json())
+            .then((data) => {
                 if (data.success) {
                     showMessage('Successfully processed ' + data.title + ' (' + data.contentLength + ' characters extracted)', 'success');
                     loadDocuments();
@@ -504,428 +193,249 @@
                     showMessage('Error processing file: ' + data.error, 'error');
                 }
             })
-            .catch(error => {
-                showMessage('Upload failed: ' + error, 'error');
+            .catch((error) => showMessage('Upload failed: ' + error, 'error'));
+    }
+
+    document.getElementById('manualForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = this;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const isEditing = form.dataset.editingId;
+        const doc = {
+            title: document.getElementById('title').value,
+            content: document.getElementById('content').value,
+            source: document.getElementById('source').value || 'Manual Entry',
+            section: 'Manual Entry',
+            keywords: document.getElementById('keywords').value.split(',').map((k) => k.trim()).filter(Boolean),
+            category: document.getElementById('category').value,
+            lastUpdated: new Date().toISOString().split('T')[0]
+        };
+        if (isEditing) {
+            doc.id = parseInt(isEditing, 10);
+            updateDocument(doc);
+        } else {
+            doc.id = Date.now();
+            saveDocument(doc);
+        }
+        form.reset();
+        delete form.dataset.editingId;
+        submitBtn.textContent = 'Save Content';
+        submitBtn.classList.remove('editing');
+    });
+
+    function updateDocument(doc) {
+        if (window.appConfig.localMode) {
+            fetch(`${window.appConfig.localApiUrl}/documents/${doc.id}`, {
+                method: 'PUT', headers: window.appConfig.getHeaders(), body: JSON.stringify(doc)
+            }).then((response) => response.json()).then((data) => {
+                if (data.success) { showMessage('Document updated successfully!', 'success'); loadDocuments(); }
+                else { showMessage('Error updating document: ' + data.error, 'error'); }
+            }).catch((error) => showMessage('Error updating document: ' + error, 'error'));
+        } else {
+            supabaseClient.from('documents').update({
+                title: doc.title, content: doc.content, source: doc.source, section: doc.section, keywords: doc.keywords,
+                category: doc.category, last_updated: doc.lastUpdated || new Date().toISOString().split('T')[0], app_name: window.appConfig.appName
+            }).eq('id', doc.id).eq('app_name', window.appConfig.appName).then(({ error }) => {
+                if (error) showMessage('Error updating document: ' + error.message, 'error');
+                else { showMessage('Document updated successfully!', 'success'); loadDocuments(); }
             });
         }
+    }
 
-        function extractKeywords(content) {
-            const words = content.toLowerCase()
-                .replace(/[^\w\s]/g, ' ')
-                .split(/\s+/)
-                .filter(word => word.length > 3)
-                .filter((word, index, arr) => arr.indexOf(word) === index)
-                .slice(0, 10);
-
-            return words;
+    function deleteDocument(id) {
+        if (!confirm('Are you sure you want to delete this document?')) return;
+        if (window.appConfig.localMode) {
+            fetch(`${window.appConfig.localApiUrl}/documents/${id}`, { method: 'DELETE', headers: window.appConfig.getHeaders() })
+                .then((response) => response.json()).then((data) => {
+                    if (data.success) { showMessage('Document deleted successfully!', 'success'); loadDocuments(); }
+                    else { showMessage('Error deleting document: ' + data.error, 'error'); }
+                });
+        } else {
+            supabaseClient.from('documents').delete().eq('id', id).eq('app_name', window.appConfig.appName).then(({ error }) => {
+                if (error) showMessage('Error deleting document: ' + error.message, 'error');
+                else { showMessage('Document deleted successfully!', 'success'); loadDocuments(); }
+            });
         }
+    }
 
-        document.getElementById('manualForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+    function saveDocument(doc) {
+        if (window.appConfig.localMode) {
+            fetch(`${window.appConfig.localApiUrl}/documents`, {
+                method: 'POST', headers: window.appConfig.getHeaders(), body: JSON.stringify(doc)
+            }).then((response) => response.json()).then((data) => {
+                if (data.success) { showMessage('Document saved successfully!', 'success'); loadDocuments(); }
+                else { showMessage('Error saving document: ' + data.error, 'error'); }
+            }).catch((error) => showMessage('Error saving document: ' + error, 'error'));
+        } else {
+            supabaseClient.from('documents').insert([{ app_name: window.appConfig.appName, title: doc.title, content: doc.content, source: doc.source, section: doc.section, keywords: doc.keywords, category: doc.category, last_updated: doc.lastUpdated || new Date().toISOString().split('T')[0] }]).then(({ error }) => {
+                if (error) showMessage('Error saving document: ' + error.message, 'error');
+                else { showMessage('Document saved successfully!', 'success'); loadDocuments(); }
+            });
+        }
+    }
 
-            const form = this;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const isEditing = form.dataset.editingId;
+    function loadDocuments() {
+        if (window.appConfig.localMode) {
+            fetch(`${window.appConfig.localApiUrl}/documents`, { headers: window.appConfig.getHeaders() })
+                .then((response) => response.json()).then((data) => { knowledgeBase = data; displayDocuments(); });
+        } else {
+            supabaseClient.from('documents').select('*').eq('app_name', window.appConfig.appName).order('title').then(({ data, error }) => {
+                if (error) return;
+                knowledgeBase = { documents: data.map((doc) => ({ id: doc.id, title: doc.title, content: doc.content, source: doc.source, section: doc.section, keywords: doc.keywords || [], category: doc.category, lastUpdated: doc.last_updated })) };
+                displayDocuments();
+            });
+        }
+    }
 
-            const doc = {
-                title: document.getElementById('title').value,
-                content: document.getElementById('content').value,
-                source: document.getElementById('source').value || 'Manual Entry',
-                section: 'Manual Entry',
-                keywords: document.getElementById('keywords').value.split(',').map(k => k.trim()).filter(Boolean),
-                category: document.getElementById('category').value,
-                lastUpdated: new Date().toISOString().split('T')[0]
-            };
-
-            if (isEditing) {
-                doc.id = parseInt(isEditing);
-                updateDocument(doc);
-            } else {
-                doc.id = Date.now();
-                saveDocument(doc);
-            }
-
-            this.reset();
-            delete form.dataset.editingId;
-            submitBtn.textContent = 'Save Content';
-            submitBtn.classList.remove('editing');
+    function displayDocuments() {
+        const container = document.getElementById('documentsList');
+        container.innerHTML = '';
+        if (knowledgeBase.documents.length === 0) {
+            container.innerHTML = '<div class="empty-state">No documents found. Add some content to get started.</div>';
+            return;
+        }
+        knowledgeBase.documents.forEach((doc) => {
+            const docElement = document.createElement('div');
+            docElement.className = 'document-item';
+            docElement.innerHTML = `<div class="document-header"><div><div class="document-title">${doc.title}</div><div class="document-meta">Source: ${doc.source} | Category: ${doc.category} | Updated: ${doc.lastUpdated}</div></div><div class="document-actions"><button class="btn btn-edit" onclick="editDocument(${doc.id})">Edit</button><button class="btn btn-delete" onclick="deleteDocument(${doc.id})">Delete</button></div></div><div class="document-content">${doc.content.substring(0, 200)}${doc.content.length > 200 ? '...' : ''}</div><div class="document-keywords">${doc.keywords.map((keyword) => `<span class="keyword-tag">${keyword}</span>`).join('')}</div>`;
+            container.appendChild(docElement);
         });
+    }
 
-        function updateDocument(doc) {
-            if (window.appConfig.localMode) {
-                const endpoint = `${window.appConfig.localApiUrl}/documents/${doc.id}`;
+    function editDocument(id) {
+        const doc = knowledgeBase.documents.find((item) => item.id === id);
+        if (!doc) { showMessage('Document not found', 'error'); return; }
+        showTab('upload');
+        document.getElementById('title').value = doc.title;
+        document.getElementById('content').value = doc.content;
+        document.getElementById('source').value = doc.source;
+        document.getElementById('category').value = doc.category;
+        document.getElementById('keywords').value = doc.keywords.join(', ');
+        const form = document.getElementById('manualForm');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.textContent = 'Update Content';
+        submitBtn.classList.add('editing');
+        form.dataset.editingId = id;
+        showMessage('Editing: ' + doc.title + '. Make your changes and click Update Content.', 'success');
+        form.scrollIntoView({ behavior: 'smooth' });
+    }
+    function getAnalyticsDateRange() {
+        return {
+            fromDate: document.getElementById('analyticsFromDate').value || null,
+            toDate: document.getElementById('analyticsToDate').value || null
+        };
+    }
 
-                fetch(endpoint, {
-                    method: 'PUT',
-                    headers: window.appConfig.getHeaders(),
-                    body: JSON.stringify(doc)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        showMessage('Document updated successfully!', 'success');
-                        loadDocuments();
-                    } else {
-                        showMessage('Error updating document: ' + data.error, 'error');
-                    }
-                })
-                .catch(error => {
-                    showMessage('Error updating document: ' + error, 'error');
+    function clearAnalyticsDateRange() {
+        document.getElementById('analyticsFromDate').value = '';
+        document.getElementById('analyticsToDate').value = '';
+    }
+
+    function buildDateQuery() {
+        const { fromDate, toDate } = getAnalyticsDateRange();
+        const params = new URLSearchParams();
+        if (fromDate) params.set('fromDate', fromDate);
+        if (toDate) params.set('toDate', toDate);
+        const queryString = params.toString();
+        return queryString ? `?${queryString}` : '';
+    }
+
+    function loadAnalytics() {
+        const qs = buildDateQuery();
+        if (window.appConfig.localMode) {
+            fetch(`${window.appConfig.localApiUrl}/unanswered${qs}`, { headers: window.appConfig.getHeaders() })
+                .then((response) => response.json()).then((data) => {
+                    document.getElementById('unansweredCount').textContent = data.length;
+                    displayUnansweredQuestions(data);
                 });
-            } else {
-                const updateData = {
-                    title: doc.title,
-                    content: doc.content,
-                    source: doc.source,
-                    section: doc.section,
-                    keywords: doc.keywords,
-                    category: doc.category,
-                    last_updated: doc.lastUpdated || new Date().toISOString().split('T')[0],
-                    app_name: window.appConfig.appName
-                };
-
-                supabaseClient
-                    .from('documents')
-                    .update(updateData)
-                    .eq('id', doc.id)
-                    .eq('app_name', window.appConfig.appName)
-                    .then(({ data, error }) => {
-                        if (error) {
-                            console.error('Supabase update error:', error);
-                            showMessage('Error updating document: ' + error.message, 'error');
-                        } else {
-                            showMessage('Document updated successfully!', 'success');
-                            loadDocuments();
-                        }
-                    });
-            }
-        }
-
-        function deleteDocument(id) {
-            if (confirm('Are you sure you want to delete this document?')) {
-                if (window.appConfig.localMode) {
-                    const endpoint = `${window.appConfig.localApiUrl}/documents/${id}`;
-
-                    fetch(endpoint, {
-                        method: 'DELETE',
-                        headers: window.appConfig.getHeaders()
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            showMessage('Document deleted successfully!', 'success');
-                            loadDocuments();
-                        } else {
-                            showMessage('Error deleting document: ' + data.error, 'error');
-                        }
-                    });
-                } else {
-                    supabaseClient
-                        .from('documents')
-                        .delete()
-                        .eq('id', id)
-                        .eq('app_name', window.appConfig.appName)
-                        .then(({ data, error }) => {
-                            if (error) {
-                                console.error('Supabase delete error:', error);
-                                showMessage('Error deleting document: ' + error.message, 'error');
-                            } else {
-                                showMessage('Document deleted successfully!', 'success');
-                                loadDocuments();
-                            }
-                        });
-                }
-            }
-        }
-        function saveDocument(doc) {
-            if (window.appConfig.localMode) {
-                const endpoint = `${window.appConfig.localApiUrl}/documents`;
-
-                fetch(endpoint, {
-                    method: 'POST',
-                    headers: window.appConfig.getHeaders(),
-                    body: JSON.stringify(doc)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        showMessage('Document saved successfully!', 'success');
-                        loadDocuments();
-                    } else {
-                        showMessage('Error saving document: ' + data.error, 'error');
-                    }
-                })
-                .catch(error => {
-                    showMessage('Error saving document: ' + error, 'error');
+            fetch(`${window.appConfig.localApiUrl}/search-logs/count${qs}`, { headers: window.appConfig.getHeaders() })
+                .then((response) => response.json()).then((data) => {
+                    document.getElementById('totalSearches').textContent = data.count != null ? data.count : 0;
                 });
-            } else {
-                const insertData = {
-                    app_name: window.appConfig.appName,
-                    title: doc.title,
-                    content: doc.content,
-                    source: doc.source,
-                    section: doc.section,
-                    keywords: doc.keywords,
-                    category: doc.category,
-                    last_updated: doc.lastUpdated || new Date().toISOString().split('T')[0]
-                };
-
-                supabaseClient
-                    .from('documents')
-                    .insert([insertData])
-                    .then(({ data, error }) => {
-                        if (error) {
-                            console.error('Supabase insert error:', error);
-                            showMessage('Error saving document: ' + error.message, 'error');
-                        } else {
-                            showMessage('Document saved successfully!', 'success');
-                            loadDocuments();
-                        }
-                    });
-            }
-        }
-
-        function loadDocuments() {
-            if (window.appConfig.localMode) {
-                const endpoint = `${window.appConfig.localApiUrl}/documents`;
-
-                fetch(endpoint, { headers: window.appConfig.getHeaders() })
-                    .then(response => response.json())
-                    .then(data => {
-                        knowledgeBase = data;
-                        displayDocuments();
-                    })
-                    .catch(error => {
-                        console.error('Error loading documents:', error);
-                    });
-            } else {
-                supabaseClient
-                    .from('documents')
-                    .select('*')
-                    .eq('app_name', window.appConfig.appName)
-                    .order('title')
-                    .then(({ data, error }) => {
-                        if (error) {
-                            console.error('Supabase error loading documents:', error);
-                        } else {
-                            knowledgeBase = {
-                                documents: data.map(doc => ({
-                                    id: doc.id,
-                                    title: doc.title,
-                                    content: doc.content,
-                                    source: doc.source,
-                                    section: doc.section,
-                                    keywords: doc.keywords || [],
-                                    category: doc.category,
-                                    lastUpdated: doc.last_updated
-                                }))
-                            };
-                            displayDocuments();
-                        }
-                    });
-            }
-        }
-
-        function displayDocuments() {
-            const container = document.getElementById('documentsList');
-            container.innerHTML = '';
-
-            if (knowledgeBase.documents.length === 0) {
-                container.innerHTML = '<div class="empty-state">No documents found. Add some content to get started.</div>';
-                return;
-            }
-
-            knowledgeBase.documents.forEach(doc => {
-                const docElement = document.createElement('div');
-                docElement.className = 'document-item';
-                docElement.innerHTML = `
-                    <div class="document-header">
-                        <div>
-                            <div class="document-title">${doc.title}</div>
-                            <div class="document-meta">Source: ${doc.source} | Category: ${doc.category} | Updated: ${doc.lastUpdated}</div>
-                        </div>
-                        <div class="document-actions">
-                            <button class="btn btn-edit" onclick="editDocument(${doc.id})">Edit</button>
-                            <button class="btn btn-delete" onclick="deleteDocument(${doc.id})">Delete</button>
-                        </div>
-                    </div>
-                    <div class="document-content">
-                        ${doc.content.substring(0, 200)}${doc.content.length > 200 ? '...' : ''}
-                    </div>
-                    <div class="document-keywords">
-                        ${doc.keywords.map(keyword => `<span class="keyword-tag">${keyword}</span>`).join('')}
-                    </div>
-                `;
-                container.appendChild(docElement);
-            });
-        }
-
-        function editDocument(id) {
-            const doc = knowledgeBase.documents.find(d => d.id === id);
-            if (!doc) {
-                showMessage('Document not found', 'error');
-                return;
-            }
-
-            showTab('upload');
-
-            document.getElementById('title').value = doc.title;
-            document.getElementById('content').value = doc.content;
-            document.getElementById('source').value = doc.source;
-            document.getElementById('category').value = doc.category;
-            document.getElementById('keywords').value = doc.keywords.join(', ');
-
-            const form = document.getElementById('manualForm');
-            const submitBtn = form.querySelector('button[type="submit"]');
-            submitBtn.textContent = 'Update Content';
-            submitBtn.classList.add('editing');
-
-            form.dataset.editingId = id;
-
-            showMessage('Editing: ' + doc.title + '. Make your changes and click Update Content.', 'success');
-
-            form.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function getAnalyticsDateRange() {
-            const fromEl = document.getElementById('analyticsFromDate');
-            const toEl = document.getElementById('analyticsToDate');
-            return {
-                fromDate: fromEl && fromEl.value ? fromEl.value : null,
-                toDate: toEl && toEl.value ? toEl.value : null
-            };
-        }
-
-        function clearAnalyticsDateRange() {
-            const fromEl = document.getElementById('analyticsFromDate');
-            const toEl = document.getElementById('analyticsToDate');
-            if (fromEl) fromEl.value = '';
-            if (toEl) toEl.value = '';
-        }
-
-        function loadAnalytics() {
+            fetch(`${window.appConfig.localApiUrl}/documents`, { headers: window.appConfig.getHeaders() })
+                .then((response) => response.json()).then((data) => {
+                    document.getElementById('totalDocs').textContent = data.documents.length;
+                });
+        } else {
+            let unansweredQuery = supabaseClient.from('unanswered_questions').select('*').eq('app_name', window.appConfig.appName).order('count', { ascending: false });
             const { fromDate, toDate } = getAnalyticsDateRange();
-            if (window.appConfig.localMode) {
-                const params = new URLSearchParams();
-                if (fromDate) params.set('fromDate', fromDate);
-                if (toDate) params.set('toDate', toDate);
-                const qs = params.toString();
-                const unansweredUrl = `${window.appConfig.localApiUrl}/unanswered` + (qs ? '?' + qs : '');
-                fetch(unansweredUrl, { headers: window.appConfig.getHeaders() })
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('unansweredCount').textContent = data.length;
-                        displayUnansweredQuestions(data);
-                    });
-                const searchCountUrl = `${window.appConfig.localApiUrl}/search-logs/count` + (qs ? '?' + qs : '');
-                fetch(searchCountUrl, { headers: window.appConfig.getHeaders() })
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('totalSearches').textContent = data.count != null ? data.count : 0;
-                    });
-                const docsEndpoint = `${window.appConfig.localApiUrl}/documents`;
-                fetch(docsEndpoint, { headers: window.appConfig.getHeaders() })
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('totalDocs').textContent = data.documents.length;
-                    });
-            } else {
-                let unansweredQuery = supabaseClient
-                    .from('unanswered_questions')
-                    .select('*')
-                    .eq('app_name', window.appConfig.appName)
-                    .order('count', { ascending: false });
-                if (fromDate) {
-                    unansweredQuery = unansweredQuery.gte('last_asked', fromDate + 'T00:00:00.000Z');
+            if (fromDate) unansweredQuery = unansweredQuery.gte('last_asked', fromDate + 'T00:00:00.000Z');
+            if (toDate) unansweredQuery = unansweredQuery.lte('last_asked', toDate + 'T23:59:59.999Z');
+            unansweredQuery.then(({ data, error }) => {
+                if (error) {
+                    document.getElementById('unansweredCount').textContent = '0';
+                    displayUnansweredQuestions([]);
+                } else {
+                    const formattedData = (data || []).map((q) => ({ question: q.question, count: q.count, lastAsked: q.last_asked }));
+                    document.getElementById('unansweredCount').textContent = formattedData.length;
+                    displayUnansweredQuestions(formattedData);
                 }
-                if (toDate) {
-                    unansweredQuery = unansweredQuery.lte('last_asked', toDate + 'T23:59:59.999Z');
-                }
-                unansweredQuery.then(({ data, error }) => {
-                    if (error) {
-                        console.error('Error loading unanswered questions:', error);
-                        document.getElementById('unansweredCount').textContent = '0';
-                        displayUnansweredQuestions([]);
-                    } else {
-                        const formattedData = (data || []).map(q => ({
-                            question: q.question,
-                            count: q.count,
-                            lastAsked: q.last_asked
-                        }));
-                        document.getElementById('unansweredCount').textContent = formattedData.length;
-                        displayUnansweredQuestions(formattedData);
-                    }
-                });
-                let searchCountQuery = supabaseClient
-                    .from('search_logs')
-                    .select('*', { count: 'exact', head: true })
-                    .eq('app_name', window.appConfig.appName);
-                if (fromDate) {
-                    searchCountQuery = searchCountQuery.gte('timestamp', fromDate + 'T00:00:00.000Z');
-                }
-                if (toDate) {
-                    searchCountQuery = searchCountQuery.lte('timestamp', toDate + 'T23:59:59.999Z');
-                }
-                searchCountQuery.then(({ count, error }) => {
-                    if (error) {
-                        console.error('Error loading search count:', error);
-                        document.getElementById('totalSearches').textContent = '0';
-                    } else {
-                        document.getElementById('totalSearches').textContent = count != null ? count : 0;
-                    }
-                });
-                supabaseClient
-                    .from('documents')
-                    .select('*', { count: 'exact', head: true })
-                    .eq('app_name', window.appConfig.appName)
-                    .then(({ count, error }) => {
-                        if (error) {
-                            console.error('Error loading document count:', error);
-                            document.getElementById('totalDocs').textContent = '0';
-                        } else {
-                            document.getElementById('totalDocs').textContent = count || 0;
-                        }
-                    });
-            }
-        }
-        function displayUnansweredQuestions(questions) {
-            const container = document.getElementById('unansweredList');
-            container.innerHTML = '';
-
-            if (questions.length === 0) {
-                container.innerHTML = '<div class="empty-state">No unanswered questions yet.</div>';
-                return;
-            }
-
-            questions.forEach(q => {
-                const questionElement = document.createElement('div');
-                questionElement.className = 'unanswered-item';
-                questionElement.innerHTML = `
-                    <div class="unanswered-question">"${q.question}"</div>
-                    <div class="unanswered-meta">
-                        Asked ${q.count} time(s) | Last asked: ${new Date(q.lastAsked).toLocaleDateString()}
-                    </div>
-                `;
-                container.appendChild(questionElement);
+            });
+            let searchCountQuery = supabaseClient.from('search_logs').select('*', { count: 'exact', head: true }).eq('app_name', window.appConfig.appName);
+            if (fromDate) searchCountQuery = searchCountQuery.gte('timestamp', fromDate + 'T00:00:00.000Z');
+            if (toDate) searchCountQuery = searchCountQuery.lte('timestamp', toDate + 'T23:59:59.999Z');
+            searchCountQuery.then(({ count }) => { document.getElementById('totalSearches').textContent = count != null ? count : 0; });
+            supabaseClient.from('documents').select('*', { count: 'exact', head: true }).eq('app_name', window.appConfig.appName).then(({ count }) => {
+                document.getElementById('totalDocs').textContent = count || 0;
             });
         }
+    }
 
-        function showMessage(message, type) {
-            const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
-
-            const messageElement = document.getElementById(type === 'success' ? 'successMessage' : 'errorMessage');
-            messageElement.textContent = message;
-            messageElement.style.display = 'block';
-
-            setTimeout(() => {
-                messageElement.style.display = 'none';
-            }, 5000);
+    async function completeUnansweredQuestion(question) {
+        if (!confirm(`Mark "${question}" as complete and remove it from this list?`)) return;
+        try {
+            if (window.appConfig.localMode) {
+                const response = await fetch(`${window.appConfig.localApiUrl}/unanswered/complete`, {
+                    method: 'POST', headers: window.appConfig.getHeaders(), body: JSON.stringify({ question })
+                });
+                const data = await response.json();
+                if (!data.success) throw new Error(data.error || 'Unable to complete question');
+            } else {
+                const { error } = await supabaseClient.from('unanswered_questions').delete().eq('app_name', window.appConfig.appName).eq('question', question);
+                if (error) throw error;
+            }
+            showMessage('Question marked as complete.', 'success');
+            loadAnalytics();
+        } catch (error) {
+            showMessage('Could not complete question: ' + error.message, 'error');
         }
+    }
 
-        loadDocuments();
+    function displayUnansweredQuestions(questions) {
+        const container = document.getElementById('unansweredList');
+        container.innerHTML = '';
+        if (questions.length === 0) {
+            container.innerHTML = '<div class="empty-state">No unanswered questions yet.</div>';
+            return;
+        }
+        questions.forEach((q) => {
+            const questionElement = document.createElement('div');
+            questionElement.className = 'unanswered-item';
+            questionElement.innerHTML = `<div class="unanswered-row"><div><div class="unanswered-question">"${q.question}"</div><div class="unanswered-meta">Asked ${q.count} time(s) | Last asked: ${new Date(q.lastAsked).toLocaleDateString()}</div></div><div class="unanswered-actions"><button class="btn btn-complete" onclick="completeUnansweredQuestion(${JSON.stringify(q.question)})">Complete</button></div></div>`;
+            container.appendChild(questionElement);
+        });
+    }
+
+    function showMessage(message, type) {
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
+        const messageElement = document.getElementById(type === 'success' ? 'successMessage' : 'errorMessage');
+        messageElement.textContent = message;
+        messageElement.style.display = 'block';
+        setTimeout(() => { messageElement.style.display = 'none'; }, 5000);
+    }
+
+    window.showTab = showTab;
+    window.deleteDocument = deleteDocument;
+    window.editDocument = editDocument;
+    window.loadAnalytics = loadAnalytics;
+    window.clearAnalyticsDateRange = clearAnalyticsDateRange;
+    window.completeUnansweredQuestion = completeUnansweredQuestion;
+
+    loadDocuments();
+}
     </script>
 </body>
 </html>

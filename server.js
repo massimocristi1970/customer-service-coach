@@ -335,6 +335,36 @@ app.get("/api/unanswered", (req, res) => {
   }
 });
 
+app.post("/api/unanswered/complete", (req, res) => {
+  try {
+    const question = String(req.body.question || "").trim();
+    if (!question) {
+      return res.json({ success: false, error: "Question is required" });
+    }
+
+    const logFile = path.join(__dirname, "logs", "unanswered-questions.json");
+    let unanswered = [];
+
+    try {
+      const data = fs.readFileSync(logFile, "utf8");
+      unanswered = JSON.parse(data);
+    } catch (e) {
+      unanswered = [];
+    }
+
+    const beforeCount = unanswered.length;
+    unanswered = unanswered.filter(
+      (item) => String(item.question || "").toLowerCase() !== question.toLowerCase()
+    );
+
+    fs.writeFileSync(logFile, JSON.stringify(unanswered, null, 2));
+
+    res.json({ success: true, removed: beforeCount - unanswered.length });
+  } catch (error) {
+    res.json({ success: false, error: error.message });
+  }
+});
+
 app.get("/api/search-logs/count", (req, res) => {
   try {
     const data = fs.readFileSync("logs/search-logs.json", "utf8");
@@ -605,3 +635,4 @@ app.listen(PORT, () => {
   );
   console.log("Ready to help your agents!");
 });
+

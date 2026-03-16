@@ -6,23 +6,17 @@
     <title>SavvyConnect Knowledge Base</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
+    <script src="auth.js"></script>
     <link rel="stylesheet" href="theme.css">
     <style>
-        .agent-shell {
-            display: grid;
-            gap: 24px;
-        }
-
+        .agent-shell { display: grid; gap: 24px; }
         .agent-hero {
             overflow: hidden;
-            background:
-                radial-gradient(circle at top right, rgba(143, 183, 216, 0.24), transparent 28%),
-                linear-gradient(135deg, rgba(17, 31, 49, 0.98), rgba(31, 93, 140, 0.9));
+            background: radial-gradient(circle at top right, rgba(143, 183, 216, 0.24), transparent 28%), linear-gradient(135deg, rgba(17, 31, 49, 0.98), rgba(31, 93, 140, 0.9));
             color: #fff;
             box-shadow: var(--shadow-panel);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
         .agent-hero::after {
             content: "";
             position: absolute;
@@ -32,49 +26,15 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.08);
         }
-
         .agent-hero .hero-title,
-        .agent-hero .hero-copy {
-            color: #fff;
-            position: relative;
-            z-index: 1;
-        }
-
-        .agent-hero .hero-copy {
-            color: rgba(255, 255, 255, 0.82);
-        }
-
-        .search-card,
-        .results-panel {
-            background: linear-gradient(180deg, rgba(223, 235, 245, 0.86), rgba(236, 243, 249, 0.92));
-        }
-
-        .search-card {
-            display: grid;
-            gap: 24px;
-        }
-
-        .search-row {
-            align-items: center;
-        }
-
-        .search-row .search-input {
-            flex: 1 1 540px;
-            min-width: 240px;
-            font-size: 1rem;
-        }
-
-        .search-btn {
-            min-width: 152px;
-            padding: 15px 22px;
-        }
-
-        .quick-actions {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-
+        .agent-hero .hero-copy { color: #fff; position: relative; z-index: 1; }
+        .agent-hero .hero-copy { color: rgba(255, 255, 255, 0.82); }
+        .search-card, .results-panel { background: linear-gradient(180deg, rgba(223, 235, 245, 0.86), rgba(236, 243, 249, 0.92)); }
+        .search-card { display: grid; gap: 24px; }
+        .search-row { align-items: center; }
+        .search-row .search-input { flex: 1 1 540px; min-width: 240px; font-size: 1rem; }
+        .search-btn { min-width: 152px; padding: 15px 22px; }
+        .quick-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
         .quick-btn {
             padding: 18px;
             border: 1px solid rgba(31, 93, 140, 0.12);
@@ -84,35 +44,11 @@
             text-align: left;
             color: var(--color-text);
         }
-
-        .quick-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-            border-color: rgba(31, 93, 140, 0.24);
-        }
-
-        .quick-btn strong {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 1rem;
-        }
-
-        .quick-btn span {
-            display: block;
-            color: var(--color-muted-strong);
-            font-size: 0.92rem;
-            line-height: 1.5;
-        }
-
-        .results-panel {
-            min-height: 280px;
-        }
-
-        .results-stack {
-            display: grid;
-            gap: 18px;
-        }
-
+        .quick-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: rgba(31, 93, 140, 0.24); }
+        .quick-btn strong { display: block; margin-bottom: 6px; font-size: 1rem; }
+        .quick-btn span { display: block; color: var(--color-muted-strong); font-size: 0.92rem; line-height: 1.5; }
+        .results-panel { min-height: 280px; }
+        .results-stack { display: grid; gap: 18px; }
         .result-card {
             background: linear-gradient(180deg, rgba(248, 251, 254, 0.9), rgba(228, 239, 248, 0.9));
             border: 1px solid rgba(31, 93, 140, 0.1);
@@ -121,72 +57,17 @@
             box-shadow: 0 16px 30px rgba(22, 34, 53, 0.07);
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
-
-        .result-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 22px 38px rgba(31, 93, 140, 0.14);
-            border-color: rgba(31, 93, 140, 0.22);
-        }
-
-        .result-topline {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            align-items: flex-start;
-            margin-bottom: 14px;
-            flex-wrap: wrap;
-        }
-
-        .result-title {
-            font-size: 1.28rem;
-            font-weight: 800;
-            color: var(--color-text);
-        }
-
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 22px 38px rgba(31, 93, 140, 0.14); border-color: rgba(31, 93, 140, 0.22); }
+        .result-topline { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 14px; flex-wrap: wrap; }
+        .result-title { font-size: 1.28rem; font-weight: 800; color: var(--color-text); }
         .result-source {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            border-radius: var(--radius-pill);
-            background: rgba(31, 93, 140, 0.12);
-            color: var(--color-primary);
-            font-size: 0.85rem;
-            font-weight: 700;
+            display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: var(--radius-pill);
+            background: rgba(31, 93, 140, 0.12); color: var(--color-primary); font-size: 0.85rem; font-weight: 700;
         }
-
-        .result-content {
-            color: var(--color-muted-strong);
-            line-height: 1.72;
-            font-size: 0.98rem;
-        }
-
-        .no-results {
-            padding: 44px 24px;
-            text-align: center;
-            color: var(--color-muted);
-            border: 1px dashed rgba(22, 34, 53, 0.14);
-            border-radius: 1rem;
-            background: rgba(218, 232, 243, 0.5);
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, rgba(143, 183, 216, 0.5), rgba(255, 255, 255, 0.92));
-            color: var(--color-text);
-            padding: 0 4px;
-            border-radius: 0.35rem;
-            font-weight: 700;
-        }
-
-        @media (max-width: 768px) {
-            .result-topline {
-                flex-direction: column;
-            }
-
-            .search-btn {
-                width: 100%;
-            }
-        }
+        .result-content { color: var(--color-muted-strong); line-height: 1.72; font-size: 0.98rem; }
+        .no-results { padding: 44px 24px; text-align: center; color: var(--color-muted); border: 1px dashed rgba(22, 34, 53, 0.14); border-radius: 1rem; background: rgba(218, 232, 243, 0.5); }
+        .highlight { background: linear-gradient(120deg, rgba(143, 183, 216, 0.5), rgba(255, 255, 255, 0.92)); color: var(--color-text); padding: 0 4px; border-radius: 0.35rem; font-weight: 700; }
+        @media (max-width: 768px) { .result-topline { flex-direction: column; } .search-btn { width: 100%; } }
     </style>
 </head>
 <body>
@@ -212,30 +93,12 @@
             </div>
 
             <div class="quick-actions">
-                <button class="quick-btn" onclick="quickSearch('right to withdraw RTW')">
-                    <strong>RTW Process</strong>
-                    <span>Return the core right-to-withdraw steps without retyping the same question.</span>
-                </button>
-                <button class="quick-btn" onclick="quickSearch('interest queries charges')">
-                    <strong>Interest Queries</strong>
-                    <span>Pull charge and interest guidance for common customer explanations.</span>
-                </button>
-                <button class="quick-btn" onclick="quickSearch('fraud investigation')">
-                    <strong>Fraud Process</strong>
-                    <span>Review the investigation flow and handoff expectations quickly.</span>
-                </button>
-                <button class="quick-btn" onclick="quickSearch('website login password')">
-                    <strong>Website Login Queries</strong>
-                    <span>Find the support path for password, access, and portal issues.</span>
-                </button>
-                <button class="quick-btn" onclick="quickSearch('payment plan schedule reset')">
-                    <strong>Payment Plans</strong>
-                    <span>Open schedule reset and payment-plan guidance in one click.</span>
-                </button>
-                <button class="quick-btn" onclick="quickSearch('vulnerability TEXAS IDEA')">
-                    <strong>Vulnerability Process</strong>
-                    <span>Access the relevant safeguarding workflow with the right keywords.</span>
-                </button>
+                <button class="quick-btn" onclick="quickSearch('right to withdraw RTW')"><strong>RTW Process</strong><span>Return the core right-to-withdraw steps without retyping the same question.</span></button>
+                <button class="quick-btn" onclick="quickSearch('interest queries charges')"><strong>Interest Queries</strong><span>Pull charge and interest guidance for common customer explanations.</span></button>
+                <button class="quick-btn" onclick="quickSearch('fraud investigation')"><strong>Fraud Process</strong><span>Review the investigation flow and handoff expectations quickly.</span></button>
+                <button class="quick-btn" onclick="quickSearch('website login password')"><strong>Website Login Queries</strong><span>Find the support path for password, access, and portal issues.</span></button>
+                <button class="quick-btn" onclick="quickSearch('payment plan schedule reset')"><strong>Payment Plans</strong><span>Open schedule reset and payment-plan guidance in one click.</span></button>
+                <button class="quick-btn" onclick="quickSearch('vulnerability TEXAS IDEA')"><strong>Vulnerability Process</strong><span>Access the relevant safeguarding workflow with the right keywords.</span></button>
             </div>
         </section>
 
@@ -251,199 +114,143 @@
     </div>
 
     <script>
-let knowledgeBase = [];
-let isKnowledgeBaseLoaded = false;
-let supabaseClient = null;
+const currentUser = window.workspaceAuth.initialize({
+    workspace: 'agent',
+    workspaceLabel: 'Agent Workspace',
+    title: 'SavvyConnect Knowledge Base',
+    subtitle: 'Sign in with your approved work email to access the knowledge base.'
+});
 
-if (!window.appConfig.localMode && typeof window.supabase !== 'undefined') {
-    supabaseClient = window.supabase.createClient(
-        window.appConfig.supabase.url,
-        window.appConfig.supabase.anonKey
-    );
-    console.log('Supabase client initialized');
-}
+if (currentUser) {
+    let knowledgeBase = [];
+    let isKnowledgeBaseLoaded = false;
+    let supabaseClient = null;
 
-async function loadKnowledgeBase() {
-    try {
-        console.log('Loading knowledge base...');
+    if (!window.appConfig.localMode && typeof window.supabase !== 'undefined') {
+        supabaseClient = window.supabase.createClient(
+            window.appConfig.supabase.url,
+            window.appConfig.supabase.anonKey
+        );
+    }
 
-        if (window.appConfig.localMode) {
-            const response = await fetch(`${window.appConfig.localApiUrl}/documents`, {
-                headers: window.appConfig.getHeaders()
-            });
-            const data = await response.json();
-            knowledgeBase = data.documents || [];
-        } else {
-            const { data, error } = await supabaseClient
-                .from('documents')
-                .select('*')
-                .eq('app_name', window.appConfig.appName)
-                .order('title');
-
-            if (error) {
-                console.error('Supabase error:', error);
-                throw error;
+    async function loadKnowledgeBase() {
+        try {
+            if (window.appConfig.localMode) {
+                const response = await fetch(`${window.appConfig.localApiUrl}/documents`, { headers: window.appConfig.getHeaders() });
+                const data = await response.json();
+                knowledgeBase = data.documents || [];
+            } else {
+                const { data, error } = await supabaseClient
+                    .from('documents')
+                    .select('*')
+                    .eq('app_name', window.appConfig.appName)
+                    .order('title');
+                if (error) throw error;
+                knowledgeBase = data || [];
             }
 
-            knowledgeBase = data || [];
+            isKnowledgeBaseLoaded = true;
+            if (knowledgeBase.length === 0) {
+                displayResults([], 'No documents in knowledge base');
+            } else {
+                displayResults([]);
+            }
+        } catch (error) {
+            knowledgeBase = [];
+            isKnowledgeBaseLoaded = true;
+            displayResults([], 'Error loading knowledge base');
         }
+    }
 
-        isKnowledgeBaseLoaded = true;
-        console.log('Knowledge base loaded:', knowledgeBase.length, 'documents');
-
-        if (knowledgeBase.length === 0) {
-            displayResults([], 'No documents in knowledge base');
-        } else {
+    async function performSearch() {
+        const query = document.getElementById('searchInput').value.trim();
+        if (!isKnowledgeBaseLoaded) {
+            displayResults([], 'Knowledge base is still loading...');
+            return;
+        }
+        if (query.length < 2) {
             displayResults([]);
+            return;
         }
-    } catch (error) {
-        console.error('Error loading knowledge base:', error);
-        knowledgeBase = [];
-        isKnowledgeBaseLoaded = true;
-        displayResults([], 'Error loading knowledge base');
-    }
-}
 
-async function performSearch() {
-    const query = document.getElementById('searchInput').value.trim();
-
-    if (!isKnowledgeBaseLoaded) {
-        displayResults([], 'Knowledge base is still loading...');
-        return;
-    }
-
-    if (query.length < 2) {
-        displayResults([]);
-        return;
-    }
-
-    console.log('Searching for:', query);
-
-    try {
-        let results = [];
-
-        if (window.appConfig.localMode) {
-            const response = await fetch(`${window.appConfig.localApiUrl}/search`, {
-                method: 'POST',
-                headers: window.appConfig.getHeaders(),
-                body: JSON.stringify({ query })
-            });
-
-            const data = await response.json();
-            results = data.results || [];
-        } else {
-            const { data, error } = await supabaseClient
-                .rpc('search_documents', {
+        try {
+            let results = [];
+            if (window.appConfig.localMode) {
+                const response = await fetch(`${window.appConfig.localApiUrl}/search`, {
+                    method: 'POST',
+                    headers: window.appConfig.getHeaders(),
+                    body: JSON.stringify({ query })
+                });
+                const data = await response.json();
+                results = data.results || [];
+            } else {
+                const { data, error } = await supabaseClient.rpc('search_documents', {
                     search_query: query,
                     p_app_name: window.appConfig.appName
                 });
-
-            if (error) {
-                console.error('Supabase search error:', error);
-                throw error;
+                if (error) throw error;
+                results = data || [];
+                supabaseClient.from('search_logs').insert({ app_name: window.appConfig.appName, query: query.trim() });
+                if (results.length === 0) {
+                    supabaseClient.rpc('increment_unanswered_count', {
+                        p_question: query.trim(),
+                        p_agent: currentUser.email,
+                        p_app_name: window.appConfig.appName
+                    });
+                }
             }
-
-            results = data || [];
-
-            supabaseClient.from('search_logs').insert({
-                app_name: window.appConfig.appName,
-                query: query.trim()
-            }).then(({ error: logErr }) => { if (logErr) console.warn('Search log insert failed:', logErr); });
-
-            if (results.length === 0) {
-                supabaseClient.rpc('increment_unanswered_count', {
-                    p_question: query.trim(),
-                    p_agent: 'unknown',
-                    p_app_name: window.appConfig.appName
-                }).then(({ error: uErr }) => { if (uErr) console.warn('Unanswered log failed:', uErr); });
-            }
+            displayResults(results, query);
+        } catch (error) {
+            displayResults([], 'Search error occurred. Please try again.');
         }
-
-        console.log('Search returned:', results.length, 'results');
-        displayResults(results, query);
-    } catch (error) {
-        console.error('Search error:', error);
-        displayResults([], 'Search error occurred. Please try again.');
-    }
-}
-
-function quickSearch(query) {
-    document.getElementById('searchInput').value = query;
-    performSearch();
-}
-
-function displayResults(results, query = '') {
-    const resultsContainer = document.getElementById('searchResults');
-
-    if (results.length === 0) {
-        let message = '';
-        if (query && query !== 'No documents in knowledge base' && query !== 'Error loading knowledge base' && query !== 'Knowledge base is still loading...') {
-            message = `No results found for "${query}". Try different keywords or use one of the guided shortcuts above.`;
-        } else if (query) {
-            message = query;
-        }
-
-        resultsContainer.innerHTML = message ? `
-            <div class="no-results">
-                ${message}
-            </div>
-        ` : '';
-        return;
     }
 
-    const resultsHTML = results.map(result => {
-        let highlightedContent = result.content
-            .replace(/\s+/g, ' ')
-            .replace(/\. /g, '. <br>')
-            .replace(/: /g, ': <br>')
-            .replace(/(\d+\)) /g, '<br>$1 ');
-
-        if (query && query.length > 1) {
-            const stopWords = [
-                'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with',
-                'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had',
-                'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might',
-                'must', 'can', 'shall', 'this', 'that', 'these', 'those', 'a', 'an',
-                'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them',
-                'name', 'what', 'how', 'when', 'where', 'why', 'who'
-            ];
-
-            const meaningfulWords = query.split(' ')
-                .filter(word => word.length > 3)
-                .filter(word => !stopWords.includes(word.toLowerCase()))
-                .filter(word => word.match(/^[a-zA-Z]+$/));
-
-            meaningfulWords.forEach(word => {
-                const regex = new RegExp(`\\b(${word})\\b`, 'gi');
-                highlightedContent = highlightedContent.replace(regex, '<span class="highlight">$1</span>');
-            });
-        }
-
-        return `
-            <article class="result-card">
-                <div class="result-topline">
-                    <div class="result-title">${result.title}</div>
-                    <div class="result-source">Source: ${result.source}</div>
-                </div>
-                <div class="result-content">${highlightedContent}</div>
-            </article>
-        `;
-    }).join('');
-
-    resultsContainer.innerHTML = `<div class="results-stack">${resultsHTML}</div>`;
-}
-
-function handleKeyPress(event) {
-    if (event.key === 'Enter') {
+    function quickSearch(query) {
+        document.getElementById('searchInput').value = query;
         performSearch();
     }
+
+    function displayResults(results, query = '') {
+        const resultsContainer = document.getElementById('searchResults');
+        if (results.length === 0) {
+            let message = '';
+            if (query && query !== 'No documents in knowledge base' && query !== 'Error loading knowledge base' && query !== 'Knowledge base is still loading...') {
+                message = `No results found for "${query}". Try different keywords or use one of the guided shortcuts above.`;
+            } else if (query) {
+                message = query;
+            }
+            resultsContainer.innerHTML = message ? `<div class="no-results">${message}</div>` : '';
+            return;
+        }
+
+        const stopWords = ['the','and','or','but','in','on','at','to','for','of','with','by','is','are','was','were','be','been','have','has','had','do','does','did','will','would','could','should','may','might','must','can','shall','this','that','these','those','a','an','i','you','he','she','it','we','they','me','him','her','us','them','name','what','how','when','where','why','who'];
+        const resultsHTML = results.map((result) => {
+            let highlightedContent = result.content.replace(/\s+/g, ' ').replace(/\. /g, '. <br>').replace(/: /g, ': <br>').replace(/(\d+\)) /g, '<br>$1 ');
+            if (query && query.length > 1) {
+                const meaningfulWords = query.split(' ').filter((word) => word.length > 3).filter((word) => !stopWords.includes(word.toLowerCase())).filter((word) => word.match(/^[a-zA-Z]+$/));
+                meaningfulWords.forEach((word) => {
+                    const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+                    highlightedContent = highlightedContent.replace(regex, '<span class="highlight">$1</span>');
+                });
+            }
+            return `<article class="result-card"><div class="result-topline"><div class="result-title">${result.title}</div><div class="result-source">Source: ${result.source}</div></div><div class="result-content">${highlightedContent}</div></article>`;
+        }).join('');
+        resultsContainer.innerHTML = `<div class="results-stack">${resultsHTML}</div>`;
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            performSearch();
+        }
+    }
+
+    window.performSearch = performSearch;
+    window.quickSearch = quickSearch;
+    window.handleKeyPress = handleKeyPress;
+
+    document.addEventListener('DOMContentLoaded', loadKnowledgeBase);
+    displayResults([], 'Loading knowledge base...');
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    loadKnowledgeBase();
-});
-
-displayResults([], 'Loading knowledge base...');
     </script>
 </body>
 </html>
