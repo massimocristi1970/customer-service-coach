@@ -411,7 +411,10 @@ if (currentUser) {
         questions.forEach((q) => {
             const questionElement = document.createElement('div');
             questionElement.className = 'unanswered-item';
-            questionElement.innerHTML = `<div class="unanswered-row"><div><div class="unanswered-question">"${q.question}"</div><div class="unanswered-meta">Asked ${q.count} time(s) | Last asked: ${new Date(q.lastAsked).toLocaleDateString()}</div></div><div class="unanswered-actions"><button class="btn btn-complete" onclick="completeUnansweredQuestion(${JSON.stringify(q.question)})">Complete</button></div></div>`;
+            questionElement.innerHTML = `<div class="unanswered-row"><div><div class="unanswered-question">"${q.question}"</div><div class="unanswered-meta">Asked ${q.count} time(s) | Last asked: ${new Date(q.lastAsked).toLocaleDateString()}</div></div><div class="unanswered-actions"><button class="btn btn-complete" type="button">Complete</button></div></div>`;
+            questionElement.querySelector('.btn-complete').addEventListener('click', function () {
+                completeUnansweredQuestion(q.question);
+            });
             container.appendChild(questionElement);
         });
     }
@@ -439,3 +442,4 @@ if (currentUser) {
     </script>
 </body>
 </html>
+
