@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-03-20T18:54:11.802Z",
+  "source_repo": "customer-service-coach",
+  "package_name": "ai-agent-knowledge-pack",
+  "document_count": 92,
+  "files": [
+    "README.md",
+    "ai-agent-vendor-brief.md",
+    "review-notes.md",
+    "knowledge-base-documents.json",
+    "knowledge-base-documents.jsonl",
+    "knowledge-base-documents.csv",
+    "taxonomy-summary.json"
+  ]
+}

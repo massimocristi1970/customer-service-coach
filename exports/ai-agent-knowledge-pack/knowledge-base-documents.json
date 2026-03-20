@@ -1,0 +1,1795 @@
+[
+  {
+    "export_id": 1,
+    "id": 1750961349597,
+    "title": "What should I do if the e-sign link shows an error?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "e-sign",
+      "error",
+      "application completed",
+      "card declined",
+      "underwriting",
+      "cache",
+      "portal"
+    ],
+    "content": "Check the account stage first:\n•\tIf at \"Application Completed\": The customer must authorize their debit card via the online portal at www.ticktockloans.com\n•\tIf at \"Card Declined\": They need to reattempt verification via the portal\n•\tIf at \"Underwriting\": The application is under review\n•\tIf still at \"e-sign\": Test the link. If the issue persists, ask the customer to clear their cache and try again. Escalate with a screenshot if necessary.\n",
+    "last_updated": "2025-07-03"
+  },
+  {
+    "export_id": 2,
+    "id": 1751036537838,
+    "title": "What happens if the first repayment date is within a few days of the application date?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "first repayment date",
+      "payday",
+      "daily interest",
+      "0.8%",
+      "principal"
+    ],
+    "content": "You can select the customer's following payday; however, you must inform them of the additional cost, as daily interest will accrue during this period at a rate of 0.8% of the outstanding principal per day.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 3,
+    "id": 1751036573919,
+    "title": "What if the customer has no additional income?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "additional income",
+      "£00.00",
+      "application",
+      "field"
+    ],
+    "content": "They must still enter £00.00 in the additional income field, otherwise they will not be able to proceed with the application.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 4,
+    "id": 1751036770778,
+    "title": "Customer Portal & Login Issues",
+    "category": "customer-portal",
+    "category_label": "Customer Portal & Login Issues",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "password reset",
+      "forgot password",
+      "email",
+      "surname",
+      "CRM",
+      "reset",
+      "password",
+      "how do I request"
+    ],
+    "content": "Go to www.ticktockloans.com, click 'Forgot Password,' and enter their email and surname exactly as it appears in CRM.",
+    "last_updated": "2025-08-08"
+  },
+  {
+    "export_id": 5,
+    "id": 1751036929355,
+    "title": "What causes login issues after a password reset?",
+    "category": "customer-portal",
+    "category_label": "Customer Portal & Login Issues",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "login issues",
+      "password reset",
+      "spaces",
+      "case sensitivity",
+      "copy paste"
+    ],
+    "content": "Usually due to extra spaces or case sensitivity in the email or password. Ask the customer to copy and paste the password from our email into the login page.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 6,
+    "id": 1751036959495,
+    "title": "What should I do if the 'My Card' section is missing in the portal?",
+    "category": "customer-portal",
+    "category_label": "Customer Portal & Login Issues",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "My Card",
+      "missing",
+      "portal",
+      "refresh page"
+    ],
+    "content": "Ask the customer to refresh the page—it should appear afterward.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 7,
+    "id": 1751037008160,
+    "title": "When can a customer be rolled back from Collections to Funds Sent?",
+    "category": "collections-account",
+    "category_label": "Collections & Account Status Management",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "rollback",
+      "collections",
+      "funds sent",
+      "missed payment",
+      "arrangement"
+    ],
+    "content": "If they make the missed payment or set up a new arrangement.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 8,
+    "id": 1751037035721,
+    "title": "When should a customer be moved from Collections to a Payment Plan?",
+    "category": "collections-account",
+    "category_label": "Collections & Account Status Management",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "collections",
+      "payment plan",
+      "M0",
+      "M1",
+      "M2",
+      "DMC",
+      "hold",
+      "arrangement"
+    ],
+    "content": "If they make a payment or set up an arrangement while in M0, M1, M2, DMC, or Hold stages.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 9,
+    "id": 1751037077719,
+    "title": "What types of schedules are available?",
+    "category": "payment-plans",
+    "category_label": "Payment Plans & Scheduling",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "payplan",
+      "amounts",
+      "duration",
+      "fixed monthly payments",
+      "months"
+    ],
+    "content": "Payplan by Amounts (fixed monthly payments)\nPayplan by Duration (based on number of months)\n",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 10,
+    "id": 1751038559545,
+    "title": "What payment methods can be used in a new schedule?",
+    "category": "payment-plans",
+    "category_label": "Payment Plans & Scheduling",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "payment methods",
+      "manual",
+      "phone",
+      "bank transfer",
+      "card",
+      "CPA"
+    ],
+    "content": "Manual (via phone or bank transfer) or Card (CPA payments).",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 11,
+    "id": 1751038626722,
+    "title": "What details must be entered for a new payment plan?",
+    "category": "payment-plans",
+    "category_label": "Payment Plans & Scheduling",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "payment plan",
+      "repayment method",
+      "amount",
+      "payments",
+      "date",
+      "frequency",
+      "interest"
+    ],
+    "content": "Repayment method, amount (£) or number of payments, first payment date, payment frequency, and interest settings.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 12,
+    "id": 1751038665795,
+    "title": "Can the first or second payment in a plan be adjusted?",
+    "category": "payment-plans",
+    "category_label": "Payment Plans & Scheduling",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "first payment",
+      "second payment",
+      "adjust",
+      "additional info",
+      "schedule setup"
+    ],
+    "content": "Yes, this can be done via the 'Additional Info' section during schedule setup.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 13,
+    "id": 1751038722035,
+    "title": "When should interest continue during a payment plan?",
+    "category": "payment-plans",
+    "category_label": "Payment Plans & Scheduling",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "interest",
+      "payment plan",
+      "price cap"
+    ],
+    "content": "Only if the price CAP has not yet been reached.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 14,
+    "id": 1751038751160,
+    "title": "How does a customer evidence their income?",
+    "category": "income-evidence",
+    "category_label": "Income Evidence & Verification",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "evidence income",
+      "payslip",
+      "bank statement",
+      "salary credits",
+      "30 days"
+    ],
+    "content": "By sending their most recent payslip or a bank statement showing salary credits within the last 30 days.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 15,
+    "id": 1751039987498,
+    "title": "The customer says they've never had to provide proof of income before. What should I say?",
+    "category": "income-evidence",
+    "category_label": "Income Evidence & Verification",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "proof of income",
+      "repeat lending policy",
+      "income verification",
+      "application"
+    ],
+    "content": "Explain that, in line with our repeat lending policy, income verification is required. Without this, we cannot proceed with the application.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 16,
+    "id": 1751040106440,
+    "title": "What email should I send when asking a customer to evidence income?",
+    "category": "income-evidence",
+    "category_label": "Income Evidence & Verification",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "email ID 62",
+      "payslip",
+      "bank statement",
+      "email dropdown"
+    ],
+    "content": "Use Email ID 62 -- Payslip / Bank Statement email. Type this into the email dropdown—it will appear at the top.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 17,
+    "id": 1751040143144,
+    "title": "What happens if the \"Open Banking\" task doesn't raise after the customer signs up with Plaid?",
+    "category": "income-evidence",
+    "category_label": "Income Evidence & Verification",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "open banking",
+      "task",
+      "Plaid",
+      "bank statement",
+      "30 days"
+    ],
+    "content": "Walk them through the process on the phone. Allow a minute for the task to generate. If it still doesn't appear, ask them to send in a bank statement covering the last 30 days.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 18,
+    "id": 1751040177989,
+    "title": "Can I confirm the SMS code over the phone?",
+    "category": "security-verification",
+    "category_label": "Security, Verification & Data Requests",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "SMS code",
+      "phone",
+      "mobile number",
+      "record"
+    ],
+    "content": "Yes, but only if the customer is calling from the mobile number on record",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 19,
+    "id": 1751040205972,
+    "title": "Can I confirm the email code over the phone?",
+    "category": "security-verification",
+    "category_label": "Security, Verification & Data Requests",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "email code",
+      "phone",
+      "two-step verification",
+      "bypass"
+    ],
+    "content": "No. The customer must access the email themselves. This is part of our two-step verification and must not be bypassed.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 20,
+    "id": 1751040249121,
+    "title": "Can I stay on the call while the customer agrees to the credit agreement?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "call",
+      "credit agreement",
+      "regulatory documents",
+      "remain"
+    ],
+    "content": "No. You must not remain on the call while the customer reads and agrees to the credit agreement and regulatory documents.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 21,
+    "id": 1751040298151,
+    "title": "What is the Right to Withdraw (RTW) process?",
+    "category": "right-to-withdraw",
+    "category_label": "Right to Withdraw (RTW)",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "right to withdraw",
+      "RTW",
+      "14 days",
+      "funded",
+      "30 days",
+      "daily interest",
+      "0.8%",
+      "principal",
+      "credit file"
+    ],
+    "content": "The customer can withdraw from the agreement within 14 days of the loan being funded. This period begins the day after the loan is funded. Once a customer has withdrawn, they have 30 days to repay the balance. This balance will accrue daily interest at a rate of 0.8% per day, based on the outstanding principal.\nYou should set a repayment date within the 30-day period via the Accounts tab in the Schedule section. Once the loan has been settled, raise a \"Customer Service -- Withdrawal from Agreement\" task. After full RTW compliance, the loan entry will be removed from the customer's credit file with the credit reference agencies.\n",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 22,
+    "id": 1751040375413,
+    "title": "I've received the transaction response: \"Transaction Success\" -- what does this mean?",
+    "category": "transaction-responses",
+    "category_label": "Transaction Responses & Payment Issues",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "transaction success",
+      "payment",
+      "verification",
+      "successful"
+    ],
+    "content": "This means that the transaction verification or payment was successful. Either the payment has been taken, or the verification has completed as expected.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 23,
+    "id": 1751040418717,
+    "title": "I've received the transaction response: \"Transaction declined by authorization system\" -- what does this mean?",
+    "category": "transaction-responses",
+    "category_label": "Transaction Responses & Payment Issues",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "transaction declined",
+      "authorization system",
+      "R1",
+      "revocation",
+      "recurring payments",
+      "VISA"
+    ],
+    "content": "This typically refers to R1: Revocation of Authorisation, meaning the cardholder has requested to stop all recurring payment transactions. You should contact the customer to confirm whether they have cancelled all transactions. This response applies to VISA ",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 24,
+    "id": 1751040508543,
+    "title": "The customer says the application was made fraudulently and not by them. What should I do?",
+    "category": "fraud-disputes",
+    "category_label": "Fraud & Disputes",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "fraudulent application",
+      "bank details",
+      "investigation",
+      "bank letter",
+      "reimbursement"
+    ],
+    "content": "When taking the initial details of an alleged fraudulent application, make sure to record the following information on the system:\n•\tContact telephone number\n•\tEmail address\n•\tWhether they recognise or hold the current bank details on the account\nIf the customer does not recognise the bank account, advise them to report it to their bank and request an investigation into how the account was opened in their name. We will need a copy of the letter the bank issues once their investigation is complete before we can consider closing the account.\nIf the bank account does belong to the customer, we will still require written confirmation from the bank stating that fraudulent transactions occurred and were investigated. In such cases, we expect the bank to reimburse the customer, who can then return the funds to us. We will also require a letter from the bank in order to write off any remaining interest.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 25,
+    "id": 1751040657310,
+    "title": "What is the Debt Respite Scheme?",
+    "category": "debt-respite",
+    "category_label": "Debt Respite Scheme / Breathing Space",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "debt respite scheme",
+      "breathing space",
+      "60 days",
+      "mental health",
+      "protection",
+      "creditors"
+    ],
+    "content": "The Debt Respite Scheme, also known as Breathing Space, is a UK government initiative that offers individuals temporary protection from creditors while they seek debt advice or mental health treatment.\nThere are two types:\n•\tStandard Breathing Space -- lasts for 60 days\n•\tMental Health Crisis Breathing Space -- lasts for the duration of the treatment, plus an additional 30 days, even if this exceeds 60 days\n",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 26,
+    "id": 1751040722098,
+    "title": "What stage should I use for an account under the Debt Respite Scheme?",
+    "category": "debt-respite",
+    "category_label": "Debt Respite Scheme / Breathing Space",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "breathing space",
+      "on hold",
+      "2 months",
+      "vulnerable customer",
+      "60 days",
+      "insolvency service"
+    ],
+    "content": "Use On Hold -- 2 Months for a standard breathing space\nUse On Hold -- Vulnerable Customer for a Mental Health breathing space\n\nIn both cases, make sure to add a task to review the account in 60 days. The Insolvency Service typically informs us when the hold expires.\n",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 27,
+    "id": 1751040759205,
+    "title": "Is interest added while the account is in Breathing Space?",
+    "category": "debt-respite",
+    "category_label": "Debt Respite Scheme / Breathing Space",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "interest",
+      "breathing space",
+      "frozen",
+      "fees",
+      "charges"
+    ],
+    "content": "No. Interest, fees, and charges are frozen while the account is in Breathing Space.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 28,
+    "id": 1751040823941,
+    "title": "Customer has joined a debt management company---what info do I need?",
+    "category": "debt-management",
+    "category_label": "Debt Management Companies (DMC)",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "debt management company",
+      "DMC",
+      "reference number",
+      "date joined"
+    ],
+    "content": "The name of the DMC, reference number, and the date they joined.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 29,
+    "id": 1751040865126,
+    "title": "What stage should I move an account to if the customer joins a DMC?",
+    "category": "debt-management",
+    "category_label": "Debt Management Companies (DMC)",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "DMC",
+      "on hold",
+      "debt management"
+    ],
+    "content": "Move the account to \"On Hold -- Debt Management.\"",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 30,
+    "id": 1751040897543,
+    "title": "Do I need to send the customer a \"Repaid\" email once the balance is cleared?",
+    "category": "system-email",
+    "category_label": "System Stages & Email Management",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "repaid email",
+      "balance cleared",
+      "automatic",
+      "zero balance"
+    ],
+    "content": "No. The system automatically sends this when the balance reaches zero.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 31,
+    "id": 1751040936631,
+    "title": "What should I check before saving a payment plan?",
+    "category": "payment-plans",
+    "category_label": "Payment Plans & Scheduling",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "payment plan",
+      "check information",
+      "save",
+      "confirm",
+      "customer"
+    ],
+    "content": "Double-check all entered information, then save and confirm details with the customer.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 32,
+    "id": 1751040989514,
+    "title": "What should I do if a customer's portal isn't updating properly?",
+    "category": "customer-portal",
+    "category_label": "Customer Portal & Login Issues",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "portal",
+      "updating",
+      "refresh page",
+      "different browser"
+    ],
+    "content": "Ask them to refresh the page or try using a different browser.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 33,
+    "id": 1751041076722,
+    "title": "What are the contact details for Tick Tock Loans?",
+    "category": "contact-information",
+    "category_label": "Contact Information",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "contact details",
+      "phone",
+      "address",
+      "email",
+      "customer service",
+      "collections",
+      "complaints",
+      "underwriting"
+    ],
+    "content": "•\tPhone: 020 8090 8340\n•\tAddress: 7 Berley Crescent, Gravesend, DA12 2AH\n•\tWebsite: www.ticktockloans.com\nEmail Addresses:\nCustomer Service: customerservice@ticktockloans.com\nCollections: collections@ticktockloans.com\nComplaints: complaints@ticktockloans.com\nUnderwriting: underwriting@ticktockloans.com\n",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 34,
+    "id": 1751041112505,
+    "title": "What are the contact details for Tick Tock Advance (MCA Product)?",
+    "category": "contact-information",
+    "category_label": "Contact Information",
+    "section": "Manual Entry",
+    "source": "Tick Tock Loans Knowledge Base v1",
+    "keywords": [
+      "tick tock advance",
+      "MCA",
+      "website",
+      "phone",
+      "email"
+    ],
+    "content": "Website: www.ticktockcredit.co.uk\nPhone: 020 3838 2148\nEmail: customerservice@ticktockcredit.co.uk\n",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 35,
+    "id": 1751041259455,
+    "title": "Right to Withdraw (RTW) Process",
+    "category": "right-to-withdraw",
+    "category_label": "Right to Withdraw (RTW)",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Withdraw",
+      "RTW",
+      "right to withdraw",
+      "cancellation",
+      "cancel loan",
+      "cancel agreement",
+      "opt out",
+      "14-day rule",
+      "14 days",
+      "fourteen days",
+      "exit agreement",
+      "cooling-off period",
+      "loan withdrawal",
+      "customer wants to cancel",
+      "agreement withdrawal",
+      "stop loan",
+      "terminate agreement",
+      "ends loan",
+      "cancels loan",
+      "wishes to withdraw",
+      "no longer wants loan"
+    ],
+    "content": "If a customer wishes to withdraw from their loan agreement, they must inform us within 14 days of the loan being funded. This 14-day period starts the day after the loan is funded.\nThe customer can notify us of their intention to withdraw either verbally or in writing.\nThe customer has 30 days from the date they notify us of their intention to withdraw to repay:\nThe amount borrowed, plus\nThe daily interest accrued up to the date the repayment is made.\nAsk the customer to confirm the exact date they intend to make the repayment.\nCreate a new payment schedule for that date.\nSet yourself a follow-up task on the same date to check whether the payment was made and follow up if necessary.\nIf the Customer Can’t Confirm a Date schedule the repayment for the 30th day after the withdrawal notification.\nIf the customer is unhappy with a card payment being scheduled, switch the payment method to bank transfer to avoid automated card collection attempts.\nThe balance will remain due, and the customer will continue to receive payment reminders as part of the usual communication cycle. If unpaid, the account will flow into the standard collections strategy.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 36,
+    "id": 1751041473940,
+    "title": "Interest Query",
+    "category": "transaction-responses",
+    "category_label": "Transaction Responses & Payment Issues",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Interest",
+      "daily interest",
+      "%",
+      "percentage",
+      "interest rate",
+      "charged interest",
+      "how much interest",
+      "contractual interest",
+      "calculate interest",
+      "work out interest",
+      "interest amount",
+      "arrears interest",
+      "quote interest",
+      "interest quote",
+      "interest query",
+      "interest calculation",
+      "total interest",
+      "cost of interest",
+      "breakdown of interest",
+      "accrued interest",
+      "what is the interest",
+      "interest explained",
+      "interest charge",
+      "interest fees",
+      "why charged interest",
+      "interest on loan",
+      "interest figure",
+      "interest applied",
+      "interest query help",
+      "customer asking about interest",
+      "interest per day",
+      "how interest works"
+    ],
+    "content": "Process Overview\n\nRefer to the customer’s original loan schedule and explain the Total Amount Payable (TAP) they agreed to at the start of their loan.\nLet them know that this amount reflects what they would repay if all payments were made on time, with no changes to their repayment dates.\nIf the TAP has increased due to changes in payment behaviour, explain why:\nInterest accrues daily at a rate of 0.8% on the outstanding principal.\nAny missed payments, changes in payday, or reduced payments may lead to an increase in the total interest charged.\nReassure them that interest is capped at 100% of the amount borrowed — this is a rule set by our regulator, the Financial Conduct Authority (FCA).\nHelp the customer understand how they can reduce their interest:\n\nThe more they pay, the less interest is charged, as the balance decreases.\nEven nominal payments (small amounts) can help reduce the interest if made within the interest-charging period.\nIf the customer expresses frustration (e.g., “You’re ripping me off” or “You’re like loan sharks”), respond calmly and clearly:\n\nWe are a regulated lender, authorised by the FCA.\nWe follow all legal rules on interest and have clearly outlined the terms in the agreement the customer signed.\nWe do not charge more than the 100% cap, and customers have control over how much interest builds up by making timely or early payments.\nOffer to help them explore ways to settle early or reduce their repayment burden.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 37,
+    "id": 1751041521722,
+    "title": "Fraud Process",
+    "category": "fraud-disputes",
+    "category_label": "Fraud & Disputes",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Fraud",
+      "suspected fraud",
+      "confirmed fraud",
+      "fraudulent",
+      "fraud alert",
+      "fraud team",
+      "fraud department",
+      "fraud process",
+      "report fraud",
+      "fraud claim",
+      "fraudulent transactions",
+      "unauthorised transactions",
+      "scam",
+      "scam activity",
+      "identity theft",
+      "account hacked",
+      "account compromised",
+      "fraud investigation",
+      "fraud check",
+      "fraud complaint",
+      "card blocked",
+      "card compromised",
+      "stolen card",
+      "fraudster",
+      "impersonation",
+      "police report",
+      "Police",
+      "crime report",
+      "crime reference number",
+      "CRN",
+      "action fraud",
+      "notice of correction",
+      "NOC",
+      "CIFAS",
+      "report to police",
+      "fraud escalation",
+      "fraud refund",
+      "fraud steps",
+      "fraud query",
+      "possible fraud",
+      "transaction not mine",
+      "not the customer",
+      "someone used."
+    ],
+    "content": "Process Overview:\n\nCustomer confirms that the bank details are not theirs:\n\nIf a customer contacts us to say they didn’t apply for the loan — often after receiving a default notice or spotting it on their credit file — follow these steps:\nVerify Identity & Cross-Check Details\nAsk the customer to confirm their full name, email address, contact number, and bank account details.\nCompare these to what’s recorded on the account.\nOutcome Based on Matching Details\nIf the email, phone number, and bank details match:\nThis likely indicates the customer, or someone close to them, made the application.\nThe customer would usually remain liable.\nIf you’re uncertain, escalate to the Fraud Specialist – Zoe Quick.\nIf any details do not match, especially the bank details:\nRecord the customer's correct contact details in the system for follow-up.\nAdvise the customer to report the loan as fraudulent to the bank used on the application.\nThe bank must investigate and provide a written response confirming the findings.\nHold the Account\nPlace the account on hold for 30 days while waiting for bank confirmation.\nAfter 30 days or upon receipt of the bank’s response, escalate to Zoe Quick for fraud investigation.\nCustomer Confirms All Details Are Correct – But Denies Applying\n\nIf the customer confirms that all details on the loan are correct, but insists they didn’t apply:\nAdvise Immediate External Reporting\nInstruct the customer to report the incident to:\nTheir bank\nAction Fraud\nThe police (to obtain a crime reference number)\nRequest Supporting Evidence\nWe require a letter from the bank confirming that the loan funds were deposited and withdrawn by a third party without the customer’s consent.\nThis confirmation must be in writing and clearly state that the transaction was fraudulent.\nFraud Outcome Handling\n\nOnce confirmed in writing:\nThe customer will be expected to repay the original loan amount (principal), since the funds were received.\nThe business will then write off any interest that accrued.\nThis aligns with our policy where fraud is proven and funds are reimbursed by the bank.",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 38,
+    "id": 1751043142284,
+    "title": "Breathing Space Workflow",
+    "category": "debt-respite",
+    "category_label": "Debt Respite Scheme / Breathing Space",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "breathing space",
+      "financial hardship",
+      "vulnerable customer",
+      "vulnerability specialist",
+      "Zoe Quick",
+      "mental health",
+      "physical health",
+      "suicide",
+      "self-harm",
+      "bereavement",
+      "caregiver",
+      "income expenditure form",
+      "I&E",
+      "collections hold",
+      "14 days",
+      "evidence request",
+      "financial vulnerability",
+      "breathing space review",
+      "chaser email",
+      "hold expired",
+      "arrears flow",
+      "on hold pending evidence",
+      "vulnerability flag",
+      "line manager referral",
+      "health conditions",
+      "hospitalization",
+      "medical treatment",
+      "family member involvement",
+      "collections activities pause",
+      "repayment plan",
+      "financial stability"
+    ],
+    "content": "Step 1: Identify Eligibility for Breathing Space\nTrigger Event: \n•\tConsider breathing space if a customer discloses financial hardship, or is identified, or discloses as vulnerable.\nInitial Assessment: \n•\tReview the customer's circumstances to determine if breathing space is suitable. Serious vulnerabilities, particularly health or mental health concerns, should be assigned to the Vulnerability Specialist (VS) - Zoe Quick.\nTriggers for Referral to  Vulnerability Specialist (VS)\nPlease note: If the customer displays any of the following triggers, please note the account and assign to the Vulnerability Specialist. If the customer does not display any of the triggers below, then continue to step 2\nDirect Disclosure of Health Conditions\n•\tThe customer mentions a diagnosed mental health or physical health condition (e.g., depression, anxiety, cancer) that affects their ability to manage finances or respond to communications.\n•\tThey discuss ongoing medical treatment or challenges that may impact their financial stability.\nMentions of Suicide or Self-Harm\n•\tIf a customer mentions suicide, self-harm, or hints at thoughts of ending their life,\nReferences to Significant Health Events\n•\tThey mention a recent major health event, such as surgery, hospitalisation, or a new serious diagnosis, impacting their ability to meet financial obligations.\n•\tStatements like “I just got out of the hospital” or “I’ve been dealing with a serious health issue” can serve as indicators.\nBereavement\n•\tThe customer mentions experiencing the recent loss of a loved one, which could impact their emotional and financial stability.\n•\tStatements like “I’m struggling after the loss of [family member]” or “I’ve just lost someone close to me” are strong indicators of vulnerability.\nFamily or Caregiver Involvement\n•\tA family member or caregiver emails on behalf of the customer, explaining that the customer has health or cognitive issues affecting their ability to manage the account.\n•\tThe customer mentions they need someone’s help due to health-related challenges, signalling potential vulnerability.\nStep 2 : Implement and Monitor Breathing Space\nIncome and Expenditure Form:\n•\tSend  a copy of the income and expenditure form to the customer at the start of the 14-day hold.\n•\tRequest evidence, where appropriate,  of any change in circumstances (e.g., job loss, reduced income).\nHold Collections Activities: \n•\tPause collections activities for the initial 14-day breathing space period and move the account to a new stage labelled \" On Hold - Pending Evidence”\nCustomer Communication: \n•\tSend  confirmation Email - Account on Hold for 14 Days with Request for Evidence and I&E Completion or Email - Account on Hold for 14 Days with Request to Complete I&E Only (as appropriate) to the customer confirming they are in a hold stage and set a follow-up date for the 14-day review. \nStep 3: Review and Extend if Necessary\t\nBreathing Space Review: \n•\tBefore the end of the initial 14-day period, assess the customer’s financial situation based on the income and expenditure form and any additional evidence provided. \n•\tNote: If at this stage the customer is deemed to be financially vulnerable, then please refer the account to a line manager who will determine whether or not a vulnerability flag should be added to the account\nFollow-Up for Unreturned Forms: \n•\tIf the customer has not returned their income and expenditure form within the 14 days, contact them to remind them of the request, send  Chaser Email for Evidence and I&E Request or Chaser Email for I&E Completion Only (as appropriate) . Provide an additional 14 days for them to return the form. Send a second chaser email at 21 days Second Chaser Email for Evidence and I&E Request (Sent at 21 Days) or Second Chaser Email for I&E Completion Only (Sent at 21 Days)\nStep 4: Closure\nEnd Breathing Space:\n•\tIf the customer’s financial position has improved or a repayment plan can be agreed based the income and expenditure provided by the customer conclude the breathing space period, move the account out of the \" On Hold - Pending Evidence \" stage, and outline next steps for resuming payments.\nUnreturned Income and Expenditure: \n•\tIf the requested completed income and expenditure form or evidence of change in circumstances is not received within the extended 14-day period, return the account to the normal collections workflow and send Email - Hold Expired, Account Returning to Arrears Flow to the customer advising that the breathing space period has ended.\n",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 39,
+    "id": 1751043291614,
+    "title": "Breathing Space Workflow - Health or Mental Health",
+    "category": "debt-respite",
+    "category_label": "Debt Respite Scheme / Breathing Space",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "mental health vulnerability",
+      "health vulnerable",
+      "mental health professional",
+      "mental health issue",
+      "serious mental health cases",
+      "debt mental health evidence form",
+      "DMHEF",
+      "vulnerable customer",
+      "vulnerability specialist",
+      "health conditions",
+      "mental health support",
+      "mental health assessment",
+      "continued vulnerability assessment"
+    ],
+    "content": "Step 1: Identify Eligibility for Breathing Space\nTrigger Event: \n•\tCustomer discloses is identified or discloses as health or mental health vulnerable.\nStep 2 : Implement and Monitor Breathing Space\nDebt and Mental Health Evidence Form: For cases indicating mental health vulnerability:\n•\tVulnerability Specialist (VS) completes a Vulnerable Customer Risk Identification Checklist (Appendix A)\n•\tSend  a copy of the Debt and Mental Health Evidence Form (DMHEF) – (Appendix B) and Debt and Mental Health Evidence Form Consent (Appendix C)  for the customers mental health professional to complete.\n•\tSend a copy of the income and expenditure form for the customer to complete. \n•\tRequest any other evidence, where appropriate,  of any change in circumstances (e.g., job loss, reduced income).\n•\t. Send email 86 – Mental Health Issue Vulnerable Customer\nHold Collections Activities: \n•\tApply an initial  30-day hold which will pause all collections activities and move the account to a new stage labelled \"Stage: On Hold - Vulnerable.\"\nCustomer Communication: \n•\tSend “Breathing Space” Send email 86 – Mental Health Issue Vulnerable Customer to the customer confirming they are in the breathing space stage and set a follow-up date for the 30-day review.\nStep 3: Review and Extend if Necessary\nBreathing Space Review: \n•\tBefore the end of the initial 30-day period, assess the customer’s situation based on the DMHEF,  income and expenditure form and any additional evidence provided. \nFollow-Up for Unreturned Forms: \n•\tIf the customer has not returned their income and expenditure form within the 30 days, contact them to remind them of the request. Send  30-Day Chaser Email - Reminder – Supporting Information Needed for Your Account.  Provide an additional 30 days for them to return the information. Send a second chaser email at 45 days 45-Day Chaser Email - Final Reminder – Supporting Information Needed to Continue Account Hold Continued Vulnerability Assessment: \n•\tThe Vulnerability Specialist will reassess serious mental health cases to determine if additional support (such as an extended forbearance plan, write off) is needed.\nStep 4: Closure\nEnd Breathing Space:\n•\tIf the customer’s position has improved, conclude the breathing space period, move the account out of the \" Stage: On Hold - Vulnerable \" stage, and outline next steps for resuming payments.\nUnreturned Income and Expenditure: \n•\tIf the requested completed income and expenditure form or evidence of change in circumstances is not received within the extended 30-day period, return the account to the normal collections workflow and send email 163 - Breathing Space Expiry to the customer advising that the breathing space period has ended.\n",
+    "last_updated": "2025-06-27"
+  },
+  {
+    "export_id": 40,
+    "id": 1751546280186,
+    "title": "How do I calculate interest?",
+    "category": "collections-account",
+    "category_label": "Collections & Account Status Management",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "interest",
+      "calculate",
+      "work out",
+      "how much",
+      "charge",
+      "daily interest",
+      "price cap"
+    ],
+    "content": "Convert the percentage to a decimal:\n\n0.8% = 0.008\n\nMultiply the decimal by the amount:\n\n£100 × 0.008 = £0.80\n\n💡 Final Answer:\n\n0.8% of £100 is £0.80 (per day)",
+    "last_updated": "2025-07-03"
+  },
+  {
+    "export_id": 41,
+    "id": 1751555066591,
+    "title": "How do you update the card details?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Update card",
+      "card",
+      "pre-auth",
+      "authorisation",
+      "new card",
+      "securely",
+      "banking app",
+      ""
+    ],
+    "content": "To update their card details, the customer must complete the process via the website. Here's how to guide them:\n\n🔹 Step 1: Log In\nAsk the customer to visit the website and log in to their account.\n\n🔹 Step 2: Locate the Card Update Option\nOnce logged in, they should look for either:\n• “Update Card Securely”, or\n• “My Card”\n\nClicking on either option will take them to the card update page - if they do not see this get the customer to refresh the page.\n\n🔹 Step 3: Enter New Card Details\nThe customer should now enter their new card information on the page provided.\n\n🔹 Step 4: Verify via Banking App\nAfter entering the details, the customer will be prompted to verify the transaction in their banking app.\n\n🔹 Step 5: Return to Website\nOnce verified, the customer must return to the original website page.\n\nThis final step ensures the update is sent successfully through our API and applied to their account. ",
+    "last_updated": "2025-07-03"
+  },
+  {
+    "export_id": 42,
+    "id": 1751555518830,
+    "title": "TEXAS - Vulnerable Customers ",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "vulnerability",
+      "TEXAS",
+      "impacting",
+      "condition",
+      "support",
+      "help customer",
+      "depression",
+      "mental health",
+      "vulnerable",
+      "disclosed",
+      "Samaritans",
+      "Mind"
+    ],
+    "content": "TEXAS is a widely used model designed to help frontline staff identify and respond appropriately to signs of customer vulnerability during conversations — especially when disclosures are made.\n\nEach letter in TEXAS represents a step to guide the interaction:\n\n🔹 T – Thank the customer\nAcknowledge and thank the customer for sharing something personal. This builds trust and shows empathy.\nExample:\n\"Thank you for letting me know, I really appreciate you sharing that with me.\"\n\n🔹 E – Explain how the information will be used\nLet the customer know why you're asking certain questions and how the information will help. This encourages openness and reassures them their data is handled appropriately.\nExample:\n\"This is just so we can understand your situation better and make sure we support you in the right way.\"\n\n🔹 X – eXplicit consent\nGet clear permission to record and use the information disclosed, especially if it will impact how their account is handled.\nExample:\n\"Is it okay if I make a note of what you've told me today so we can make sure your account reflects the right level of support?\"\n\n🔹 A – Ask relevant questions\nAsk only appropriate, respectful follow-up questions to better understand their needs — without probing unnecessarily.\nFocus on the impact, not the condition.\nExample:\n\"How is this currently affecting your ability to manage your account or make payments?\"\n\n🔹 S – Signpost or support\nOffer appropriate support based on what they’ve shared — this could include:\n\nApplying collections hold or breathing space\n\nReferring to the vulnerabilities specialist (Zoe Quick)\n\nOffering adjusted communication or repayment options\n\nSignposting to external organisations (e.g. Mind, StepChange, Samaritans)\n\n✅ Use TEXAS when:\nA customer discloses a mental health, financial, or life-impacting condition.\n\nYou suspect vulnerability based on what they say, how they say it, or how they behave.\n\nYou want to build a complete picture before applying any account-level support or escalation.",
+    "last_updated": "2025-07-03"
+  },
+  {
+    "export_id": 43,
+    "id": 1751985069663,
+    "title": "What is the cooling-off period?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "cooling",
+      "between loans",
+      "period"
+    ],
+    "content": "The cooling-off period is a set amount of time that must pass between loans once a previous loan has been repaid. During this time, any new applications will be automatically declined, in line with our repeat lending policy.\nThe following applies:\n•\tBetween the 1st and 2nd loan – 30-day cooling-off period\n•\tBetween the 2nd and 3rd loan – 30-day cooling-off period\n",
+    "last_updated": "2025-07-08"
+  },
+  {
+    "export_id": 44,
+    "id": 1751985614134,
+    "title": "Do we offer top-up loans?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "top-up",
+      "top",
+      "second loan",
+      "additional loan",
+      "increase balance"
+    ],
+    "content": "No, we do not offer top-up loans. Customers are also subject to a cooling-off period, which varies depending on how many loans they’ve had previously. If a customer wishes to repay their loan and reapply, they will need to take this condition into account.",
+    "last_updated": "2025-07-08"
+  },
+  {
+    "export_id": 45,
+    "id": 1751988255452,
+    "title": "What does each stage in the system mean?",
+    "category": "system-email",
+    "category_label": "System Stages & Email Management",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "stage",
+      "collector",
+      "collections",
+      "underwriting",
+      "workflow",
+      "strategy"
+    ],
+    "content": "Lead Purchased\n– The customer’s application has been sourced from an online broker and purchased by TTL.\nE-sign Sent\n– The e-agreement has been sent to the customer for signature.\nApplication Completed\n– The customer has signed the agreement and now needs to complete debit card verification.\nUnderwriting\n– The application is currently being assessed by the underwriting team.\nOffer Sent\n– Affordability checks are complete, and a new loan offer has been sent. The customer must re-sign the e-agreement.\nSigned Off\n– All assessment checks have passed, and the loan has been approved.\nFunds Processing\n– The loan is in the process of being sent to the customer.\nFunds Sent\n– Funds have been successfully credited to the customer’s account.\nCollections – Missed Instalment\n– The customer has missed their next scheduled payment.\nCollections M0\n– The customer has missed one payment.\nCollections M1\n– The customer has missed two payments. A 28-day notice for default may be issued at this stage.\nCollections M2\n– The customer has missed two or more payments. Communications about referral to a Debt Collection Agency (DCA) begin here.\nCollections Review\n– The account is being reviewed and prepared for referral to external debt collection.\nExternal Collections – Referred\n– The account has been passed to external debt collectors (typically in the order: CRS > UK Search > Digital DRA).\nExternal Collections – Returned\n– The account has been returned to us by the external debt collectors.\n",
+    "last_updated": "2025-07-08"
+  },
+  {
+    "export_id": 46,
+    "id": 1751988353004,
+    "title": "Who make up the backoffice team?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "backoffice",
+      "team",
+      "BO",
+      "Yulia",
+      "admin",
+      "dmc",
+      "email"
+    ],
+    "content": "Yulia Nachkebia (Team Lead)\nTinatin Maqatsaria\nZuka Gvazava\nKhatia Tavdishvili\n",
+    "last_updated": "2025-07-08"
+  },
+  {
+    "export_id": 47,
+    "id": 1751988486896,
+    "title": "Who make up the underwriting team?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "team",
+      "Pikria",
+      "underwriters",
+      "underwrites"
+    ],
+    "content": "Pikria Amashukeli \nNugzar Rukhaia\nNona Macharashvili\nMariam Macharashvili\nAnna Markhulia\nLuka Macharashvili\nTamar Abramidze\nNata Begdarashvili",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 48,
+    "id": 1751989614643,
+    "title": "Can I place the customer on a 30 day hold if they make a nominal payment?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "hold",
+      "temp financial difficulty",
+      "forbearance",
+      "nominal pay",
+      "GFP",
+      "extend hold",
+      "breathing space",
+      "freeze"
+    ],
+    "content": "Yes you can, however you should consider the reasons why you can’t at this stage set them up into an affordable plan. If you are waiting on information or changes in a role/position and the customer wants to make a nominal payment but there is no accessible income for future payments, then taking a nominal payment and holding the account would be an option. ",
+    "last_updated": "2025-07-08"
+  },
+  {
+    "export_id": 49,
+    "id": 1751989763595,
+    "title": "How does the customer repay their balance if they exercise their right to withdraw? ",
+    "category": "payment-plans",
+    "category_label": "Payment Plans & Scheduling",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "BT",
+      "transfer",
+      "banking details",
+      "standing order",
+      "STO",
+      "RTW payment"
+    ],
+    "content": "Customers can either pay the balance owing on their verified debit card on file or alternatively, they can make a bank transfer using the following detail; customers should attach their reference number to the payment:\n\nAccount Name: Savvy Loan Products Ltd\n\nAccount Number: 03587924\n\nSort Code: 04-00-72",
+    "last_updated": "2025-07-08"
+  },
+  {
+    "export_id": 50,
+    "id": 1751989805022,
+    "title": "What email do I send to confirm to the customer that their account has been placed on hold?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "email",
+      "hold",
+      "confirm hold",
+      "breathing space",
+      "BS email"
+    ],
+    "content": "Select or type email 43 or On Hold 30 days and send.",
+    "last_updated": "2025-07-08"
+  },
+  {
+    "export_id": 51,
+    "id": 1753692123175,
+    "title": "Do we lend to customers who are paid in cash?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Cash",
+      "in hand",
+      "self-employed"
+    ],
+    "content": "No. The customer either has to be full time employed and paid into a bank account or self-employed and able to evidence through invoices.",
+    "last_updated": "2025-07-28"
+  },
+  {
+    "export_id": 52,
+    "id": 1753693493542,
+    "title": "How do I block an account?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "block",
+      "shut down",
+      "close account"
+    ],
+    "content": "Before blocking an account, confirm with a manager that it’s the appropriate action. To block an account, open the “Update” drop-down under the orange tab and choose “Block.” The block is applied to the account immediately.",
+    "last_updated": "2025-07-28"
+  },
+  {
+    "export_id": 53,
+    "id": 1753693919241,
+    "title": "How do I request a password?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "password",
+      "reset",
+      "login",
+      "website",
+      "online",
+      "forgot"
+    ],
+    "content": "To reset a customer’s online password, go to our website at www.ticktockloans.com and click “Login” in the top right corner. Instead of logging in, select “Forgot password” underneath. Enter the customer’s email address and surname exactly as they appear in our CRM; if the details don’t match, the reset won’t work. A new password will be sent to the email address on file.",
+    "last_updated": "2025-07-28"
+  },
+  {
+    "export_id": 54,
+    "id": 1754667749772,
+    "title": "What is Bankruptcy?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Bankruptcy",
+      "BO",
+      "Bankruptcy Order",
+      "Order"
+    ],
+    "content": "Bankruptcy is a legal process designed to help individuals who can’t repay their debts. It gives you a fresh financial start by writing off most of your unsecured debts, but it also comes with serious consequences and restrictions.\n\n📝 How do you apply?\nIn the UK, you can apply for bankruptcy online through the government’s Insolvency Service. You don’t need to go to court unless someone else is making you bankrupt. It’s a big decision, so it’s important to get advice before applying.\n\n💷 How much does it cost?\nAs of now, it costs £680 to apply for bankruptcy. This fee must be paid before your application can be submitted, although payment plans may be available in some cases.\n\n👥 Who manages your bankruptcy?\nOnce your bankruptcy is approved, it is managed by an Official Receiver – a person who works for the Insolvency Service. They’ll review your finances and may take control of certain assets to help repay your debts. In some cases, a Trustee may also be appointed to handle this.\n\n⚠️ What restrictions does bankruptcy create?\nWhen you're bankrupt, there are several restrictions you must follow, including:\n\nYou can’t borrow more than £500 without telling the lender you’re bankrupt.\n\nYou can’t act as a company director without court permission.\n\nYou must cooperate fully with the Official Receiver and provide any information they request.\n\nYour credit file will show the bankruptcy for 6 years, which can make getting credit, renting, or even some jobs more difficult.\n\nYour assets may be sold, and you could be asked to make monthly payments for up to 3 years if you have disposable income.\n\n📌 Important: Bankruptcy can be life-changing, so it’s always best to speak to a free debt adviser before applying. They can help you explore all your options and make the best choice for your situation.",
+    "last_updated": "2025-08-08"
+  },
+  {
+    "export_id": 55,
+    "id": 1754668003410,
+    "title": "What happens if a customer goes bankrupt?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "bankruptcy process",
+      "bankruptcy order",
+      "bankruptcy",
+      "dividend",
+      "written off",
+      "WO",
+      "official reciever",
+      "proof of debt",
+      "POD",
+      "bankrupt",
+      "insolvency",
+      "insolvency services"
+    ],
+    "content": "You’ll be notified\nIf a customer is made bankrupt, you’ll usually receive a notice from the Official Receiver or see it on the Insolvency Register. Alterntively, the customer may make you aware directly.\n\nStop all contact and collection\nYou must stop chasing the customer for payment — no calls, emails, letters, or legal action. Bankruptcy protection means you're legally not allowed to pursue the debt.\n\nSend a Proof of Debt\nYou can submit a claim to the Official Receiver (or Trustee) showing how much you’re owed, with any evidence (like statements or contracts).\n\nWait for updates\nThe Receiver will deal with the customer’s assets. If there’s money left after priority debts and fees, you might get a small payment (called a dividend), though this is rare.\n\nDebt is written off\nAfter 12 months, bankruptcy usually ends. Most unsecured debts (like loans or credit cards) are written off. You can’t chase the customer after this.",
+    "last_updated": "2025-08-08"
+  },
+  {
+    "export_id": 56,
+    "id": 1754668301922,
+    "title": "Bankruptcy Procedure",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Bankruptcy Procedure",
+      "bankrupt",
+      "BO",
+      "hearing",
+      "bankruptcy"
+    ],
+    "content": "When a customer informs us they have been made bankrupt or are going through bankruptcy proceedings, follow the steps below:\n\nGather Key Information:\n\nFull name of the court where the hearing is scheduled or has taken place.\n\nDate of the bankruptcy hearing or date the order was made.\n\nBankruptcy order number (if known).\n\nCheck the Insolvency Register:\n\nVisit the Insolvency Service website to verify if the order has been registered:\n🔗 https://www.insolvencydirect.bis.gov.uk/eiir/\n\nIf listed, copy and paste the exact URL of the customer’s listing onto their account notes.\n\nUpdate Account Status:\n\nChange the customer’s stage to: On Hold – IVA/Bankruptcy.\n\nRequest Documentation:\n\nInform the customer that we require formal confirmation of the bankruptcy order (e.g., court letter or order document).\n\nMake them aware that this must be received within 21 days to maintain the hold status on their account.",
+    "last_updated": "2025-08-08"
+  },
+  {
+    "export_id": 57,
+    "id": 1755702047345,
+    "title": "Can you apply for a loan the same day loan is expired or cancelled?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Reapply",
+      "apply",
+      "expired",
+      "cancelled",
+      "same day"
+    ],
+    "content": "Yes. ",
+    "last_updated": "2025-08-20"
+  },
+  {
+    "export_id": 58,
+    "id": 1755702219748,
+    "title": "When do I send a Survey email?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "survey",
+      "email",
+      "send email"
+    ],
+    "content": "You should send the customer a survey email after each call, unless one has already been sent to them that day. The only exception is for stages between Leadgen Purchased and Funds Processing, as they will have already received the survey link once they were funded.",
+    "last_updated": "2025-08-20"
+  },
+  {
+    "export_id": 59,
+    "id": 1755702363437,
+    "title": "What is our IBAN Number?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "IBAN",
+      "no uk account",
+      "paying abroad"
+    ],
+    "content": "GB32 TRWI 2314 7081 2998 84/ TRWIGB2L\nAccount holder: Savvy Loan Products Ltd",
+    "last_updated": "2025-08-20"
+  },
+  {
+    "export_id": 60,
+    "id": 1755702690896,
+    "title": "How can a customer stop the default notice being registered on thier credit file?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "default notice",
+      "default letter",
+      "stop",
+      "DFN",
+      "default",
+      "credit reference agency",
+      "CRA"
+    ],
+    "content": "To prevent the default notice from being recorded with the credit reference agencies, the customer must either:\n\nSettle the balance stated in the letter by the date noted in the default notice. (Note: the balance in the letter may differ from the current outstanding balance, as interest has accrued since the letter was issued.)\n\nMake a partial payment and agree for the remaining balance to be cleared either in full by a later date or through an affordable repayment arrangement. \n\nNote: If the amount stated in the default notice is not settled in full by the deadline, interest will continue to accrue according to the new schedule and will be payable.",
+    "last_updated": "2025-08-20"
+  },
+  {
+    "export_id": 61,
+    "id": 1758198264053,
+    "title": "Debt Relief Order",
+    "category": "collections-account",
+    "category_label": "Collections & Account Status Management",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "DRO",
+      "Relief",
+      "Debt Relief",
+      "Insolvency",
+      "debt management",
+      "order"
+    ],
+    "content": "A Debt Relief Order (DRO) is a formal insolvency tool designed for individuals with low income, minimal assets, and relatively small unsecured debts who are unable to repay their creditors. DROs provide a structured mechanism for managing qualifying debts while offering a clear path to debt write-off.\n\nKey Features:\n\nDebt Eligibility: Unsecured debts, including credit cards, personal loans, overdrafts, utility arrears, and other qualifying debts. Current debt limit: £30,000 (England & Wales).\n\nEligibility Criteria:\n\nTotal qualifying debts ≤ £30,000\n\nLimited assets (generally no more than £2,000, excluding certain essential items)\n\nLow disposable income (typically less than £75 per month after essential outgoings)\n\nMust not have had a DRO in the past six years\n\nDuration: Standard DRO period is 12 months. If circumstances remain unchanged, qualifying debts are written off at the end of this period.\n\nCredit Impact: DROs remain on the individual’s credit file for six years, affecting future credit applications.\n\nApplication Process:\n\nMust be completed through an approved intermediary (debt adviser from an approved organisation).\n\nA one-off fee of £90 is payable before submission.\n\nEffect During DRO: Creditors included in the DRO cannot pursue repayment while the order is active.\n\nConsiderations for Staff:\n\nDROs are suitable only for those meeting strict eligibility criteria; staff should verify circumstances carefully.\n\nWhile DROs provide debt relief, they have long-term implications for the customer’s credit rating and financial options.\n\nStaff should advise customers of alternative solutions if DROs are not appropriate.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 62,
+    "id": 1758198812630,
+    "title": "Handling Customer DRO Notifications",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "DRO",
+      "procedure",
+      "Insolvency",
+      "DRO stage",
+      "debt relief order"
+    ],
+    "content": "Purpose:\nTo ensure customer Debt Relief Orders (DROs) are recorded accurately and accounts are managed correctly in line with our internal processes and regulatory requirements.\n\nProcedure:\n\nCustomer Notification:\n\nIf a customer contacts us to advise they have been approved for a DRO, the agent should:\n\nRecord the DRO reference number.\n\nRecord the DRO order date.\n\nRecord the official receiver or intermediary handling the DRO.\n\nVerification:\n\nIf the DRO has been formally made, the agent must verify it on the Insolvency Service Register:\n\nInsolvency Service Register\n\nCopy and paste the verification information into the customer notes.\n\nAccount Management:\n\nMove the account to the IVA/Bankruptcy stage in the system.\n\nA task will automatically be raised for the Back Office team to action at a later date.\n\nNotes:\n\nEnsure all relevant information is recorded clearly in the customer notes.\n\nDo not attempt to take further collection action on accounts under an active DRO.\n\nOutcome:\nFollowing this procedure ensures compliance, accurate record-keeping, and that the customer’s account is managed appropriately while under a DRO.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 63,
+    "id": 1758199205870,
+    "title": "Calculating Daily Interest",
+    "category": "transaction-responses",
+    "category_label": "Transaction Responses & Payment Issues",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "calculate",
+      "interest",
+      "daily interest",
+      "charge",
+      "queries"
+    ],
+    "content": "Purpose:\nTo provide staff with a clear process for explaining how interest is applied and to calculate the daily interest charge for customer accounts.\n\nInterest Rate:\n\nWe charge 0.8% per day on the outstanding principal balance.\n\nDaily Interest Calculation:\n\nIdentify the outstanding principal on the customer account.\n\nMultiply the principal by 0.8% (0.008) to calculate the daily interest charge.\n\nFormula:\n\nDaily Interest = Outstanding Principal × 0.008\n\n\nExample Calculations:\n\nPrincipal (£)\tDaily Interest (£)\n300\t            2.40\n500\t            4.00\n750\t            6.00\n1,000\t        8.00\n1,500\t        12.00\n\nUsing the Table/Formula on Calls:\n\nIf a customer asks how much interest will be applied each day, staff can either:\n\nUse the table for quick reference, or\n\nApply the formula to calculate the exact amount for the outstanding balance.\n\nNotes:\n\nInterest is calculated daily based on the current outstanding principal.\n\nDo not include previously accrued interest when calculating daily interest — only use the current principal.\n\nEnsure all calculations and explanations are clearly noted in the customer account.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 64,
+    "id": 1758199711580,
+    "title": "Early Settlements",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "early",
+      "settlement",
+      "settle early",
+      "ESF",
+      "pay early"
+    ],
+    "content": "Purpose:\nTo explain how early settlements work and provide staff with a clear process to follow when customers request to pay their loan in full before the end of the agreed duration.\n\nKey Points:\n\nCustomers can settle their loan early by paying:\n\nThe outstanding principal, and\n\nThe interest accrued up to the settlement date.\n\nThe settlement figure provided is valid only on the day it is quoted.\n\nIf payment is not made on the same day, the settlement figure will increase daily at a rate of 0.8% of the outstanding principal.\n\nAdvise the customer:\n\n“This figure is valid for today only. If payment is not made today, the settlement figure will increase tomorrow by 0.8% of the outstanding principal.”\n\nNote the account with the settlement figure given and the date.\n\nFormula for Daily Settlement Increase:\n\nDaily Increase = Outstanding Principal × 0.008\n\n\nExample:\n\nOutstanding principal: £1,000\n\nDaily increase: £1,000 × 0.008 = £8.00\n\nIf the customer does not pay today, the quoted settlement figure will increase by £8.00 tomorrow.\n\nImportant Notes for Staff:\n\nAlways remind customers that early settlement saves them from paying further future interest, but the figure changes daily.\n\nEnsure all settlement quotes and customer communications are recorded in the notes.\n\nDo not attempt to fix a settlement figure beyond the day it is quoted.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 65,
+    "id": 1758199927883,
+    "title": "Contacting Customers in Insolvency",
+    "category": "collections-account",
+    "category_label": "Collections & Account Status Management",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "contacting",
+      "during insolvency",
+      "IVA",
+      "bankruptcy",
+      "DRO",
+      "Trust Deed",
+      "Sequestration"
+    ],
+    "content": "No. Once a customer has entered an approved form of insolvency (e.g. Debt Relief Order, Individual Voluntary Arrangement, Bankruptcy, or Debt Management Plan through an appointed provider), we must not work directly with the customer regarding repayment of their debt.\n\nProcedure for Staff:\n\nIdentify Insolvency Status:\n\nConfirm the form of insolvency (e.g. DRO, IVA, Bankruptcy, DMP).\n\nRecord all relevant details in the customer notes (reference number, order date, name of Insolvency Practitioner/Official Receiver/DMP provider).\n\nVerification:\n\nWhere applicable, verify on the Insolvency Register:\nInsolvency Service Register\n\nCopy and paste confirmation into customer notes.\n\nAccount Handling:\n\nMove the account to the IVA/Bankruptcy stage in the system.\n\nA back-office task will automatically be raised for further handling.\n\nCommunication:\n\nDo not discuss repayment or collection directly with the customer.\n\nPolitely explain that all communications will now be managed via their appointed Insolvency Practitioner/Official Receiver/DMP provider.\n\nScript Example for Agents:\n\n“As your account is now under an approved form of insolvency, we’re not able to discuss repayment directly with you. From this point forward, all matters will be handled by your Insolvency Practitioner/Official Receiver, and we will work directly with them on your account.”\n\nKey Compliance Note:\nContacting customers directly to seek repayment after insolvency has been approved may breach regulatory obligations and consumer duty principles. All communication must go through the appointed insolvency representative.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 66,
+    "id": 1758200055828,
+    "title": "Insolvency Orders Made Before Loan Approval",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "orders made before approval",
+      "IVA",
+      "bankruptcy",
+      "dro",
+      "trust deed",
+      "sequestration",
+      "customer took loan after",
+      "applied",
+      "loan"
+    ],
+    "content": "Scenario:\nA customer advises (or it is identified) that they had an insolvency order (e.g. DRO, IVA, Bankruptcy) in place before they took out the loan.\n\nKey Point:\n\nIf the insolvency order was already made before the loan agreement was taken out, the customer’s current loan is not included in that insolvency.\n\nThis means the customer remains liable for repayment under the original loan terms.\n\nProcedure for Staff:\n\nCheck the insolvency order date against the loan start date.\n\nIf the insolvency order date is before the loan start date → the loan is not covered by that order.\n\nIf the insolvency order date is after the loan start date → follow the normal insolvency procedure (treat the loan as covered).\n\nRecord Details:\n\nNote the insolvency order reference, date, and type in the account.\n\nRecord the loan start date for clarity.\n\nCustomer Communication:\n\nIf the loan is not covered by the insolvency order, explain clearly to the customer that the debt remains payable in full.\n\nExample script:\n\n“I can see that your insolvency order was made before this loan agreement started. This means your loan with us is not included in that arrangement, and you remain responsible for repayment under the original terms.”\n\nAccount Handling:\n\nContinue managing the loan as normal (collections, interest, or settlement discussions) unless the customer later enters into a new insolvency arrangement that includes this loan.\n\nCompliance Note:\nIt is important to distinguish between debts included in insolvency orders and those that fall outside due to being taken out afterwards. Always double-check dates and record them clearly.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 67,
+    "id": 1758200491465,
+    "title": "Cancelling a Schedule",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "undo",
+      "cancel CPA",
+      "cancel PP",
+      "cancel schedule",
+      "cancel"
+    ],
+    "content": "Purpose:\nTo explain how agents can cancel a customer’s payment schedule and when this happens automatically.\n\nSteps for Agents (Manual Cancellation):\n\nGo to the account page of the customer’s account.\n\nAt the top of the page, locate the orange box titled “Schedules.”\n\nOpen the drop-down menu.\n\nSelect “Cancel Pay Plan.”\n\nThis will immediately cancel the active schedule on the account.\n\nAutomatic Cancellations:\nA payment schedule will also cancel automatically if the account is moved into any of the following stages:\n\nOn Hold 1 Month\n\nOn Hold 2 Month\n\nOn Hold 3 Month\n\nDM (Debt Management)\n\nVul (Vulnerability)\n\nPending Evidence\n\nImportant Notes for Staff:\n\nAlways confirm with the customer if they requested cancellation, and record the reason in the account notes.\n\nDo not attempt to restart or amend a schedule without following the correct setup procedure.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 68,
+    "id": 1758201330818,
+    "title": "Customer Service Essentials",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "skills",
+      "good customer service",
+      "CS skills"
+    ],
+    "content": "Purpose: Ensure all staff interact with customers in a professional, supportive, and compliant way.\n\nKey Skills:\n\nTone: Always polite, empathetic, and professional, even in challenging conversations.\n\nActive Listening: Let the customer speak, don’t interrupt, and acknowledge their concerns.\n\nPlain English: Avoid jargon — explain things clearly and simply.\n\nEmpathy Statements: e.g. “I understand this must be difficult” or “Thank you for sharing that with me.”\n\nOwnership: Take responsibility for helping resolve the query, even if you need to escalate.\n\nClosing Calls/Emails: Summarise what was agreed and next steps.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 69,
+    "id": 1758201606395,
+    "title": "Dealing with Vulnerable Customers",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Dealing with Vulnerable Customers",
+      "TEXAS",
+      "vul",
+      "special needs",
+      "support"
+    ],
+    "content": "Purpose: To handle calls where customers disclose difficulties such as illness, financial hardship, or other vulnerabilities.\n\nSteps:\n\nListen carefully and acknowledge what the customer has said.\n\nReassure them we can pause or adapt support if needed.\n\nMove the account with to on hold - Vulnerability, if you agree a hold and note the reason. \n\nAdd a \"must read note\" to make other staff aware of potential vulnerbility (this will show at the top of the general page)\n\nTask the account for a review (dependant on what is agreed with the customer)\n\nProvide information on free debt advice services if appropriate.\n\nUSse vulnerbility tools if needed i.e TEXAS\n\nEscalate to a manager (Zoe Quick) if position is complex and you are unsure of how to handle the situation.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 70,
+    "id": 1758201648742,
+    "title": "Handling Difficult Conversations",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "angry customer",
+      "conflict resolution"
+    ],
+    "content": "Purpose: To support staff when customers become upset, angry, or frustrated.\n\nTop Tips:\n\nStay calm and professional — don’t match the customer’s tone.\n\nAcknowledge their feelings: “I can hear you’re frustrated, let’s work through this together.”\n\nStick to facts and solutions, not emotions.\n\nIf the customer becomes abusive, politely warn them before ending the call.\n\nAlways record notes factually and without judgment.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 71,
+    "id": 1758201846282,
+    "title": "Understanding & Managing Customer Vulnerabilities",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "vulnerability",
+      "conditions",
+      "mental health",
+      "identifying",
+      "vul"
+    ],
+    "content": "Purpose:\nTo help staff recognise and respond appropriately when customers disclose vulnerabilities, in line with Consumer Duty and treating customers fairly.\n\n1. Health-Related Vulnerabilities\n\nExamples: Physical disability, serious illness, mental health conditions, addiction, cognitive impairment.\n\nHow to Respond:\n\nShow empathy and patience.\n\nOffer to slow down the call or provide information in writing.\n\nIf needed, place account into VUL (Vulnerability) status.\n\nProvide signposting to specialist support (e.g. debt charities, mental health helplines).\n\n2. Financial Vulnerabilities\n\nExamples: Job loss, reduced income, high cost of living, reliance on benefits, sudden financial shock (e.g. bereavement, separation).\n\nHow to Respond:\n\nExplore affordable solutions (payment plans, short-term hold).\n\nPlace into On Hold stage if evidence is pending.\n\nRemind them about free, impartial debt advice services.\n\nRecord notes clearly with context.\n\n3. Situational Vulnerabilities\n\nExamples: Bereavement, domestic abuse, caring responsibilities, divorce/separation, homelessness.\n\nHow to Respond:\n\nBe sensitive to emotional impact.\n\nAvoid pressing for immediate decisions.\n\nOffer flexibility and note the account accordingly.\n\nEscalate if safeguarding concerns arise (e.g. risk of harm).\n\n4. Communication Barriers\n\nExamples: Low literacy, English not first language, hearing or speech difficulties, limited access to digital tools.\n\nHow to Respond:\n\nAdapt communication style — speak clearly, avoid jargon.\n\nOffer alternative formats (email instead of phone, written confirmation).\n\nAllow extra time on calls.\n\nRecord any preferences in account notes.\n\n5. Age-Related Vulnerabilities\n\nExamples: Elderly customers with reduced memory/understanding, very young customers with limited financial experience.\n\nHow to Respond:\n\nCheck understanding by asking the customer to repeat back.\n\nProvide extra explanations where needed.\n\nBe mindful of potential safeguarding concerns.\n\nEscalate if exploitation or financial abuse is suspected.\n\n6. Risk of Harm / Safeguarding\n\nExamples: Suicidal thoughts, domestic abuse, threats of violence, immediate safety risks.\n\nHow to Respond:\n\nStay calm and listen.\n\nIf risk of immediate harm, follow emergency safeguarding procedure (e.g. contact emergency services if disclosure suggests life is in danger).\n\nEscalate to a manager straight away.\n\nRecord facts only, not opinions.\n\nKey Staff Reminders\n\nAlways note the vulnerability in the system using MUST READ NOTE and/or place into On Hold-Vulnerble stage, with the reason stated clearly.\n\nNever judge or dismiss what the customer discloses.\n\nProvide reassurance and explain what support options are available.\n\nEscalate if unsure — better to check than mishandle a vulnerable customer.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 72,
+    "id": 1758201922330,
+    "title": "Vulnerabilities & Tools for Staff",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "tools",
+      "texas",
+      "IDEA",
+      "CARERS",
+      "vulnerability",
+      "vul"
+    ],
+    "content": "Purpose:\nTo help staff identify, record, and manage customer vulnerabilities consistently and sensitively, using recognised industry tools.\n\n1. Health-Related Vulnerabilities\n\nExamples: Long-term illness, disability, mental health, addiction.\n\nTool: TEXAS Protocol (for handling disclosures)\n\nThank the customer for sharing.\n\nExplain how the information will be used.\n\nXplicit consent — ask if you can record/share it internally.\n\nAsk relevant questions (how it affects finances, any support needed).\n\nSignpost to help (e.g. StepChange, Mind, Citizens Advice).\n\n2. Financial Vulnerabilities\n\nExamples: Job loss, reduced income, benefit reliance, cost-of-living pressures.\n\nTool: IDEA (for understanding impact)\n\nImpact — how is the situation affecting them financially?\n\nDuration — is it short-term, long-term, or permanent?\n\nExperience — have they managed something similar before?\n\nAdjustment — what support or changes do they need?\n\n3. Situational Vulnerabilities\n\nExamples: Bereavement, caring duties, domestic abuse, separation.\n\nTool: CARERS (for carers or dependent-related issues)\n\nCheck circumstances sensitively.\n\nAssess how caring impacts finances/time.\n\nRecord disclosure with consent.\n\nExplain available support.\n\nRefer to advice organisations if appropriate.\n\nSupport flexibly (e.g. pauses, payment plans).",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 73,
+    "id": 1758202128463,
+    "title": "Using IDEA with Customers",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "IDEA",
+      "vul",
+      "tools",
+      "understanding"
+    ],
+    "content": "Purpose:\nIDEA helps agents understand the customer’s situation more deeply when they disclose a vulnerability. It breaks the conversation into four areas: Impact, Duration, Experience, Adjustment.\n\nI – Impact\n\nWhat impact is the vulnerability having on their finances or ability to manage the account?\n\n✅ Example questions:\n\n“How is this situation affecting your ability to make payments right now?”\n\n“Has this change impacted your income or expenses?”\n\n✅ Example notes:\n\nCustomer unable to work due to surgery, now on reduced sick pay.\n\nCustomer’s mental health makes budgeting difficult.\n\nD – Duration\n\nIs the situation temporary, long-term, or permanent?\n\n✅ Example questions:\n\n“Do you expect this to change soon, or is it ongoing?”\n\n“Has your GP or adviser said how long you may be in this situation?”\n\n✅ Example notes:\n\nCustomer expects to return to work in 3 months after recovery.\n\nCustomer has long-term disability, likely ongoing.\n\nE – Experience\n\nHas the customer been through this before, and how did they manage?\n\n✅ Example questions:\n\n“Have you had to manage something like this before?”\n\n“What’s helped you cope with your finances in the past?”\n\n✅ Example notes:\n\nCustomer has been through redundancy before, relied on payment holidays.\n\nCustomer has never been in financial difficulty before, feels anxious and unsure.\n\nA – Adjustment\n\nWhat changes, support, or solutions are needed now?\n\n✅ Example questions:\n\n“What would help make things more manageable for you right now?”\n\n“Would a short-term hold or reduced payment plan give you some breathing space?”\n\n✅ Example notes:\n\nCustomer requests 2-month payment hold until benefits start.\n\nCustomer would like smaller instalments for 6 months.\n\nPutting It All Together – Example Call Notes\n\nIDEA applied:\n\nImpact: Customer off work due to broken leg, income dropped to statutory sick pay.\n\nDuration: Doctor says recovery expected in 12 weeks.\n\nExperience: Customer previously managed using savings, but has none left now.\n\nAdjustment: Customer requests a temporary hold on payments until return to work.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 74,
+    "id": 1758202196993,
+    "title": "Using CARERS with Customers",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "carers",
+      "support",
+      "vul",
+      "tools"
+    ],
+    "content": "Purpose:\nThe CARERS tool helps agents handle disclosures where customers are carers, or where caring responsibilities are affecting their finances and account management.\n\nC – Check circumstances sensitively\n\nUnderstand the customer’s caring situation without being intrusive.\n\n✅ Example questions:\n\n“Can I ask a little more about your caring responsibilities, so I can understand how it affects your account?”\n\n“Who do you provide care for, and how much time does this take each day?”\n\n✅ Example notes:\n\nCustomer caring full-time for elderly parent with dementia.\n\nCustomer provides part-time care for disabled child alongside work.\n\nA – Assess how caring impacts finances/time\n\nDoes caring reduce income, increase expenses, or affect their ability to make payments?\n\n✅ Example questions:\n\n“Does your caring role affect your ability to work or manage finances?”\n\n“Do you have extra costs linked to caring, such as travel or equipment?”\n\n✅ Example notes:\n\nCustomer reduced to part-time work due to caring role.\n\nCustomer has increased household costs, no spare income.\n\nR – Record disclosure with consent\n\nAlways ask before noting sensitive details.\n\n✅ Example script:\n\n“Would you be happy for me to make a note of this on your account, so we can make sure we support you properly?”\n\n✅ Example notes:\n\nConsent given. Recorded customer caring for disabled child; limited availability during working hours.\n\nE – Explain available support\n\nTell the customer how we can help manage their account fairly.\n\n✅ Example script:\n\n“We can look at putting your account on hold, adjusting your payment plan, or finding a schedule that works around your circumstances.”\n\nR – Refer to advice organisations if appropriate\n\nSignpost to specialist support.\n\n✅ Examples:\n\nCarers UK (www.carersuk.org\n)\n\nCitizens Advice\n\nLocal authority carers’ services\n\n✅ Example script:\n\n“There are organisations that can support carers with financial and emotional help — would you like me to share their details?”\n\nS – Support flexibly\n\nPut in place adjustments to help the customer manage.\n\n✅ Examples:\n\nPlace account into On Hold (VUL) while circumstances are reviewed.\n\nOffer flexible repayment dates that match benefit/payment cycles.\n\nAllow more time for evidence if requested.\n\nPutting It All Together – Example Call Notes\n\nCARERS applied:\n\nCheck: Customer provides daily care for disabled spouse.\n\nAssess: Reduced working hours, lower income, increased household costs.\n\nRecord: Consent given; noted in account.\n\nExplain: Advised account could be placed on hold pending review.\n\nRefer: Provided details for Carers UK.\n\nSupport: Account placed into VUL stage; repayment plan to be reviewed in 3 months.",
+    "last_updated": "2025-09-18"
+  },
+  {
+    "export_id": 75,
+    "id": 1758202663656,
+    "title": "Abbreviations Log",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "abbreviatiions",
+      "shorthand",
+      "meanings"
+    ],
+    "content": "Purpose:\nQuick reference for staff to understand common abbreviations used in customer accounts, communications, and internal processes.\n\nAccount Stages & Holds\n\nOn Hold 1/2/3 – Account temporarily paused for review.\n\nDM – Debt Management hold.\n\nVUL – Vulnerable customer hold.\n\nIVA – Individual Voluntary Arrangement.\n\nDRO – Debt Relief Order.\n\nBNK – Bankruptcy.\n\nProcesses & Actions\n\nCB – Call Back.\n\nLM – Left Message.\n\nNA – No Answer.\n\nCATC – Collection Action To Continue.\n\nES – Early Settlement.\n\nRTW – Right To Withdraw.\n\nCustomer & Payment Terms\n\nBTW - Back to work.\n\nOOW - Out of work.\n\nEOM - End of month.\n\nCust – Customer.\n\nBT – Bank Transfer.\n\nCPA – Continuous Payment Authority.\n\nPaym – Payment.\n\nCIF – Clear In Full.\n\nClr – Cleared.\n\nmnth – Month.\n\nrec'd – Received.\n\nVulnerability Tools & Protocols\n\nTEXAS – Thank, Explain, eXplicit consent, Ask, Signpost.\n\nIDEA – Impact, Duration, Experience, Adjustment.\n\nCARERS – Check, Assess, Record, Explain, Refer, Support.\n\nBRUCE – Behaviour, Remember, Understand, Check, Explore.\n\nCredit & Collections References\n\nCRS – Credit Resource Solutions.\n\nUKS – UK Search.\n\nDRA – Digital DRA.\n\nInterest & Balances\n\nOS – Outstanding Balance (principal + accrued interest).\n\nINT – Daily Interest applied (0.8% per day of outstanding principal).",
+    "last_updated": "2025-10-15"
+  },
+  {
+    "export_id": 76,
+    "id": 1760539410222,
+    "title": "What is an Annual Percentage Rate (APR)",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "APR",
+      "annual percentage",
+      "interest",
+      "total amount payable"
+    ],
+    "content": "What is APR?\nAPR stands for Annual Percentage Rate. It represents the total cost of borrowing over a year, including interest and any compulsory fees, expressed as an annual percentage of the amount borrowed.\n\nWhy Do We Use It?\nAlthough our products are short-term and interest is typically calculated on a daily basis, we are still required by regulation to display an APR. This ensures transparency and consistency across all lenders, allowing customers to compare the cost of credit between different products and providers — even if the borrowing period is much shorter than a year.\n\nHow It Relates to High-Cost Short-Term Credit (HCSTC):\n\nIn high-cost short-term lending, the APR appears very high because it’s an annualised figure based on daily interest rates applied to short borrowing periods.\n\nFor example, a loan that runs for 30 days with daily interest may look disproportionately high when shown as an annual rate, but this doesn’t mean the borrower is paying that amount — it’s simply how the cost is standardised for comparison.\n\nThe key figure for our customers remains the total amount repayable and the daily interest rate, which reflect the true short-term cost of borrowing.\n\nIn Summary:\nWe calculate interest daily to reflect short borrowing terms, but we must display the APR to comply with consumer credit regulations and maintain transparency for customers.",
+    "last_updated": "2025-10-15"
+  },
+  {
+    "export_id": 77,
+    "id": 1760539694223,
+    "title": "Where can I locate the Annual Percentage Rate (APR)",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "representative",
+      "apr",
+      "credit",
+      "charge",
+      "locate",
+      "find"
+    ],
+    "content": "Locating the APR Figure\n\nYou may receive questions from customers about where to find the APR (Annual Percentage Rate). The location depends on whether the customer is making a general enquiry or already has an active account.\n\n1. General Public / Customer Service Enquiry\n\nFor general queries from potential customers who do not yet have an account, the APR can be found on our website.\n\nAt the bottom of the website, we display a representative example showing a typical loan and its associated costs:\n\nExample:\nBorrow £350 and pay £127.28 per month for 5 months at a fixed interest rate of 0.8% per day (292% per year).\nThe total charge for credit is £286.40 (all interest).\nThe total amount repayable is £636.40.\nRepresentative APR: 1297.89%.\n\nThis example helps customers understand the cost of borrowing and how the APR relates to our short-term lending model.\n\n2. Existing Customers with an Account\n\nIf the customer already has an account with us, the exact APR and full loan details are available within their Consumer Credit Agreement.\n\nThis document can be found in the customer’s account area under “Attachments.”\nYou should guide the customer to this section and explain that the agreement outlines their specific loan terms, including:\n\nThe interest rate\n\nThe total charge for credit\n\nThe total amount repayable\n\nThe representative APR",
+    "last_updated": "2025-10-15"
+  },
+  {
+    "export_id": 78,
+    "id": 1763463815660,
+    "title": "What is a Notice of Sum in Arrears ",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "NOSIA",
+      "sum in arrears",
+      "notice",
+      "regulated document",
+      "notice of sum"
+    ],
+    "content": "A Notice of Sum in Arrears is a formal letter sent by a lender/creditor when a borrower has fallen behind on their repayments for a credit agreement regulated by the Consumer Credit Act (for example: loans, credit cards, hire purchase, store cards).\n\nThe notice is issued when the borrower has missed the equivalent of two or more payments, or has underpaid to the point that the arrears reach the value of two full instalments.\n\nIts purpose is to:\n\nInform the borrower that they are behind on payments\n\nConfirm the total amount of arrears owed\n\nExplain any consequences, such as further action if the arrears are not cleared\n\nProvide required information and protections, including where to get free debt advice\n\nIt is a statutory notice, meaning the creditor must send it. It is not a court order and does not mean legal action has already started.",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 79,
+    "id": 1763463953673,
+    "title": "What is a Further Notice of Sum in Arrears?",
+    "category": "collections-account",
+    "category_label": "Collections & Account Status Management",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Further notice",
+      "FNOSIA",
+      "sum in arrears"
+    ],
+    "content": "A Further Notice of Sum in Arrears is a follow-up letter a lender/creditor must send after they have already issued an initial Notice of Sum in Arrears (NOSIA) under the Consumer Credit Act.\n\nA further NOSIA is sent every six months if:\n\nThe borrower still has arrears outstanding, and\n\nThe credit agreement is still active.\n\nIts purpose is to:\n\nUpdate the borrower on how much arrears remain\n\nRemind them that the account is still behind on payments\n\nProvide the required statutory information, including consumer rights and where to access free debt advice\n\nJust like the initial NOSIA, a further NOSIA:\n\nIs not a court order\n\nDoes not mean legal action has begun\n\nIs a legal requirement for regulated credit agreements\n\nIt is simply a periodic reminder that arrears are still owed.",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 80,
+    "id": 1763465948903,
+    "title": "What is a Summary of Borrowing",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "SOB",
+      "Summary",
+      "Payday lending market",
+      "borrowing"
+    ],
+    "content": "A Summary of Borrowing (SOB) is a regulatory document a lender must provide to a customer who has taken a High-Cost Short-Term Credit (HCST) product (for example, payday or other short-term, high-cost loans). It gives a clear, concise breakdown of how much the customer has borrowed and how much they have paid in charges (interest and fees) over a reporting period.\n\nPurpose:\n\nShow the total amount borrowed during the reporting period.\n\nShow the total charges (interest, fees, and other costs).\n\nImprove transparency so customers can see the true cost of repeat or short-term borrowing.\n\nHelp customers make informed decisions about future borrowing and seek debt advice if needed.\n\nKey points:\n\nThe SOB is informational only — it is not a collection notice or enforcement action.\n\nIt is a regulatory requirement designed to protect consumers and ensure visibility of repeated HCST borrowing.\n\nWhen a customer SHOULD be sent an SOB\n\nA lender must send a Summary of Borrowing:\n\nEvery three months (quarterly), in arrears, covering the previous three-month period — regardless of whether payments are due or the account is active, where the customer has had HCST borrowing that meets the FCA reporting criteria.\n\nWhen the account is closed (including where the debt is sold or transferred to another creditor/third party).\n\nWhere there has been repeat borrowing from the lender (i.e., the customer has borrowed more than once), or otherwise where the FCA’s HCST reporting criteria apply.\n",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 81,
+    "id": 1763467063526,
+    "title": "What is our appeals process?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "appeal",
+      "declined",
+      "unhappy with decision",
+      "appeal process"
+    ],
+    "content": "The appeal is reviewed by a senior underwriter to determine whether the original lending decision was correct.\n\nThe process typically takes up to 48 hours from the time the appeal is submitted.\n\nTo submit an appeal, the customer must follow the instructions in their decline email. In short, they should:\n\nEmail underwriting@ticktockloans.com\n\nClearly state their concerns and reasons for requesting a review\n\nThe senior underwriter will consider the customer’s points as part of their review.\n\nAppeal decisions will be communicated via email.\n\nCustomers can submit an appeal either directly by email or manually through a customer service representative.",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 82,
+    "id": 1763467409592,
+    "title": "Outbound Dialling Guidelines ",
+    "category": "collections-account",
+    "category_label": "Collections & Account Status Management",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "Outbound dialling",
+      "due date list",
+      "DD list",
+      "DD+1",
+      "calling out",
+      "voicemails"
+    ],
+    "content": "When handling outbound dialling, please follow these rules to remain compliant with our Arrears Collections policy:\n\nCall Spacing & Attempt Limits\n\nLeave at least 3 hours between the first and second call to the same customer.\n\nMake no more than 5 call attempts per customer per day.\n\nVoicemail Policy\n\nLeave only one voicemail per customer per day.\n\nOnce a voicemail has been left, do not contact the customer again until the following day.\n\nDue Calls\n\nCall twice per day, once in the AM and once in the PM.\n\nList Priority\n\nFirst list: This is your initial priority for calling.\n\nSecond priority: DD + 1\n\nFollowed by: M0 → M1 → M2\n\nDaily List Refresh\n\nAll lists are refreshed daily.\n\nInbound Call Priority\n\nInbound calls take priority between 9:00–10:00 AM and during lunch periods.\n\nResume outbound calls once these periods have ended.",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 83,
+    "id": 1763482878170,
+    "title": "Call Structure – Reminder Guide",
+    "category": "collections-account",
+    "category_label": "Collections & Account Status Management",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "call structure",
+      "opening",
+      "closure",
+      "open ended questions",
+      "call flow",
+      "conversation",
+      "call"
+    ],
+    "content": "1. Introduction\n\nIntroduce yourself and the company.\n\nComplete DPA/security checks.\n\nAdvise the customer that calls are recorded (outbound calls).\n\n2. Middle of the Call (Information Gathering)\n\nUse open questions to understand the customer’s situation:\n\n“How can I help you today?”\n\n“What has caused you to miss payments?”\n\n“Has anything changed in your circumstances recently?”\n\n“Is your situation likely to change in the near future?”\n\n“What steps are you taking to improve your situation?”\n\nKeep the conversation focused, supportive, and non-judgmental.\n\n3. Resolution\n\nExplore what the customer’s situation allows them to do:\n\nDo they need time to assess their finances or seek advice?\n\nIf they have income, how much can they reasonably pay toward their debt?\n\nCan the customer make a realistic offer?\n\nIf not, consider completing an Income & Expenditure (I&E) with them.\n\nCan they make a token payment during the call as a sign of goodwill?\n\nYour aim is to reach a fair and sustainable solution based on their circumstances.\n\n4. Call Closure\n\nBefore ending the call, confirm the following clearly:\n\nThe resolution/solution agreed\n\nThe terms (amounts, dates, frequency)\n\nWhether an email will be sent confirming the arrangement\n\nThe consequences of not maintaining the arrangement, such as:\n\nIssuing a pending default notice to credit reference agencies\n\nInstructing a third-party debt recovery agency\n\nCancelling the arrangement and returning the account to collections\n\nSet clear expectations:\n\nWho will contact them\n\nWhen they will be contacted\n\nHow we will communicate about upcoming payments or failed payments\n\nAlways close by asking:\n“Is there anything else I can help you with today?”",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 84,
+    "id": 1763483097125,
+    "title": "What are the consequences of non-payment?",
+    "category": "collections-account",
+    "category_label": "Collections & Account Status Management",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "consequences",
+      "non-payment",
+      "non payment",
+      "failed arrangement",
+      "default notice",
+      "debt recovery",
+      "debt agency",
+      "failed payment"
+    ],
+    "content": "1. Arrangement Cancelled\n\nIf the customer misses a payment or breaks the terms of the plan:\n\nThe current payment arrangement will be cancelled.\n\nThe account will return to active collections, meaning further contact attempts may be made to resolve the arrears.\n\nYou should always tell the customer:\n\n“If the agreed payment is not made, the arrangement may be cancelled and your account will return to collections for further action.”\n\n\n2. Pending Default Notice Issued\n\nIf the account continues to remain unpaid:\n\nA Pending Default Notice may be issued.\n\nThis is a formal warning that a default could be recorded if no action is taken.\n\nIt gives the customer an opportunity to bring the account back in line before a default is applied.\n\nThis should be explained clearly:\n\n“If the arrears are not resolved, we may issue a Pending Default Notice which is a formal step before a default is registered with credit reference agencies.”\n\n\n3. Default Registered with Credit Reference Agencies\n\nIf the customer still fails to contact us or make payments:\n\nA default may be registered on their credit file.\n\nThis will remain on their credit report for six years.\n\nIt can affect their ability to obtain credit, mortgages, phone contracts, or other financial services.\n\nExplain simply:\n\n“A default can impact your credit rating for six years and may affect future borrowing.”\n\n\n4. Third-Party Debt Recovery Agency Instructed\n\nIf the account cannot be resolved directly:\n\nThe debt may be transferred to a licensed third-party debt recovery agency.\n\nThe customer will then be contacted by the agency, not us.\n\nThe agency may use their own contact processes to recover the balance.\n\nExplain clearly and calmly:\n\n“If the account remains unpaid, it may be passed to a third-party debt recovery agency who will continue recovery efforts.”\n\n\n5. Additional Collections Activity\n\nDepending on the customer’s behaviour and account history, further action may include:\n\nIncreased outbound contact to try to engage the customer\n\nWritten correspondence outlining the arrears and next steps\n\nReassessment of the customer’s affordability if they re-engage\n\nThese actions should always be proportionate, fair, and compliant with regulatory requirements.\n\n\n6. Potential Legal Action (if applicable to your business)\n\nIf your organisation uses legal recovery routes, consequences may also include:\n\nEscalation to the legal team for pre-legal assessment\n\nThe possibility of a County Court Judgment (CCJ)\n\nFurther enforcement if a CCJ remains unpaid\n\nOnly include this section if legal routes are used. If not, I can remove or adapt it.\n\n\n7. Impact on Future Lending\n\nIf the customer continues to default or shows poor repayment behaviour:\n\nThey may be restricted from future borrowing\n\nTheir account may be flagged internally\n\nThey may be declined for new applications until the debt is resolved\n\nExplain in simple terms:\n\n“Non-payment can affect future lending decisions with us.”\n\nSummary to Read to Customers\n\nHere’s a simplified version for agents to use during calls:\n\n“If the payment isn’t made, the arrangement may be cancelled and your account will return to collections.\nIf it remains unpaid, we may issue a Pending Default Notice which can lead to a default being registered on your credit file for six years.\nThe account may also be passed to a third-party debt recovery agency.\nIt’s really important we work together to agree a plan that is realistic and sustainable for you.”",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 85,
+    "id": 1763483660577,
+    "title": "Can I change my password on my account?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "password update",
+      "change password",
+      "password"
+    ],
+    "content": "Yes. You can update your password at any time by logging into your online account at www.ticktockloans.com.\n\nOnce logged in, go to the “My Profile” section, where you will be able to change your password to something more memorable and secure.",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 86,
+    "id": 1763483794456,
+    "title": "Do you accept credit cards?",
+    "category": "collections-account",
+    "category_label": "Collections & Account Status Management",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "credit card",
+      "debit card",
+      "card update"
+    ],
+    "content": "No. We do not accept credit cards as a payment method.\n\nThis is to ensure we comply with regulatory expectations, as customers should not use credit to repay credit, which could worsen their financial situation.",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 87,
+    "id": 1763484019184,
+    "title": "Can I change the email address or phone number on theaccount?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "mobile number",
+      "updating contact details",
+      "telephone number"
+    ],
+    "content": "Yes. You can update the contact details; however, for security reasons we must first speak to the customer on the mobile number currently registered on the account.\n\nOnce we’ve verified the customers identity through that number, we can override the existing details and update the email address or phone number.",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 88,
+    "id": 1763484574473,
+    "title": "What Debt Recovery Agencies do we use?",
+    "category": "customer-portal",
+    "category_label": "Customer Portal & Login Issues",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "DRA",
+      "DCA",
+      "CRS",
+      "Digital DRA",
+      "UKS",
+      "UK Search",
+      "external recoveries",
+      "external collections"
+    ],
+    "content": "Credit Resource Solutions (CRS)\n\nPhone: 01422 324 510 \nEmail: sales@creditresourcesolutions.co.uk\nPostal Address: Second Floor, G Mill, Dean Clough, Halifax, West Yorkshire, HX3 5AX \nComplaints Email: complaints@creditresourcesolutions.co.uk\nWebsite: paycrs.co.uk\n\nOpening Hours: Mon–Fri, 08:00–18:00; Sat, 09:30–12:30 (as per their contact centre) \npaycrs.co.uk\n\nUK Search\n\nPhone: 01246 488 924 \nEmail (General / Customer): [email protected] \nAddress: 4 Gander Lane, Chesterfield, S43 4PZ \nOpening Hours:Monday–Thursday: 09:00–19:00 Friday: 09:00–17:00 Saturday: 09:00–13:00 \n\nDigital DRA (The Digital Debt Resolution Agency)\n\nWebsite / Portal: https://www.digitaldra.co.uk/\nRegistered Office: Office 5, Elsie Whiteley Innovation Centre, Hopwood Lane, Halifax, HX1 5ER \nEmail: info@digitaldra.co.uk\nSupport / Portal Contact: Customers can raise queries via their Customer Portal or by replying to the last email / SMS contact. \n",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 89,
+    "id": 1763484900719,
+    "title": "Do we accept direct debit?",
+    "category": "application-processing",
+    "category_label": "Application Processing & General Operations",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "DD",
+      "direct debit",
+      "CPA",
+      "continuous payment authority",
+      "mandate"
+    ],
+    "content": "No \n\nOur primary automatic payment method is Continuous Payment Authority (CPA), which requires the customer’s consent to allow payments to be collected automatically.\n\nCustomers can also choose manual collection, where they must call us to process each payment.\n\nIf a customer prefers to pay by other methods, bank transfer is available. However, this option cannot be used at the application stage, as CPA is required as part of the loan application process.",
+    "last_updated": "2025-11-18"
+  },
+  {
+    "export_id": 90,
+    "id": 1763733571577,
+    "title": "What is a Subject Access Request (SAR)?",
+    "category": "security-verification",
+    "category_label": "Security, Verification & Data Requests",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "DSAR",
+      "subject access request",
+      "SAR",
+      "data request"
+    ],
+    "content": "A Subject Access Request is a request made by an individual for access to the personal data an organisation holds about them.\nSARs fall under the UK GDPR and Data Protection Act 2018.\n\nA SAR can be:\n\nWritten (email, letter, webform)\n\nVerbal (phone call, in person)\n\nMade to any staff member — not just the Data Protection Officer\n\nNo special wording is required. If a customer says anything like “I want my data”, it may be a valid SAR.",
+    "last_updated": "2025-11-21"
+  },
+  {
+    "export_id": 91,
+    "id": 1763733629276,
+    "title": "Identifying a Valid SAR",
+    "category": "security-verification",
+    "category_label": "Security, Verification & Data Requests",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "data",
+      "customer information",
+      "call recordings",
+      "DSAR",
+      "SAR",
+      "DPA"
+    ],
+    "content": "A request is a SAR if the individual asks for:\n\n“Everything you hold about me”\n\n“All my notes, calls, emails, recordings”\n\n“Any personal data you have on me”\n\n“A copy of my information”\n\nIf unsure, treat it as a SAR and escalate.",
+    "last_updated": "2025-11-21"
+  },
+  {
+    "export_id": 92,
+    "id": 1763735568309,
+    "title": "DSAR (Data Subject Access Request) Process",
+    "category": "security-verification",
+    "category_label": "Security, Verification & Data Requests",
+    "section": "Manual Entry",
+    "source": "Manual Entry",
+    "keywords": [
+      "DSAR",
+      "SAR",
+      "Process",
+      "Subject access request",
+      "data request",
+      "information request"
+    ],
+    "content": "Step 1 — Acknowledge the Request\n\nThank the customer and confirm that we can help.\n\nAdvise that we will need to log the request for processing.\n\nIf on a call, note that the request is verbal — this is still valid.\n\nStep 2 — Raise the Correct Task\n\nAgents must raise a Complaint – Subject Access Request task.\nThis must be assigned to Alex Cross to action all DSAR responses.\n\nThis step is mandatory for every DSAR, regardless of channel or phrasing.\n\nStep 3 — Inform the Customer of the Timescales\n\nProvide the standard timeframe information:\n\nWe must respond within one month of receiving the request.\n\nIf the request is complex or involves large volumes of data, we may need to extend the deadline by up to two additional months.\n\nIf an extension is needed, the customer must be informed within the first month.\n\n3. Identity Verification\n\nBefore data can be released, identity must be verified.\nFollow our standard security checks.\nIf identity can't be safely confirmed, the timeframe is paused until verification is completed.\n\n4. What Happens After the Task Is Raised\n\nHandled by Alex Cross:\n\nLogging the DSAR\n\nGathering all relevant data (notes, correspondence, call recordings, documents)\n\nReviewing and redacting where needed\n\nPreparing the DSAR response pack\n\nSending securely to the customer\n\nClosing the complaint task\n\nRecording completion in the SAR log\n\nAgents do not prepare, review, or send DSAR information themselves.\n\n5. What to Avoid\n\nNever refuse a request because it’s verbal\n\nNever send personal data directly\n\nNever promise specific data points (e.g., “we definitely have that call recording”)\n\nNever delay raising the task — the one-month timeframe starts immediately upon receipt\n\n6. Standard Script Example (Optional for Agents)\n\n“I can help with that. I’ll log a Subject Access Request for you today. We must respond within one month, and if the request is complex we may extend by up to two additional months — but we would let you know within the first month if that’s needed.”",
+    "last_updated": "2025-11-21"
+  }
+]
