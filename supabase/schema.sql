@@ -77,39 +77,50 @@ ALTER TABLE feedback_logs ENABLE ROW LEVEL SECURITY;
 -- For production, you may want to restrict these further
 
 -- Documents policies
+DROP POLICY IF EXISTS "Enable read access for all users" ON documents;
 CREATE POLICY "Enable read access for all users" ON documents
     FOR SELECT USING (true);
 
+DROP POLICY IF EXISTS "Enable insert for authenticated users" ON documents;
 CREATE POLICY "Enable insert for authenticated users" ON documents
     FOR INSERT WITH CHECK (true);
 
+DROP POLICY IF EXISTS "Enable update for authenticated users" ON documents;
 CREATE POLICY "Enable update for authenticated users" ON documents
     FOR UPDATE USING (true);
 
+DROP POLICY IF EXISTS "Enable delete for authenticated users" ON documents;
 CREATE POLICY "Enable delete for authenticated users" ON documents
     FOR DELETE USING (true);
 
 -- Search logs policies
+DROP POLICY IF EXISTS "Enable insert for all users" ON search_logs;
 CREATE POLICY "Enable insert for all users" ON search_logs
     FOR INSERT WITH CHECK (true);
 
+DROP POLICY IF EXISTS "Enable read for authenticated users" ON search_logs;
 CREATE POLICY "Enable read for authenticated users" ON search_logs
     FOR SELECT USING (true);
 
 -- Unanswered questions policies
+DROP POLICY IF EXISTS "Enable read for authenticated users" ON unanswered_questions;
 CREATE POLICY "Enable read for authenticated users" ON unanswered_questions
     FOR SELECT USING (true);
 
+DROP POLICY IF EXISTS "Enable insert for all users" ON unanswered_questions;
 CREATE POLICY "Enable insert for all users" ON unanswered_questions
     FOR INSERT WITH CHECK (true);
 
+DROP POLICY IF EXISTS "Enable update for all users" ON unanswered_questions;
 CREATE POLICY "Enable update for all users" ON unanswered_questions
     FOR UPDATE USING (true);
 
 -- Feedback logs policies
+DROP POLICY IF EXISTS "Enable insert for all users" ON feedback_logs;
 CREATE POLICY "Enable insert for all users" ON feedback_logs
     FOR INSERT WITH CHECK (true);
 
+DROP POLICY IF EXISTS "Enable read for authenticated users" ON feedback_logs;
 CREATE POLICY "Enable read for authenticated users" ON feedback_logs
     FOR SELECT USING (true);
 

@@ -37,6 +37,20 @@
         .form-divider { display: flex; align-items: center; justify-content: center; color: var(--color-muted-strong); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
         .form-group { margin-bottom: 18px; }
         .form-group label { display: block; margin-bottom: 8px; font-size: 0.94rem; font-weight: 700; color: var(--color-muted-strong); }
+        .rich-editor-shell { border: 1px solid rgba(22, 34, 53, 0.12); border-radius: 1rem; overflow: hidden; background: rgba(255, 255, 255, 0.88); }
+        .rich-editor-toolbar { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px; background: rgba(214, 229, 241, 0.62); border-bottom: 1px solid rgba(22, 34, 53, 0.08); }
+        .editor-tool, .editor-select {
+            border: 1px solid rgba(22, 34, 53, 0.12); border-radius: 999px; background: rgba(248, 251, 254, 0.92);
+            color: var(--color-text); padding: 8px 12px; font-size: 0.9rem;
+        }
+        .editor-tool { cursor: pointer; font-weight: 700; min-width: 42px; }
+        .editor-select { cursor: pointer; }
+        .rich-editor {
+            min-height: 240px; padding: 18px; color: var(--color-text); line-height: 1.7; outline: none;
+        }
+        .rich-editor:empty::before { content: attr(data-placeholder); color: var(--color-muted); }
+        .rich-editor p, .rich-editor ul, .rich-editor ol, .rich-editor h2, .rich-editor h3 { margin: 0 0 12px; }
+        .rich-editor ul, .rich-editor ol { padding-left: 24px; }
         .documents-list, .unanswered-list { display: grid; gap: 16px; }
         .document-item, .unanswered-item {
             background: linear-gradient(180deg, rgba(248, 251, 254, 0.9), rgba(224, 237, 247, 0.9));
@@ -101,7 +115,27 @@
                 <form id="manualForm">
                     <div class="section-title"><div><h3>Add Content Manually</h3><p class="section-copy">Create or update one article at a time with category and keyword metadata.</p></div></div>
                     <div class="form-group"><label for="title">Title</label><input type="text" id="title" placeholder="e.g., Refund Process for Damaged Items" required></div>
-                    <div class="form-group"><label for="content">Content</label><textarea id="content" placeholder="Enter the detailed information agents need to know..." required></textarea></div>
+                    <div class="form-group">
+                        <label for="contentEditor">Content</label>
+                        <div class="rich-editor-shell">
+                            <div class="rich-editor-toolbar">
+                                <button class="editor-tool" type="button" onclick="formatContent('bold')" title="Bold"><strong>B</strong></button>
+                                <button class="editor-tool" type="button" onclick="formatContent('italic')" title="Italic"><em>I</em></button>
+                                <button class="editor-tool" type="button" onclick="formatContent('underline')" title="Underline"><u>U</u></button>
+                                <button class="editor-tool" type="button" onclick="formatContent('insertUnorderedList')" title="Bullet list">• List</button>
+                                <button class="editor-tool" type="button" onclick="formatContent('insertOrderedList')" title="Numbered list">1. List</button>
+                                <select class="editor-select" id="contentBlockType" onchange="applyBlockFormat(this.value)">
+                                    <option value="">Text size</option>
+                                    <option value="P">Normal text</option>
+                                    <option value="H3">Medium heading</option>
+                                    <option value="H2">Large heading</option>
+                                </select>
+                                <button class="editor-tool" type="button" onclick="formatContent('removeFormat')" title="Clear formatting">Clear</button>
+                            </div>
+                            <div id="contentEditor" class="rich-editor" contenteditable="true" data-placeholder="Enter the detailed information agents need to know..."></div>
+                        </div>
+                        <textarea id="content" hidden required></textarea>
+                    </div>
                     <div class="form-group"><label for="source">Source Document</label><input type="text" id="source" placeholder="e.g., Customer Service Manual v2.1"></div>
                     <div class="form-group"><label for="category">Category</label><select id="category">
                         <option value="application-processing">Application Processing & E-sign Issues</option><option value="customer-portal">Customer Portal & Login Issues</option><option value="collections-account">Collections & Account Status Management</option><option value="payment-plans">Payment Plans & Scheduling</option><option value="income-evidence">Income Evidence & Verification</option><option value="security-verification">Security & Verification</option><option value="right-to-withdraw">Right to Withdraw (RTW)</option><option value="transaction-responses">Transaction Responses & Payment Issues</option><option value="fraud-disputes">Fraud & Disputes</option><option value="debt-respite">Debt Respite Scheme (Breathing Space)</option><option value="debt-management">Debt Management Companies (DMC)</option><option value="system-email">System & Email Management</option><option value="contact-information">Contact Information</option>
@@ -162,6 +196,8 @@ if (currentUser) {
 
     document.getElementById('fileInput').addEventListener('change', handleFileUpload);
     const uploadSection = document.getElementById('uploadSection');
+    const contentEditor = document.getElementById('contentEditor');
+    const contentTextarea = document.getElementById('content');
     uploadSection.addEventListener('dragover', function(e) { e.preventDefault(); uploadSection.classList.add('dragover'); });
     uploadSection.addEventListener('dragleave', function(e) { e.preventDefault(); uploadSection.classList.remove('dragover'); });
     uploadSection.addEventListener('drop', function(e) {
@@ -169,6 +205,41 @@ if (currentUser) {
         uploadSection.classList.remove('dragover');
         handleFileUpload({ target: { files: e.dataTransfer.files } });
     });
+    contentEditor.addEventListener('input', syncEditorToTextarea);
+
+    function syncEditorToTextarea() {
+        contentTextarea.value = contentEditor.innerHTML.trim();
+    }
+
+    function setEditorContent(html) {
+        contentEditor.innerHTML = html || '';
+        syncEditorToTextarea();
+    }
+
+    function getEditorContent() {
+        syncEditorToTextarea();
+        return contentTextarea.value.trim();
+    }
+
+    function formatContent(command) {
+        contentEditor.focus();
+        document.execCommand(command, false, null);
+        syncEditorToTextarea();
+    }
+
+    function applyBlockFormat(tagName) {
+        if (!tagName) return;
+        contentEditor.focus();
+        document.execCommand('formatBlock', false, tagName);
+        document.getElementById('contentBlockType').value = '';
+        syncEditorToTextarea();
+    }
+
+    function stripHtml(html) {
+        const temp = document.createElement('div');
+        temp.innerHTML = html || '';
+        return (temp.textContent || temp.innerText || '').trim();
+    }
 
     function handleFileUpload(event) {
         const files = event.target.files;
@@ -203,7 +274,7 @@ if (currentUser) {
         const isEditing = form.dataset.editingId;
         const doc = {
             title: document.getElementById('title').value,
-            content: document.getElementById('content').value,
+            content: getEditorContent(),
             source: document.getElementById('source').value || 'Manual Entry',
             section: 'Manual Entry',
             keywords: document.getElementById('keywords').value.split(',').map((k) => k.trim()).filter(Boolean),
@@ -218,6 +289,7 @@ if (currentUser) {
             saveDocument(doc);
         }
         form.reset();
+        setEditorContent('');
         delete form.dataset.editingId;
         submitBtn.textContent = 'Save Content';
         submitBtn.classList.remove('editing');
@@ -295,9 +367,10 @@ if (currentUser) {
             return;
         }
         knowledgeBase.documents.forEach((doc) => {
+            const previewText = stripHtml(doc.content);
             const docElement = document.createElement('div');
             docElement.className = 'document-item';
-            docElement.innerHTML = `<div class="document-header"><div><div class="document-title">${doc.title}</div><div class="document-meta">Source: ${doc.source} | Category: ${doc.category} | Updated: ${doc.lastUpdated}</div></div><div class="document-actions"><button class="btn btn-edit" onclick="editDocument(${doc.id})">Edit</button><button class="btn btn-delete" onclick="deleteDocument(${doc.id})">Delete</button></div></div><div class="document-content">${doc.content.substring(0, 200)}${doc.content.length > 200 ? '...' : ''}</div><div class="document-keywords">${doc.keywords.map((keyword) => `<span class="keyword-tag">${keyword}</span>`).join('')}</div>`;
+            docElement.innerHTML = `<div class="document-header"><div><div class="document-title">${doc.title}</div><div class="document-meta">Source: ${doc.source} | Category: ${doc.category} | Updated: ${doc.lastUpdated}</div></div><div class="document-actions"><button class="btn btn-edit" onclick="editDocument(${doc.id})">Edit</button><button class="btn btn-delete" onclick="deleteDocument(${doc.id})">Delete</button></div></div><div class="document-content">${previewText.substring(0, 200)}${previewText.length > 200 ? '...' : ''}</div><div class="document-keywords">${doc.keywords.map((keyword) => `<span class="keyword-tag">${keyword}</span>`).join('')}</div>`;
             container.appendChild(docElement);
         });
     }
@@ -307,7 +380,7 @@ if (currentUser) {
         if (!doc) { showMessage('Document not found', 'error'); return; }
         showTab('upload');
         document.getElementById('title').value = doc.title;
-        document.getElementById('content').value = doc.content;
+        setEditorContent(doc.content);
         document.getElementById('source').value = doc.source;
         document.getElementById('category').value = doc.category;
         document.getElementById('keywords').value = doc.keywords.join(', ');
@@ -436,6 +509,8 @@ if (currentUser) {
     window.loadAnalytics = loadAnalytics;
     window.clearAnalyticsDateRange = clearAnalyticsDateRange;
     window.completeUnansweredQuestion = completeUnansweredQuestion;
+    window.formatContent = formatContent;
+    window.applyBlockFormat = applyBlockFormat;
 
     loadDocuments();
 }

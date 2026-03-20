@@ -65,6 +65,8 @@
             background: rgba(31, 93, 140, 0.12); color: var(--color-primary); font-size: 0.85rem; font-weight: 700;
         }
         .result-content { color: var(--color-muted-strong); line-height: 1.72; font-size: 0.98rem; }
+        .result-content p, .result-content ul, .result-content ol, .result-content h2, .result-content h3 { margin: 0 0 12px; }
+        .result-content ul, .result-content ol { padding-left: 24px; }
         .no-results { padding: 44px 24px; text-align: center; color: var(--color-muted); border: 1px dashed rgba(22, 34, 53, 0.14); border-radius: 1rem; background: rgba(218, 232, 243, 0.5); }
         .highlight { background: linear-gradient(120deg, rgba(143, 183, 216, 0.5), rgba(255, 255, 255, 0.92)); color: var(--color-text); padding: 0 4px; border-radius: 0.35rem; font-weight: 700; }
         @media (max-width: 768px) { .result-topline { flex-direction: column; } .search-btn { width: 100%; } }
@@ -275,6 +277,10 @@ if (currentUser) {
         performSearch();
     }
 
+    function hasHtmlMarkup(content) {
+        return /<[^>]+>/.test(content || '');
+    }
+
     function displayResults(results, query = '') {
         const resultsContainer = document.getElementById('searchResults');
         if (results.length === 0) {
@@ -290,8 +296,11 @@ if (currentUser) {
 
         const stopWords = ['the','and','or','but','in','on','at','to','for','of','with','by','is','are','was','were','be','been','have','has','had','do','does','did','will','would','could','should','may','might','must','can','shall','this','that','these','those','a','an','i','you','he','she','it','we','they','me','him','her','us','them','name','what','how','when','where','why','who'];
         const resultsHTML = results.map((result) => {
-            let highlightedContent = result.content.replace(/\s+/g, ' ').replace(/\. /g, '. <br>').replace(/: /g, ': <br>').replace(/(\d+\)) /g, '<br>$1 ');
-            if (query && query.length > 1) {
+            const contentHasHtml = hasHtmlMarkup(result.content);
+            let highlightedContent = contentHasHtml
+                ? result.content
+                : result.content.replace(/\s+/g, ' ').replace(/\. /g, '. <br>').replace(/: /g, ': <br>').replace(/(\d+\)) /g, '<br>$1 ');
+            if (!contentHasHtml && query && query.length > 1) {
                 const meaningfulWords = query.split(' ').filter((word) => word.length > 3).filter((word) => !stopWords.includes(word.toLowerCase())).filter((word) => word.match(/^[a-zA-Z]+$/));
                 meaningfulWords.forEach((word) => {
                     const regex = new RegExp(`\\b(${word})\\b`, 'gi');
