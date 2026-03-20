@@ -121,6 +121,8 @@ CREATE OR REPLACE FUNCTION increment_unanswered_count(
 )
 RETURNS void
 LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
 AS $$
 BEGIN
     INSERT INTO unanswered_questions (app_name, question, count, agent, first_asked, last_asked)
@@ -132,6 +134,8 @@ BEGIN
         agent = EXCLUDED.agent;
 END;
 $$;
+
+GRANT EXECUTE ON FUNCTION increment_unanswered_count(TEXT, TEXT, TEXT) TO anon, authenticated;
 
 -- Function to search documents (PostgreSQL full-text search)
 CREATE OR REPLACE FUNCTION search_documents(

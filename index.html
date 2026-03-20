@@ -162,6 +162,74 @@ if (currentUser) {
         }
     }
 
+    async function logSearch(query) {
+        const { error } = await supabaseClient
+            .from('search_logs')
+            .insert({ app_name: window.appConfig.appName, query });
+
+        if (error) {
+            console.warn('Search log insert failed:', error);
+        }
+    }
+
+    async function logUnansweredQuestion(query) {
+        const payload = {
+            p_question: query,
+            p_agent: currentUser.email,
+            p_app_name: window.appConfig.appName
+        };
+
+        const { error: rpcError } = await supabaseClient.rpc('increment_unanswered_count', payload);
+        if (!rpcError) {
+            return;
+        }
+
+        console.warn('Unanswered log RPC failed, falling back to table update:', rpcError);
+
+        const { data: existing, error: selectError } = await supabaseClient
+            .from('unanswered_questions')
+            .select('id, count')
+            .eq('app_name', window.appConfig.appName)
+            .eq('question', query)
+            .maybeSingle();
+
+        if (selectError) {
+            console.warn('Unanswered log lookup failed:', selectError);
+            return;
+        }
+
+        if (existing) {
+            const { error: updateError } = await supabaseClient
+                .from('unanswered_questions')
+                .update({
+                    count: (existing.count || 0) + 1,
+                    last_asked: new Date().toISOString(),
+                    agent: currentUser.email
+                })
+                .eq('id', existing.id);
+
+            if (updateError) {
+                console.warn('Unanswered log update failed:', updateError);
+            }
+            return;
+        }
+
+        const { error: insertError } = await supabaseClient
+            .from('unanswered_questions')
+            .insert({
+                app_name: window.appConfig.appName,
+                question: query,
+                count: 1,
+                first_asked: new Date().toISOString(),
+                last_asked: new Date().toISOString(),
+                agent: currentUser.email
+            });
+
+        if (insertError) {
+            console.warn('Unanswered log insert fallback failed:', insertError);
+        }
+    }
+
     async function performSearch() {
         const query = document.getElementById('searchInput').value.trim();
         if (!isKnowledgeBaseLoaded) {
@@ -190,17 +258,14 @@ if (currentUser) {
                 });
                 if (error) throw error;
                 results = data || [];
-                supabaseClient.from('search_logs').insert({ app_name: window.appConfig.appName, query: query.trim() });
+                await logSearch(query.trim());
                 if (results.length === 0) {
-                    supabaseClient.rpc('increment_unanswered_count', {
-                        p_question: query.trim(),
-                        p_agent: currentUser.email,
-                        p_app_name: window.appConfig.appName
-                    });
+                    await logUnansweredQuestion(query.trim());
                 }
             }
             displayResults(results, query);
         } catch (error) {
+            console.error('Search error:', error);
             displayResults([], 'Search error occurred. Please try again.');
         }
     }
