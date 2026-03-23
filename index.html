@@ -67,6 +67,7 @@
         .result-content { color: var(--color-muted-strong); line-height: 1.72; font-size: 0.98rem; }
         .result-content p, .result-content ul, .result-content ol, .result-content h2, .result-content h3 { margin: 0 0 12px; }
         .result-content ul, .result-content ol { padding-left: 24px; }
+        .result-snippet-label { display: block; margin-bottom: 8px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted); }
         .no-results { padding: 44px 24px; text-align: center; color: var(--color-muted); border: 1px dashed rgba(22, 34, 53, 0.14); border-radius: 1rem; background: rgba(218, 232, 243, 0.5); }
         .highlight { background: linear-gradient(120deg, rgba(143, 183, 216, 0.5), rgba(255, 255, 255, 0.92)); color: var(--color-text); padding: 0 4px; border-radius: 0.35rem; font-weight: 700; }
         @media (max-width: 768px) { .result-topline { flex-direction: column; } .search-btn { width: 100%; } }
@@ -281,6 +282,54 @@ if (currentUser) {
         return /<[^>]+>/.test(content || '');
     }
 
+    function getMeaningfulWords(query) {
+        const stopWords = ['the','and','or','but','in','on','at','to','for','of','with','by','is','are','was','were','be','been','have','has','had','do','does','did','will','would','could','should','may','might','must','can','shall','this','that','these','those','a','an','i','you','he','she','it','we','they','me','him','her','us','them','name','what','how','when','where','why','who'];
+        return (query || '')
+            .split(/\s+/)
+            .filter((word) => word.length > 3)
+            .filter((word) => !stopWords.includes(word.toLowerCase()))
+            .filter((word) => word.match(/^[a-zA-Z]+$/));
+    }
+
+    function escapeRegExp(value) {
+        return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function getRelevantSnippet(content, query) {
+        const plainText = (content || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+        if (!plainText) return '';
+
+        const meaningfulWords = getMeaningfulWords(query);
+        let matchIndex = -1;
+        let matchLength = 0;
+
+        meaningfulWords.forEach((word) => {
+            const index = plainText.toLowerCase().indexOf(word.toLowerCase());
+            if (index !== -1 && (matchIndex === -1 || index < matchIndex)) {
+                matchIndex = index;
+                matchLength = word.length;
+            }
+        });
+
+        if (matchIndex === -1) {
+            return plainText.length > 320 ? plainText.substring(0, 320).trim() + '...' : plainText;
+        }
+
+        const start = Math.max(0, matchIndex - 140);
+        const end = Math.min(plainText.length, matchIndex + matchLength + 220);
+        const snippet = plainText.substring(start, end).trim();
+        return (start > 0 ? '...' : '') + snippet + (end < plainText.length ? '...' : '');
+    }
+
+    function highlightSnippet(snippet, query) {
+        let highlighted = snippet;
+        getMeaningfulWords(query).forEach((word) => {
+            const regex = new RegExp(`\\b(${escapeRegExp(word)})\\b`, 'gi');
+            highlighted = highlighted.replace(regex, '<span class="highlight">$1</span>');
+        });
+        return highlighted;
+    }
+
     function displayResults(results, query = '') {
         const resultsContainer = document.getElementById('searchResults');
         if (results.length === 0) {
@@ -294,20 +343,11 @@ if (currentUser) {
             return;
         }
 
-        const stopWords = ['the','and','or','but','in','on','at','to','for','of','with','by','is','are','was','were','be','been','have','has','had','do','does','did','will','would','could','should','may','might','must','can','shall','this','that','these','those','a','an','i','you','he','she','it','we','they','me','him','her','us','them','name','what','how','when','where','why','who'];
         const resultsHTML = results.map((result) => {
-            const contentHasHtml = hasHtmlMarkup(result.content);
-            let highlightedContent = contentHasHtml
-                ? result.content
-                : result.content.replace(/\s+/g, ' ').replace(/\. /g, '. <br>').replace(/: /g, ': <br>').replace(/(\d+\)) /g, '<br>$1 ');
-            if (!contentHasHtml && query && query.length > 1) {
-                const meaningfulWords = query.split(' ').filter((word) => word.length > 3).filter((word) => !stopWords.includes(word.toLowerCase())).filter((word) => word.match(/^[a-zA-Z]+$/));
-                meaningfulWords.forEach((word) => {
-                    const regex = new RegExp(`\\b(${word})\\b`, 'gi');
-                    highlightedContent = highlightedContent.replace(regex, '<span class="highlight">$1</span>');
-                });
-            }
-            return `<article class="result-card"><div class="result-topline"><div class="result-title">${result.title}</div><div class="result-source">Source: ${result.source}</div></div><div class="result-content">${highlightedContent}</div></article>`;
+            const snippet = result.snippet || getRelevantSnippet(result.content, query);
+            const highlightedContent = hasHtmlMarkup(snippet) ? snippet : highlightSnippet(snippet, query);
+            const sourceLabel = result.section ? `Source: ${result.source} | ${result.section}` : `Source: ${result.source}`;
+            return `<article class="result-card"><div class="result-topline"><div class="result-title">${result.title}</div><div class="result-source">${sourceLabel}</div></div><div class="result-content"><span class="result-snippet-label">Relevant excerpt</span>${highlightedContent}</div></article>`;
         }).join('');
         resultsContainer.innerHTML = `<div class="results-stack">${resultsHTML}</div>`;
     }

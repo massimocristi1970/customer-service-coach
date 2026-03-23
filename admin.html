@@ -180,9 +180,23 @@ const currentUser = window.workspaceAuth.initialize({
 if (currentUser) {
     let knowledgeBase = { documents: [] };
     let supabaseClient = null;
+    let pdfJsReady = false;
+    const uploadChunkTargetLength = 1800;
+    const uploadChunkOverlap = 240;
     if (!window.appConfig.localMode && typeof window.supabase !== 'undefined') {
         supabaseClient = window.supabase.createClient(window.appConfig.supabase.url, window.appConfig.supabase.anonKey);
     }
+
+    const pdfWorkerUrl = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs';
+    import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs')
+        .then((pdfjsLib) => {
+            window.pdfjsLib = pdfjsLib;
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
+            pdfJsReady = true;
+        })
+        .catch(() => {
+            pdfJsReady = false;
+        });
 
     function showTab(tabName, tabButton = null) {
         document.querySelectorAll('.tab-content').forEach((content) => content.classList.remove('active'));
@@ -243,28 +257,173 @@ if (currentUser) {
 
     function handleFileUpload(event) {
         const files = event.target.files;
-        for (let file of files) uploadFile(file);
+        Array.from(files || []).forEach((file) => uploadFile(file));
+        event.target.value = '';
     }
 
-    function uploadFile(file) {
-        if (!window.appConfig.localMode) {
-            showMessage('File upload is only available in local mode. Please use the manual entry form or switch to local mode.', 'error');
-            return;
+    async function uploadFile(file) {
+        try {
+            showMessage('Processing ' + file.name + '...', 'success');
+            const extractedText = await extractTextFromFile(file);
+            const cleanedText = extractedText.trim();
+
+            if (!cleanedText) {
+                showMessage('No readable text was found in ' + file.name + '.', 'error');
+                return;
+            }
+
+            const documents = createUploadedDocuments(file.name, cleanedText);
+            saveDocuments(documents, {
+                successMessage: 'Successfully processed ' + documents[0].title + ' into ' + documents.length + ' searchable section' + (documents.length === 1 ? '' : 's') + '.'
+            });
+        } catch (error) {
+            showMessage('Error processing file: ' + error.message, 'error');
         }
-        const formData = new FormData();
-        formData.append('file', file);
-        showMessage('Uploading and processing ' + file.name + '...', 'success');
-        fetch(`${window.appConfig.localApiUrl}/upload`, { method: 'POST', body: formData })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.success) {
-                    showMessage('Successfully processed ' + data.title + ' (' + data.contentLength + ' characters extracted)', 'success');
-                    loadDocuments();
-                } else {
-                    showMessage('Error processing file: ' + data.error, 'error');
+    }
+
+    async function extractTextFromFile(file) {
+        if (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')) {
+            return extractTextFromPdf(file);
+        }
+
+        if (file.type === 'text/plain' || file.name.toLowerCase().endsWith('.txt')) {
+            return file.text();
+        }
+
+        throw new Error('Unsupported file type. Please use PDF or TXT files.');
+    }
+
+    async function extractTextFromPdf(file) {
+        if (!pdfJsReady || !window.pdfjsLib) {
+            throw new Error('PDF support is still loading. Please try again in a moment.');
+        }
+
+        const arrayBuffer = await file.arrayBuffer();
+        const pdf = await window.pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+        const pages = [];
+
+        for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+            const page = await pdf.getPage(pageNumber);
+            const textContent = await page.getTextContent();
+            const pageText = textContent.items.map((item) => item.str).join(' ');
+            pages.push(pageText.replace(/\s+/g, ' ').trim());
+        }
+
+        return pages.join('\n\n');
+    }
+
+    function extractKeywords(text) {
+        const commonWords = ['the','and','or','but','in','on','at','to','for','of','with','by','is','are','was','were','be','been','have','has','had','do','does','did','will','would','could','should','may','might','must','can','shall','this','that','these','those','from','into','your','their','about'];
+        const counts = {};
+        text.toLowerCase()
+            .replace(/[^\w\s]/g, ' ')
+            .split(/\s+/)
+            .filter((word) => word.length > 3)
+            .filter((word) => !commonWords.includes(word))
+            .forEach((word) => {
+                counts[word] = (counts[word] || 0) + 1;
+            });
+
+        return Object.entries(counts)
+            .sort(([, a], [, b]) => b - a)
+            .slice(0, 10)
+            .map(([word]) => word);
+    }
+
+    function createUploadedDocuments(fileName, text) {
+        const title = fileName.replace(/\.[^/.]+$/, '');
+        const normalizedText = text.replace(/\r/g, '').trim();
+        const chunks = splitTextIntoChunks(normalizedText, uploadChunkTargetLength, uploadChunkOverlap);
+        const timestamp = Date.now();
+
+        return chunks.map((chunk, index) => ({
+            id: timestamp + index,
+            title,
+            content: chunk,
+            source: fileName,
+            section: chunks.length === 1 ? 'Uploaded Document' : 'Uploaded Document - Part ' + (index + 1) + ' of ' + chunks.length,
+            keywords: extractKeywords(chunk),
+            category: 'general',
+            lastUpdated: new Date().toISOString().split('T')[0]
+        }));
+    }
+
+    function splitTextIntoChunks(text, targetLength, overlapLength) {
+        if (text.length <= targetLength) return [text];
+
+        const paragraphs = text.split(/\n\s*\n/).map((paragraph) => paragraph.trim()).filter(Boolean);
+        const chunks = [];
+        let currentChunk = '';
+
+        paragraphs.forEach((paragraph) => {
+            const candidate = currentChunk ? currentChunk + '\n\n' + paragraph : paragraph;
+            if (candidate.length <= targetLength) {
+                currentChunk = candidate;
+                return;
+            }
+
+            if (currentChunk) {
+                chunks.push(currentChunk.trim());
+                const overlap = currentChunk.slice(Math.max(0, currentChunk.length - overlapLength)).trim();
+                currentChunk = overlap ? overlap + '\n\n' + paragraph : paragraph;
+                if (currentChunk.length <= targetLength * 1.35) {
+                    return;
                 }
-            })
-            .catch((error) => showMessage('Upload failed: ' + error, 'error'));
+            } else if (paragraph.length <= targetLength * 1.35) {
+                currentChunk = paragraph;
+                return;
+            }
+
+            const sentenceChunks = splitLongParagraph(paragraph, targetLength, overlapLength);
+            sentenceChunks.forEach((sentenceChunk, sentenceIndex) => {
+                if (sentenceIndex < sentenceChunks.length - 1) {
+                    chunks.push(sentenceChunk.trim());
+                } else {
+                    currentChunk = sentenceChunk.trim();
+                }
+            });
+        });
+
+        if (currentChunk.trim()) {
+            chunks.push(currentChunk.trim());
+        }
+
+        return chunks;
+    }
+
+    function splitLongParagraph(paragraph, targetLength, overlapLength) {
+        const sentences = paragraph.match(/[^.!?]+[.!?]?/g) || [paragraph];
+        const chunks = [];
+        let currentChunk = '';
+
+        sentences.forEach((sentence) => {
+            const cleanSentence = sentence.trim();
+            if (!cleanSentence) return;
+            const candidate = currentChunk ? currentChunk + ' ' + cleanSentence : cleanSentence;
+            if (candidate.length <= targetLength) {
+                currentChunk = candidate;
+                return;
+            }
+
+            if (currentChunk) {
+                chunks.push(currentChunk.trim());
+                const overlap = currentChunk.slice(Math.max(0, currentChunk.length - overlapLength)).trim();
+                currentChunk = overlap ? overlap + ' ' + cleanSentence : cleanSentence;
+                return;
+            }
+
+            for (let start = 0; start < cleanSentence.length; start += (targetLength - overlapLength)) {
+                const piece = cleanSentence.slice(start, start + targetLength).trim();
+                if (piece) chunks.push(piece);
+            }
+            currentChunk = '';
+        });
+
+        if (currentChunk.trim()) {
+            chunks.push(currentChunk.trim());
+        }
+
+        return chunks;
     }
 
     document.getElementById('manualForm').addEventListener('submit', function(e) {
@@ -330,18 +489,37 @@ if (currentUser) {
         }
     }
 
-    function saveDocument(doc) {
+    function saveDocument(doc, options = {}) {
+        return saveDocuments([doc], options);
+    }
+
+    function saveDocuments(docs, options = {}) {
+        const successMessage = options.successMessage || 'Document saved successfully!';
         if (window.appConfig.localMode) {
-            fetch(`${window.appConfig.localApiUrl}/documents`, {
-                method: 'POST', headers: window.appConfig.getHeaders(), body: JSON.stringify(doc)
-            }).then((response) => response.json()).then((data) => {
-                if (data.success) { showMessage('Document saved successfully!', 'success'); loadDocuments(); }
-                else { showMessage('Error saving document: ' + data.error, 'error'); }
+            docs.reduce((promise, doc) => {
+                return promise.then(() => fetch(`${window.appConfig.localApiUrl}/documents`, {
+                    method: 'POST', headers: window.appConfig.getHeaders(), body: JSON.stringify(doc)
+                }).then((response) => response.json()).then((data) => {
+                    if (!data.success) throw new Error(data.error);
+                }));
+            }, Promise.resolve()).then(() => {
+                showMessage(successMessage, 'success');
+                loadDocuments();
             }).catch((error) => showMessage('Error saving document: ' + error, 'error'));
         } else {
-            supabaseClient.from('documents').insert([{ app_name: window.appConfig.appName, title: doc.title, content: doc.content, source: doc.source, section: doc.section, keywords: doc.keywords, category: doc.category, last_updated: doc.lastUpdated || new Date().toISOString().split('T')[0] }]).then(({ error }) => {
+            const payload = docs.map((doc) => ({
+                app_name: window.appConfig.appName,
+                title: doc.title,
+                content: doc.content,
+                source: doc.source,
+                section: doc.section,
+                keywords: doc.keywords,
+                category: doc.category,
+                last_updated: doc.lastUpdated || new Date().toISOString().split('T')[0]
+            }));
+            supabaseClient.from('documents').insert(payload).then(({ error }) => {
                 if (error) showMessage('Error saving document: ' + error.message, 'error');
-                else { showMessage('Document saved successfully!', 'success'); loadDocuments(); }
+                else { showMessage(successMessage, 'success'); loadDocuments(); }
             });
         }
     }

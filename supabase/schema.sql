@@ -157,6 +157,7 @@ RETURNS TABLE (
     id BIGINT,
     title TEXT,
     content TEXT,
+    snippet TEXT,
     source TEXT,
     section TEXT,
     keywords TEXT[],
@@ -172,6 +173,12 @@ BEGIN
         d.id,
         d.title,
         d.content,
+        ts_headline(
+            'english',
+            d.content,
+            plainto_tsquery('english', search_query),
+            'StartSel=<span class="highlight">, StopSel=</span>, MaxWords=45, MinWords=15, ShortWord=3, MaxFragments=2, FragmentDelimiter= ... '
+        ) as snippet,
         d.source,
         d.section,
         d.keywords,
