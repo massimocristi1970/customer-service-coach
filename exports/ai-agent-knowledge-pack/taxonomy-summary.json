@@ -50,18 +50,6 @@
       ]
     },
     {
-      "category": "security-verification",
-      "label": "Security, Verification & Data Requests",
-      "count": 5,
-      "sample_titles": [
-        "Can I confirm the SMS code over the phone?",
-        "Can I confirm the email code over the phone?",
-        "What is a Subject Access Request (SAR)?",
-        "Identifying a Valid SAR",
-        "DSAR (Data Subject Access Request) Process"
-      ]
-    },
-    {
       "category": "debt-respite",
       "label": "Debt Respite Scheme / Breathing Space",
       "count": 5,
@@ -71,6 +59,18 @@
         "Is interest added while the account is in Breathing Space?",
         "Breathing Space Workflow",
         "Breathing Space Workflow - Health or Mental Health"
+      ]
+    },
+    {
+      "category": "security-verification",
+      "label": "Security, Verification & Data Requests",
+      "count": 5,
+      "sample_titles": [
+        "Can I confirm the SMS code over the phone?",
+        "Can I confirm the email code over the phone?",
+        "What is a Subject Access Request (SAR)?",
+        "Identifying a Valid SAR",
+        "DSAR (Data Subject Access Request) Process"
       ]
     },
     {
@@ -96,21 +96,12 @@
       ]
     },
     {
-      "category": "right-to-withdraw",
-      "label": "Right to Withdraw (RTW)",
+      "category": "contact-information",
+      "label": "Contact Information",
       "count": 2,
       "sample_titles": [
-        "What is the Right to Withdraw (RTW) process?",
-        "Right to Withdraw (RTW) Process"
-      ]
-    },
-    {
-      "category": "fraud-disputes",
-      "label": "Fraud & Disputes",
-      "count": 2,
-      "sample_titles": [
-        "The customer says the application was made fraudulently and not by them. What should I do?",
-        "Fraud Process"
+        "What are the contact details for Tick Tock Loans?",
+        "What are the contact details for Tick Tock Advance (MCA Product)?"
       ]
     },
     {
@@ -123,21 +114,30 @@
       ]
     },
     {
+      "category": "fraud-disputes",
+      "label": "Fraud & Disputes",
+      "count": 2,
+      "sample_titles": [
+        "The customer says the application was made fraudulently and not by them. What should I do?",
+        "Fraud Process"
+      ]
+    },
+    {
+      "category": "right-to-withdraw",
+      "label": "Right to Withdraw (RTW)",
+      "count": 2,
+      "sample_titles": [
+        "What is the Right to Withdraw (RTW) process?",
+        "Right to Withdraw (RTW) Process"
+      ]
+    },
+    {
       "category": "system-email",
       "label": "System Stages & Email Management",
       "count": 2,
       "sample_titles": [
         "Do I need to send the customer a \"Repaid\" email once the balance is cleared?",
         "What does each stage in the system mean?"
-      ]
-    },
-    {
-      "category": "contact-information",
-      "label": "Contact Information",
-      "count": 2,
-      "sample_titles": [
-        "What are the contact details for Tick Tock Loans?",
-        "What are the contact details for Tick Tock Advance (MCA Product)?"
       ]
     }
   ]

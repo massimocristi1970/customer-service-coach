@@ -16,7 +16,7 @@
       "cache",
       "portal"
     ],
-    "content": "Check the account stage first:\n•\tIf at \"Application Completed\": The customer must authorize their debit card via the online portal at www.ticktockloans.com\n•\tIf at \"Card Declined\": They need to reattempt verification via the portal\n•\tIf at \"Underwriting\": The application is under review\n•\tIf still at \"e-sign\": Test the link. If the issue persists, ask the customer to clear their cache and try again. Escalate with a screenshot if necessary.\n",
+    "content": "Check the account stage first:\n•\tIf at \"Application Completed\": The customer must authorize their debit card via the online portal at www.ticktockloans.com\n•\tIf at \"Card Declined\": They need to reattempt verification via the portal\n•\tIf at \"Underwriting\": The application is under review\n•\tIf still at \"e-sign\": Test the link. If the issue persists, ask the customer to clear their cache and try again. Escalate with a screenshot if necessary.",
     "last_updated": "2025-07-03"
   },
   {
@@ -164,7 +164,7 @@
       "fixed monthly payments",
       "months"
     ],
-    "content": "Payplan by Amounts (fixed monthly payments)\nPayplan by Duration (based on number of months)\n",
+    "content": "Payplan by Amounts (fixed monthly payments)\nPayplan by Duration (based on number of months)",
     "last_updated": "2025-06-27"
   },
   {
@@ -380,7 +380,7 @@
       "principal",
       "credit file"
     ],
-    "content": "The customer can withdraw from the agreement within 14 days of the loan being funded. This period begins the day after the loan is funded. Once a customer has withdrawn, they have 30 days to repay the balance. This balance will accrue daily interest at a rate of 0.8% per day, based on the outstanding principal.\nYou should set a repayment date within the 30-day period via the Accounts tab in the Schedule section. Once the loan has been settled, raise a \"Customer Service -- Withdrawal from Agreement\" task. After full RTW compliance, the loan entry will be removed from the customer's credit file with the credit reference agencies.\n",
+    "content": "The customer can withdraw from the agreement within 14 days of the loan being funded. This period begins the day after the loan is funded. Once a customer has withdrawn, they have 30 days to repay the balance. This balance will accrue daily interest at a rate of 0.8% per day, based on the outstanding principal.\nYou should set a repayment date within the 30-day period via the Accounts tab in the Schedule section. Once the loan has been settled, raise a \"Customer Service -- Withdrawal from Agreement\" task. After full RTW compliance, the loan entry will be removed from the customer's credit file with the credit reference agencies.",
     "last_updated": "2025-06-27"
   },
   {
@@ -416,7 +416,7 @@
       "recurring payments",
       "VISA"
     ],
-    "content": "This typically refers to R1: Revocation of Authorisation, meaning the cardholder has requested to stop all recurring payment transactions. You should contact the customer to confirm whether they have cancelled all transactions. This response applies to VISA ",
+    "content": "This typically refers to R1: Revocation of Authorisation, meaning the cardholder has requested to stop all recurring payment transactions. You should contact the customer to confirm whether they have cancelled all transactions. This response applies to VISA",
     "last_updated": "2025-06-27"
   },
   {
@@ -453,7 +453,7 @@
       "protection",
       "creditors"
     ],
-    "content": "The Debt Respite Scheme, also known as Breathing Space, is a UK government initiative that offers individuals temporary protection from creditors while they seek debt advice or mental health treatment.\nThere are two types:\n•\tStandard Breathing Space -- lasts for 60 days\n•\tMental Health Crisis Breathing Space -- lasts for the duration of the treatment, plus an additional 30 days, even if this exceeds 60 days\n",
+    "content": "The Debt Respite Scheme, also known as Breathing Space, is a UK government initiative that offers individuals temporary protection from creditors while they seek debt advice or mental health treatment.\nThere are two types:\n•\tStandard Breathing Space -- lasts for 60 days\n•\tMental Health Crisis Breathing Space -- lasts for the duration of the treatment, plus an additional 30 days, even if this exceeds 60 days",
     "last_updated": "2025-06-27"
   },
   {
@@ -472,7 +472,7 @@
       "60 days",
       "insolvency service"
     ],
-    "content": "Use On Hold -- 2 Months for a standard breathing space\nUse On Hold -- Vulnerable Customer for a Mental Health breathing space\n\nIn both cases, make sure to add a task to review the account in 60 days. The Insolvency Service typically informs us when the hold expires.\n",
+    "content": "Use On Hold -- 2 Months for a standard breathing space\nUse On Hold -- Vulnerable Customer for a Mental Health breathing space\n\nIn both cases, make sure to add a task to review the account in 60 days. The Insolvency Service typically informs us when the hold expires.",
     "last_updated": "2025-06-27"
   },
   {
@@ -596,7 +596,7 @@
       "complaints",
       "underwriting"
     ],
-    "content": "•\tPhone: 020 8090 8340\n•\tAddress: 7 Berley Crescent, Gravesend, DA12 2AH\n•\tWebsite: www.ticktockloans.com\nEmail Addresses:\nCustomer Service: customerservice@ticktockloans.com\nCollections: collections@ticktockloans.com\nComplaints: complaints@ticktockloans.com\nUnderwriting: underwriting@ticktockloans.com\n",
+    "content": "•\tPhone: 020 8090 8340\n•\tAddress: 7 Berley Crescent, Gravesend, DA12 2AH\n•\tWebsite: www.ticktockloans.com\nEmail Addresses:\nCustomer Service: customerservice@ticktockloans.com\nCollections: collections@ticktockloans.com\nComplaints: complaints@ticktockloans.com\nUnderwriting: underwriting@ticktockloans.com",
     "last_updated": "2025-06-27"
   },
   {
@@ -614,7 +614,7 @@
       "phone",
       "email"
     ],
-    "content": "Website: www.ticktockcredit.co.uk\nPhone: 020 3838 2148\nEmail: customerservice@ticktockcredit.co.uk\n",
+    "content": "Website: www.ticktockcredit.co.uk\nPhone: 020 3838 2148\nEmail: customerservice@ticktockcredit.co.uk",
     "last_updated": "2025-06-27"
   },
   {
@@ -793,7 +793,7 @@
       "repayment plan",
       "financial stability"
     ],
-    "content": "Step 1: Identify Eligibility for Breathing Space\nTrigger Event: \n•\tConsider breathing space if a customer discloses financial hardship, or is identified, or discloses as vulnerable.\nInitial Assessment: \n•\tReview the customer's circumstances to determine if breathing space is suitable. Serious vulnerabilities, particularly health or mental health concerns, should be assigned to the Vulnerability Specialist (VS) - Zoe Quick.\nTriggers for Referral to  Vulnerability Specialist (VS)\nPlease note: If the customer displays any of the following triggers, please note the account and assign to the Vulnerability Specialist. If the customer does not display any of the triggers below, then continue to step 2\nDirect Disclosure of Health Conditions\n•\tThe customer mentions a diagnosed mental health or physical health condition (e.g., depression, anxiety, cancer) that affects their ability to manage finances or respond to communications.\n•\tThey discuss ongoing medical treatment or challenges that may impact their financial stability.\nMentions of Suicide or Self-Harm\n•\tIf a customer mentions suicide, self-harm, or hints at thoughts of ending their life,\nReferences to Significant Health Events\n•\tThey mention a recent major health event, such as surgery, hospitalisation, or a new serious diagnosis, impacting their ability to meet financial obligations.\n•\tStatements like “I just got out of the hospital” or “I’ve been dealing with a serious health issue” can serve as indicators.\nBereavement\n•\tThe customer mentions experiencing the recent loss of a loved one, which could impact their emotional and financial stability.\n•\tStatements like “I’m struggling after the loss of [family member]” or “I’ve just lost someone close to me” are strong indicators of vulnerability.\nFamily or Caregiver Involvement\n•\tA family member or caregiver emails on behalf of the customer, explaining that the customer has health or cognitive issues affecting their ability to manage the account.\n•\tThe customer mentions they need someone’s help due to health-related challenges, signalling potential vulnerability.\nStep 2 : Implement and Monitor Breathing Space\nIncome and Expenditure Form:\n•\tSend  a copy of the income and expenditure form to the customer at the start of the 14-day hold.\n•\tRequest evidence, where appropriate,  of any change in circumstances (e.g., job loss, reduced income).\nHold Collections Activities: \n•\tPause collections activities for the initial 14-day breathing space period and move the account to a new stage labelled \" On Hold - Pending Evidence”\nCustomer Communication: \n•\tSend  confirmation Email - Account on Hold for 14 Days with Request for Evidence and I&E Completion or Email - Account on Hold for 14 Days with Request to Complete I&E Only (as appropriate) to the customer confirming they are in a hold stage and set a follow-up date for the 14-day review. \nStep 3: Review and Extend if Necessary\t\nBreathing Space Review: \n•\tBefore the end of the initial 14-day period, assess the customer’s financial situation based on the income and expenditure form and any additional evidence provided. \n•\tNote: If at this stage the customer is deemed to be financially vulnerable, then please refer the account to a line manager who will determine whether or not a vulnerability flag should be added to the account\nFollow-Up for Unreturned Forms: \n•\tIf the customer has not returned their income and expenditure form within the 14 days, contact them to remind them of the request, send  Chaser Email for Evidence and I&E Request or Chaser Email for I&E Completion Only (as appropriate) . Provide an additional 14 days for them to return the form. Send a second chaser email at 21 days Second Chaser Email for Evidence and I&E Request (Sent at 21 Days) or Second Chaser Email for I&E Completion Only (Sent at 21 Days)\nStep 4: Closure\nEnd Breathing Space:\n•\tIf the customer’s financial position has improved or a repayment plan can be agreed based the income and expenditure provided by the customer conclude the breathing space period, move the account out of the \" On Hold - Pending Evidence \" stage, and outline next steps for resuming payments.\nUnreturned Income and Expenditure: \n•\tIf the requested completed income and expenditure form or evidence of change in circumstances is not received within the extended 14-day period, return the account to the normal collections workflow and send Email - Hold Expired, Account Returning to Arrears Flow to the customer advising that the breathing space period has ended.\n",
+    "content": "Step 1: Identify Eligibility for Breathing Space\nTrigger Event:\n•\tConsider breathing space if a customer discloses financial hardship, or is identified, or discloses as vulnerable.\nInitial Assessment:\n•\tReview the customer's circumstances to determine if breathing space is suitable. Serious vulnerabilities, particularly health or mental health concerns, should be assigned to the Vulnerability Specialist (VS) - Zoe Quick.\nTriggers for Referral to  Vulnerability Specialist (VS)\nPlease note: If the customer displays any of the following triggers, please note the account and assign to the Vulnerability Specialist. If the customer does not display any of the triggers below, then continue to step 2\nDirect Disclosure of Health Conditions\n•\tThe customer mentions a diagnosed mental health or physical health condition (e.g., depression, anxiety, cancer) that affects their ability to manage finances or respond to communications.\n•\tThey discuss ongoing medical treatment or challenges that may impact their financial stability.\nMentions of Suicide or Self-Harm\n•\tIf a customer mentions suicide, self-harm, or hints at thoughts of ending their life,\nReferences to Significant Health Events\n•\tThey mention a recent major health event, such as surgery, hospitalisation, or a new serious diagnosis, impacting their ability to meet financial obligations.\n•\tStatements like “I just got out of the hospital” or “I’ve been dealing with a serious health issue” can serve as indicators.\nBereavement\n•\tThe customer mentions experiencing the recent loss of a loved one, which could impact their emotional and financial stability.\n•\tStatements like “I’m struggling after the loss of [family member]” or “I’ve just lost someone close to me” are strong indicators of vulnerability.\nFamily or Caregiver Involvement\n•\tA family member or caregiver emails on behalf of the customer, explaining that the customer has health or cognitive issues affecting their ability to manage the account.\n•\tThe customer mentions they need someone’s help due to health-related challenges, signalling potential vulnerability.\nStep 2 : Implement and Monitor Breathing Space\nIncome and Expenditure Form:\n•\tSend  a copy of the income and expenditure form to the customer at the start of the 14-day hold.\n•\tRequest evidence, where appropriate,  of any change in circumstances (e.g., job loss, reduced income).\nHold Collections Activities:\n•\tPause collections activities for the initial 14-day breathing space period and move the account to a new stage labelled \" On Hold - Pending Evidence”\nCustomer Communication:\n•\tSend  confirmation Email - Account on Hold for 14 Days with Request for Evidence and I&E Completion or Email - Account on Hold for 14 Days with Request to Complete I&E Only (as appropriate) to the customer confirming they are in a hold stage and set a follow-up date for the 14-day review.\nStep 3: Review and Extend if Necessary\nBreathing Space Review:\n•\tBefore the end of the initial 14-day period, assess the customer’s financial situation based on the income and expenditure form and any additional evidence provided.\n•\tNote: If at this stage the customer is deemed to be financially vulnerable, then please refer the account to a line manager who will determine whether or not a vulnerability flag should be added to the account\nFollow-Up for Unreturned Forms:\n•\tIf the customer has not returned their income and expenditure form within the 14 days, contact them to remind them of the request, send  Chaser Email for Evidence and I&E Request or Chaser Email for I&E Completion Only (as appropriate) . Provide an additional 14 days for them to return the form. Send a second chaser email at 21 days Second Chaser Email for Evidence and I&E Request (Sent at 21 Days) or Second Chaser Email for I&E Completion Only (Sent at 21 Days)\nStep 4: Closure\nEnd Breathing Space:\n•\tIf the customer’s financial position has improved or a repayment plan can be agreed based the income and expenditure provided by the customer conclude the breathing space period, move the account out of the \" On Hold - Pending Evidence \" stage, and outline next steps for resuming payments.\nUnreturned Income and Expenditure:\n•\tIf the requested completed income and expenditure form or evidence of change in circumstances is not received within the extended 14-day period, return the account to the normal collections workflow and send Email - Hold Expired, Account Returning to Arrears Flow to the customer advising that the breathing space period has ended.",
     "last_updated": "2025-06-27"
   },
   {
@@ -819,7 +819,7 @@
       "mental health assessment",
       "continued vulnerability assessment"
     ],
-    "content": "Step 1: Identify Eligibility for Breathing Space\nTrigger Event: \n•\tCustomer discloses is identified or discloses as health or mental health vulnerable.\nStep 2 : Implement and Monitor Breathing Space\nDebt and Mental Health Evidence Form: For cases indicating mental health vulnerability:\n•\tVulnerability Specialist (VS) completes a Vulnerable Customer Risk Identification Checklist (Appendix A)\n•\tSend  a copy of the Debt and Mental Health Evidence Form (DMHEF) – (Appendix B) and Debt and Mental Health Evidence Form Consent (Appendix C)  for the customers mental health professional to complete.\n•\tSend a copy of the income and expenditure form for the customer to complete. \n•\tRequest any other evidence, where appropriate,  of any change in circumstances (e.g., job loss, reduced income).\n•\t. Send email 86 – Mental Health Issue Vulnerable Customer\nHold Collections Activities: \n•\tApply an initial  30-day hold which will pause all collections activities and move the account to a new stage labelled \"Stage: On Hold - Vulnerable.\"\nCustomer Communication: \n•\tSend “Breathing Space” Send email 86 – Mental Health Issue Vulnerable Customer to the customer confirming they are in the breathing space stage and set a follow-up date for the 30-day review.\nStep 3: Review and Extend if Necessary\nBreathing Space Review: \n•\tBefore the end of the initial 30-day period, assess the customer’s situation based on the DMHEF,  income and expenditure form and any additional evidence provided. \nFollow-Up for Unreturned Forms: \n•\tIf the customer has not returned their income and expenditure form within the 30 days, contact them to remind them of the request. Send  30-Day Chaser Email - Reminder – Supporting Information Needed for Your Account.  Provide an additional 30 days for them to return the information. Send a second chaser email at 45 days 45-Day Chaser Email - Final Reminder – Supporting Information Needed to Continue Account Hold Continued Vulnerability Assessment: \n•\tThe Vulnerability Specialist will reassess serious mental health cases to determine if additional support (such as an extended forbearance plan, write off) is needed.\nStep 4: Closure\nEnd Breathing Space:\n•\tIf the customer’s position has improved, conclude the breathing space period, move the account out of the \" Stage: On Hold - Vulnerable \" stage, and outline next steps for resuming payments.\nUnreturned Income and Expenditure: \n•\tIf the requested completed income and expenditure form or evidence of change in circumstances is not received within the extended 30-day period, return the account to the normal collections workflow and send email 163 - Breathing Space Expiry to the customer advising that the breathing space period has ended.\n",
+    "content": "Step 1: Identify Eligibility for Breathing Space\nTrigger Event:\n•\tCustomer discloses is identified or discloses as health or mental health vulnerable.\nStep 2 : Implement and Monitor Breathing Space\nDebt and Mental Health Evidence Form: For cases indicating mental health vulnerability:\n•\tVulnerability Specialist (VS) completes a Vulnerable Customer Risk Identification Checklist (Appendix A)\n•\tSend  a copy of the Debt and Mental Health Evidence Form (DMHEF) – (Appendix B) and Debt and Mental Health Evidence Form Consent (Appendix C)  for the customers mental health professional to complete.\n•\tSend a copy of the income and expenditure form for the customer to complete.\n•\tRequest any other evidence, where appropriate,  of any change in circumstances (e.g., job loss, reduced income).\n•\t. Send email 86 – Mental Health Issue Vulnerable Customer\nHold Collections Activities:\n•\tApply an initial  30-day hold which will pause all collections activities and move the account to a new stage labelled \"Stage: On Hold - Vulnerable.\"\nCustomer Communication:\n•\tSend “Breathing Space” Send email 86 – Mental Health Issue Vulnerable Customer to the customer confirming they are in the breathing space stage and set a follow-up date for the 30-day review.\nStep 3: Review and Extend if Necessary\nBreathing Space Review:\n•\tBefore the end of the initial 30-day period, assess the customer’s situation based on the DMHEF,  income and expenditure form and any additional evidence provided.\nFollow-Up for Unreturned Forms:\n•\tIf the customer has not returned their income and expenditure form within the 30 days, contact them to remind them of the request. Send  30-Day Chaser Email - Reminder – Supporting Information Needed for Your Account.  Provide an additional 30 days for them to return the information. Send a second chaser email at 45 days 45-Day Chaser Email - Final Reminder – Supporting Information Needed to Continue Account Hold Continued Vulnerability Assessment:\n•\tThe Vulnerability Specialist will reassess serious mental health cases to determine if additional support (such as an extended forbearance plan, write off) is needed.\nStep 4: Closure\nEnd Breathing Space:\n•\tIf the customer’s position has improved, conclude the breathing space period, move the account out of the \" Stage: On Hold - Vulnerable \" stage, and outline next steps for resuming payments.\nUnreturned Income and Expenditure:\n•\tIf the requested completed income and expenditure form or evidence of change in circumstances is not received within the extended 30-day period, return the account to the normal collections workflow and send email 163 - Breathing Space Expiry to the customer advising that the breathing space period has ended.",
     "last_updated": "2025-06-27"
   },
   {
@@ -857,16 +857,15 @@
       "authorisation",
       "new card",
       "securely",
-      "banking app",
-      ""
+      "banking app"
     ],
-    "content": "To update their card details, the customer must complete the process via the website. Here's how to guide them:\n\n🔹 Step 1: Log In\nAsk the customer to visit the website and log in to their account.\n\n🔹 Step 2: Locate the Card Update Option\nOnce logged in, they should look for either:\n• “Update Card Securely”, or\n• “My Card”\n\nClicking on either option will take them to the card update page - if they do not see this get the customer to refresh the page.\n\n🔹 Step 3: Enter New Card Details\nThe customer should now enter their new card information on the page provided.\n\n🔹 Step 4: Verify via Banking App\nAfter entering the details, the customer will be prompted to verify the transaction in their banking app.\n\n🔹 Step 5: Return to Website\nOnce verified, the customer must return to the original website page.\n\nThis final step ensures the update is sent successfully through our API and applied to their account. ",
+    "content": "To update their card details, the customer must complete the process via the website. Here's how to guide them:\n\n🔹 Step 1: Log In\nAsk the customer to visit the website and log in to their account.\n\n🔹 Step 2: Locate the Card Update Option\nOnce logged in, they should look for either:\n• “Update Card Securely”, or\n• “My Card”\n\nClicking on either option will take them to the card update page - if they do not see this get the customer to refresh the page.\n\n🔹 Step 3: Enter New Card Details\nThe customer should now enter their new card information on the page provided.\n\n🔹 Step 4: Verify via Banking App\nAfter entering the details, the customer will be prompted to verify the transaction in their banking app.\n\n🔹 Step 5: Return to Website\nOnce verified, the customer must return to the original website page.\n\nThis final step ensures the update is sent successfully through our API and applied to their account.",
     "last_updated": "2025-07-03"
   },
   {
     "export_id": 42,
     "id": 1751555518830,
-    "title": "TEXAS - Vulnerable Customers ",
+    "title": "TEXAS - Vulnerable Customers",
     "category": "application-processing",
     "category_label": "Application Processing & General Operations",
     "section": "Manual Entry",
@@ -901,7 +900,7 @@
       "between loans",
       "period"
     ],
-    "content": "The cooling-off period is a set amount of time that must pass between loans once a previous loan has been repaid. During this time, any new applications will be automatically declined, in line with our repeat lending policy.\nThe following applies:\n•\tBetween the 1st and 2nd loan – 30-day cooling-off period\n•\tBetween the 2nd and 3rd loan – 30-day cooling-off period\n",
+    "content": "The cooling-off period is a set amount of time that must pass between loans once a previous loan has been repaid. During this time, any new applications will be automatically declined, in line with our repeat lending policy.\nThe following applies:\n•\tBetween the 1st and 2nd loan – 30-day cooling-off period\n•\tBetween the 2nd and 3rd loan – 30-day cooling-off period",
     "last_updated": "2025-07-08"
   },
   {
@@ -938,7 +937,7 @@
       "workflow",
       "strategy"
     ],
-    "content": "Lead Purchased\n– The customer’s application has been sourced from an online broker and purchased by TTL.\nE-sign Sent\n– The e-agreement has been sent to the customer for signature.\nApplication Completed\n– The customer has signed the agreement and now needs to complete debit card verification.\nUnderwriting\n– The application is currently being assessed by the underwriting team.\nOffer Sent\n– Affordability checks are complete, and a new loan offer has been sent. The customer must re-sign the e-agreement.\nSigned Off\n– All assessment checks have passed, and the loan has been approved.\nFunds Processing\n– The loan is in the process of being sent to the customer.\nFunds Sent\n– Funds have been successfully credited to the customer’s account.\nCollections – Missed Instalment\n– The customer has missed their next scheduled payment.\nCollections M0\n– The customer has missed one payment.\nCollections M1\n– The customer has missed two payments. A 28-day notice for default may be issued at this stage.\nCollections M2\n– The customer has missed two or more payments. Communications about referral to a Debt Collection Agency (DCA) begin here.\nCollections Review\n– The account is being reviewed and prepared for referral to external debt collection.\nExternal Collections – Referred\n– The account has been passed to external debt collectors (typically in the order: CRS > UK Search > Digital DRA).\nExternal Collections – Returned\n– The account has been returned to us by the external debt collectors.\n",
+    "content": "Lead Purchased\n– The customer’s application has been sourced from an online broker and purchased by TTL.\nE-sign Sent\n– The e-agreement has been sent to the customer for signature.\nApplication Completed\n– The customer has signed the agreement and now needs to complete debit card verification.\nUnderwriting\n– The application is currently being assessed by the underwriting team.\nOffer Sent\n– Affordability checks are complete, and a new loan offer has been sent. The customer must re-sign the e-agreement.\nSigned Off\n– All assessment checks have passed, and the loan has been approved.\nFunds Processing\n– The loan is in the process of being sent to the customer.\nFunds Sent\n– Funds have been successfully credited to the customer’s account.\nCollections – Missed Instalment\n– The customer has missed their next scheduled payment.\nCollections M0\n– The customer has missed one payment.\nCollections M1\n– The customer has missed two payments. A 28-day notice for default may be issued at this stage.\nCollections M2\n– The customer has missed two or more payments. Communications about referral to a Debt Collection Agency (DCA) begin here.\nCollections Review\n– The account is being reviewed and prepared for referral to external debt collection.\nExternal Collections – Referred\n– The account has been passed to external debt collectors (typically in the order: CRS > UK Search > Digital DRA).\nExternal Collections – Returned\n– The account has been returned to us by the external debt collectors.",
     "last_updated": "2025-07-08"
   },
   {
@@ -958,7 +957,7 @@
       "dmc",
       "email"
     ],
-    "content": "Yulia Nachkebia (Team Lead)\nTinatin Maqatsaria\nZuka Gvazava\nKhatia Tavdishvili\n",
+    "content": "Yulia Nachkebia (Team Lead)\nTinatin Maqatsaria\nZuka Gvazava\nKhatia Tavdishvili",
     "last_updated": "2025-07-08"
   },
   {
@@ -975,7 +974,7 @@
       "underwriters",
       "underwrites"
     ],
-    "content": "Pikria Amashukeli \nNugzar Rukhaia\nNona Macharashvili\nMariam Macharashvili\nAnna Markhulia\nLuka Macharashvili\nTamar Abramidze\nNata Begdarashvili",
+    "content": "Pikria Amashukeli\nNugzar Rukhaia\nNona Macharashvili\nMariam Macharashvili\nAnna Markhulia\nLuka Macharashvili\nTamar Abramidze\nNata Begdarashvili",
     "last_updated": "2025-11-18"
   },
   {
@@ -996,13 +995,13 @@
       "breathing space",
       "freeze"
     ],
-    "content": "Yes you can, however you should consider the reasons why you can’t at this stage set them up into an affordable plan. If you are waiting on information or changes in a role/position and the customer wants to make a nominal payment but there is no accessible income for future payments, then taking a nominal payment and holding the account would be an option. ",
+    "content": "Yes you can, however you should consider the reasons why you can’t at this stage set them up into an affordable plan. If you are waiting on information or changes in a role/position and the customer wants to make a nominal payment but there is no accessible income for future payments, then taking a nominal payment and holding the account would be an option.",
     "last_updated": "2025-07-08"
   },
   {
     "export_id": 49,
     "id": 1751989763595,
-    "title": "How does the customer repay their balance if they exercise their right to withdraw? ",
+    "title": "How does the customer repay their balance if they exercise their right to withdraw?",
     "category": "payment-plans",
     "category_label": "Payment Plans & Scheduling",
     "section": "Manual Entry",
@@ -1162,7 +1161,7 @@
       "cancelled",
       "same day"
     ],
-    "content": "Yes. ",
+    "content": "Yes.",
     "last_updated": "2025-08-20"
   },
   {
@@ -1214,7 +1213,7 @@
       "credit reference agency",
       "CRA"
     ],
-    "content": "To prevent the default notice from being recorded with the credit reference agencies, the customer must either:\n\nSettle the balance stated in the letter by the date noted in the default notice. (Note: the balance in the letter may differ from the current outstanding balance, as interest has accrued since the letter was issued.)\n\nMake a partial payment and agree for the remaining balance to be cleared either in full by a later date or through an affordable repayment arrangement. \n\nNote: If the amount stated in the default notice is not settled in full by the deadline, interest will continue to accrue according to the new schedule and will be payable.",
+    "content": "To prevent the default notice from being recorded with the credit reference agencies, the customer must either:\n\nSettle the balance stated in the letter by the date noted in the default notice. (Note: the balance in the letter may differ from the current outstanding balance, as interest has accrued since the letter was issued.)\n\nMake a partial payment and agree for the remaining balance to be cleared either in full by a later date or through an affordable repayment arrangement.\n\nNote: If the amount stated in the default notice is not settled in full by the deadline, interest will continue to accrue according to the new schedule and will be payable.",
     "last_updated": "2025-08-20"
   },
   {
@@ -1381,7 +1380,7 @@
       "special needs",
       "support"
     ],
-    "content": "Purpose: To handle calls where customers disclose difficulties such as illness, financial hardship, or other vulnerabilities.\n\nSteps:\n\nListen carefully and acknowledge what the customer has said.\n\nReassure them we can pause or adapt support if needed.\n\nMove the account with to on hold - Vulnerability, if you agree a hold and note the reason. \n\nAdd a \"must read note\" to make other staff aware of potential vulnerbility (this will show at the top of the general page)\n\nTask the account for a review (dependant on what is agreed with the customer)\n\nProvide information on free debt advice services if appropriate.\n\nUSse vulnerbility tools if needed i.e TEXAS\n\nEscalate to a manager (Zoe Quick) if position is complex and you are unsure of how to handle the situation.",
+    "content": "Purpose: To handle calls where customers disclose difficulties such as illness, financial hardship, or other vulnerabilities.\n\nSteps:\n\nListen carefully and acknowledge what the customer has said.\n\nReassure them we can pause or adapt support if needed.\n\nMove the account with to on hold - Vulnerability, if you agree a hold and note the reason.\n\nAdd a \"must read note\" to make other staff aware of potential vulnerbility (this will show at the top of the general page)\n\nTask the account for a review (dependant on what is agreed with the customer)\n\nProvide information on free debt advice services if appropriate.\n\nUSse vulnerbility tools if needed i.e TEXAS\n\nEscalate to a manager (Zoe Quick) if position is complex and you are unsure of how to handle the situation.",
     "last_updated": "2025-09-18"
   },
   {
@@ -1525,7 +1524,7 @@
   {
     "export_id": 78,
     "id": 1763463815660,
-    "title": "What is a Notice of Sum in Arrears ",
+    "title": "What is a Notice of Sum in Arrears",
     "category": "application-processing",
     "category_label": "Application Processing & General Operations",
     "section": "Manual Entry",
@@ -1570,7 +1569,7 @@
       "Payday lending market",
       "borrowing"
     ],
-    "content": "A Summary of Borrowing (SOB) is a regulatory document a lender must provide to a customer who has taken a High-Cost Short-Term Credit (HCST) product (for example, payday or other short-term, high-cost loans). It gives a clear, concise breakdown of how much the customer has borrowed and how much they have paid in charges (interest and fees) over a reporting period.\n\nPurpose:\n\nShow the total amount borrowed during the reporting period.\n\nShow the total charges (interest, fees, and other costs).\n\nImprove transparency so customers can see the true cost of repeat or short-term borrowing.\n\nHelp customers make informed decisions about future borrowing and seek debt advice if needed.\n\nKey points:\n\nThe SOB is informational only — it is not a collection notice or enforcement action.\n\nIt is a regulatory requirement designed to protect consumers and ensure visibility of repeated HCST borrowing.\n\nWhen a customer SHOULD be sent an SOB\n\nA lender must send a Summary of Borrowing:\n\nEvery three months (quarterly), in arrears, covering the previous three-month period — regardless of whether payments are due or the account is active, where the customer has had HCST borrowing that meets the FCA reporting criteria.\n\nWhen the account is closed (including where the debt is sold or transferred to another creditor/third party).\n\nWhere there has been repeat borrowing from the lender (i.e., the customer has borrowed more than once), or otherwise where the FCA’s HCST reporting criteria apply.\n",
+    "content": "A Summary of Borrowing (SOB) is a regulatory document a lender must provide to a customer who has taken a High-Cost Short-Term Credit (HCST) product (for example, payday or other short-term, high-cost loans). It gives a clear, concise breakdown of how much the customer has borrowed and how much they have paid in charges (interest and fees) over a reporting period.\n\nPurpose:\n\nShow the total amount borrowed during the reporting period.\n\nShow the total charges (interest, fees, and other costs).\n\nImprove transparency so customers can see the true cost of repeat or short-term borrowing.\n\nHelp customers make informed decisions about future borrowing and seek debt advice if needed.\n\nKey points:\n\nThe SOB is informational only — it is not a collection notice or enforcement action.\n\nIt is a regulatory requirement designed to protect consumers and ensure visibility of repeated HCST borrowing.\n\nWhen a customer SHOULD be sent an SOB\n\nA lender must send a Summary of Borrowing:\n\nEvery three months (quarterly), in arrears, covering the previous three-month period — regardless of whether payments are due or the account is active, where the customer has had HCST borrowing that meets the FCA reporting criteria.\n\nWhen the account is closed (including where the debt is sold or transferred to another creditor/third party).\n\nWhere there has been repeat borrowing from the lender (i.e., the customer has borrowed more than once), or otherwise where the FCA’s HCST reporting criteria apply.",
     "last_updated": "2025-11-18"
   },
   {
@@ -1593,7 +1592,7 @@
   {
     "export_id": 82,
     "id": 1763467409592,
-    "title": "Outbound Dialling Guidelines ",
+    "title": "Outbound Dialling Guidelines",
     "category": "collections-account",
     "category_label": "Collections & Account Status Management",
     "section": "Manual Entry",
@@ -1716,7 +1715,7 @@
       "external recoveries",
       "external collections"
     ],
-    "content": "Credit Resource Solutions (CRS)\n\nPhone: 01422 324 510 \nEmail: sales@creditresourcesolutions.co.uk\nPostal Address: Second Floor, G Mill, Dean Clough, Halifax, West Yorkshire, HX3 5AX \nComplaints Email: complaints@creditresourcesolutions.co.uk\nWebsite: paycrs.co.uk\n\nOpening Hours: Mon–Fri, 08:00–18:00; Sat, 09:30–12:30 (as per their contact centre) \npaycrs.co.uk\n\nUK Search\n\nPhone: 01246 488 924 \nEmail (General / Customer): [email protected] \nAddress: 4 Gander Lane, Chesterfield, S43 4PZ \nOpening Hours:Monday–Thursday: 09:00–19:00 Friday: 09:00–17:00 Saturday: 09:00–13:00 \n\nDigital DRA (The Digital Debt Resolution Agency)\n\nWebsite / Portal: https://www.digitaldra.co.uk/\nRegistered Office: Office 5, Elsie Whiteley Innovation Centre, Hopwood Lane, Halifax, HX1 5ER \nEmail: info@digitaldra.co.uk\nSupport / Portal Contact: Customers can raise queries via their Customer Portal or by replying to the last email / SMS contact. \n",
+    "content": "Credit Resource Solutions (CRS)\n\nPhone: 01422 324 510\nEmail: sales@creditresourcesolutions.co.uk\nPostal Address: Second Floor, G Mill, Dean Clough, Halifax, West Yorkshire, HX3 5AX\nComplaints Email: complaints@creditresourcesolutions.co.uk\nWebsite: paycrs.co.uk\n\nOpening Hours: Mon–Fri, 08:00–18:00; Sat, 09:30–12:30 (as per their contact centre)\npaycrs.co.uk\n\nUK Search\n\nPhone: 01246 488 924\nEmail (General / Customer): [email protected]\nAddress: 4 Gander Lane, Chesterfield, S43 4PZ\nOpening Hours:Monday–Thursday: 09:00–19:00 Friday: 09:00–17:00 Saturday: 09:00–13:00\n\nDigital DRA (The Digital Debt Resolution Agency)\n\nWebsite / Portal: https://www.digitaldra.co.uk/\nRegistered Office: Office 5, Elsie Whiteley Innovation Centre, Hopwood Lane, Halifax, HX1 5ER\nEmail: info@digitaldra.co.uk\nSupport / Portal Contact: Customers can raise queries via their Customer Portal or by replying to the last email / SMS contact.",
     "last_updated": "2025-11-18"
   },
   {
@@ -1734,7 +1733,7 @@
       "continuous payment authority",
       "mandate"
     ],
-    "content": "No \n\nOur primary automatic payment method is Continuous Payment Authority (CPA), which requires the customer’s consent to allow payments to be collected automatically.\n\nCustomers can also choose manual collection, where they must call us to process each payment.\n\nIf a customer prefers to pay by other methods, bank transfer is available. However, this option cannot be used at the application stage, as CPA is required as part of the loan application process.",
+    "content": "No\n\nOur primary automatic payment method is Continuous Payment Authority (CPA), which requires the customer’s consent to allow payments to be collected automatically.\n\nCustomers can also choose manual collection, where they must call us to process each payment.\n\nIf a customer prefers to pay by other methods, bank transfer is available. However, this option cannot be used at the application stage, as CPA is required as part of the loan application process.",
     "last_updated": "2025-11-18"
   },
   {

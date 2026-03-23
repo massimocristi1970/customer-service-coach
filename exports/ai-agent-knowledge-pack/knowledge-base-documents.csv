@@ -3,8 +3,7 @@ export_id,id,title,category,category_label,section,source,keywords,content,last_
 •	If at ""Application Completed"": The customer must authorize their debit card via the online portal at www.ticktockloans.com
 •	If at ""Card Declined"": They need to reattempt verification via the portal
 •	If at ""Underwriting"": The application is under review
-•	If still at ""e-sign"": Test the link. If the issue persists, ask the customer to clear their cache and try again. Escalate with a screenshot if necessary.
-",2025-07-03
+•	If still at ""e-sign"": Test the link. If the issue persists, ask the customer to clear their cache and try again. Escalate with a screenshot if necessary.",2025-07-03
 2,1751036537838,What happens if the first repayment date is within a few days of the application date?,application-processing,Application Processing & General Operations,Manual Entry,Tick Tock Loans Knowledge Base v1,first repayment date | payday | daily interest | 0.8% | principal,"You can select the customer's following payday; however, you must inform them of the additional cost, as daily interest will accrue during this period at a rate of 0.8% of the outstanding principal per day.",2025-06-27
 3,1751036573919,What if the customer has no additional income?,application-processing,Application Processing & General Operations,Manual Entry,Tick Tock Loans Knowledge Base v1,additional income | £00.00 | application | field,"They must still enter £00.00 in the additional income field, otherwise they will not be able to proceed with the application.",2025-06-27
 4,1751036770778,Customer Portal & Login Issues,customer-portal,Customer Portal & Login Issues,Manual Entry,Tick Tock Loans Knowledge Base v1,password reset | forgot password | email | surname | CRM | reset | password | how do I request,"Go to www.ticktockloans.com, click 'Forgot Password,' and enter their email and surname exactly as it appears in CRM.",2025-08-08
@@ -13,8 +12,7 @@ export_id,id,title,category,category_label,section,source,keywords,content,last_
 7,1751037008160,When can a customer be rolled back from Collections to Funds Sent?,collections-account,Collections & Account Status Management,Manual Entry,Tick Tock Loans Knowledge Base v1,rollback | collections | funds sent | missed payment | arrangement,If they make the missed payment or set up a new arrangement.,2025-06-27
 8,1751037035721,When should a customer be moved from Collections to a Payment Plan?,collections-account,Collections & Account Status Management,Manual Entry,Tick Tock Loans Knowledge Base v1,collections | payment plan | M0 | M1 | M2 | DMC | hold | arrangement,"If they make a payment or set up an arrangement while in M0, M1, M2, DMC, or Hold stages.",2025-06-27
 9,1751037077719,What types of schedules are available?,payment-plans,Payment Plans & Scheduling,Manual Entry,Tick Tock Loans Knowledge Base v1,payplan | amounts | duration | fixed monthly payments | months,"Payplan by Amounts (fixed monthly payments)
-Payplan by Duration (based on number of months)
-",2025-06-27
+Payplan by Duration (based on number of months)",2025-06-27
 10,1751038559545,What payment methods can be used in a new schedule?,payment-plans,Payment Plans & Scheduling,Manual Entry,Tick Tock Loans Knowledge Base v1,payment methods | manual | phone | bank transfer | card | CPA,Manual (via phone or bank transfer) or Card (CPA payments).,2025-06-27
 11,1751038626722,What details must be entered for a new payment plan?,payment-plans,Payment Plans & Scheduling,Manual Entry,Tick Tock Loans Knowledge Base v1,payment plan | repayment method | amount | payments | date | frequency | interest,"Repayment method, amount (£) or number of payments, first payment date, payment frequency, and interest settings.",2025-06-27
 12,1751038665795,Can the first or second payment in a plan be adjusted?,payment-plans,Payment Plans & Scheduling,Manual Entry,Tick Tock Loans Knowledge Base v1,first payment | second payment | adjust | additional info | schedule setup,"Yes, this can be done via the 'Additional Info' section during schedule setup.",2025-06-27
@@ -27,10 +25,9 @@ Payplan by Duration (based on number of months)
 19,1751040205972,Can I confirm the email code over the phone?,security-verification,"Security, Verification & Data Requests",Manual Entry,Tick Tock Loans Knowledge Base v1,email code | phone | two-step verification | bypass,No. The customer must access the email themselves. This is part of our two-step verification and must not be bypassed.,2025-06-27
 20,1751040249121,Can I stay on the call while the customer agrees to the credit agreement?,application-processing,Application Processing & General Operations,Manual Entry,Tick Tock Loans Knowledge Base v1,call | credit agreement | regulatory documents | remain,No. You must not remain on the call while the customer reads and agrees to the credit agreement and regulatory documents.,2025-06-27
 21,1751040298151,What is the Right to Withdraw (RTW) process?,right-to-withdraw,Right to Withdraw (RTW),Manual Entry,Tick Tock Loans Knowledge Base v1,right to withdraw | RTW | 14 days | funded | 30 days | daily interest | 0.8% | principal | credit file,"The customer can withdraw from the agreement within 14 days of the loan being funded. This period begins the day after the loan is funded. Once a customer has withdrawn, they have 30 days to repay the balance. This balance will accrue daily interest at a rate of 0.8% per day, based on the outstanding principal.
-You should set a repayment date within the 30-day period via the Accounts tab in the Schedule section. Once the loan has been settled, raise a ""Customer Service -- Withdrawal from Agreement"" task. After full RTW compliance, the loan entry will be removed from the customer's credit file with the credit reference agencies.
-",2025-06-27
+You should set a repayment date within the 30-day period via the Accounts tab in the Schedule section. Once the loan has been settled, raise a ""Customer Service -- Withdrawal from Agreement"" task. After full RTW compliance, the loan entry will be removed from the customer's credit file with the credit reference agencies.",2025-06-27
 22,1751040375413,"I've received the transaction response: ""Transaction Success"" -- what does this mean?",transaction-responses,Transaction Responses & Payment Issues,Manual Entry,Tick Tock Loans Knowledge Base v1,transaction success | payment | verification | successful,"This means that the transaction verification or payment was successful. Either the payment has been taken, or the verification has completed as expected.",2025-06-27
-23,1751040418717,"I've received the transaction response: ""Transaction declined by authorization system"" -- what does this mean?",transaction-responses,Transaction Responses & Payment Issues,Manual Entry,Tick Tock Loans Knowledge Base v1,transaction declined | authorization system | R1 | revocation | recurring payments | VISA,"This typically refers to R1: Revocation of Authorisation, meaning the cardholder has requested to stop all recurring payment transactions. You should contact the customer to confirm whether they have cancelled all transactions. This response applies to VISA ",2025-06-27
+23,1751040418717,"I've received the transaction response: ""Transaction declined by authorization system"" -- what does this mean?",transaction-responses,Transaction Responses & Payment Issues,Manual Entry,Tick Tock Loans Knowledge Base v1,transaction declined | authorization system | R1 | revocation | recurring payments | VISA,"This typically refers to R1: Revocation of Authorisation, meaning the cardholder has requested to stop all recurring payment transactions. You should contact the customer to confirm whether they have cancelled all transactions. This response applies to VISA",2025-06-27
 24,1751040508543,The customer says the application was made fraudulently and not by them. What should I do?,fraud-disputes,Fraud & Disputes,Manual Entry,Tick Tock Loans Knowledge Base v1,fraudulent application | bank details | investigation | bank letter | reimbursement,"When taking the initial details of an alleged fraudulent application, make sure to record the following information on the system:
 •	Contact telephone number
 •	Email address
@@ -40,13 +37,11 @@ If the bank account does belong to the customer, we will still require written c
 25,1751040657310,What is the Debt Respite Scheme?,debt-respite,Debt Respite Scheme / Breathing Space,Manual Entry,Tick Tock Loans Knowledge Base v1,debt respite scheme | breathing space | 60 days | mental health | protection | creditors,"The Debt Respite Scheme, also known as Breathing Space, is a UK government initiative that offers individuals temporary protection from creditors while they seek debt advice or mental health treatment.
 There are two types:
 •	Standard Breathing Space -- lasts for 60 days
-•	Mental Health Crisis Breathing Space -- lasts for the duration of the treatment, plus an additional 30 days, even if this exceeds 60 days
-",2025-06-27
+•	Mental Health Crisis Breathing Space -- lasts for the duration of the treatment, plus an additional 30 days, even if this exceeds 60 days",2025-06-27
 26,1751040722098,What stage should I use for an account under the Debt Respite Scheme?,debt-respite,Debt Respite Scheme / Breathing Space,Manual Entry,Tick Tock Loans Knowledge Base v1,breathing space | on hold | 2 months | vulnerable customer | 60 days | insolvency service,"Use On Hold -- 2 Months for a standard breathing space
 Use On Hold -- Vulnerable Customer for a Mental Health breathing space
 
-In both cases, make sure to add a task to review the account in 60 days. The Insolvency Service typically informs us when the hold expires.
-",2025-06-27
+In both cases, make sure to add a task to review the account in 60 days. The Insolvency Service typically informs us when the hold expires.",2025-06-27
 27,1751040759205,Is interest added while the account is in Breathing Space?,debt-respite,Debt Respite Scheme / Breathing Space,Manual Entry,Tick Tock Loans Knowledge Base v1,interest | breathing space | frozen | fees | charges,"No. Interest, fees, and charges are frozen while the account is in Breathing Space.",2025-06-27
 28,1751040823941,Customer has joined a debt management company---what info do I need?,debt-management,Debt Management Companies (DMC),Manual Entry,Tick Tock Loans Knowledge Base v1,debt management company | DMC | reference number | date joined,"The name of the DMC, reference number, and the date they joined.",2025-06-27
 29,1751040865126,What stage should I move an account to if the customer joins a DMC?,debt-management,Debt Management Companies (DMC),Manual Entry,Tick Tock Loans Knowledge Base v1,DMC | on hold | debt management,"Move the account to ""On Hold -- Debt Management.""",2025-06-27
@@ -60,12 +55,10 @@ Email Addresses:
 Customer Service: customerservice@ticktockloans.com
 Collections: collections@ticktockloans.com
 Complaints: complaints@ticktockloans.com
-Underwriting: underwriting@ticktockloans.com
-",2025-06-27
+Underwriting: underwriting@ticktockloans.com",2025-06-27
 34,1751041112505,What are the contact details for Tick Tock Advance (MCA Product)?,contact-information,Contact Information,Manual Entry,Tick Tock Loans Knowledge Base v1,tick tock advance | MCA | website | phone | email,"Website: www.ticktockcredit.co.uk
 Phone: 020 3838 2148
-Email: customerservice@ticktockcredit.co.uk
-",2025-06-27
+Email: customerservice@ticktockcredit.co.uk",2025-06-27
 35,1751041259455,Right to Withdraw (RTW) Process,right-to-withdraw,Right to Withdraw (RTW),Manual Entry,Manual Entry,Withdraw | RTW | right to withdraw | cancellation | cancel loan | cancel agreement | opt out | 14-day rule | 14 days | fourteen days | exit agreement | cooling-off period | loan withdrawal | customer wants to cancel | agreement withdrawal | stop loan | terminate agreement | ends loan | cancels loan | wishes to withdraw | no longer wants loan,"If a customer wishes to withdraw from their loan agreement, they must inform us within 14 days of the loan being funded. This 14-day period starts the day after the loan is funded.
 The customer can notify us of their intention to withdraw either verbally or in writing.
 The customer has 30 days from the date they notify us of their intention to withdraw to repay:
@@ -133,9 +126,9 @@ The customer will be expected to repay the original loan amount (principal), sin
 The business will then write off any interest that accrued.
 This aligns with our policy where fraud is proven and funds are reimbursed by the bank.",2025-06-27
 38,1751043142284,Breathing Space Workflow,debt-respite,Debt Respite Scheme / Breathing Space,Manual Entry,Manual Entry,breathing space | financial hardship | vulnerable customer | vulnerability specialist | Zoe Quick | mental health | physical health | suicide | self-harm | bereavement | caregiver | income expenditure form | I&E | collections hold | 14 days | evidence request | financial vulnerability | breathing space review | chaser email | hold expired | arrears flow | on hold pending evidence | vulnerability flag | line manager referral | health conditions | hospitalization | medical treatment | family member involvement | collections activities pause | repayment plan | financial stability,"Step 1: Identify Eligibility for Breathing Space
-Trigger Event: 
+Trigger Event:
 •	Consider breathing space if a customer discloses financial hardship, or is identified, or discloses as vulnerable.
-Initial Assessment: 
+Initial Assessment:
 •	Review the customer's circumstances to determine if breathing space is suitable. Serious vulnerabilities, particularly health or mental health concerns, should be assigned to the Vulnerability Specialist (VS) - Zoe Quick.
 Triggers for Referral to  Vulnerability Specialist (VS)
 Please note: If the customer displays any of the following triggers, please note the account and assign to the Vulnerability Specialist. If the customer does not display any of the triggers below, then continue to step 2
@@ -157,48 +150,46 @@ Step 2 : Implement and Monitor Breathing Space
 Income and Expenditure Form:
 •	Send  a copy of the income and expenditure form to the customer at the start of the 14-day hold.
 •	Request evidence, where appropriate,  of any change in circumstances (e.g., job loss, reduced income).
-Hold Collections Activities: 
+Hold Collections Activities:
 •	Pause collections activities for the initial 14-day breathing space period and move the account to a new stage labelled "" On Hold - Pending Evidence”
-Customer Communication: 
-•	Send  confirmation Email - Account on Hold for 14 Days with Request for Evidence and I&E Completion or Email - Account on Hold for 14 Days with Request to Complete I&E Only (as appropriate) to the customer confirming they are in a hold stage and set a follow-up date for the 14-day review. 
-Step 3: Review and Extend if Necessary	
-Breathing Space Review: 
-•	Before the end of the initial 14-day period, assess the customer’s financial situation based on the income and expenditure form and any additional evidence provided. 
+Customer Communication:
+•	Send  confirmation Email - Account on Hold for 14 Days with Request for Evidence and I&E Completion or Email - Account on Hold for 14 Days with Request to Complete I&E Only (as appropriate) to the customer confirming they are in a hold stage and set a follow-up date for the 14-day review.
+Step 3: Review and Extend if Necessary
+Breathing Space Review:
+•	Before the end of the initial 14-day period, assess the customer’s financial situation based on the income and expenditure form and any additional evidence provided.
 •	Note: If at this stage the customer is deemed to be financially vulnerable, then please refer the account to a line manager who will determine whether or not a vulnerability flag should be added to the account
-Follow-Up for Unreturned Forms: 
+Follow-Up for Unreturned Forms:
 •	If the customer has not returned their income and expenditure form within the 14 days, contact them to remind them of the request, send  Chaser Email for Evidence and I&E Request or Chaser Email for I&E Completion Only (as appropriate) . Provide an additional 14 days for them to return the form. Send a second chaser email at 21 days Second Chaser Email for Evidence and I&E Request (Sent at 21 Days) or Second Chaser Email for I&E Completion Only (Sent at 21 Days)
 Step 4: Closure
 End Breathing Space:
 •	If the customer’s financial position has improved or a repayment plan can be agreed based the income and expenditure provided by the customer conclude the breathing space period, move the account out of the "" On Hold - Pending Evidence "" stage, and outline next steps for resuming payments.
-Unreturned Income and Expenditure: 
-•	If the requested completed income and expenditure form or evidence of change in circumstances is not received within the extended 14-day period, return the account to the normal collections workflow and send Email - Hold Expired, Account Returning to Arrears Flow to the customer advising that the breathing space period has ended.
-",2025-06-27
+Unreturned Income and Expenditure:
+•	If the requested completed income and expenditure form or evidence of change in circumstances is not received within the extended 14-day period, return the account to the normal collections workflow and send Email - Hold Expired, Account Returning to Arrears Flow to the customer advising that the breathing space period has ended.",2025-06-27
 39,1751043291614,Breathing Space Workflow - Health or Mental Health,debt-respite,Debt Respite Scheme / Breathing Space,Manual Entry,Manual Entry,mental health vulnerability | health vulnerable | mental health professional | mental health issue | serious mental health cases | debt mental health evidence form | DMHEF | vulnerable customer | vulnerability specialist | health conditions | mental health support | mental health assessment | continued vulnerability assessment,"Step 1: Identify Eligibility for Breathing Space
-Trigger Event: 
+Trigger Event:
 •	Customer discloses is identified or discloses as health or mental health vulnerable.
 Step 2 : Implement and Monitor Breathing Space
 Debt and Mental Health Evidence Form: For cases indicating mental health vulnerability:
 •	Vulnerability Specialist (VS) completes a Vulnerable Customer Risk Identification Checklist (Appendix A)
 •	Send  a copy of the Debt and Mental Health Evidence Form (DMHEF) – (Appendix B) and Debt and Mental Health Evidence Form Consent (Appendix C)  for the customers mental health professional to complete.
-•	Send a copy of the income and expenditure form for the customer to complete. 
+•	Send a copy of the income and expenditure form for the customer to complete.
 •	Request any other evidence, where appropriate,  of any change in circumstances (e.g., job loss, reduced income).
 •	. Send email 86 – Mental Health Issue Vulnerable Customer
-Hold Collections Activities: 
+Hold Collections Activities:
 •	Apply an initial  30-day hold which will pause all collections activities and move the account to a new stage labelled ""Stage: On Hold - Vulnerable.""
-Customer Communication: 
+Customer Communication:
 •	Send “Breathing Space” Send email 86 – Mental Health Issue Vulnerable Customer to the customer confirming they are in the breathing space stage and set a follow-up date for the 30-day review.
 Step 3: Review and Extend if Necessary
-Breathing Space Review: 
-•	Before the end of the initial 30-day period, assess the customer’s situation based on the DMHEF,  income and expenditure form and any additional evidence provided. 
-Follow-Up for Unreturned Forms: 
-•	If the customer has not returned their income and expenditure form within the 30 days, contact them to remind them of the request. Send  30-Day Chaser Email - Reminder – Supporting Information Needed for Your Account.  Provide an additional 30 days for them to return the information. Send a second chaser email at 45 days 45-Day Chaser Email - Final Reminder – Supporting Information Needed to Continue Account Hold Continued Vulnerability Assessment: 
+Breathing Space Review:
+•	Before the end of the initial 30-day period, assess the customer’s situation based on the DMHEF,  income and expenditure form and any additional evidence provided.
+Follow-Up for Unreturned Forms:
+•	If the customer has not returned their income and expenditure form within the 30 days, contact them to remind them of the request. Send  30-Day Chaser Email - Reminder – Supporting Information Needed for Your Account.  Provide an additional 30 days for them to return the information. Send a second chaser email at 45 days 45-Day Chaser Email - Final Reminder – Supporting Information Needed to Continue Account Hold Continued Vulnerability Assessment:
 •	The Vulnerability Specialist will reassess serious mental health cases to determine if additional support (such as an extended forbearance plan, write off) is needed.
 Step 4: Closure
 End Breathing Space:
 •	If the customer’s position has improved, conclude the breathing space period, move the account out of the "" Stage: On Hold - Vulnerable "" stage, and outline next steps for resuming payments.
-Unreturned Income and Expenditure: 
-•	If the requested completed income and expenditure form or evidence of change in circumstances is not received within the extended 30-day period, return the account to the normal collections workflow and send email 163 - Breathing Space Expiry to the customer advising that the breathing space period has ended.
-",2025-06-27
+Unreturned Income and Expenditure:
+•	If the requested completed income and expenditure form or evidence of change in circumstances is not received within the extended 30-day period, return the account to the normal collections workflow and send email 163 - Breathing Space Expiry to the customer advising that the breathing space period has ended.",2025-06-27
 40,1751546280186,How do I calculate interest?,collections-account,Collections & Account Status Management,Manual Entry,Manual Entry,interest | calculate | work out | how much | charge | daily interest | price cap,"Convert the percentage to a decimal:
 
 0.8% = 0.008
@@ -210,7 +201,7 @@ Multiply the decimal by the amount:
 💡 Final Answer:
 
 0.8% of £100 is £0.80 (per day)",2025-07-03
-41,1751555066591,How do you update the card details?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,Update card | card | pre-auth | authorisation | new card | securely | banking app | ,"To update their card details, the customer must complete the process via the website. Here's how to guide them:
+41,1751555066591,How do you update the card details?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,Update card | card | pre-auth | authorisation | new card | securely | banking app,"To update their card details, the customer must complete the process via the website. Here's how to guide them:
 
 🔹 Step 1: Log In
 Ask the customer to visit the website and log in to their account.
@@ -231,8 +222,8 @@ After entering the details, the customer will be prompted to verify the transact
 🔹 Step 5: Return to Website
 Once verified, the customer must return to the original website page.
 
-This final step ensures the update is sent successfully through our API and applied to their account. ",2025-07-03
-42,1751555518830,TEXAS - Vulnerable Customers ,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,vulnerability | TEXAS | impacting | condition | support | help customer | depression | mental health | vulnerable | disclosed | Samaritans | Mind,"TEXAS is a widely used model designed to help frontline staff identify and respond appropriately to signs of customer vulnerability during conversations — especially when disclosures are made.
+This final step ensures the update is sent successfully through our API and applied to their account.",2025-07-03
+42,1751555518830,TEXAS - Vulnerable Customers,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,vulnerability | TEXAS | impacting | condition | support | help customer | depression | mental health | vulnerable | disclosed | Samaritans | Mind,"TEXAS is a widely used model designed to help frontline staff identify and respond appropriately to signs of customer vulnerability during conversations — especially when disclosures are made.
 
 Each letter in TEXAS represents a step to guide the interaction:
 
@@ -277,8 +268,7 @@ You want to build a complete picture before applying any account-level support o
 43,1751985069663,What is the cooling-off period?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,cooling | between loans | period,"The cooling-off period is a set amount of time that must pass between loans once a previous loan has been repaid. During this time, any new applications will be automatically declined, in line with our repeat lending policy.
 The following applies:
 •	Between the 1st and 2nd loan – 30-day cooling-off period
-•	Between the 2nd and 3rd loan – 30-day cooling-off period
-",2025-07-08
+•	Between the 2nd and 3rd loan – 30-day cooling-off period",2025-07-08
 44,1751985614134,Do we offer top-up loans?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,top-up | top | second loan | additional loan | increase balance,"No, we do not offer top-up loans. Customers are also subject to a cooling-off period, which varies depending on how many loans they’ve had previously. If a customer wishes to repay their loan and reapply, they will need to take this condition into account.",2025-07-08
 45,1751988255452,What does each stage in the system mean?,system-email,System Stages & Email Management,Manual Entry,Manual Entry,stage | collector | collections | underwriting | workflow | strategy,"Lead Purchased
 – The customer’s application has been sourced from an online broker and purchased by TTL.
@@ -309,14 +299,12 @@ Collections Review
 External Collections – Referred
 – The account has been passed to external debt collectors (typically in the order: CRS > UK Search > Digital DRA).
 External Collections – Returned
-– The account has been returned to us by the external debt collectors.
-",2025-07-08
+– The account has been returned to us by the external debt collectors.",2025-07-08
 46,1751988353004,Who make up the backoffice team?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,backoffice | team | BO | Yulia | admin | dmc | email,"Yulia Nachkebia (Team Lead)
 Tinatin Maqatsaria
 Zuka Gvazava
-Khatia Tavdishvili
-",2025-07-08
-47,1751988486896,Who make up the underwriting team?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,team | Pikria | underwriters | underwrites,"Pikria Amashukeli 
+Khatia Tavdishvili",2025-07-08
+47,1751988486896,Who make up the underwriting team?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,team | Pikria | underwriters | underwrites,"Pikria Amashukeli
 Nugzar Rukhaia
 Nona Macharashvili
 Mariam Macharashvili
@@ -324,8 +312,8 @@ Anna Markhulia
 Luka Macharashvili
 Tamar Abramidze
 Nata Begdarashvili",2025-11-18
-48,1751989614643,Can I place the customer on a 30 day hold if they make a nominal payment?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,hold | temp financial difficulty | forbearance | nominal pay | GFP | extend hold | breathing space | freeze,"Yes you can, however you should consider the reasons why you can’t at this stage set them up into an affordable plan. If you are waiting on information or changes in a role/position and the customer wants to make a nominal payment but there is no accessible income for future payments, then taking a nominal payment and holding the account would be an option. ",2025-07-08
-49,1751989763595,How does the customer repay their balance if they exercise their right to withdraw? ,payment-plans,Payment Plans & Scheduling,Manual Entry,Manual Entry,BT | transfer | banking details | standing order | STO | RTW payment,"Customers can either pay the balance owing on their verified debit card on file or alternatively, they can make a bank transfer using the following detail; customers should attach their reference number to the payment:
+48,1751989614643,Can I place the customer on a 30 day hold if they make a nominal payment?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,hold | temp financial difficulty | forbearance | nominal pay | GFP | extend hold | breathing space | freeze,"Yes you can, however you should consider the reasons why you can’t at this stage set them up into an affordable plan. If you are waiting on information or changes in a role/position and the customer wants to make a nominal payment but there is no accessible income for future payments, then taking a nominal payment and holding the account would be an option.",2025-07-08
+49,1751989763595,How does the customer repay their balance if they exercise their right to withdraw?,payment-plans,Payment Plans & Scheduling,Manual Entry,Manual Entry,BT | transfer | banking details | standing order | STO | RTW payment,"Customers can either pay the balance owing on their verified debit card on file or alternatively, they can make a bank transfer using the following detail; customers should attach their reference number to the payment:
 
 Account Name: Savvy Loan Products Ltd
 
@@ -401,7 +389,7 @@ Request Documentation:
 Inform the customer that we require formal confirmation of the bankruptcy order (e.g., court letter or order document).
 
 Make them aware that this must be received within 21 days to maintain the hold status on their account.",2025-08-08
-57,1755702047345,Can you apply for a loan the same day loan is expired or cancelled?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,Reapply | apply | expired | cancelled | same day,Yes. ,2025-08-20
+57,1755702047345,Can you apply for a loan the same day loan is expired or cancelled?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,Reapply | apply | expired | cancelled | same day,Yes.,2025-08-20
 58,1755702219748,When do I send a Survey email?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,survey | email | send email,"You should send the customer a survey email after each call, unless one has already been sent to them that day. The only exception is for stages between Leadgen Purchased and Funds Processing, as they will have already received the survey link once they were funded.",2025-08-20
 59,1755702363437,What is our IBAN Number?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,IBAN | no uk account | paying abroad,"GB32 TRWI 2314 7081 2998 84/ TRWIGB2L
 Account holder: Savvy Loan Products Ltd",2025-08-20
@@ -409,7 +397,7 @@ Account holder: Savvy Loan Products Ltd",2025-08-20
 
 Settle the balance stated in the letter by the date noted in the default notice. (Note: the balance in the letter may differ from the current outstanding balance, as interest has accrued since the letter was issued.)
 
-Make a partial payment and agree for the remaining balance to be cleared either in full by a later date or through an affordable repayment arrangement. 
+Make a partial payment and agree for the remaining balance to be cleared either in full by a later date or through an affordable repayment arrangement.
 
 Note: If the amount stated in the default notice is not settled in full by the deadline, interest will continue to accrue according to the new schedule and will be payable.",2025-08-20
 61,1758198264053,Debt Relief Order,collections-account,Collections & Account Status Management,Manual Entry,Manual Entry,DRO | Relief | Debt Relief | Insolvency | debt management | order,"A Debt Relief Order (DRO) is a formal insolvency tool designed for individuals with low income, minimal assets, and relatively small unsecured debts who are unable to repay their creditors. DROs provide a structured mechanism for managing qualifying debts while offering a clear path to debt write-off.
@@ -697,7 +685,7 @@ Listen carefully and acknowledge what the customer has said.
 
 Reassure them we can pause or adapt support if needed.
 
-Move the account with to on hold - Vulnerability, if you agree a hold and note the reason. 
+Move the account with to on hold - Vulnerability, if you agree a hold and note the reason.
 
 Add a ""must read note"" to make other staff aware of potential vulnerbility (this will show at the top of the general page)
 
@@ -1170,7 +1158,7 @@ The total charge for credit
 The total amount repayable
 
 The representative APR",2025-10-15
-78,1763463815660,What is a Notice of Sum in Arrears ,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,NOSIA | sum in arrears | notice | regulated document | notice of sum,"A Notice of Sum in Arrears is a formal letter sent by a lender/creditor when a borrower has fallen behind on their repayments for a credit agreement regulated by the Consumer Credit Act (for example: loans, credit cards, hire purchase, store cards).
+78,1763463815660,What is a Notice of Sum in Arrears,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,NOSIA | sum in arrears | notice | regulated document | notice of sum,"A Notice of Sum in Arrears is a formal letter sent by a lender/creditor when a borrower has fallen behind on their repayments for a credit agreement regulated by the Consumer Credit Act (for example: loans, credit cards, hire purchase, store cards).
 
 The notice is issued when the borrower has missed the equivalent of two or more payments, or has underpaid to the point that the arrears reach the value of two full instalments.
 
@@ -1236,8 +1224,7 @@ Every three months (quarterly), in arrears, covering the previous three-month pe
 
 When the account is closed (including where the debt is sold or transferred to another creditor/third party).
 
-Where there has been repeat borrowing from the lender (i.e., the customer has borrowed more than once), or otherwise where the FCA’s HCST reporting criteria apply.
-",2025-11-18
+Where there has been repeat borrowing from the lender (i.e., the customer has borrowed more than once), or otherwise where the FCA’s HCST reporting criteria apply.",2025-11-18
 81,1763467063526,What is our appeals process?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,appeal | declined | unhappy with decision | appeal process,"The appeal is reviewed by a senior underwriter to determine whether the original lending decision was correct.
 
 The process typically takes up to 48 hours from the time the appeal is submitted.
@@ -1253,7 +1240,7 @@ The senior underwriter will consider the customer’s points as part of their re
 Appeal decisions will be communicated via email.
 
 Customers can submit an appeal either directly by email or manually through a customer service representative.",2025-11-18
-82,1763467409592,Outbound Dialling Guidelines ,collections-account,Collections & Account Status Management,Manual Entry,Manual Entry,Outbound dialling | due date list | DD list | DD+1 | calling out | voicemails,"When handling outbound dialling, please follow these rules to remain compliant with our Arrears Collections policy:
+82,1763467409592,Outbound Dialling Guidelines,collections-account,Collections & Account Status Management,Manual Entry,Manual Entry,Outbound dialling | due date list | DD list | DD+1 | calling out | voicemails,"When handling outbound dialling, please follow these rules to remain compliant with our Arrears Collections policy:
 
 Call Spacing & Attempt Limits
 
@@ -1473,30 +1460,29 @@ This is to ensure we comply with regulatory expectations, as customers should no
 Once we’ve verified the customers identity through that number, we can override the existing details and update the email address or phone number.",2025-11-18
 88,1763484574473,What Debt Recovery Agencies do we use?,customer-portal,Customer Portal & Login Issues,Manual Entry,Manual Entry,DRA | DCA | CRS | Digital DRA | UKS | UK Search | external recoveries | external collections,"Credit Resource Solutions (CRS)
 
-Phone: 01422 324 510 
+Phone: 01422 324 510
 Email: sales@creditresourcesolutions.co.uk
-Postal Address: Second Floor, G Mill, Dean Clough, Halifax, West Yorkshire, HX3 5AX 
+Postal Address: Second Floor, G Mill, Dean Clough, Halifax, West Yorkshire, HX3 5AX
 Complaints Email: complaints@creditresourcesolutions.co.uk
 Website: paycrs.co.uk
 
-Opening Hours: Mon–Fri, 08:00–18:00; Sat, 09:30–12:30 (as per their contact centre) 
+Opening Hours: Mon–Fri, 08:00–18:00; Sat, 09:30–12:30 (as per their contact centre)
 paycrs.co.uk
 
 UK Search
 
-Phone: 01246 488 924 
-Email (General / Customer): [email protected] 
-Address: 4 Gander Lane, Chesterfield, S43 4PZ 
-Opening Hours:Monday–Thursday: 09:00–19:00 Friday: 09:00–17:00 Saturday: 09:00–13:00 
+Phone: 01246 488 924
+Email (General / Customer): [email protected]
+Address: 4 Gander Lane, Chesterfield, S43 4PZ
+Opening Hours:Monday–Thursday: 09:00–19:00 Friday: 09:00–17:00 Saturday: 09:00–13:00
 
 Digital DRA (The Digital Debt Resolution Agency)
 
 Website / Portal: https://www.digitaldra.co.uk/
-Registered Office: Office 5, Elsie Whiteley Innovation Centre, Hopwood Lane, Halifax, HX1 5ER 
+Registered Office: Office 5, Elsie Whiteley Innovation Centre, Hopwood Lane, Halifax, HX1 5ER
 Email: info@digitaldra.co.uk
-Support / Portal Contact: Customers can raise queries via their Customer Portal or by replying to the last email / SMS contact. 
-",2025-11-18
-89,1763484900719,Do we accept direct debit?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,DD | direct debit | CPA | continuous payment authority | mandate,"No 
+Support / Portal Contact: Customers can raise queries via their Customer Portal or by replying to the last email / SMS contact.",2025-11-18
+89,1763484900719,Do we accept direct debit?,application-processing,Application Processing & General Operations,Manual Entry,Manual Entry,DD | direct debit | CPA | continuous payment authority | mandate,"No
 
 Our primary automatic payment method is Continuous Payment Authority (CPA), which requires the customer’s consent to allow payments to be collected automatically.
 
