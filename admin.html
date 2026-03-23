@@ -272,6 +272,15 @@ if (currentUser) {
                 return;
             }
 
+            const duplicateMatch = findDuplicateDocument(file.name);
+            if (duplicateMatch) {
+                const shouldContinue = confirm('A document that looks like this file is already in the knowledge base:\n\n' + duplicateMatch.title + '\nSource: ' + duplicateMatch.source + '\nSection: ' + duplicateMatch.section + '\n\nUpload it anyway?');
+                if (!shouldContinue) {
+                    showMessage('Upload cancelled to avoid a duplicate document.', 'success');
+                    return;
+                }
+            }
+
             const documents = createUploadedDocuments(file.name, cleanedText);
             saveDocuments(documents, {
                 successMessage: 'Successfully processed ' + documents[0].title + ' into ' + documents.length + ' searchable section' + (documents.length === 1 ? '' : 's') + '.'
@@ -389,6 +398,23 @@ if (currentUser) {
         }
 
         return chunks;
+    }
+
+    function normalizeDocumentName(value) {
+        return (value || '')
+            .toLowerCase()
+            .replace(/\.[^/.]+$/, '')
+            .replace(/[^a-z0-9]+/g, ' ')
+            .trim();
+    }
+
+    function findDuplicateDocument(fileName) {
+        const normalizedFileName = normalizeDocumentName(fileName);
+        return (knowledgeBase.documents || []).find((doc) => {
+            const normalizedTitle = normalizeDocumentName(doc.title);
+            const normalizedSource = normalizeDocumentName(doc.source);
+            return normalizedTitle === normalizedFileName || normalizedSource === normalizedFileName;
+        }) || null;
     }
 
     function splitLongParagraph(paragraph, targetLength, overlapLength) {
