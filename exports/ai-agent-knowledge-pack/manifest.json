@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T11:26:43.012739+00:00",
+  "generated_at": "2026-03-23T16:03:57.604445+00:00",
   "pack_version": "2.0",
   "source_repo": "customer-service-coach",
   "package_name": "ai-agent-knowledge-pack",
@@ -11,6 +11,7 @@
     "ai-agent-vendor-brief.md",
     "implementation-guide.md",
     "review-notes.md",
+    "knowledge-base-detailed.txt",
     "knowledge-base-documents.json",
     "knowledge-base-documents.jsonl",
     "knowledge-base-documents.csv",

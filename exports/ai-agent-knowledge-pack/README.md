@@ -17,6 +17,7 @@ This folder contains an offline handoff pack for the company operating your AI c
 - ai-agent-vendor-brief.md
 - implementation-guide.md
 - review-notes.md
+- knowledge-base-detailed.txt
 - knowledge-base-documents.json
 - knowledge-base-documents.jsonl
 - knowledge-base-documents.csv

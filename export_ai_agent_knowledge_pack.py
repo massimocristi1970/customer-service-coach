@@ -45,6 +45,12 @@ CATEGORY_LABELS = {
 
 def clean_text(value: str) -> str:
     text = str(value or "")
+    if any(marker in text for marker in ["â", "Â", "Ã"]):
+        try:
+            repaired = text.encode("latin1").decode("utf-8")
+            text = repaired
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            pass
     for source, target in MOJIBAKE_REPLACEMENTS.items():
         text = text.replace(source, target)
     return "\n".join(line.rstrip() for line in text.replace("\r\n", "\n").replace("\r", "\n").split("\n")).strip()
@@ -137,6 +143,7 @@ def build_manifest(documents: List[Dict[str, object]]) -> Dict[str, object]:
             "ai-agent-vendor-brief.md",
             "implementation-guide.md",
             "review-notes.md",
+            "knowledge-base-detailed.txt",
             "knowledge-base-documents.json",
             "knowledge-base-documents.jsonl",
             "knowledge-base-documents.csv",
@@ -183,6 +190,40 @@ def write_csv_documents(documents: List[Dict[str, object]]) -> None:
                     "keywords": " | ".join(doc["keywords"]),
                 }
             )
+
+
+def write_detailed_text_export(documents: List[Dict[str, object]]) -> None:
+    path = OUTPUT_DIR / "knowledge-base-detailed.txt"
+    lines = [
+        "Customer Service Coach Knowledge Base",
+        "Detailed Offline Export",
+        "",
+        f"Generated: {datetime.now(timezone.utc).isoformat()}",
+        f"Document count: {len(documents)}",
+        "",
+        "This file is intended for vendor knowledge-base upload or review.",
+        "It contains the full answer content for every exported document.",
+        "",
+    ]
+    for doc in documents:
+        lines.extend(
+            [
+                "=" * 80,
+                f"Document ID: {doc['id']}",
+                f"Export ID: {doc['export_id']}",
+                f"Title: {doc['title']}",
+                f"Category: {doc['category_label']} ({doc['category']})",
+                f"Section: {doc['section']}",
+                f"Source: {doc['source']}",
+                f"Last Updated: {doc['last_updated']}",
+                f"Keywords: {', '.join(doc['keywords']) if doc['keywords'] else 'None'}",
+                "",
+                "Answer Content:",
+                doc["content"] or "[No content]",
+                "",
+            ]
+        )
+    path.write_text("\n".join(lines), encoding="utf-8")
 
 
 def write_readme(manifest: Dict[str, object]) -> None:
@@ -343,6 +384,7 @@ def main() -> None:
     write_json_documents(documents)
     write_jsonl_documents(documents)
     write_csv_documents(documents)
+    write_detailed_text_export(documents)
     write_readme(manifest)
     write_vendor_brief(manifest, taxonomy_summary)
     write_implementation_guide(test_queries)
