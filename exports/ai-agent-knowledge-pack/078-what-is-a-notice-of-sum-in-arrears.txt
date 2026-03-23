@@ -1,0 +1,19 @@
+Customer Scenario: What is a Notice of Sum in Arrears
+Scenario Title: What is a Notice of Sum in Arrears
+Category: Application Processing & General Operations
+Keywords: NOSIA, sum in arrears, notice, regulated document, notice of sum
+
+Answer To Give The Customer:
+A Notice of Sum in Arrears is a formal letter sent by a lender/creditor when a borrower has fallen behind on their repayments for a credit agreement regulated by the Consumer Credit Act (for example: loans, credit cards, hire purchase, store cards).
+
+The notice is issued when the borrower has missed the equivalent of two or more payments, or has underpaid to the point that the arrears reach the value of two full instalments.
+
+Its purpose is to:
+
+Inform the borrower that they are behind on payments
+
+Confirm the total amount of arrears owed
+
+Explain any consequences, such as further action if the arrears are not cleared
+
+Provide required information and protections, including where to get free debt advice

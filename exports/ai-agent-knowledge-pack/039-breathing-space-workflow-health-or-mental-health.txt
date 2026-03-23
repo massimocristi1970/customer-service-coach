@@ -1,0 +1,7 @@
+Customer Scenario: The customer needs help with breathing space - health or mental health.
+Scenario Title: Breathing Space Workflow - Health or Mental Health
+Category: Debt Respite Scheme / Breathing Space
+Keywords: mental health vulnerability, health vulnerable, mental health professional, mental health issue, serious mental health cases, debt mental health evidence form, DMHEF, vulnerable customer, vulnerability specialist, health conditions, mental health support, mental health assessment, continued vulnerability assessment
+
+Answer To Give The Customer:
+If the customer is affected by physical or mental health issues, bereavement, or serious personal circumstances, they may be considered for additional support or a temporary hold while the business reviews the situation. The customer may be asked for information or evidence so suitable support can be put in place.

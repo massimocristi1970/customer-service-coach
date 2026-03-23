@@ -1,0 +1,37 @@
+Customer Scenario: The customer is asking about Contacting Customers in Insolvency.
+Scenario Title: Contacting Customers in Insolvency
+Category: Collections & Account Status Management
+Keywords: contacting, during insolvency, IVA, bankruptcy, DRO, Trust Deed, Sequestration
+
+Answer To Give The Customer:
+No. Once a customer has entered an approved form of insolvency (e.g. Debt Relief Order, Individual Voluntary Arrangement, Bankruptcy, or Debt Management Plan through an appointed provider), we must not work directly with the customer regarding repayment of their debt.
+
+Procedure for Staff:
+
+Identify Insolvency Status:
+
+Confirm the form of insolvency (e.g. DRO, IVA, Bankruptcy, DMP).
+
+Record all relevant details in the customer notes (reference number, order date, name of Insolvency Practitioner/Official Receiver/DMP provider).
+
+Verification:
+
+Where applicable, verify on the Insolvency Register:
+Insolvency Service Register
+
+Copy and paste confirmation into customer notes.
+
+Account Handling:
+
+Communication:
+
+Do not discuss repayment or collection directly with the customer.
+
+Politely explain that all communications will now be managed via their appointed Insolvency Practitioner/Official Receiver/DMP provider.
+
+Script Example for Agents:
+
+“As your account is now under an approved form of insolvency, we’re not able to discuss repayment directly with you. From this point forward, all matters will be handled by your Insolvency Practitioner/Official Receiver, and we will work directly with them on your account.”
+
+Key Compliance Note:
+Contacting customers directly to seek repayment after insolvency has been approved may breach regulatory obligations and consumer duty principles. All communication must go through the appointed insolvency representative.

@@ -1,0 +1,13 @@
+Customer Scenario: Do we accept direct debit?
+Scenario Title: Do we accept direct debit?
+Category: Application Processing & General Operations
+Keywords: DD, direct debit, CPA, continuous payment authority, mandate
+
+Answer To Give The Customer:
+No
+
+Our primary automatic payment method is Continuous Payment Authority (CPA), which requires the customer’s consent to allow payments to be collected automatically.
+
+Customers can also choose manual collection, where they must call us to process each payment.
+
+If a customer prefers to pay by other methods, bank transfer is available. However, this option cannot be used at the application stage, as CPA is required as part of the loan application process.

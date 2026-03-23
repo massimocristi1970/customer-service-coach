@@ -1,0 +1,7 @@
+Customer Scenario: What payment methods can be used in a new schedule?
+Scenario Title: What payment methods can be used in a new schedule?
+Category: Payment Plans & Scheduling
+Keywords: payment methods, manual, phone, bank transfer, card, CPA
+
+Answer To Give The Customer:
+Manual (via phone or bank transfer) or Card (CPA payments).

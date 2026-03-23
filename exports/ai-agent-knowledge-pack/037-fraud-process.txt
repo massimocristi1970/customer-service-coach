@@ -1,0 +1,7 @@
+Customer Scenario: The customer needs help with fraud.
+Scenario Title: Fraud Process
+Category: Fraud & Disputes
+Keywords: Fraud, suspected fraud, confirmed fraud, fraudulent, fraud alert, fraud team, fraud department, fraud process, report fraud, fraud claim, fraudulent transactions, unauthorised transactions, scam, scam activity, identity theft, account hacked, account compromised, fraud investigation, fraud check, fraud complaint, card blocked, card compromised, stolen card, fraudster, impersonation, police report, Police, crime report, crime reference number, CRN, action fraud, notice of correction, NOC, CIFAS, report to police, fraud escalation, fraud refund, fraud steps, fraud query, possible fraud, transaction not mine, not the customer, someone used.
+
+Answer To Give The Customer:
+If the customer says the application or transactions were fraudulent, they should contact their bank immediately and report the matter for investigation. They may also be asked to report it to Action Fraud or the police and provide written evidence from the bank so the case can be reviewed properly.

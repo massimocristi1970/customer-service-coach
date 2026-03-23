@@ -1,0 +1,17 @@
+Customer Scenario: What is a Subject Access Request (SAR)?
+Scenario Title: What is a Subject Access Request (SAR)?
+Category: Security, Verification & Data Requests
+Keywords: DSAR, subject access request, SAR, data request
+
+Answer To Give The Customer:
+SARs fall under the UK GDPR and Data Protection Act 2018.
+
+A SAR can be:
+
+Written (email, letter, webform)
+
+Verbal (phone call, in person)
+
+Made to any staff member — not just the Data Protection Officer
+
+No special wording is required. If a customer says anything like “I want my data”, it may be a valid SAR.

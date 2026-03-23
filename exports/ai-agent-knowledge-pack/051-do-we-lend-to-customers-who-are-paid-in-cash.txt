@@ -1,0 +1,7 @@
+Customer Scenario: Do we lend to customers who are paid in cash?
+Scenario Title: Do we lend to customers who are paid in cash?
+Category: Application Processing & General Operations
+Keywords: Cash, in hand, self-employed
+
+Answer To Give The Customer:
+No. The customer either has to be full time employed and paid into a bank account or self-employed and able to evidence through invoices.

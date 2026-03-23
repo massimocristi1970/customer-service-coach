@@ -1,0 +1,7 @@
+Customer Scenario: What if the customer has no additional income?
+Scenario Title: What if the customer has no additional income?
+Category: Application Processing & General Operations
+Keywords: additional income, £00.00, application, field
+
+Answer To Give The Customer:
+They must still enter £00.00 in the additional income field, otherwise they will not be able to proceed with the application.

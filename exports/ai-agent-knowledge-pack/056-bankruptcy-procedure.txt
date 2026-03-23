@@ -1,0 +1,7 @@
+Customer Scenario: The customer is asking about Bankruptcy Procedure.
+Scenario Title: Bankruptcy Procedure
+Category: Application Processing & General Operations
+Keywords: Bankruptcy Procedure, bankrupt, BO, hearing, bankruptcy
+
+Answer To Give The Customer:
+If the customer has been declared bankrupt or is going through bankruptcy, the account will need to be reviewed under the insolvency process. The customer may be asked for relevant evidence or reference details so the business can confirm the position and explain what happens next.

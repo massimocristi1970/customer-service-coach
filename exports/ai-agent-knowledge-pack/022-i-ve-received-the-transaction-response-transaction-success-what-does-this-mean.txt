@@ -1,0 +1,7 @@
+Customer Scenario: The customer is asking about I've received the transaction response: "Transaction Success" -- what does this mean?.
+Scenario Title: I've received the transaction response: "Transaction Success" -- what does this mean?
+Category: Transaction Responses & Payment Issues
+Keywords: transaction success, payment, verification, successful
+
+Answer To Give The Customer:
+This means that the transaction verification or payment was successful. Either the payment has been taken, or the verification has completed as expected.

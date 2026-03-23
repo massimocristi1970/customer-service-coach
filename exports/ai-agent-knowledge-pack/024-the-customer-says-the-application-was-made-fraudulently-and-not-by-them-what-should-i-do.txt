@@ -1,0 +1,7 @@
+Customer Scenario: The customer says the application was made fraudulently and not by them. What should I do?
+Scenario Title: The customer says the application was made fraudulently and not by them. What should I do?
+Category: Fraud & Disputes
+Keywords: fraudulent application, bank details, investigation, bank letter, reimbursement
+
+Answer To Give The Customer:
+If the customer believes the application was fraudulent, they should report it to their bank straight away and ask the bank to investigate. We may need written confirmation from the bank before the account can be reviewed and any remaining balance or interest can be considered.

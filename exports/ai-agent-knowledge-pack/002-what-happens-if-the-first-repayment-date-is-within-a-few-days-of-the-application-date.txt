@@ -1,0 +1,7 @@
+Customer Scenario: What happens if the first repayment date is within a few days of the application date?
+Scenario Title: What happens if the first repayment date is within a few days of the application date?
+Category: Application Processing & General Operations
+Keywords: first repayment date, payday, daily interest, 0.8%, principal
+
+Answer To Give The Customer:
+You can select the customer's following payday; however, you must inform them of the additional cost, as daily interest will accrue during this period at a rate of 0.8% of the outstanding principal per day.

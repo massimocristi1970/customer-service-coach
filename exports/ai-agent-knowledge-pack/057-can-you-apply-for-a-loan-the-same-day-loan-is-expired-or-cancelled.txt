@@ -1,0 +1,7 @@
+Customer Scenario: Can you apply for a loan the same day loan is expired or cancelled?
+Scenario Title: Can you apply for a loan the same day loan is expired or cancelled?
+Category: Application Processing & General Operations
+Keywords: Reapply, apply, expired, cancelled, same day
+
+Answer To Give The Customer:
+Yes.

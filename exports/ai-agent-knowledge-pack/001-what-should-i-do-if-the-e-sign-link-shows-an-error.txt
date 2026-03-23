@@ -1,0 +1,11 @@
+Customer Scenario: What should I do if the e-sign link shows an error?
+Scenario Title: What should I do if the e-sign link shows an error?
+Category: Application Processing & General Operations
+Keywords: e-sign, error, application completed, card declined, underwriting, cache, portal
+
+Answer To Give The Customer:
+Check the account stage first:
+•	If at "Application Completed": The customer must authorize their debit card via the online portal at www.ticktockloans.com
+•	If at "Card Declined": They need to reattempt verification via the portal
+•	If at "Underwriting": The application is under review
+•	If still at "e-sign": Test the link. If the issue persists, ask the customer to clear their cache and try again. Escalate with a screenshot if necessary.

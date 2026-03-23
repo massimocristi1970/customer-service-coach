@@ -1,0 +1,9 @@
+Customer Scenario: Do you accept credit cards?
+Scenario Title: Do you accept credit cards?
+Category: Collections & Account Status Management
+Keywords: credit card, debit card, card update
+
+Answer To Give The Customer:
+No. We do not accept credit cards as a payment method.
+
+This is to ensure we comply with regulatory expectations, as customers should not use credit to repay credit, which could worsen their financial situation.

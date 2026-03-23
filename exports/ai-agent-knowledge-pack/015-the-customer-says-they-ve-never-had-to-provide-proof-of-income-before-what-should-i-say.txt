@@ -1,0 +1,7 @@
+Customer Scenario: The customer says they've never had to provide proof of income before. What should I say?
+Scenario Title: The customer says they've never had to provide proof of income before. What should I say?
+Category: Income Evidence & Verification
+Keywords: proof of income, repeat lending policy, income verification, application
+
+Answer To Give The Customer:
+Explain that, in line with our repeat lending policy, income verification is required. Without this, we cannot proceed with the application.

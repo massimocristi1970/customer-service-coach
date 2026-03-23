@@ -1,0 +1,7 @@
+Customer Scenario: How does a customer evidence their income?
+Scenario Title: How does a customer evidence their income?
+Category: Income Evidence & Verification
+Keywords: evidence income, payslip, bank statement, salary credits, 30 days
+
+Answer To Give The Customer:
+By sending their most recent payslip or a bank statement showing salary credits within the last 30 days.

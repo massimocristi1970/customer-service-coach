@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-import csv
-import json
-from collections import Counter
-from datetime import datetime, timezone
+import re
+import shutil
 from pathlib import Path
 from typing import Dict, List
+import json
 
 
 ROOT = Path(__file__).resolve().parent
@@ -43,17 +42,235 @@ CATEGORY_LABELS = {
 }
 
 
+INTERNAL_TITLE_PATTERNS = [
+    r"\bwhat email should i send\b",
+    r"\bwhat email do i send\b",
+    r"\bwhen do i send\b",
+    r"\bwhat details must be entered\b",
+    r"\bwhat info do i need\b",
+    r"\bwhat stage should i use\b",
+    r"\bwhat stage should i move\b",
+    r"\bwhen can a customer be rolled back\b",
+    r"\bwhen should a customer be moved\b",
+    r"\bwhat should i check before saving\b",
+    r"\bwho make up\b",
+    r"\btexas\b",
+    r"\busing idea\b",
+    r"\busing carers\b",
+    r"\bvulnerabilities & tools for staff\b",
+    r"\bcustomer service essentials\b",
+    r"\bhandling difficult conversations\b",
+    r"\babbreviations log\b",
+    r"\boutbound dialling guidelines\b",
+    r"\bcall structure\b",
+    r"\bdo i need to send\b",
+    r"\bcan i confirm the sms code over the phone\b",
+    r"\bcan i confirm the email code over the phone\b",
+    r"\bcan i stay on the call while\b",
+    r"\bhow do i block an account\b",
+    r"\bcan i place the customer on a 30 day hold\b",
+    r"\bwhat does each stage in the system mean\b",
+]
+
+
+def is_customer_facing_scenario(title: str) -> bool:
+    normalized = clean_text(title).lower()
+    return not any(re.search(pattern, normalized) for pattern in INTERNAL_TITLE_PATTERNS)
+
+
+def scenario_question(doc: Dict[str, object]) -> str:
+    title = str(doc["title"]).strip()
+    if re.match(r"^(what|when|why|how|can|do|is|are)\b", title, re.IGNORECASE):
+        return title
+    if title.lower().startswith("the customer says"):
+        return title
+    if "process" in title.lower():
+        return f"The customer needs help with {title.lower().replace(' process', '')}."
+    if "workflow" in title.lower():
+        return f"The customer needs help with {title.lower().replace(' workflow', '')}."
+    if title.lower() == "customer portal & login issues":
+        return "The customer cannot access their account or is having portal login problems."
+    return f"The customer is asking about {title}."
+
+
+def handling_guidance(doc: Dict[str, object]) -> List[str]:
+    category = str(doc["category"])
+    title = str(doc["title"]).lower()
+    guidance: List[str] = []
+
+    if category in {"customer-portal", "application-processing"}:
+        guidance.append("Acknowledge the issue clearly and guide the customer through the practical next steps in plain language.")
+    if category in {"payment-plans", "collections-account", "debt-respite", "debt-management"}:
+        guidance.append("Explain the process calmly, focus on realistic next steps, and avoid pressuring the customer into unaffordable commitments.")
+    if category in {"fraud-disputes", "security-verification"}:
+        guidance.append("Do not guess or improvise. Follow the approved process and escalate where identity, fraud, or data rights are involved.")
+    if category in {"contact-information"}:
+        guidance.append("Give the customer the requested contact details clearly and repeat them if needed.")
+    if "vulnerab" in title or "bankrupt" in title or "insolvency" in title or "breathing space" in title or "debt relief" in title:
+        guidance.append("Use a supportive tone and make clear what the business can do next without applying unnecessary pressure.")
+    if "fraud" in title or "sar" in title or "dsar" in title:
+        guidance.append("If the request requires formal verification or evidence, tell the customer what is needed and route to the correct process.")
+
+    if not guidance:
+        guidance.append("Answer the question directly, keep the wording clear, and offer the next action the customer should take.")
+
+    return guidance
+
+
+def escalation_note(doc: Dict[str, object]) -> str:
+    title = str(doc["title"]).lower()
+    category = str(doc["category"])
+    if category in {"fraud-disputes", "security-verification"} or "fraud" in title or "sar" in title or "dsar" in title:
+        return "Escalate if identity, fraud evidence, or formal data-rights handling is required."
+    if "vulnerab" in title or "bankrupt" in title or "insolvency" in title or "breathing space" in title or "debt relief" in title:
+        return "Escalate if the customer is vulnerable, distressed, or their circumstances require specialist handling."
+    if category in {"payment-plans", "collections-account", "debt-management"}:
+        return "Escalate if the customer asks for an arrangement the AI is not authorised to confirm or if affordability is unclear."
+    return "Escalate if the customer asks something outside the approved answer or if the AI is not confident."
+
+
+EMPLOYEE_PROCESS_PATTERNS = [
+    r"You should set .*? via the Accounts tab.*?(?:\.|\n)",
+    r"Once the loan has been settled, raise .*?(?:\.|\n)",
+    r"raise a .*? task.*?(?:\.|\n)",
+    r"record the following information on the system:.*?(?=\n\n|$)",
+    r"Record the customer's correct contact details in the system for follow-up\.(?:\n|$)",
+    r"Compare these to what[’']s recorded on the account\.(?:\n|$)",
+    r"Place the account on hold for 30 days.*?(?=\n\n|$)",
+    r"After 30 days.*?fraud investigation\.(?:\n|$)",
+    r"If you[’']re uncertain, escalate.*?(?:\n|$)",
+    r"escalate to .*?(?:\.|\n)",
+    r"follow these steps:.*?(?=\n\n|$)",
+    r"Process Overview:?[\s\n]*",
+]
+
+INTERNAL_LINE_MARKERS = [
+    "when taking the initial details",
+    "accounts tab",
+    "raise a",
+    "raise an",
+    "task",
+    "on hold",
+    "pending evidence",
+    "send ",
+    "email -",
+    "chaser email",
+    "vulnerability specialist",
+    "assign to",
+    "assign the",
+    "move the account",
+    "move the loan",
+    "follow-up",
+    "record the",
+    "record customer's",
+    "record the customer's",
+    "on the system",
+    "in the system",
+    "line manager",
+    "review the customer's circumstances",
+    "pause collections",
+    "hold collections",
+    "step 1",
+    "step 2",
+    "step 3",
+    "step 4",
+    "trigger event",
+    "initial assessment",
+    "triggers for referral",
+    "family or caregiver involvement",
+    "income and expenditure form",
+    "customer communication",
+    "unreturned income and expenditure",
+    "please note",
+    "follow-up for",
+    "breathing space review",
+    "end breathing space",
+    "closure",
+    "process overview",
+]
+
+
+ANSWER_OVERRIDES = {
+    "The customer says the application was made fraudulently and not by them. What should I do?": (
+        "If the customer believes the application was fraudulent, they should report it to their bank straight away and ask the bank to investigate. "
+        "We may need written confirmation from the bank before the account can be reviewed and any remaining balance or interest can be considered."
+    ),
+    "Fraud Process": (
+        "If the customer says the application or transactions were fraudulent, they should contact their bank immediately and report the matter for investigation. "
+        "They may also be asked to report it to Action Fraud or the police and provide written evidence from the bank so the case can be reviewed properly."
+    ),
+    "Breathing Space Workflow": (
+        "If the customer is in financial difficulty or vulnerable, they may be given a temporary breathing-space period while their circumstances are reviewed. "
+        "During that time, the business may ask for information about their situation so it can decide what support or next steps are appropriate."
+    ),
+    "Breathing Space Workflow - Health or Mental Health": (
+        "If the customer is affected by physical or mental health issues, bereavement, or serious personal circumstances, they may be considered for additional support or a temporary hold while the business reviews the situation. "
+        "The customer may be asked for information or evidence so suitable support can be put in place."
+    ),
+    "Bankruptcy Procedure": (
+        "If the customer has been declared bankrupt or is going through bankruptcy, the account will need to be reviewed under the insolvency process. "
+        "The customer may be asked for relevant evidence or reference details so the business can confirm the position and explain what happens next."
+    ),
+    "Debt Relief Order": (
+        "If the customer is under a Debt Relief Order, the account will need to be reviewed in line with that arrangement. "
+        "The customer may be asked to provide the relevant details so the business can confirm the order and explain what it means for the account."
+    ),
+    "Handling Customer DRO Notifications": (
+        "If the customer says they are under a Debt Relief Order, the business will need to review the account and confirm the details of the order before explaining the next steps. "
+        "The customer may be asked for evidence or reference information to support that review."
+    ),
+    "DSAR (Data Subject Access Request) Process": (
+        "If the customer wants a copy of their personal data, they can make a Data Subject Access Request. "
+        "The business may need to verify the request before processing it and will then explain how the information will be provided."
+    ),
+    "Identifying a Valid SAR": (
+        "If the customer is asking for access to their personal data, the business may need to confirm enough detail to understand and verify the request before it can be processed."
+    ),
+}
+
+
+def clean_answer_content(content: str) -> str:
+    text = clean_text(content)
+    for pattern in EMPLOYEE_PROCESS_PATTERNS:
+        text = re.sub(pattern, "", text, flags=re.IGNORECASE | re.DOTALL)
+    kept_lines: List[str] = []
+    for raw_line in text.split("\n"):
+        line = raw_line.strip()
+        normalized = line.lower()
+        if not line:
+            if kept_lines and kept_lines[-1] != "":
+                kept_lines.append("")
+            continue
+        if any(marker in normalized for marker in INTERNAL_LINE_MARKERS):
+            continue
+        kept_lines.append(line)
+
+    cleaned = "\n".join(kept_lines)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    cleaned = re.sub(r"[ \t]+\n", "\n", cleaned)
+    cleaned = cleaned.strip()
+    if cleaned.endswith("make sure to"):
+        cleaned = ""
+    return cleaned
+
+
 def clean_text(value: str) -> str:
     text = str(value or "")
     if any(marker in text for marker in ["â", "Â", "Ã"]):
         try:
-            repaired = text.encode("latin1").decode("utf-8")
-            text = repaired
+            text = text.encode("latin1").decode("utf-8")
         except (UnicodeEncodeError, UnicodeDecodeError):
             pass
     for source, target in MOJIBAKE_REPLACEMENTS.items():
         text = text.replace(source, target)
-    return "\n".join(line.rstrip() for line in text.replace("\r\n", "\n").replace("\r", "\n").split("\n")).strip()
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    return "\n".join(line.rstrip() for line in text.split("\n")).strip()
+
+
+def slugify(text: str) -> str:
+    slug = clean_text(text).lower()
+    slug = re.sub(r"[^a-z0-9]+", "-", slug).strip("-")
+    return slug[:120] or "scenario"
 
 
 def load_documents() -> List[Dict[str, object]]:
@@ -61,7 +278,7 @@ def load_documents() -> List[Dict[str, object]]:
     documents = raw.get("documents", [])
     cleaned: List[Dict[str, object]] = []
     for index, doc in enumerate(documents, start=1):
-        category = doc.get("category", "uncategorised")
+        category = clean_text(doc.get("category", "uncategorised"))
         cleaned.append(
             {
                 "export_id": index,
@@ -76,322 +293,64 @@ def load_documents() -> List[Dict[str, object]]:
                 "last_updated": clean_text(doc.get("lastUpdated", "")),
             }
         )
-    return cleaned
+    return [doc for doc in cleaned if is_customer_facing_scenario(str(doc["title"]))]
 
 
-def build_taxonomy_summary(documents: List[Dict[str, object]]) -> Dict[str, object]:
-    counts = Counter(doc["category"] for doc in documents)
-    categories = []
-    for category, count in sorted(counts.items(), key=lambda item: (-item[1], item[0])):
-        sample_titles = [doc["title"] for doc in documents if doc["category"] == category][:5]
-        categories.append(
-            {
-                "category": category,
-                "label": CATEGORY_LABELS.get(category, category.replace("-", " ").title()),
-                "count": count,
-                "sample_titles": sample_titles,
-            }
-        )
-    return {
-        "total_documents": len(documents),
-        "categories": categories,
-    }
+def reset_output_dir() -> None:
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    for child in OUTPUT_DIR.iterdir():
+        if child.is_file():
+            child.unlink()
+        elif child.is_dir():
+            shutil.rmtree(child)
 
 
-def build_test_queries() -> List[Dict[str, str]]:
-    return [
-        {
-            "query": "The customer says their e-sign link is not working.",
-            "expected_category": "application-processing",
-            "expected_outcome": "Return the e-sign troubleshooting steps and advise escalation with screenshot if the issue persists.",
-        },
-        {
-            "query": "The customer wants to know how Breathing Space affects interest.",
-            "expected_category": "debt-respite",
-            "expected_outcome": "Return the breathing-space process answer and keep wording procedural rather than speculative.",
-        },
-        {
-            "query": "The customer says the application was fraudulent.",
-            "expected_category": "fraud-disputes",
-            "expected_outcome": "Route to the fraud process rather than trying to resolve casually in-line.",
-        },
-        {
-            "query": "The customer cannot log in after resetting their password.",
-            "expected_category": "customer-portal",
-            "expected_outcome": "Return the login troubleshooting answer and mention exact-field matching for email and surname where relevant.",
-        },
-        {
-            "query": "The customer asks what details are needed for a new payment plan.",
-            "expected_category": "payment-plans",
-            "expected_outcome": "Return the payment-plan setup fields clearly and in list form.",
-        },
-    ]
-
-
-def build_manifest(documents: List[Dict[str, object]]) -> Dict[str, object]:
-    generated_at = datetime.now(timezone.utc).isoformat()
-    return {
-        "generated_at": generated_at,
-        "pack_version": "2.0",
-        "source_repo": "customer-service-coach",
-        "package_name": "ai-agent-knowledge-pack",
-        "document_count": len(documents),
-        "offline_handoff_only": True,
-        "contains_full_answer_content": True,
-        "files": [
-            "README.md",
-            "ai-agent-vendor-brief.md",
-            "implementation-guide.md",
-            "review-notes.md",
-            "knowledge-base-detailed.txt",
-            "knowledge-base-documents.json",
-            "knowledge-base-documents.jsonl",
-            "knowledge-base-documents.csv",
-            "taxonomy-summary.json",
-            "manifest.json",
-        ],
-    }
-
-
-def write_json_documents(documents: List[Dict[str, object]]) -> None:
-    path = OUTPUT_DIR / "knowledge-base-documents.json"
-    path.write_text(json.dumps(documents, indent=2, ensure_ascii=False), encoding="utf-8")
-
-
-def write_jsonl_documents(documents: List[Dict[str, object]]) -> None:
-    path = OUTPUT_DIR / "knowledge-base-documents.jsonl"
-    lines = [json.dumps(doc, ensure_ascii=False) for doc in documents]
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
-def write_csv_documents(documents: List[Dict[str, object]]) -> None:
-    path = OUTPUT_DIR / "knowledge-base-documents.csv"
-    with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(
-            handle,
-            fieldnames=[
-                "export_id",
-                "id",
-                "title",
-                "category",
-                "category_label",
-                "section",
-                "source",
-                "keywords",
-                "content",
-                "last_updated",
-            ],
-        )
-        writer.writeheader()
-        for doc in documents:
-            writer.writerow(
-                {
-                    **doc,
-                    "keywords": " | ".join(doc["keywords"]),
-                }
-            )
-
-
-def write_detailed_text_export(documents: List[Dict[str, object]]) -> None:
-    path = OUTPUT_DIR / "knowledge-base-detailed.txt"
+def build_document_text(doc: Dict[str, object]) -> str:
+    keywords = doc["keywords"] if doc["keywords"] else []
+    answer = ANSWER_OVERRIDES.get(str(doc["title"])) or clean_answer_content(str(doc["content"])) or "[No answer content available]"
     lines = [
-        "Customer Service Coach Knowledge Base",
-        "Detailed Offline Export",
+        f"Customer Scenario: {scenario_question(doc)}",
+        f"Scenario Title: {doc['title']}",
+        f"Category: {doc['category_label']}",
+        f"Keywords: {', '.join(keywords) if keywords else 'None'}",
         "",
-        f"Generated: {datetime.now(timezone.utc).isoformat()}",
-        f"Document count: {len(documents)}",
-        "",
-        "This file is intended for vendor knowledge-base upload or review.",
-        "It contains the full answer content for every exported document.",
-        "",
+        "Answer To Give The Customer:",
+        answer,
     ]
+    return "\n".join(lines).strip() + "\n"
+
+
+def write_scenario_files(documents: List[Dict[str, object]]) -> List[str]:
+    written_files: List[str] = []
+    used_names = set()
+
     for doc in documents:
-        lines.extend(
-            [
-                "=" * 80,
-                f"Document ID: {doc['id']}",
-                f"Export ID: {doc['export_id']}",
-                f"Title: {doc['title']}",
-                f"Category: {doc['category_label']} ({doc['category']})",
-                f"Section: {doc['section']}",
-                f"Source: {doc['source']}",
-                f"Last Updated: {doc['last_updated']}",
-                f"Keywords: {', '.join(doc['keywords']) if doc['keywords'] else 'None'}",
-                "",
-                "Answer Content:",
-                doc["content"] or "[No content]",
-                "",
-            ]
-        )
-    path.write_text("\n".join(lines), encoding="utf-8")
+        base_name = f"{int(doc['export_id']):03d}-{slugify(str(doc['title']))}.txt"
+        file_name = base_name
+        suffix = 2
+        while file_name.lower() in used_names:
+            file_name = base_name[:-4] + f"-{suffix}.txt"
+            suffix += 1
+        used_names.add(file_name.lower())
 
+        output_path = OUTPUT_DIR / file_name
+        output_path.write_text(build_document_text(doc), encoding="utf-8")
+        written_files.append(file_name)
 
-def write_readme(manifest: Dict[str, object]) -> None:
-    path = OUTPUT_DIR / "README.md"
-    lines = [
-        "# AI Agent Knowledge Pack",
-        "",
-        "This folder contains an offline handoff pack for the company operating your AI calling agent.",
-        "",
-        "## What this pack gives the vendor",
-        "- The full exported knowledge-base content, including the answer text for each document.",
-        "- Category and keyword metadata to support routing, retrieval, and confidence scoring.",
-        "- A handoff brief, implementation guide, review notes, and taxonomy summary.",
-        "",
-        "## What this pack does not give the vendor",
-        "- Live API or database access.",
-        "- Automatic visibility of future edits after this export date.",
-        "- Application credentials, admin settings, or local auth details.",
-        "",
-        "## Included files",
-    ]
-    for file_name in manifest["files"]:
-        lines.append(f"- {file_name}")
-    lines.extend(
-        [
-            "",
-            "## Suggested handoff",
-            "- Give the vendor the brief plus JSON if they support structured ingestion.",
-            "- Use JSONL if they want one document per line for bulk import pipelines.",
-            "- Use CSV if they prefer spreadsheet review or ETL workflows.",
-            "",
-            "## Operating note",
-            "- Because this is an offline pack, any future content changes need a refreshed export and resend.",
-        ]
-    )
-    path.write_text("\n".join(lines), encoding="utf-8")
-
-
-def write_vendor_brief(manifest: Dict[str, object], taxonomy_summary: Dict[str, object]) -> None:
-    path = OUTPUT_DIR / "ai-agent-vendor-brief.md"
-    lines = [
-        "# AI Agent Knowledge Handoff Pack",
-        "",
-        "## Purpose",
-        "This pack is designed for a third-party AI calling agent provider. It captures the operational knowledge currently stored in the SavvyConnect / Customer Service Coach app so their AI can answer customer-service questions more accurately and in language that matches your internal processes.",
-        "",
-        "## What this app contains",
-        f"- A searchable operational knowledge base used by front-line agents during live customer conversations.",
-        f"- {manifest['document_count']} curated documents stored in a structured format.",
-        "- Full answer content for each exported document, not just titles or metadata.",
-        "- Content that is mostly written as real agent questions and procedural answers, which makes it suitable for intent matching and retrieval-augmented answering.",
-        "- An admin workflow for adding new content, refining keywords, and reviewing unanswered questions.",
-        "",
-        "## Access boundary",
-        "- This handoff does not require API access to the live database.",
-        "- The vendor can read and index the answer content directly from the exported JSON, JSONL, or CSV files.",
-        "- The vendor will not see future edits unless you provide a refreshed export.",
-        "",
-        "## What the knowledge appears to cover",
-    ]
-    for category in taxonomy_summary["categories"]:
-        lines.append(f"- {category['label']}: {category['count']} documents")
-    lines.extend(
-        [
-            "",
-            "## Recommended use by the AI vendor",
-            "- Treat each document as procedural guidance, not just factual snippets.",
-            "- Preserve category and keyword metadata because it improves routing and confidence.",
-            "- Prefer retrieval over pure generation for regulated or process-heavy answers.",
-            "- Return short actionable answers first, then offer clarifying next steps.",
-            "- Where confidence is low or no clear matching document exists, the AI should explicitly say it is unsure and route to a human or approved fallback process.",
-            "- Keep an audit trail of unanswered or low-confidence intents so the pack can be expanded over time.",
-            "",
-            "## Important cautions",
-            "- This repository also contains application configuration and internal access controls. Those are not included in this handoff pack because they are not needed for answer quality and may expose unnecessary internal details.",
-            "- Some content appears to be specific to Tick Tock Loans / Tick Tock Advance and should be validated before being surfaced externally word-for-word.",
-            "- This pack should be treated as operational guidance and reviewed for compliance before the vendor uses it in production.",
-        ]
-    )
-    path.write_text("\n".join(lines), encoding="utf-8")
-
-
-def write_implementation_guide(test_queries: List[Dict[str, str]]) -> None:
-    path = OUTPUT_DIR / "implementation-guide.md"
-    lines = [
-        "# Implementation Guide",
-        "",
-        "## How to use this pack",
-        "- Index the exported documents as a retrieval corpus.",
-        "- Keep `category`, `category_label`, `keywords`, and `last_updated` in the vendor index.",
-        "- Use the document `content` field as the primary answer body.",
-        "- Present concise answers first, then offer next-step guidance or escalation routes.",
-        "",
-        "## Change management",
-        "- Treat the exported files as a versioned snapshot, not a live source of truth.",
-        "- Record the export date in the vendor environment so the team knows how current the corpus is.",
-        "- Any content change request should be reviewed internally first and then released by sending a fresh export.",
-        "- Do not let the vendor edit the source of truth directly if API or database access is intentionally restricted.",
-        "",
-        "## QA checklist",
-        "- Verify that top results stay within the correct category for common intents.",
-        "- Verify that answers remain procedural and do not invent policy where no document exists.",
-        "- Verify that low-confidence intents route to a human or fallback path.",
-        "- Verify that keyword metadata improves retrieval rather than being shown verbatim to customers.",
-        "",
-        "## Sample validation queries",
-    ]
-    for item in test_queries:
-        lines.append(f"- Query: {item['query']}")
-        lines.append(f"  Expected category: {item['expected_category']}")
-        lines.append(f"  Expected outcome: {item['expected_outcome']}")
-    path.write_text("\n".join(lines), encoding="utf-8")
-
-
-def write_review_notes() -> None:
-    path = OUTPUT_DIR / "review-notes.md"
-    lines = [
-        "# Review Notes",
-        "",
-        "## What I reviewed",
-        "- The structured knowledge base itself to determine scope and suitability for an external AI agent.",
-        "- The exported fields available for offline handoff.",
-        "- The likely handoff needs of a vendor that will not receive live API or database access.",
-        "",
-        "## Findings relevant to an AI calling agent",
-        "- The app is strongly oriented around real support workflows rather than generic FAQ content.",
-        "- Document titles are usually phrased as realistic service-desk or call-centre questions, which is useful for intent mapping.",
-        "- Keyword metadata is present and should be retained by any downstream vendor because it can be used as synonyms, labels, or retrieval hints.",
-        "- The export includes the full answer content for each document, so the vendor can work without direct database access.",
-        "- Because the delivery model is offline, the main operational risk is stale content rather than missing content.",
-        "",
-        "## Recommendation",
-        "Use this pack as a retrieval corpus plus taxonomy seed, not as a one-time flat FAQ dump. The highest-value operating model is:",
-        "1. Index the structured documents.",
-        "2. Keep category and keyword metadata.",
-        "3. Log low-confidence and unanswered queries.",
-        "4. Refresh and resend the export whenever material content changes are approved.",
-    ]
-    path.write_text("\n".join(lines), encoding="utf-8")
-
-
-def write_taxonomy_summary(taxonomy_summary: Dict[str, object]) -> None:
-    path = OUTPUT_DIR / "taxonomy-summary.json"
-    path.write_text(json.dumps(taxonomy_summary, indent=2, ensure_ascii=False), encoding="utf-8")
-
-
-def write_manifest(manifest: Dict[str, object]) -> None:
-    path = OUTPUT_DIR / "manifest.json"
-    path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
+    return written_files
 
 
 def main() -> None:
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     documents = load_documents()
-    taxonomy_summary = build_taxonomy_summary(documents)
-    test_queries = build_test_queries()
-    manifest = build_manifest(documents)
-    write_json_documents(documents)
-    write_jsonl_documents(documents)
-    write_csv_documents(documents)
-    write_detailed_text_export(documents)
-    write_readme(manifest)
-    write_vendor_brief(manifest, taxonomy_summary)
-    write_implementation_guide(test_queries)
-    write_review_notes()
-    write_taxonomy_summary(taxonomy_summary)
-    write_manifest(manifest)
-    print(json.dumps({"document_count": len(documents), "output_dir": str(OUTPUT_DIR)}, indent=2))
+    reset_output_dir()
+    written_files = write_scenario_files(documents)
+    summary = {
+        "document_count": len(documents),
+        "output_dir": str(OUTPUT_DIR),
+        "files_written": len(written_files),
+        "sample_files": written_files[:10],
+    }
+    print(json.dumps(summary, indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

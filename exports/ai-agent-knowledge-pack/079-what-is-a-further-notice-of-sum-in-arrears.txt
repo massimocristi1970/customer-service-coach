@@ -1,0 +1,29 @@
+Customer Scenario: What is a Further Notice of Sum in Arrears?
+Scenario Title: What is a Further Notice of Sum in Arrears?
+Category: Collections & Account Status Management
+Keywords: Further notice, FNOSIA, sum in arrears
+
+Answer To Give The Customer:
+A further NOSIA is sent every six months if:
+
+The borrower still has arrears outstanding, and
+
+The credit agreement is still active.
+
+Its purpose is to:
+
+Update the borrower on how much arrears remain
+
+Remind them that the account is still behind on payments
+
+Provide the required statutory information, including consumer rights and where to access free debt advice
+
+Just like the initial NOSIA, a further NOSIA:
+
+Is not a court order
+
+Does not mean legal action has begun
+
+Is a legal requirement for regulated credit agreements
+
+It is simply a periodic reminder that arrears are still owed.

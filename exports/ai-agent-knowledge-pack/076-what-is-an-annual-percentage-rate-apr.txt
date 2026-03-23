@@ -1,0 +1,22 @@
+Customer Scenario: What is an Annual Percentage Rate (APR)
+Scenario Title: What is an Annual Percentage Rate (APR)
+Category: Application Processing & General Operations
+Keywords: APR, annual percentage, interest, total amount payable
+
+Answer To Give The Customer:
+What is APR?
+APR stands for Annual Percentage Rate. It represents the total cost of borrowing over a year, including interest and any compulsory fees, expressed as an annual percentage of the amount borrowed.
+
+Why Do We Use It?
+Although our products are short-term and interest is typically calculated on a daily basis, we are still required by regulation to display an APR. This ensures transparency and consistency across all lenders, allowing customers to compare the cost of credit between different products and providers — even if the borrowing period is much shorter than a year.
+
+How It Relates to High-Cost Short-Term Credit (HCSTC):
+
+In high-cost short-term lending, the APR appears very high because it’s an annualised figure based on daily interest rates applied to short borrowing periods.
+
+For example, a loan that runs for 30 days with daily interest may look disproportionately high when shown as an annual rate, but this doesn’t mean the borrower is paying that amount — it’s simply how the cost is standardised for comparison.
+
+The key figure for our customers remains the total amount repayable and the daily interest rate, which reflect the true short-term cost of borrowing.
+
+In Summary:
+We calculate interest daily to reflect short borrowing terms, but we must display the APR to comply with consumer credit regulations and maintain transparency for customers.

@@ -1,0 +1,7 @@
+Customer Scenario: When should interest continue during a payment plan?
+Scenario Title: When should interest continue during a payment plan?
+Category: Payment Plans & Scheduling
+Keywords: interest, payment plan, price cap
+
+Answer To Give The Customer:
+Only if the price CAP has not yet been reached.

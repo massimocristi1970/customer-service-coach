@@ -1,0 +1,7 @@
+Customer Scenario: The customer is asking about Identifying a Valid SAR.
+Scenario Title: Identifying a Valid SAR
+Category: Security, Verification & Data Requests
+Keywords: data, customer information, call recordings, DSAR, SAR, DPA
+
+Answer To Give The Customer:
+If the customer is asking for access to their personal data, the business may need to confirm enough detail to understand and verify the request before it can be processed.

@@ -1,0 +1,7 @@
+Customer Scenario: The customer is asking about Debt Relief Order.
+Scenario Title: Debt Relief Order
+Category: Collections & Account Status Management
+Keywords: DRO, Relief, Debt Relief, Insolvency, debt management, order
+
+Answer To Give The Customer:
+If the customer is under a Debt Relief Order, the account will need to be reviewed in line with that arrangement. The customer may be asked to provide the relevant details so the business can confirm the order and explain what it means for the account.

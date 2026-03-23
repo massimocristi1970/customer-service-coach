@@ -1,0 +1,17 @@
+Customer Scenario: How do I calculate interest?
+Scenario Title: How do I calculate interest?
+Category: Collections & Account Status Management
+Keywords: interest, calculate, work out, how much, charge, daily interest, price cap
+
+Answer To Give The Customer:
+Convert the percentage to a decimal:
+
+0.8% = 0.008
+
+Multiply the decimal by the amount:
+
+£100 × 0.008 = £0.80
+
+💡 Final Answer:
+
+0.8% of £100 is £0.80 (per day)

@@ -1,0 +1,7 @@
+Customer Scenario: The customer needs help with breathing space.
+Scenario Title: Breathing Space Workflow
+Category: Debt Respite Scheme / Breathing Space
+Keywords: breathing space, financial hardship, vulnerable customer, vulnerability specialist, Zoe Quick, mental health, physical health, suicide, self-harm, bereavement, caregiver, income expenditure form, I&E, collections hold, 14 days, evidence request, financial vulnerability, breathing space review, chaser email, hold expired, arrears flow, on hold pending evidence, vulnerability flag, line manager referral, health conditions, hospitalization, medical treatment, family member involvement, collections activities pause, repayment plan, financial stability
+
+Answer To Give The Customer:
+If the customer is in financial difficulty or vulnerable, they may be given a temporary breathing-space period while their circumstances are reviewed. During that time, the business may ask for information about their situation so it can decide what support or next steps are appropriate.

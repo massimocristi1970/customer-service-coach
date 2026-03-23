@@ -1,0 +1,10 @@
+Customer Scenario: What is the Debt Respite Scheme?
+Scenario Title: What is the Debt Respite Scheme?
+Category: Debt Respite Scheme / Breathing Space
+Keywords: debt respite scheme, breathing space, 60 days, mental health, protection, creditors
+
+Answer To Give The Customer:
+The Debt Respite Scheme, also known as Breathing Space, is a UK government initiative that offers individuals temporary protection from creditors while they seek debt advice or mental health treatment.
+There are two types:
+•	Standard Breathing Space -- lasts for 60 days
+•	Mental Health Crisis Breathing Space -- lasts for the duration of the treatment, plus an additional 30 days, even if this exceeds 60 days

@@ -1,0 +1,13 @@
+Customer Scenario: How does the customer repay their balance if they exercise their right to withdraw?
+Scenario Title: How does the customer repay their balance if they exercise their right to withdraw?
+Category: Payment Plans & Scheduling
+Keywords: BT, transfer, banking details, standing order, STO, RTW payment
+
+Answer To Give The Customer:
+Customers can either pay the balance owing on their verified debit card on file or alternatively, they can make a bank transfer using the following detail; customers should attach their reference number to the payment:
+
+Account Name: Savvy Loan Products Ltd
+
+Account Number: 03587924
+
+Sort Code: 04-00-72

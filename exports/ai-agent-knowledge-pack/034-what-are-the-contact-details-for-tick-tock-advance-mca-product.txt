@@ -1,0 +1,9 @@
+Customer Scenario: What are the contact details for Tick Tock Advance (MCA Product)?
+Scenario Title: What are the contact details for Tick Tock Advance (MCA Product)?
+Category: Contact Information
+Keywords: tick tock advance, MCA, website, phone, email
+
+Answer To Give The Customer:
+Website: www.ticktockcredit.co.uk
+Phone: 020 3838 2148
+Email: customerservice@ticktockcredit.co.uk

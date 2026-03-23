@@ -1,0 +1,22 @@
+Customer Scenario: The customer is asking about Interest Query.
+Scenario Title: Interest Query
+Category: Transaction Responses & Payment Issues
+Keywords: Interest, daily interest, %, percentage, interest rate, charged interest, how much interest, contractual interest, calculate interest, work out interest, interest amount, arrears interest, quote interest, interest quote, interest query, interest calculation, total interest, cost of interest, breakdown of interest, accrued interest, what is the interest, interest explained, interest charge, interest fees, why charged interest, interest on loan, interest figure, interest applied, interest query help, customer asking about interest, interest per day, how interest works
+
+Answer To Give The Customer:
+Refer to the customer’s original loan schedule and explain the Total Amount Payable (TAP) they agreed to at the start of their loan.
+Let them know that this amount reflects what they would repay if all payments were made on time, with no changes to their repayment dates.
+If the TAP has increased due to changes in payment behaviour, explain why:
+Interest accrues daily at a rate of 0.8% on the outstanding principal.
+Any missed payments, changes in payday, or reduced payments may lead to an increase in the total interest charged.
+Reassure them that interest is capped at 100% of the amount borrowed — this is a rule set by our regulator, the Financial Conduct Authority (FCA).
+Help the customer understand how they can reduce their interest:
+
+The more they pay, the less interest is charged, as the balance decreases.
+Even nominal payments (small amounts) can help reduce the interest if made within the interest-charging period.
+If the customer expresses frustration (e.g., “You’re ripping me off” or “You’re like loan sharks”), respond calmly and clearly:
+
+We are a regulated lender, authorised by the FCA.
+We follow all legal rules on interest and have clearly outlined the terms in the agreement the customer signed.
+We do not charge more than the 100% cap, and customers have control over how much interest builds up by making timely or early payments.
+Offer to help them explore ways to settle early or reduce their repayment burden.

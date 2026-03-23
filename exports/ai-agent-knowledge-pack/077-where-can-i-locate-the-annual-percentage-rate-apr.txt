@@ -1,0 +1,38 @@
+Customer Scenario: The customer is asking about Where can I locate the Annual Percentage Rate (APR).
+Scenario Title: Where can I locate the Annual Percentage Rate (APR)
+Category: Application Processing & General Operations
+Keywords: representative, apr, credit, charge, locate, find
+
+Answer To Give The Customer:
+Locating the APR Figure
+
+You may receive questions from customers about where to find the APR (Annual Percentage Rate). The location depends on whether the customer is making a general enquiry or already has an active account.
+
+1. General Public / Customer Service Enquiry
+
+For general queries from potential customers who do not yet have an account, the APR can be found on our website.
+
+At the bottom of the website, we display a representative example showing a typical loan and its associated costs:
+
+Example:
+Borrow £350 and pay £127.28 per month for 5 months at a fixed interest rate of 0.8% per day (292% per year).
+The total charge for credit is £286.40 (all interest).
+The total amount repayable is £636.40.
+Representative APR: 1297.89%.
+
+This example helps customers understand the cost of borrowing and how the APR relates to our short-term lending model.
+
+2. Existing Customers with an Account
+
+If the customer already has an account with us, the exact APR and full loan details are available within their Consumer Credit Agreement.
+
+This document can be found in the customer’s account area under “Attachments.”
+You should guide the customer to this section and explain that the agreement outlines their specific loan terms, including:
+
+The interest rate
+
+The total charge for credit
+
+The total amount repayable
+
+The representative APR

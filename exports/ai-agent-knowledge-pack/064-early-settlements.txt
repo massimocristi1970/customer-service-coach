@@ -1,0 +1,44 @@
+Customer Scenario: The customer is asking about Early Settlements.
+Scenario Title: Early Settlements
+Category: Application Processing & General Operations
+Keywords: early, settlement, settle early, ESF, pay early
+
+Answer To Give The Customer:
+Purpose:
+To explain how early settlements work and provide staff with a clear process to follow when customers request to pay their loan in full before the end of the agreed duration.
+
+Key Points:
+
+Customers can settle their loan early by paying:
+
+The outstanding principal, and
+
+The interest accrued up to the settlement date.
+
+The settlement figure provided is valid only on the day it is quoted.
+
+If payment is not made on the same day, the settlement figure will increase daily at a rate of 0.8% of the outstanding principal.
+
+Advise the customer:
+
+“This figure is valid for today only. If payment is not made today, the settlement figure will increase tomorrow by 0.8% of the outstanding principal.”
+
+Note the account with the settlement figure given and the date.
+
+Formula for Daily Settlement Increase:
+
+Daily Increase = Outstanding Principal × 0.008
+
+Example:
+
+Outstanding principal: £1,000
+
+Daily increase: £1,000 × 0.008 = £8.00
+
+If the customer does not pay today, the quoted settlement figure will increase by £8.00 tomorrow.
+
+Important Notes for Staff:
+
+Always remind customers that early settlement saves them from paying further future interest, but the figure changes daily.
+
+Do not attempt to fix a settlement figure beyond the day it is quoted.

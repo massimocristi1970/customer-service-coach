@@ -1,0 +1,7 @@
+Customer Scenario: The customer cannot access their account or is having portal login problems.
+Scenario Title: Customer Portal & Login Issues
+Category: Customer Portal & Login Issues
+Keywords: password reset, forgot password, email, surname, CRM, reset, password, how do I request
+
+Answer To Give The Customer:
+Go to www.ticktockloans.com, click 'Forgot Password,' and enter their email and surname exactly as it appears in CRM.

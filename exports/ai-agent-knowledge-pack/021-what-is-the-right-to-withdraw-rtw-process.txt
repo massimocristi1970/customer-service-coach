@@ -1,0 +1,8 @@
+Customer Scenario: What is the Right to Withdraw (RTW) process?
+Scenario Title: What is the Right to Withdraw (RTW) process?
+Category: Right to Withdraw (RTW)
+Keywords: right to withdraw, RTW, 14 days, funded, 30 days, daily interest, 0.8%, principal, credit file
+
+Answer To Give The Customer:
+The customer can withdraw from the agreement within 14 days of the loan being funded. This period begins the day after the loan is funded. Once a customer has withdrawn, they have 30 days to repay the balance. This balance will accrue daily interest at a rate of 0.8% per day, based on the outstanding principal.
+After full RTW compliance, the loan entry will be removed from the customer's credit file with the credit reference agencies.

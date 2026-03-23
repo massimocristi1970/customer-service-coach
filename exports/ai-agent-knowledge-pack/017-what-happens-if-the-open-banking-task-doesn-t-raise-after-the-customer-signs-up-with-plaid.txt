@@ -1,0 +1,7 @@
+Customer Scenario: What happens if the "Open Banking" task doesn't raise after the customer signs up with Plaid?
+Scenario Title: What happens if the "Open Banking" task doesn't raise after the customer signs up with Plaid?
+Category: Income Evidence & Verification
+Keywords: open banking, task, Plaid, bank statement, 30 days
+
+Answer To Give The Customer:
+[No answer content available]

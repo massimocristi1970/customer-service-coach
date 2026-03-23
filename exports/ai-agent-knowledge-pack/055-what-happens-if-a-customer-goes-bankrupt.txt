@@ -1,0 +1,19 @@
+Customer Scenario: What happens if a customer goes bankrupt?
+Scenario Title: What happens if a customer goes bankrupt?
+Category: Application Processing & General Operations
+Keywords: bankruptcy process, bankruptcy order, bankruptcy, dividend, written off, WO, official reciever, proof of debt, POD, bankrupt, insolvency, insolvency services
+
+Answer To Give The Customer:
+You’ll be notified
+If a customer is made bankrupt, you’ll usually receive a notice from the Official Receiver or see it on the Insolvency Register. Alterntively, the customer may make you aware directly.
+
+Stop all contact and collection
+You must stop chasing the customer for payment — no calls, emails, letters, or legal action. Bankruptcy protection means you're legally not allowed to pursue the debt.
+
+You can submit a claim to the Official Receiver (or Trustee) showing how much you’re owed, with any evidence (like statements or contracts).
+
+Wait for updates
+The Receiver will deal with the customer’s assets. If there’s money left after priority debts and fees, you might get a small payment (called a dividend), though this is rare.
+
+Debt is written off
+After 12 months, bankruptcy usually ends. Most unsecured debts (like loans or credit cards) are written off. You can’t chase the customer after this.

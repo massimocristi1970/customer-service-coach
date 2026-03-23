@@ -1,0 +1,94 @@
+Customer Scenario: The customer is asking about Understanding & Managing Customer Vulnerabilities.
+Scenario Title: Understanding & Managing Customer Vulnerabilities
+Category: Application Processing & General Operations
+Keywords: vulnerability, conditions, mental health, identifying, vul
+
+Answer To Give The Customer:
+Purpose:
+To help staff recognise and respond appropriately when customers disclose vulnerabilities, in line with Consumer Duty and treating customers fairly.
+
+1. Health-Related Vulnerabilities
+
+Examples: Physical disability, serious illness, mental health conditions, addiction, cognitive impairment.
+
+How to Respond:
+
+Show empathy and patience.
+
+Offer to slow down the call or provide information in writing.
+
+If needed, place account into VUL (Vulnerability) status.
+
+Provide signposting to specialist support (e.g. debt charities, mental health helplines).
+
+2. Financial Vulnerabilities
+
+Examples: Job loss, reduced income, high cost of living, reliance on benefits, sudden financial shock (e.g. bereavement, separation).
+
+How to Respond:
+
+Explore affordable solutions (payment plans, short-term hold).
+
+Remind them about free, impartial debt advice services.
+
+Record notes clearly with context.
+
+3. Situational Vulnerabilities
+
+Examples: Bereavement, domestic abuse, caring responsibilities, divorce/separation, homelessness.
+
+How to Respond:
+
+Be sensitive to emotional impact.
+
+Avoid pressing for immediate decisions.
+
+Offer flexibility and note the account accordingly.
+
+Escalate if safeguarding concerns arise (e.g. risk of harm).
+
+4. Communication Barriers
+
+Examples: Low literacy, English not first language, hearing or speech difficulties, limited access to digital tools.
+
+How to Respond:
+
+Adapt communication style — speak clearly, avoid jargon.
+
+Offer alternative formats (email instead of phone, written confirmation).
+
+Allow extra time on calls.
+
+Record any preferences in account notes.
+
+5. Age-Related Vulnerabilities
+
+Examples: Elderly customers with reduced memory/understanding, very young customers with limited financial experience.
+
+How to Respond:
+
+Check understanding by asking the customer to repeat back.
+
+Provide extra explanations where needed.
+
+Be mindful of potential safeguarding concerns.
+
+Escalate if exploitation or financial abuse is suspected.
+
+6. Risk of Harm / Safeguarding
+
+Examples: Suicidal thoughts, domestic abuse, threats of violence, immediate safety risks.
+
+How to Respond:
+
+Stay calm and listen.
+
+Record facts only, not opinions.
+
+Key Staff Reminders
+
+Never judge or dismiss what the customer discloses.
+
+Provide reassurance and explain what support options are available.
+
+Escalate if unsure — better to check than mishandle a vulnerable customer.

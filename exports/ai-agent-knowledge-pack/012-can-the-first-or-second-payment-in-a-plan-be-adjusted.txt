@@ -1,0 +1,7 @@
+Customer Scenario: Can the first or second payment in a plan be adjusted?
+Scenario Title: Can the first or second payment in a plan be adjusted?
+Category: Payment Plans & Scheduling
+Keywords: first payment, second payment, adjust, additional info, schedule setup
+
+Answer To Give The Customer:
+Yes, this can be done via the 'Additional Info' section during schedule setup.

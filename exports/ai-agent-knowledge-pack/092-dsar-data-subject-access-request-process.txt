@@ -1,0 +1,7 @@
+Customer Scenario: The customer needs help with dsar (data subject access request).
+Scenario Title: DSAR (Data Subject Access Request) Process
+Category: Security, Verification & Data Requests
+Keywords: DSAR, SAR, Process, Subject access request, data request, information request
+
+Answer To Give The Customer:
+If the customer wants a copy of their personal data, they can make a Data Subject Access Request. The business may need to verify the request before processing it and will then explain how the information will be provided.

@@ -1,0 +1,7 @@
+Customer Scenario: What should I do if the 'My Card' section is missing in the portal?
+Scenario Title: What should I do if the 'My Card' section is missing in the portal?
+Category: Customer Portal & Login Issues
+Keywords: My Card, missing, portal, refresh page
+
+Answer To Give The Customer:
+Ask the customer to refresh the page—it should appear afterward.

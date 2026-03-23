@@ -1,0 +1,8 @@
+Customer Scenario: What is our IBAN Number?
+Scenario Title: What is our IBAN Number?
+Category: Application Processing & General Operations
+Keywords: IBAN, no uk account, paying abroad
+
+Answer To Give The Customer:
+GB32 TRWI 2314 7081 2998 84/ TRWIGB2L
+Account holder: Savvy Loan Products Ltd

@@ -1,0 +1,14 @@
+Customer Scenario: What are the contact details for Tick Tock Loans?
+Scenario Title: What are the contact details for Tick Tock Loans?
+Category: Contact Information
+Keywords: contact details, phone, address, email, customer service, collections, complaints, underwriting
+
+Answer To Give The Customer:
+•	Phone: 020 8090 8340
+•	Address: 7 Berley Crescent, Gravesend, DA12 2AH
+•	Website: www.ticktockloans.com
+Email Addresses:
+Customer Service: customerservice@ticktockloans.com
+Collections: collections@ticktockloans.com
+Complaints: complaints@ticktockloans.com
+Underwriting: underwriting@ticktockloans.com

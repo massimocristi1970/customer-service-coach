@@ -1,0 +1,31 @@
+Customer Scenario: The customer is asking about Cancelling a Schedule.
+Scenario Title: Cancelling a Schedule
+Category: Application Processing & General Operations
+Keywords: undo, cancel CPA, cancel PP, cancel schedule, cancel
+
+Answer To Give The Customer:
+Purpose:
+To explain how agents can cancel a customer’s payment schedule and when this happens automatically.
+
+Steps for Agents (Manual Cancellation):
+
+Go to the account page of the customer’s account.
+
+At the top of the page, locate the orange box titled “Schedules.”
+
+Open the drop-down menu.
+
+Select “Cancel Pay Plan.”
+
+This will immediately cancel the active schedule on the account.
+
+Automatic Cancellations:
+A payment schedule will also cancel automatically if the account is moved into any of the following stages:
+
+DM (Debt Management)
+
+Vul (Vulnerability)
+
+Important Notes for Staff:
+
+Do not attempt to restart or amend a schedule without following the correct setup procedure.

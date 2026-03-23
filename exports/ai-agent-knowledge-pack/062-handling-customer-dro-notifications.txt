@@ -1,0 +1,7 @@
+Customer Scenario: The customer is asking about Handling Customer DRO Notifications.
+Scenario Title: Handling Customer DRO Notifications
+Category: Application Processing & General Operations
+Keywords: DRO, procedure, Insolvency, DRO stage, debt relief order
+
+Answer To Give The Customer:
+If the customer says they are under a Debt Relief Order, the business will need to review the account and confirm the details of the order before explaining the next steps. The customer may be asked for evidence or reference information to support that review.

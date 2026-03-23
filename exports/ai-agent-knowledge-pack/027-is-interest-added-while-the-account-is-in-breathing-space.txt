@@ -1,0 +1,7 @@
+Customer Scenario: Is interest added while the account is in Breathing Space?
+Scenario Title: Is interest added while the account is in Breathing Space?
+Category: Debt Respite Scheme / Breathing Space
+Keywords: interest, breathing space, frozen, fees, charges
+
+Answer To Give The Customer:
+No. Interest, fees, and charges are frozen while the account is in Breathing Space.

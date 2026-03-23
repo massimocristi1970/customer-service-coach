@@ -1,0 +1,106 @@
+Customer Scenario: What are the consequences of non-payment?
+Scenario Title: What are the consequences of non-payment?
+Category: Collections & Account Status Management
+Keywords: consequences, non-payment, non payment, failed arrangement, default notice, debt recovery, debt agency, failed payment
+
+Answer To Give The Customer:
+1. Arrangement Cancelled
+
+If the customer misses a payment or breaks the terms of the plan:
+
+The current payment arrangement will be cancelled.
+
+The account will return to active collections, meaning further contact attempts may be made to resolve the arrears.
+
+You should always tell the customer:
+
+“If the agreed payment is not made, the arrangement may be cancelled and your account will return to collections for further action.”
+
+2. Pending Default Notice Issued
+
+If the account continues to remain unpaid:
+
+A Pending Default Notice may be issued.
+
+This is a formal warning that a default could be recorded if no action is taken.
+
+It gives the customer an opportunity to bring the account back in line before a default is applied.
+
+This should be explained clearly:
+
+“If the arrears are not resolved, we may issue a Pending Default Notice which is a formal step before a default is registered with credit reference agencies.”
+
+3. Default Registered with Credit Reference Agencies
+
+If the customer still fails to contact us or make payments:
+
+A default may be registered on their credit file.
+
+This will remain on their credit report for six years.
+
+It can affect their ability to obtain credit, mortgages, phone contracts, or other financial services.
+
+Explain simply:
+
+“A default can impact your credit rating for six years and may affect future borrowing.”
+
+4. Third-Party Debt Recovery Agency Instructed
+
+If the account cannot be resolved directly:
+
+The debt may be transferred to a licensed third-party debt recovery agency.
+
+The customer will then be contacted by the agency, not us.
+
+The agency may use their own contact processes to recover the balance.
+
+Explain clearly and calmly:
+
+“If the account remains unpaid, it may be passed to a third-party debt recovery agency who will continue recovery efforts.”
+
+5. Additional Collections Activity
+
+Depending on the customer’s behaviour and account history, further action may include:
+
+Increased outbound contact to try to engage the customer
+
+Written correspondence outlining the arrears and next steps
+
+Reassessment of the customer’s affordability if they re-engage
+
+These actions should always be proportionate, fair, and compliant with regulatory requirements.
+
+6. Potential Legal Action (if applicable to your business)
+
+If your organisation uses legal recovery routes, consequences may also include:
+
+Escalation to the legal team for pre-legal assessment
+
+The possibility of a County Court Judgment (CCJ)
+
+Further enforcement if a CCJ remains unpaid
+
+Only include this section if legal routes are used. If not, I can remove or adapt it.
+
+7. Impact on Future Lending
+
+If the customer continues to default or shows poor repayment behaviour:
+
+They may be restricted from future borrowing
+
+Their account may be flagged internally
+
+They may be declined for new applications until the debt is resolved
+
+Explain in simple terms:
+
+“Non-payment can affect future lending decisions with us.”
+
+Summary to Read to Customers
+
+Here’s a simplified version for agents to use during calls:
+
+“If the payment isn’t made, the arrangement may be cancelled and your account will return to collections.
+If it remains unpaid, we may issue a Pending Default Notice which can lead to a default being registered on your credit file for six years.
+The account may also be passed to a third-party debt recovery agency.
+It’s really important we work together to agree a plan that is realistic and sustainable for you.”

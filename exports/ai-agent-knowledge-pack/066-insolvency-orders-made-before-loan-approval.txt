@@ -1,0 +1,38 @@
+Customer Scenario: The customer is asking about Insolvency Orders Made Before Loan Approval.
+Scenario Title: Insolvency Orders Made Before Loan Approval
+Category: Application Processing & General Operations
+Keywords: orders made before approval, IVA, bankruptcy, dro, trust deed, sequestration, customer took loan after, applied, loan
+
+Answer To Give The Customer:
+Scenario:
+A customer advises (or it is identified) that they had an insolvency order (e.g. DRO, IVA, Bankruptcy) in place before they took out the loan.
+
+Key Point:
+
+If the insolvency order was already made before the loan agreement was taken out, the customer’s current loan is not included in that insolvency.
+
+This means the customer remains liable for repayment under the original loan terms.
+
+Procedure for Staff:
+
+Check the insolvency order date against the loan start date.
+
+If the insolvency order date is before the loan start date → the loan is not covered by that order.
+
+If the insolvency order date is after the loan start date → follow the normal insolvency procedure (treat the loan as covered).
+
+Record Details:
+
+Note the insolvency order reference, date, and type in the account.
+
+If the loan is not covered by the insolvency order, explain clearly to the customer that the debt remains payable in full.
+
+Example script:
+
+“I can see that your insolvency order was made before this loan agreement started. This means your loan with us is not included in that arrangement, and you remain responsible for repayment under the original terms.”
+
+Account Handling:
+
+Continue managing the loan as normal (collections, interest, or settlement discussions) unless the customer later enters into a new insolvency arrangement that includes this loan.
+
+Compliance Note:

@@ -1,0 +1,47 @@
+Customer Scenario: The customer is asking about Calculating Daily Interest.
+Scenario Title: Calculating Daily Interest
+Category: Transaction Responses & Payment Issues
+Keywords: calculate, interest, daily interest, charge, queries
+
+Answer To Give The Customer:
+Purpose:
+To provide staff with a clear process for explaining how interest is applied and to calculate the daily interest charge for customer accounts.
+
+Interest Rate:
+
+We charge 0.8% per day on the outstanding principal balance.
+
+Daily Interest Calculation:
+
+Identify the outstanding principal on the customer account.
+
+Multiply the principal by 0.8% (0.008) to calculate the daily interest charge.
+
+Formula:
+
+Daily Interest = Outstanding Principal × 0.008
+
+Example Calculations:
+
+Principal (£)	Daily Interest (£)
+300	            2.40
+500	            4.00
+750	            6.00
+1,000	        8.00
+1,500	        12.00
+
+Using the Table/Formula on Calls:
+
+If a customer asks how much interest will be applied each day, staff can either:
+
+Use the table for quick reference, or
+
+Apply the formula to calculate the exact amount for the outstanding balance.
+
+Notes:
+
+Interest is calculated daily based on the current outstanding principal.
+
+Do not include previously accrued interest when calculating daily interest — only use the current principal.
+
+Ensure all calculations and explanations are clearly noted in the customer account.

@@ -1,0 +1,13 @@
+Customer Scenario: How can a customer stop the default notice being registered on thier credit file?
+Scenario Title: How can a customer stop the default notice being registered on thier credit file?
+Category: Application Processing & General Operations
+Keywords: default notice, default letter, stop, DFN, default, credit reference agency, CRA
+
+Answer To Give The Customer:
+To prevent the default notice from being recorded with the credit reference agencies, the customer must either:
+
+Settle the balance stated in the letter by the date noted in the default notice. (Note: the balance in the letter may differ from the current outstanding balance, as interest has accrued since the letter was issued.)
+
+Make a partial payment and agree for the remaining balance to be cleared either in full by a later date or through an affordable repayment arrangement.
+
+Note: If the amount stated in the default notice is not settled in full by the deadline, interest will continue to accrue according to the new schedule and will be payable.

@@ -1,0 +1,19 @@
+Customer Scenario: The customer is asking about Dealing with Vulnerable Customers.
+Scenario Title: Dealing with Vulnerable Customers
+Category: Application Processing & General Operations
+Keywords: Dealing with Vulnerable Customers, TEXAS, vul, special needs, support
+
+Answer To Give The Customer:
+Purpose: To handle calls where customers disclose difficulties such as illness, financial hardship, or other vulnerabilities.
+
+Steps:
+
+Listen carefully and acknowledge what the customer has said.
+
+Reassure them we can pause or adapt support if needed.
+
+Add a "must read note" to make other staff aware of potential vulnerbility (this will show at the top of the general page)
+
+Provide information on free debt advice services if appropriate.
+
+USse vulnerbility tools if needed i.e TEXAS

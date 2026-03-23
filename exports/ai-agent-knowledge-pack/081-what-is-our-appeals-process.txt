@@ -1,0 +1,21 @@
+Customer Scenario: What is our appeals process?
+Scenario Title: What is our appeals process?
+Category: Application Processing & General Operations
+Keywords: appeal, declined, unhappy with decision, appeal process
+
+Answer To Give The Customer:
+The appeal is reviewed by a senior underwriter to determine whether the original lending decision was correct.
+
+The process typically takes up to 48 hours from the time the appeal is submitted.
+
+To submit an appeal, the customer must follow the instructions in their decline email. In short, they should:
+
+Email underwriting@ticktockloans.com
+
+Clearly state their concerns and reasons for requesting a review
+
+The senior underwriter will consider the customer’s points as part of their review.
+
+Appeal decisions will be communicated via email.
+
+Customers can submit an appeal either directly by email or manually through a customer service representative.

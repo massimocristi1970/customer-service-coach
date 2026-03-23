@@ -1,0 +1,31 @@
+Customer Scenario: What is Bankruptcy?
+Scenario Title: What is Bankruptcy?
+Category: Application Processing & General Operations
+Keywords: Bankruptcy, BO, Bankruptcy Order, Order
+
+Answer To Give The Customer:
+Bankruptcy is a legal process designed to help individuals who can’t repay their debts. It gives you a fresh financial start by writing off most of your unsecured debts, but it also comes with serious consequences and restrictions.
+
+📝 How do you apply?
+In the UK, you can apply for bankruptcy online through the government’s Insolvency Service. You don’t need to go to court unless someone else is making you bankrupt. It’s a big decision, so it’s important to get advice before applying.
+
+💷 How much does it cost?
+As of now, it costs £680 to apply for bankruptcy. This fee must be paid before your application can be submitted, although payment plans may be available in some cases.
+
+👥 Who manages your bankruptcy?
+Once your bankruptcy is approved, it is managed by an Official Receiver – a person who works for the Insolvency Service. They’ll review your finances and may take control of certain assets to help repay your debts. In some cases, a Trustee may also be appointed to handle this.
+
+⚠️ What restrictions does bankruptcy create?
+When you're bankrupt, there are several restrictions you must follow, including:
+
+You can’t borrow more than £500 without telling the lender you’re bankrupt.
+
+You can’t act as a company director without court permission.
+
+You must cooperate fully with the Official Receiver and provide any information they request.
+
+Your credit file will show the bankruptcy for 6 years, which can make getting credit, renting, or even some jobs more difficult.
+
+Your assets may be sold, and you could be asked to make monthly payments for up to 3 years if you have disposable income.
+
+📌 Important: Bankruptcy can be life-changing, so it’s always best to speak to a free debt adviser before applying. They can help you explore all your options and make the best choice for your situation.

@@ -1,0 +1,16 @@
+Customer Scenario: The customer needs help with right to withdraw (rtw).
+Scenario Title: Right to Withdraw (RTW) Process
+Category: Right to Withdraw (RTW)
+Keywords: Withdraw, RTW, right to withdraw, cancellation, cancel loan, cancel agreement, opt out, 14-day rule, 14 days, fourteen days, exit agreement, cooling-off period, loan withdrawal, customer wants to cancel, agreement withdrawal, stop loan, terminate agreement, ends loan, cancels loan, wishes to withdraw, no longer wants loan
+
+Answer To Give The Customer:
+If a customer wishes to withdraw from their loan agreement, they must inform us within 14 days of the loan being funded. This 14-day period starts the day after the loan is funded.
+The customer can notify us of their intention to withdraw either verbally or in writing.
+The customer has 30 days from the date they notify us of their intention to withdraw to repay:
+The amount borrowed, plus
+The daily interest accrued up to the date the repayment is made.
+Ask the customer to confirm the exact date they intend to make the repayment.
+Create a new payment schedule for that date.
+If the Customer Can’t Confirm a Date schedule the repayment for the 30th day after the withdrawal notification.
+If the customer is unhappy with a card payment being scheduled, switch the payment method to bank transfer to avoid automated card collection attempts.
+The balance will remain due, and the customer will continue to receive payment reminders as part of the usual communication cycle. If unpaid, the account will flow into the standard collections strategy.

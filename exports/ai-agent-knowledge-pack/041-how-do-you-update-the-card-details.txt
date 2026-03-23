@@ -1,0 +1,24 @@
+Customer Scenario: How do you update the card details?
+Scenario Title: How do you update the card details?
+Category: Application Processing & General Operations
+Keywords: Update card, card, pre-auth, authorisation, new card, securely, banking app
+
+Answer To Give The Customer:
+To update their card details, the customer must complete the process via the website. Here's how to guide them:
+
+Ask the customer to visit the website and log in to their account.
+
+Once logged in, they should look for either:
+• “Update Card Securely”, or
+• “My Card”
+
+Clicking on either option will take them to the card update page - if they do not see this get the customer to refresh the page.
+
+The customer should now enter their new card information on the page provided.
+
+After entering the details, the customer will be prompted to verify the transaction in their banking app.
+
+🔹 Step 5: Return to Website
+Once verified, the customer must return to the original website page.
+
+This final step ensures the update is sent successfully through our API and applied to their account.

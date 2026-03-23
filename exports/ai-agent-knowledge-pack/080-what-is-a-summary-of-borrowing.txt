@@ -1,0 +1,31 @@
+Customer Scenario: What is a Summary of Borrowing
+Scenario Title: What is a Summary of Borrowing
+Category: Application Processing & General Operations
+Keywords: SOB, Summary, Payday lending market, borrowing
+
+Answer To Give The Customer:
+A Summary of Borrowing (SOB) is a regulatory document a lender must provide to a customer who has taken a High-Cost Short-Term Credit (HCST) product (for example, payday or other short-term, high-cost loans). It gives a clear, concise breakdown of how much the customer has borrowed and how much they have paid in charges (interest and fees) over a reporting period.
+
+Purpose:
+
+Show the total amount borrowed during the reporting period.
+
+Show the total charges (interest, fees, and other costs).
+
+Improve transparency so customers can see the true cost of repeat or short-term borrowing.
+
+Help customers make informed decisions about future borrowing and seek debt advice if needed.
+
+Key points:
+
+The SOB is informational only — it is not a collection notice or enforcement action.
+
+It is a regulatory requirement designed to protect consumers and ensure visibility of repeated HCST borrowing.
+
+When a customer SHOULD be sent an SOB
+
+Every three months (quarterly), in arrears, covering the previous three-month period — regardless of whether payments are due or the account is active, where the customer has had HCST borrowing that meets the FCA reporting criteria.
+
+When the account is closed (including where the debt is sold or transferred to another creditor/third party).
+
+Where there has been repeat borrowing from the lender (i.e., the customer has borrowed more than once), or otherwise where the FCA’s HCST reporting criteria apply.

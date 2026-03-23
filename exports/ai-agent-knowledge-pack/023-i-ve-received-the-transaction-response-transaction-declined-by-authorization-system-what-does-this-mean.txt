@@ -1,0 +1,7 @@
+Customer Scenario: The customer is asking about I've received the transaction response: "Transaction declined by authorization system" -- what does this mean?.
+Scenario Title: I've received the transaction response: "Transaction declined by authorization system" -- what does this mean?
+Category: Transaction Responses & Payment Issues
+Keywords: transaction declined, authorization system, R1, revocation, recurring payments, VISA
+
+Answer To Give The Customer:
+This typically refers to R1: Revocation of Authorisation, meaning the cardholder has requested to stop all recurring payment transactions. You should contact the customer to confirm whether they have cancelled all transactions. This response applies to VISA

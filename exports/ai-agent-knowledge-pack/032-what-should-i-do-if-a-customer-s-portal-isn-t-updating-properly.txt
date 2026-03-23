@@ -1,0 +1,7 @@
+Customer Scenario: What should I do if a customer's portal isn't updating properly?
+Scenario Title: What should I do if a customer's portal isn't updating properly?
+Category: Customer Portal & Login Issues
+Keywords: portal, updating, refresh page, different browser
+
+Answer To Give The Customer:
+Ask them to refresh the page or try using a different browser.

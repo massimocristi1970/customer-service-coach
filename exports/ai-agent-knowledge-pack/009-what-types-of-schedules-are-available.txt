@@ -1,0 +1,8 @@
+Customer Scenario: What types of schedules are available?
+Scenario Title: What types of schedules are available?
+Category: Payment Plans & Scheduling
+Keywords: payplan, amounts, duration, fixed monthly payments, months
+
+Answer To Give The Customer:
+Payplan by Amounts (fixed monthly payments)
+Payplan by Duration (based on number of months)

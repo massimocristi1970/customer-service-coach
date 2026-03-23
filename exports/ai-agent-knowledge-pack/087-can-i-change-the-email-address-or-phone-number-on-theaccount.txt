@@ -1,0 +1,9 @@
+Customer Scenario: Can I change the email address or phone number on theaccount?
+Scenario Title: Can I change the email address or phone number on theaccount?
+Category: Application Processing & General Operations
+Keywords: mobile number, updating contact details, telephone number
+
+Answer To Give The Customer:
+Yes. You can update the contact details; however, for security reasons we must first speak to the customer on the mobile number currently registered on the account.
+
+Once we’ve verified the customers identity through that number, we can override the existing details and update the email address or phone number.
