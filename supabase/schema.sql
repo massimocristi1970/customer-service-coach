@@ -149,6 +149,8 @@ $$;
 GRANT EXECUTE ON FUNCTION increment_unanswered_count(TEXT, TEXT, TEXT) TO anon, authenticated;
 
 -- Function to search documents (PostgreSQL full-text search)
+DROP FUNCTION IF EXISTS search_documents(TEXT, TEXT);
+
 CREATE OR REPLACE FUNCTION search_documents(
     search_query TEXT,
     p_app_name TEXT DEFAULT 'customer-service-coach'
