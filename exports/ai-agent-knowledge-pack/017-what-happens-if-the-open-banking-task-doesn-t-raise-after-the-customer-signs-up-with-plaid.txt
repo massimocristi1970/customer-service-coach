@@ -4,4 +4,4 @@ Category: Income Evidence & Verification
 Keywords: open banking, task, Plaid, bank statement, 30 days
 
 Answer To Give The Customer:
-[No answer content available]
+Ask the customer to email across a copy of their most recent bank statement back dating the last 30 days

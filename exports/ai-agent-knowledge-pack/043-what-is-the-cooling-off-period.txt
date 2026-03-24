@@ -5,6 +5,4 @@ Keywords: cooling, between loans, period
 
 Answer To Give The Customer:
 The cooling-off period is a set amount of time that must pass between loans once a previous loan has been repaid. During this time, any new applications will be automatically declined, in line with our repeat lending policy.
-The following applies:
-•	Between the 1st and 2nd loan – 30-day cooling-off period
-•	Between the 2nd and 3rd loan – 30-day cooling-off period
+The current cooling-off period is 5 days from the date the last loan was repaid.

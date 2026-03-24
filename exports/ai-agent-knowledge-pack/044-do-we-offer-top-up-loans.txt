@@ -4,4 +4,4 @@ Category: Application Processing & General Operations
 Keywords: top-up, top, second loan, additional loan, increase balance
 
 Answer To Give The Customer:
-No, we do not offer top-up loans. Customers are also subject to a cooling-off period, which varies depending on how many loans they’ve had previously. If a customer wishes to repay their loan and reapply, they will need to take this condition into account.
+No, we do not offer top-up loans. Customers are also subject to a cooling-off period which is 5 days from the date the last loan was repaid.. If a customer wishes to repay their loan and reapply, they will need to take this condition into account.

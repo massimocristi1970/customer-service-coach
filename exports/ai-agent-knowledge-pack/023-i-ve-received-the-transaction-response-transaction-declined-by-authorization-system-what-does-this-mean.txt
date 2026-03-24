@@ -4,4 +4,4 @@ Category: Transaction Responses & Payment Issues
 Keywords: transaction declined, authorization system, R1, revocation, recurring payments, VISA
 
 Answer To Give The Customer:
-This typically refers to R1: Revocation of Authorisation, meaning the cardholder has requested to stop all recurring payment transactions. You should contact the customer to confirm whether they have cancelled all transactions. This response applies to VISA
+This typically refers to R1: Revocation of Authorisation, meaning the cardholder has requested to stop all recurring payment transactions. You should contact the customer to confirm whether they have cancelled all transactions. This response applies to VISA. The customer may need to contact their bank to understand why the transaction was declined. 
